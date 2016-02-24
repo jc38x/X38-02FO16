@@ -1,0 +1,149 @@
+%**************************************************************************
+% X38-02FO16
+% jcds (jcds.x38e@gmail.com)
+% 2016
+%**************************************************************************
+
+function [out_keys, out_cones] = generate_cones(in_order, in_iedge, in_oedge, in_range, in_K, in_DF)
+out_cones = cell(1, in_range.szin);
+out_keys = in_order(is_in(in_order, in_range));
+pos = 0;
+
+for in = out_keys
+    iedge = in_iedge{in};
+    inode = iedge(1, :);
+    inpre = inode(is_in(inode, in_range));
+    szin = numel(inpre);
+    idx = 0;
+    
+    
+    
+    szcone = 1 + 200;
+    
+    %for n = 1:szin, szcone = szcone + nchoosek(szin, n); end
+    cones = cell(5, szcone);
+    
+
+    try_add_cone(in);
+    for n = 1:szin
+        all = nchoosek(inpre, n);
+        for m = 1:size(all, 1)
+            %{ 
+in_sel = in_all(in_m, :);
+            
+            sel = all(m, :);
+            count = ones(1, n);
+            limit = zeros(1, n);
+            ws = cell(1, n);
+            for i = 1:n
+                lc = out_cones{out_keys == sel(i)};
+                ws{i} = lc(1, :); 
+                limit(i) = size(lc, 2);
+            end
+            while (count(end) <= limit(end))
+                tcsz = 1;
+                for i = 1:n
+                    conearray = ws{i};
+                    tcsz = tcsz + numel(conearray{count(i)});
+                end
+                tc = zeros(1, tcsz);
+                tc(1) = in;
+                tci = 2;
+                for i = 1:n
+                    conearray = ws{i};
+                    for cae = conearray{count(i)}
+                        tc(tci) = cae;
+                        tci = tci + 1;
+                    end
+                end
+                
+                
+                tc = unique(tc, 'stable');
+                try_add_cone(tc);
+                countindex = 1;
+                while (true)
+                    count(countindex) = count(countindex) + 1;
+                    if (count(countindex) <= limit(countindex)), break; end
+                    if (countindex >= n), break; end;                    
+                    count(countindex) = 1;
+                    countindex = countindex + 1;
+                end
+            end
+            %}
+        end
+    end
+        %%}
+    
+    
+    cones = cones(:, 1:idx);
+    rem = false(1, idx);
+    for i = 1:idx
+        for j = (i+1):idx, rem(j) = rem(j) || isempty(setxor(cones{1, i}, cones{2, j})); end        
+    end
+    pos = pos + 1;
+    out_cones{pos} = cones(:, ~rem);
+end
+
+function combine_cones(in_sel, in_all, in_m, in_n, in_in)
+    count = ones(1, in_n);
+    limit = zeros(1, in_n);
+    ws = cell(1, in_n);
+    for x = 1:in_n
+        lc = out_cones{out_keys == in_sel(x)};
+        ws{x} = lc(1, :);
+        limit(x) = size(lc, 2);
+    end
+    while (count(end) <= limit(end))
+        tcsz = 1;
+        for x = 1:in_n
+            car = ws{x};
+            tcsz = tcsz + numel(car{count(x)});
+        end
+        tc = zeros(1, tcsz);
+        tc(1) = in_in;
+        tci = 2;            
+        for x = 1:in_n
+            car = ws{x};
+            for cae = car{count(i)}
+                tc(tci) = cae;
+                tci = tci + 1;
+            end
+        end
+            
+            
+            tc = unique(tc, 'stable');
+            try_add_cone(tc);
+            countindex = 1;
+            while (true)
+                count(countindex) = count(countindex) + 1;
+                if (count(countindex) <= limit(countindex)), break; end
+                if (countindex >= n), break; end;
+                count(countindex) = 1;
+                countindex = countindex + 1;
+            end
+        end
+        
+    end
+
+
+function try_add_cone(in_c)
+    ie = [in_iedge{in_c}];
+    iec = ismember(ie(1, :), in_c);
+    iee = ~iec;
+    if (numel(unique(ie(1, iee))) > in_K), return; end
+
+    oenr = cell2mat(in_oedge(in_c(2:end)));
+    if (~isempty(oenr))
+        oenr(:, ismember(oenr(2, :), in_c)) = [];
+        if (in_DF && ~isempty(oenr)), return; end
+    end
+
+    idx = idx + 1;
+
+    cones{1, idx} = in_c;
+    cones{2, idx} = ie(:, iec);
+    cones{3, idx} = ie(:, iee);
+    cones{4, idx} = in_oedge{in_c(1)};
+    cones{5, idx} = oenr;
+end
+end
