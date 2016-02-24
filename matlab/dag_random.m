@@ -5,9 +5,9 @@ t = tic();
 %[delay, range] = sample_valavan();
 %[delay, range] = random_dag(100, 5000, 60, 1, 10); %ok
 
-%[delay, range] = random_dag(385, 555, 60, 1, 10); %ok
+[delay, range] = random_dag(385, 555, 60, 1, 10); %ok
 %[delay, range] = random_dag(100, 200, 10, 1, 10); %ok
-[delay, range] = random_dag(20, 30, 10, 1, 10); %ok
+%[delay, range] = random_dag(20, 30, 10, 1, 10); %ok
 %[delay, range] = random_dag(6, 6, 2, 1, 10); %ok
 toc(t)
 
