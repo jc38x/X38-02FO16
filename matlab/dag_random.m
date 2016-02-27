@@ -8,7 +8,8 @@ t = tic();
 %[delay, range] = random_dag(1, 495, 1, 1, 10);
 %[delay, range] = random_dag(385, 555, 60, 1, 10); %ok
 %[delay, range] = random_dag(100, 200, 10, 1, 10); %ok
-[delay, range] = random_dag(20, 30, 10, 1, 10); %ok
+%[delay, range] = random_dag(20, 30, 10, 1, 10); %ok
+[delay, range] = random_dag(1, 450, 1, 1, 10); %ok
 %[delay, range] = random_dag(6, 6, 2, 1, 10); %ok
 toc(t)
 
@@ -19,7 +20,7 @@ toc(t)
 bg = build_graph(delay, labels, range);
 view(bg);
 
-
+%{
 t = tic();
 [labels] = node_labels(range);
 
@@ -49,5 +50,6 @@ newlabels = [labels(range.pi), labels(indices(I)+double(range.szpi)), labels(ran
 br = build_graph(result_delay, newlabels, result_range);
 
 view(br);
+%}
 %{
 %}
