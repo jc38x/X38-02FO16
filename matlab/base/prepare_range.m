@@ -14,6 +14,7 @@ out_range.pohi = in_pohi;
 out_range.pi = [out_range.pilo:out_range.pihi];
 out_range.in = [out_range.inlo:out_range.inhi];
 out_range.po = [out_range.polo:out_range.pohi];
+out_range.all = [out_range.pilo:out_range.pohi];
 out_range.szpi = out_range.pihi - out_range.pilo + 1;
 out_range.szin = out_range.inhi - out_range.inlo + 1;
 out_range.szpo = out_range.pohi - out_range.polo + 1;

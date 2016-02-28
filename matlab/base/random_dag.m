@@ -98,5 +98,7 @@ function [out_ok] = try_fill()
             out_delay(adjoe, adjie) = 0;
         end
     end
+    
+    out_ok = false;
 end
 end
