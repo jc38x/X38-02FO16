@@ -9,12 +9,11 @@ nin = numel(in_S);
 nsz = in_range.szpi + nin + in_range.szpo;
 ofs = in_range.pihi;
 poofs = in_range.szin - nin;
-
+adjS = [in_S - ofs];
 out_delay = spalloc(nsz, nsz, sum(in_delay(:) > 0));
-out_tag = sparse(1, [in_S - ofs], [[1:nin] + ofs]);
+out_tag = sparse(1, adjS, [[1:nin] + ofs]);
 
-for visible = in_S
-    cvidx = visible - ofs;
+for cvidx = adjS
     vcone = in_Cv{cvidx};
     i2 = out_tag(cvidx);
     for e = vcone{3}

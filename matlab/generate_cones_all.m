@@ -4,7 +4,7 @@
 % 2016
 %**************************************************************************
 
-function [out_keys, out_cones] = generate_cones(in_order, in_iedge, in_oedge, in_range, in_K, in_DF)
+function [out_keys, out_cones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF)
 inofs = in_range.szpi;
 numelcones = ones(1, in_range.szin);
 dupmap = containers.Map();
@@ -70,6 +70,14 @@ for in = out_keys
     end
 
     cones = cones(:, 1:index);
+    
+    if (in_DF)
+        rem = true(1, index);
+        for n = 2:index, rem(n) = isempty(cones{5, n}); end
+        cones = cones(:, rem);
+        index = size(cones, 2);
+    end
+    
     adjin = in - inofs;
     out_cones{adjin} = cones;
     numelcones(adjin) = index;
@@ -85,7 +93,7 @@ function try_add_cone(in_c)
     oenr = cell2mat(in_oedge(in_c(nroot)));
     if (~isempty(oenr))
         oenr(:, ismembc(oenr(2, :), in_c)) = [];
-        if (in_DF && ~isempty(oenr)), return; end
+        %if (in_DF && ~isempty(oenr)), return; end
     end
 
     index = index + 1;
