@@ -35,7 +35,7 @@ for in = out_keys
     szcones = 1;
     suball = all(2:end);
     for n = suball, szcones = szcones + prod(numelcones(n{1}(2:end) - inofs)); end
-    cones = cell(5, szcones);
+    cones = cell(7, szcones);
     index = 0;
     
     try_add_cone(all{1});

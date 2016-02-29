@@ -4,20 +4,20 @@ DF = true;
 mode = 2;
 
 %RNG = rng();
-rng(RNG);
+%rng(RNG);
 
 t = tic();
 %delay = result_delay;
 %range = result_range;
 
-%[delay, range] = sample_valavan();
+[delay, range] = sample_valavan();
 %[delay, range] = random_dag(100, 5000, 60, 1, 10); %ok
 
 %[delay, range] = random_dag(1, 495, 1, 1, 10);
 %[delay, range] = random_dag(385, 555, 60, 1, 10); %ok
 %[delay, range] = random_dag(100, 200, 10, 1, 10); %ok
 %[delay, range] = random_dag(20, 30, 10, 1, 10); %ok
-[delay, range] = random_dag(1, 20, 1, 1, 10); %ok 360s
+%[delay, range] = random_dag(1, 20, 1, 1, 10); %ok 360s
 %[delay, range] = random_dag(6, 6, 2, 1, 10); %ok
 toc(t)
 
@@ -35,12 +35,15 @@ height = fill_height(redro, oedge, delay, range);
 
 toc(t)
 
-%t = tic();
-%[keys, cones] = generate_cones_all(order, iedge, oedge, range, K, DF);
-%toc(t)
+t = tic();
+[keys, cones] = generate_cones_all(order, iedge, oedge, range, K, DF);
+toc(t)
+
+%[depthcones] = fill_depth_cones(cones, delay, depth);
+[afcones] = fill_af_cones(cones, af, noedge);
 
 
-
+%{
 t = tic();
 [s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, 1);
 toc(t)
@@ -63,6 +66,6 @@ br = build_graph(result_delay, newlabels, result_range);
 
 view(br);
 %%{
-
+%}
 %{
 %}

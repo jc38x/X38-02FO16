@@ -5,6 +5,12 @@
 
 function [out_s, out_cv] = hara(in_order, in_iedge, in_oedge, in_noedge, in_delay, in_depth, in_height, in_af, in_range, in_K, in_DF, in_mode, in_maxi) % DF/NDF
 [tsort, allcones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF);
+
+
+
+
+
+
 rtsort = fliplr(tsort);
 cv = cell(1, in_range.szin);
 ofs = in_range.pihi;
@@ -18,14 +24,46 @@ nheight = in_height;
 edepth = spalloc(gsz, gsz, sasz);
 eaf = spalloc(gsz, gsz, sasz);
 eheight = spalloc(gsz, gsz, sasz);
+Odepth = [];
 
 for i = 1:in_maxi
     traverse_fwd();
     traverse_bwd();
+    
+    if (i == 1)
+        set_odepth();
+    end
+    
+    
 end
 
 out_s = s(is_in(s, in_range));
 out_cv = cv;
+
+
+
+function set_odepth()
+    [delay, ~, range] = rebuild_graph_from_cones(s(is_in(s, in_range)), cv, in_delay, in_range);
+    [iedge, ~] = prepare_edges(delay);
+    depth = fill_depth(graphtopoorder(delay), iedge, delay, range);
+    Odepth = max(depth(range.po));
+end
+
+
+
+
+
+function [out_bc, out_bcdepth, out_bcaf] = best_cone(in_v)
+    if (in_mode == 1)
+        [out_bc, out_bcdepth, out_bcaf] = best_cone_depth(in_v);
+    elseif (in_mode == 2)
+        [out_bc, out_bcdepth, out_bcaf] = best_cone_area(in_v);
+    end
+end
+
+
+
+
 
 function traverse_fwd()
 for v = in_range.pi
@@ -43,10 +81,14 @@ for v = tsort
     naf(v) = bcaf;
     for e = in_oedge{v}
         edepth(e(1), e(2)) = in_delay(e(1), e(2)) + ndepth(v);
-        eaf(e(1), e(2)) = naf(v) / in_noedge(v);
+        eaf(e(1), e(2)) = naf(v) / in_noedge(v); %ok
     end
 end
 end
+
+
+
+
 
 function traverse_bwd()
 s = [];
@@ -78,7 +120,7 @@ for v = rtsort
 end
 end
 
-
+%{
     function [out_depth] = cone_depth(in_cone)
         out_depth = 0;
         for e = in_cone{3}
@@ -93,33 +135,30 @@ end
             out_af = out_af + (in_af(e(1)) / in_noedge(e(1)));
         end      
     end
+%}
 
-    function [out_bc, out_bcdepth, out_bcaf] = best_cone(in_v)
-        if (in_mode == 1)
-            [out_bc, out_bcdepth, out_bcaf] = best_cone_depth(in_v);
-        elseif (in_mode == 2)
-            [out_bc, out_bcdepth, out_bcaf] = best_cone_area(in_v);
-        end
-    end
 
     function [out_bc, out_bcdepth, out_bcaf] = best_cone_depth(in_v)
-        cones = allcones{in_v - ofs};          
+        cones = allcones{in_v - ofs};
         out_bcdepth = [];
         out_bcaf = [];
-        for c = cones
-            d = cone_depth(c);
-            a = cone_af(c);            
-            if (isempty(out_bcdepth) || (d < out_bcdepth))
-                out_bc = c;
-                out_bcdepth = d;
-                out_bcaf = a;
-            elseif (isequalfp(d, out_bcdepth))
-                if (a < out_bcaf)
+        if (isempty(Odepth))
+            for c = cones
+                d = cone_depth(c);
+                a = cone_af(c);
+                if (isempty(out_bcdepth) || (d < out_bcdepth))
                     out_bc = c;
                     out_bcdepth = d;
                     out_bcaf = a;
+                elseif (isequalfp(d, out_bcdepth))
+                    if (a < out_bcaf)
+                        out_bc = c;
+                        out_bcdepth = d;
+                        out_bcaf = a;
+                    end
                 end
             end
+        else
         end
     end
 
