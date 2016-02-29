@@ -1,10 +1,10 @@
 
 K = 4;
-DF = false;
+DF = true;
 mode = 2;
 
 %RNG = rng();
-%rng(RNG);
+rng(RNG);
 
 t = tic();
 %delay = result_delay;

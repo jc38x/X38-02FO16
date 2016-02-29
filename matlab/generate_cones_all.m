@@ -70,18 +70,33 @@ for in = out_keys
     end
 
     cones = cones(:, 1:index);
-    
+    %{
     if (in_DF)
         rem = true(1, index);
         for n = 2:index, rem(n) = isempty(cones{5, n}); end
         cones = cones(:, rem);
         index = size(cones, 2);
     end
+    %}
     
     adjin = in - inofs;
     out_cones{adjin} = cones;
     numelcones(adjin) = index;
 end
+
+if (in_DF)
+    for i = 1:in_range.szin
+        con = out_cones{i};
+        idx = numelcones(i);
+        rem = true(1, idx);
+        for n = 2:idx, rem(n) = isempty(con{5, n}); end
+        con = con(:, rem);
+        idx = size(con, 2);
+        out_cones{i} = con;
+        numelcones(i) = idx;
+    end
+end
+
 
 function try_add_cone(in_c)
     ie = [in_iedge{in_c}];
