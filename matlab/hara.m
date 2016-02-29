@@ -7,6 +7,14 @@ function [out_s, out_cv] = hara(in_order, in_iedge, in_oedge, in_noedge, in_dela
 [tsort, allcones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF);
 
 
+[depthcones] = fill_depth_cones(allcones, in_delay, in_depth);
+[afcones] = fill_af_cones(allcones, in_af, in_noedge);
+
+%cone depth
+%cone af
+
+
+
 
 
 
@@ -94,9 +102,7 @@ function traverse_bwd()
 s = [];
 for v = in_range.po
     iedge = in_iedge{v};
-    for e = iedge
-        eheight(e(1), e(2)) = in_delay(e(1), e(2));
-    end
+    for e = iedge, eheight(e(1), e(2)) = in_delay(e(1), e(2)); end
     s = union(s, iedge(1, :));
 end
 for v = rtsort
