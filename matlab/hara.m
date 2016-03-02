@@ -38,6 +38,7 @@ for i = 1:in_maxi
     
     if ((in_mode == 1) && (i == 1))
         set_odepth();
+        Odepth
     end
     
     solution = s(is_in(s, in_range));
@@ -63,7 +64,11 @@ out_cv = bestcones;
     out_depth = 0;
     for e = in_cone{in_range.CONE_IEDGE}
         e1 = e(1);
-        d = ndepth(e1) + edepth(e1, e(2));
+        %dalt = in_depth(e(2));
+        %d = ndepth(e1) + edepth(e1, e(2));
+        d = full(edepth(e1, e(2)));
+        %if (~isequalfp(dalt, d)), error([num2str(dalt) ' / ' num2str(d)]); end
+        
         if (d > out_depth), out_depth = d; end
     end
     end
@@ -88,6 +93,7 @@ out_cv = bestcones;
     for v = tsort
         [bc, bcdepth, bcaf] = best_cone(v);
         cv{v - ofs} = bc;
+        %disp(bcdepth)
         ndepth(v) = bcdepth;
         naf(v) = bcaf;
         no = nnoedge(v);
