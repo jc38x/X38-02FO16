@@ -4,7 +4,7 @@
 % 2016
 %**************************************************************************
 
-function [out_keys, out_cones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF, in_depth)
+function [out_keys, out_cones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF, in_delay)
 inofs = in_range.szpi;
 numelcones = ones(1, in_range.szin);
 dupmap = containers.Map();
@@ -112,20 +112,38 @@ function try_add_cone(in_c)
     
     
     tempie = ie(1, iee);
+    tempie2 = ie(2, iee);
     remove = false(1, numel(tempie));
-    for k = tempie        
+    dli = [];
+    de = [];
+    count = 0;
+    for k = unique(tempie)        
         de = tempie == k;
         if (sum(de) <= 1), continue; end
         dli = find(de);
-        [~, mdi] = max(in_depth(ie(2, de)));
+        [~, mdi] = max(in_delay(k, tempie2(de)));
         de(dli(mdi)) = false;
         remove = remove | de;
+        count = count + 1;
     end
     xie = ie(:, iee);
     %cones{6, index} = xie(:, ~remove);
     cones{3, index} = xie(:, ~remove);
     
+    %cones{6, index} = xie;
+    %cones{7, index} = k;
+    %cones{8, index} = ie(2, iee);
+    %cones{9, index} = dli;
     
+    %{
+     in_delay(k, ie(2, de));
+    cones{7, index} = ie(:, iee);
+    cones{8, index} = tempie;
+    cones{9, index} = dli;
+    cones{10, index} = de;
+    cones{11, index} = count;
+    cones{12, index} = k;
+    %}
     
 end
 end

@@ -4,6 +4,7 @@ DF = false;
 mode = 2;
 alpha = 2;
 maxi = 20;
+epsrand = [0.0001, 0.0005];
 
 %RNG = rng();
 rng(RNG);
@@ -18,8 +19,8 @@ t = tic();
 %[delay, range] = random_dag(1, 495, 1, 1, 10);
 %[delay, range] = random_dag(385, 555, 60, 1, 10); %ok
 %[delay, range] = random_dag(100, 200, 10, 1, 10); %ok
-[delay, range] = random_dag(5, 450, 3, 1, 10); %ok
-%[delay, range] = random_dag(1, 20, 1, 1, 10); %ok 360s
+%[delay, range] = random_dag(5, 450, 3, 1, 10); %ok <<<<<<<<<<
+[delay, range] = random_dag(1, 10, 1, 1, 10); %ok 360s
 %[delay, range] = random_dag(6, 6, 2, 1, 10); %ok
 toc(t)
 
@@ -38,7 +39,7 @@ height = fill_height(redro, oedge, delay, range);
 toc(t)
 
 %t = tic();
-%[keys, cones] = generate_cones_all(order, iedge, oedge, range, K, DF, depth);
+[keys, cones] = generate_cones_all(order, iedge, oedge, range, K, DF, delay);
 %toc(t)
 %bg = build_graph(delay, labels, range);
 %view(bg);
@@ -55,7 +56,7 @@ toc(t)
 
 
 t = tic();
-[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha);
+[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
 toc(t)
 
 t = tic();
@@ -63,8 +64,8 @@ t = tic();
 toc(t)
 
 
-%bg = build_graph(delay, labels, range);
-%view(bg);
+bg = build_graph(delay, labels, range);
+view(bg);
 
 indices = find(resulttag);
 [~, I] = sort(resulttag(indices));
@@ -72,9 +73,9 @@ newlabels = [labels(range.pi), labels(indices(I)+double(range.szpi)), labels(ran
 
 
 
-%br = build_graph(result_delay, newlabels, result_range);
+br = build_graph(result_delay, newlabels, result_range);
 
-%view(br);
+view(br);
 
 
 

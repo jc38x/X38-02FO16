@@ -3,8 +3,8 @@
 % 10.1109/TCAD.2006.882119
 %**************************************************************************
 
-function [out_s, out_cv] = hara(in_order, in_iedge, in_oedge, in_noedge, in_delay, in_depth, in_height, in_af, in_range, in_K, in_DF, in_mode, in_maxi, in_alpha) % DF/NDF
-[tsort, allcones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF, in_depth);
+function [out_s, out_cv] = hara(in_order, in_iedge, in_oedge, in_noedge, in_delay, in_depth, in_height, in_af, in_range, in_K, in_DF, in_mode, in_maxi, in_alpha, in_minrand, in_maxrand) % DF/NDF
+[tsort, allcones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF, in_delay);
 
 rtsort = fliplr(tsort);
 
@@ -69,7 +69,12 @@ out_cv = cv;
     function [out_af] = cone_af(in_cone)
     out_af = 1;
     for e = in_cone{3}, out_af = out_af + eaf(e(1), e(2)); end
+    out_af = out_af + in_minrand + (rand() * (in_maxrand - in_minrand));
     end
+
+
+
+
 
     function traverse_fwd()
     for v = in_range.pi
