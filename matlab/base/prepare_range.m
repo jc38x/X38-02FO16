@@ -19,4 +19,8 @@ out_range.szpi = out_range.pihi - out_range.pilo + 1;
 out_range.szin = out_range.inhi - out_range.inlo + 1;
 out_range.szpo = out_range.pohi - out_range.polo + 1;
 out_range.sz = out_range.pohi - out_range.pilo + 1;
+out_range.CONE_NODE = 1;
+out_range.CONE_IEDGE = 6;
+out_range.CONE_OEDGE = 4;
+out_range.CONE_ENTRIES = 6;
 end

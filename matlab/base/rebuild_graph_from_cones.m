@@ -16,18 +16,18 @@ out_tag = sparse(1, adjS, [[1:nin] + ofs]);
 for cvidx = adjS
     vcone = in_Cv{cvidx};
     i2 = out_tag(cvidx);
-    for e = vcone{3}
+    for e = vcone{in_range.CONE_IEDGE}
         e1 = e(1);
         if (is_in(e1, in_range)), i1 = out_tag(e1 - ofs); else i1 = e1; end
         delay = in_delay(e1, e(2));
-        if (delay > out_delay(i1, i2)), out_delay(i1, i2) = delay; end
+        out_delay(i1, i2) = delay;
     end
-    for e = vcone{4}
+    for e = vcone{in_range.CONE_OEDGE}
         e2 = e(2);
         if (is_in(e2, in_range)), continue; end
         i1 = e2 - poofs;
         delay = in_delay(e(1), e2);
-        if (delay > out_delay(i2, i1)), out_delay(i2, i1) = delay; end
+        out_delay(i2, i1) = delay;
     end
 end
 

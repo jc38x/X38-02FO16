@@ -35,7 +35,7 @@ for in = out_keys
     szcones = 1;
     suball = all(2:end);
     for n = suball, szcones = szcones + prod(numelcones(n{1}(2:end) - inofs)); end
-    cones = cell(6, szcones);
+    cones = cell(in_range.CONE_ENTRIES, szcones);
     index = 0;
     
     try_add_cone(all{1});
@@ -114,9 +114,9 @@ function try_add_cone(in_c)
     tempie = ie(1, iee);
     tempie2 = ie(2, iee);
     remove = false(1, numel(tempie));
-    dli = [];
-    de = [];
-    count = 0;
+    %dli = [];
+    %de = [];
+    %count = 0;
     for k = unique(tempie)        
         de = tempie == k;
         if (sum(de) <= 1), continue; end
@@ -124,11 +124,12 @@ function try_add_cone(in_c)
         [~, mdi] = max(in_delay(k, tempie2(de)));
         de(dli(mdi)) = false;
         remove = remove | de;
-        count = count + 1;
+        %count = count + 1;
     end
     xie = ie(:, iee);
     %cones{6, index} = xie(:, ~remove);
-    cones{3, index} = xie(:, ~remove);
+    cones{3, index} = {1};
+    cones{6, index} = xie(:, ~remove);
     
     %cones{6, index} = xie;
     %cones{7, index} = k;
