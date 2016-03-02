@@ -4,7 +4,7 @@
 % 2016
 %**************************************************************************
 
-function [out_keys, out_cones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF)
+function [out_keys, out_cones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF, in_depth)
 inofs = in_range.szpi;
 numelcones = ones(1, in_range.szin);
 dupmap = containers.Map();
@@ -35,7 +35,7 @@ for in = out_keys
     szcones = 1;
     suball = all(2:end);
     for n = suball, szcones = szcones + prod(numelcones(n{1}(2:end) - inofs)); end
-    cones = cell(7, szcones);
+    cones = cell(6, szcones);
     index = 0;
     
     try_add_cone(all{1});
@@ -70,14 +70,7 @@ for in = out_keys
     end
 
     cones = cones(:, 1:index);
-    %{
-    if (in_DF)
-        rem = true(1, index);
-        for n = 2:index, rem(n) = isempty(cones{5, n}); end
-        cones = cones(:, rem);
-        index = size(cones, 2);
-    end
-    %}
+   
     
     adjin = in - inofs;
     out_cones{adjin} = cones;
@@ -106,17 +99,46 @@ function try_add_cone(in_c)
 
     nroot = in_c ~= in;
     oenr = cell2mat(in_oedge(in_c(nroot)));
-    if (~isempty(oenr))
-        oenr(:, ismembc(oenr(2, :), in_c)) = [];
-        %if (in_DF && ~isempty(oenr)), return; end
-    end
+    if (~isempty(oenr)), oenr(:, ismembc(oenr(2, :), in_c)) = []; end
 
     index = index + 1;
     
     cones{1, index} = [in, in_c(nroot)];
     cones{2, index} = ie(:, iec);
-    cones{3, index} = ie(:, iee);
+    %cones{3, index} = ie(:, iee);
     cones{4, index} = in_oedge{in};
     cones{5, index} = oenr;
+    
+    
+    
+    tempie = ie(1, iee);
+    remove = false(1, numel(tempie));
+    for k = tempie        
+        de = tempie == k;
+        if (sum(de) <= 1), continue; end
+        dli = find(de);
+        [~, mdi] = max(in_depth(ie(2, de)));
+        de(dli(mdi)) = false;
+        remove = remove | de;
+    end
+    xie = ie(:, iee);
+    %cones{6, index} = xie(:, ~remove);
+    cones{3, index} = xie(:, ~remove);
+    
+    
+    
 end
 end
+
+ %{
+    if (in_DF)
+        rem = true(1, index);
+        for n = 2:index, rem(n) = isempty(cones{5, n}); end
+        cones = cones(:, rem);
+        index = size(cones, 2);
+    end
+    %}
+    %if (in_DF && ~isempty(oenr)), return; end
+    
+    
+    %if (out_delay(head, adjtail) > 0), continue; end

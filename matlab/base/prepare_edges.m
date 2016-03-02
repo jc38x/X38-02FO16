@@ -6,7 +6,6 @@
 
 function [out_iedge, out_oedge] = prepare_edges(in_delay)
 gsz = size(in_delay, 1);
-
 out_iedge = cell(1, gsz);
 out_oedge = cell(1, gsz);
 

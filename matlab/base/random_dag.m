@@ -9,7 +9,6 @@ sz = in_npi + in_nin + in_npo;
 inofs = in_npi;
 inbse = in_npi + 1;
 poofs = in_npi + in_nin;
-
 iein = zeros(1, in_nin);
 oein = zeros(1, in_nin);
 out_delay = spalloc(sz, sz, (2 * in_nin) + in_npo);
@@ -45,7 +44,6 @@ while (~all(iein >= 2))
     head = datasample(available, 1);
     takeninin(tail, head) = false;
     adjtail = tail + inofs;
-    if (out_delay(head, adjtail) > 0), continue; end
     out_delay(head, adjtail) = random_delay();
     if ((head > in_npi) && ~graphisdag(out_delay))
         out_delay(head, adjtail) = 0;
