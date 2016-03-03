@@ -1,0 +1,95 @@
+
+http://stackoverflow.com/questions/3693632/how-to-build-old-source-code-with-latest-gcc
+http://ftp.gnu.org/gnu/gcc/
+http://ubuntuforums.org/showthread.php?t=1682774
+http://stackoverflow.com/questions/26375445/error-compiling-gcc-3-4-6-in-ubuntu-14-04
+http://stackoverflow.com/questions/6329887/compiling-problems-cannot-find-crt1-o
+http://stackoverflow.com/questions/91576/crti-o-file-missing
+http://stackoverflow.com/questions/19894168/build-php5-3-8-on-ubuntu-get-error-configure-error-unable-to-locate-gmp-h
+http://stackoverflow.com/questions/7351205/where-to-find-gmp-h
+http://ddd.fit.cvut.cz/prj/Benchmarks/LGSynth91.pdf
+
+---PREREQUISITOS
+libgmp-dev
+libmpfr-dev
+libmpc-dev
+gcc-multilib
+libgmp3-dev
+m4
+
+sudo ln -s /usr/include/i386-linux-gnu/gmp.h /usr/include/gmp.h
+export LIBRARY_PATH=/usr/lib/i386-linux-gnu
+
+---gcc-4.8.4
+---gcc-4.3.2
+
+/gcc-4.3.2/gcc/config/i386/linux_unwind.h:138 -> https://bbs.archlinux.org/viewtopic.php?id=144949 -> http://pastebin.com/VkgE27Pd
+
+../gcc-4.3.2/configure --prefix=/usr/local/gcc432 --enable-languages=c,c++
+make all
+sudo make install
+
+sudo ln -s /usr/local/gcc432/bin/gcc /usr/local/bin/gcc432
+gcc432 --version
+
+---gcc-4.8.4
+---gcc-4.0.0
+
+NO
+
+---gcc-4.3.2
+---gcc.4.0.0
+
+export CC=gcc432
+
+/gcc-4.0.0/gcc/config/i386/linux_unwind.h
+
+../gcc-4.0.0/configure --prefix=/usr/local/gcc400 --enable-languages=c,c++
+make all
+sudo make install
+
+sudo ln -s /usr/local/gcc400/bin/gcc /usr/local/bin/gcc400
+gcc400 --version
+
+---gcc-4.0.0
+---gcc-3.2.2
+
+NO
+
+---gcc-4.0.0
+---gcc-3.4.0
+
+export CC=gcc400
+
+/gcc-3.4.0/gcc/config/i386/linux.h:238 -> http://stackoverflow.com/questions/26375445/error-compiling-gcc-3-4-6-in-ubuntu-14-04
+
+../gcc-3.4.0/configure --prefix=/usr/local/gcc340 --enable-languages=c,c++
+make all
+sudo make install
+
+sudo ln -s /usr/local/gcc340/bin/gcc /usr/local/bin/gcc340
+gcc340 --version
+
+--gcc-3.4.0
+--gcc-3.2.2
+
+export CC=gcc340
+
+/gcc-3.2.2/gcc/config/i386/linux.h
+
+../gcc-3.2.2/configure --prefix=/usr/local/gcc322 --enable-languages=c,c++
+make all
+sudo make install
+
+sudo ln -s /usr/local/gcc322/bin/gcc /usr/local/bin/gcc322
+gcc322 --version
+
+---gcc-3.2.2
+---sis-1.3.6
+
+export CC=gcc322
+
+./configure --prefix=/usr/local/sis-1.3.6
+make
+sudo make install
+
