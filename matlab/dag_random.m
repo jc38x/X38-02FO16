@@ -19,9 +19,9 @@ t = tic();
 %[delay, range] = random_dag(1, 495, 1, 1, 10);
 %[delay, range] = random_dag(385, 555, 60, 1, 10); %ok
 %[delay, range] = random_dag(100, 200, 10, 1, 10); %ok
-[delay, range] = random_dag(30, 1950, 20, 1, 10); %ok <<<<<<<<<<
+%[delay, range] = random_dag(30, 1950, 20, 1, 10); %ok <<<<<<<<<<
 %[delay, range] = random_dag(30, 50, 20, 1, 10); %ok 360s
-%[delay, range] = random_dag(6, 6, 2, 1, 10); %ok
+[delay, range] = random_dag(30, 30, 20, 1, 10); %ok
 toc(t)
 
 t = tic();
@@ -54,15 +54,15 @@ t = tic();
 [resultdelay, resulttag, resultrange] = rebuild_graph_from_cones(s, cv, delay, range);
 toc(t)
 
-%bg = build_graph(delay, labels, range);
-%view(bg);
+bg = build_graph(delay, labels, range);
+view(bg);
 
 indices = find(resulttag);
 [~, I] = sort(resulttag(indices));
 newlabels = [labels(range.pi), labels(indices(I)+double(range.szpi)), labels(range.po)];
 
-%br = build_graph(resultdelay, newlabels, resultrange);
-%view(br);
+br = build_graph(resultdelay, newlabels, resultrange);
+view(br);
 
 
 [resultiedge, resultoedge] = prepare_edges(resultdelay);
