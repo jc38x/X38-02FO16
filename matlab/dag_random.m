@@ -7,7 +7,7 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 %RNG = rng();
-rng(RNG);
+%rng(RNG);
 
 t = tic();
 %delay = result_delay;

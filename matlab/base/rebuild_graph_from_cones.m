@@ -9,9 +9,9 @@ nin = numel(in_S);
 nsz = in_range.szpi + nin + in_range.szpo;
 ofs = in_range.pihi;
 poofs = in_range.szin - nin;
-adjS = [in_S - ofs];
+adjS = in_S - ofs;
 out_delay = spalloc(nsz, nsz, sum(in_delay(:) > 0));
-out_tag = sparse(1, adjS, [[1:nin] + ofs]);
+out_tag = sparse(1, adjS, (1:nin) + ofs);
 
 for cvidx = adjS
     vcone = in_Cv{cvidx};
@@ -37,5 +37,6 @@ inlo = in_range.pihi + 1;
 inhi = in_range.pihi + nin;
 polo = inhi + 1;
 pohi = inhi + in_range.szpo;
+
 out_range = prepare_range(pilo, pihi, inlo, inhi, polo, pohi);
 end

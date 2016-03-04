@@ -29,9 +29,9 @@ for spi = randperm(in_npi);
     iein(sin) = iein(sin) + 1;
 end
 
-takeninin = full(out_delay([1:(poofs)], [(inbse):(poofs)]).' <= 0);
-takeninin([1:(in_nin + 1):(in_nin ^ 2)] + (in_npi * in_nin)) = false;
-piin = [1:poofs];
+takeninin = full(out_delay(1:(poofs), (inbse):(poofs)).' <= 0);
+takeninin((1:(in_nin + 1):(in_nin ^ 2)) + (in_npi * in_nin)) = false;
+piin = 1:poofs;
 
 while (~all(iein >= 2))
     fin = find(iein < 2);
@@ -58,13 +58,14 @@ v1 = inbse;
 vn = poofs;
 o1 = vn + 1;
 on = vn + in_npo;
+
 out_range = prepare_range(i1, in, v1, vn, o1, on);
 
-function [out_delay] = random_delay()
+    function [out_delay] = random_delay()
     out_delay = randi([in_mind, in_maxd]);
-end
+    end
 
-function [out_ok] = try_fill()
+    function [out_ok] = try_fill()
     foe = find(oein < 1);
     if (isempty(foe))
         out_ok = true;
@@ -96,7 +97,7 @@ function [out_ok] = try_fill()
             out_delay(adjoe, adjie) = 0;
         end
     end
-    
+
     out_ok = false;
-end
+    end
 end
