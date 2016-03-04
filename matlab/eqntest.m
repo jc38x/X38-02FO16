@@ -7,13 +7,13 @@ CONFIG.EQN_NEDGES = 8192;
 
 K = 4;
 DF = false;
-mode = 1;
+mode = 2;
 alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 t = tic();
-feqn = fopen('alu4_.eqn', 'rt');
+feqn = fopen('dsip_.eqn', 'rt');
 [delay, range, labels, equations] = eqn2mat(feqn);
 fclose(feqn);
 toc(t)
@@ -32,7 +32,17 @@ t = tic();
 [s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
 toc(t)
 
+t = tic();
+[resultdelay, resulttag, resultrange] = rebuild_graph_from_cones(s, cv, delay, range);
+toc(t)
 
+[resultiedge, resultoedge] = prepare_edges(resultdelay);
+resultorder = graphtopoorder(resultdelay);
+resultredro = fliplr(resultorder);
+
+resultdepth = fill_depth(resultorder, resultiedge, resultdelay, resultrange);
+resultheight = fill_height(resultredro, resultoedge, resultdelay, resultrange);
+[resultaf, resultnoedge] = fill_af(resultorder, resultiedge, resultoedge, resultrange);
 
 
 
