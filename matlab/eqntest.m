@@ -7,13 +7,13 @@ CONFIG.EQN_NEDGES = 8192;
 
 K = 4;
 DF = false;
-mode = 2;
+mode = 1;
 alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 t = tic();
-feqn = fopen('dsip_.eqn', 'rt');
+feqn = fopen('alu4_i.eqn', 'rt');
 [delay, range, labels, equations] = eqn2mat(feqn);
 fclose(feqn);
 toc(t)
