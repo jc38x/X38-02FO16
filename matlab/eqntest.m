@@ -15,7 +15,10 @@ epsrand = [0.001, 0.005]; %small
 
 t = tic();
 
-feqn = fopen('alu4_proc.eqn', 'rt');
+%feqn = fopen('alu4_proc.eqn', 'rt');
+%feqn = fopen('dsip_PROC.eqn', 'rt');
+feqn = fopen('C6288_proc.eqn', 'rt');
+
 [delay, range, labels, equations] = eqn2mat(feqn);
 
 toc(t);
