@@ -12,30 +12,42 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
+t = tic();
+feqn = fopen('alu4_.eqn', 'rt');
+[delay, range, labels, equations] = eqn2mat(feqn);
+fclose(feqn);
+toc(t)
 
 t = tic();
-
-%feqn = fopen('alu4_proc.eqn', 'rt');
-%feqn = fopen('dsip_PROC.eqn', 'rt');
-feqn = fopen('C6288_proc.eqn', 'rt');
-
-[delay, range, labels, equations] = eqn2mat(feqn);
-
-toc(t);
-
 [iedge, oedge] = prepare_edges(delay);
 order = graphtopoorder(delay);
 redro = fliplr(order);
 
-
 depth = fill_depth(order, iedge, delay, range);
 height = fill_height(redro, oedge, delay, range);
 [af, noedge] = fill_af(order, iedge, oedge, range);
+toc(t)
 
 t = tic();
 [s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
 toc(t)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%feqn = fopen('dsip_PROC.eqn', 'rt');
+%feqn = fopen('C6288_proc.eqn', 'rt');
 
 
 %{

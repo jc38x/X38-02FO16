@@ -38,7 +38,7 @@ for i = 1:in_maxi
     
     if ((in_mode == 1) && (i == 1))
         set_odepth();
-        Odepth
+        disp(['Odepth: ' num2str(Odepth)]);
     end
     
     solution = s(is_in(s, in_range));
@@ -48,7 +48,7 @@ for i = 1:in_maxi
         bestluts = luts;
         bestcones = cv;
     end    
-    disp(['LUTs: ' num2str(luts) ' - Best: ' num2str(bestluts)]);
+    disp([num2str(i) ' -> LUTs: ' num2str(luts) ' - Best: ' num2str(bestluts)]);
 
 
 end
