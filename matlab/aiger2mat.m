@@ -1,8 +1,12 @@
+%**************************************************************************
+% X38-02FO16
+% jcds (jcds.x38e@gmail.com)
+% 2016
+%**************************************************************************
 
 function [out_delay, out_labels, out_range] = aiger2mat(in_filename)
 fid = fopen(in_filename, 'rt');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
-
 nline = fgetl(fid);
 header = strsplitntrim(nline, ' ');
 if (~strcmp(header{1}, 'aag')), error('File is not ASCII AIGER'); end
@@ -19,83 +23,48 @@ if (l < 0), error('L < 0'); end
 if (o < 0), error('O < 0'); end
 if (a < 0), error('A < 0'); end
 
-
-
 instancemap = containers.Map('KeyType', 'char', 'ValueType', 'char');
 signal2uid = containers.Map();
 uid = 0;
-
-edges = [];
-
-pilist = [];
-polist = [];
-inlist = [];
-
+edges = cell(2, (3 * a) + i + o + (2 * l));
+edgesindex = 0;
+pilist = zeros(1, i + l);
+piindex = 0;
+polist = zeros(1, o + l);
+poindex = 0;
+inlist = zeros(1, (2 * a) + i);
+inindex = 0;
 
 for k = 1:i
     nline = strtrim(fgetl(fid));
-    
-    literal = nline;
-    signal = ['i_' num2str(k)];
-    push_instance(literal, signal);
-    push_signal(signal);
-    
-    pilist = [pilist, signal2uid(signal)];
+    push_input_port(nline, ['i' num2str(k) '_']);
 end
 
 for k = 1:l
     nline = strsplitntrim(fgetl(fid), ' ');
-    
-    literal = nline{1};
-    signal = ['latch_i_' num2str(k)];
-    push_instance(literal, signal);
-    push_signal(signal);
-    
-    pilist = [pilist, signal2uid(signal)];
-
-    literal = nline{2};
-    signal = ['latch_o_' num2str(k)];
-    push_signal(signal);
-    try_push_inverter(literal);    
-    push_edge(literal, signal);
-    
-    polist = [polist, signal2uid(signal)];
+    sk = num2str(k);
+    push_input_port(nline{1}, ['latch' sk 'i_']);
+    push_output_port(nline{2}, ['latch' sk 'o_']);
 end
 
 for k = 1:o
     nline = strtrim(fgetl(fid));
-    
-    literal = nline;
-    signal = ['o_' num2str(k)];
-    push_signal(signal);
-    try_push_inverter(literal);    
-    push_edge(literal, signal);
-    
-    polist = [polist, signal2uid(signal)];
+    push_output_port(nline, ['o' num2str(k) '_']);
 end
 
 for k = 1:a
     nline = strsplitntrim(fgetl(fid), ' ');
-    
     literal = nline{1};
-    signal = ['and_2_' num2str(k)];
-    push_instance(literal, signal);
-    push_signal(signal);
-    
-    inlist = [inlist, signal2uid(signal)];
-    
-    input1 = nline{2};
-    try_push_inverter(input1);    
-    push_edge(input1, literal);    
-
-    input2 = nline{3};
-    try_push_inverter(input2);    
-    push_edge(input2, literal);
+    push_node(literal, 'and2_');
+    make_and_input(nline{2}, literal);      
+    make_and_input(nline{3}, literal);
 end
-
 
 fclose(fid);
 
+pilist = pilist(1:piindex);
+inlist = inlist(1:inindex);
+polist = polist(1:poindex);
 
 pilo = 1;
 pihi = size(pilist, 2);
@@ -112,13 +81,13 @@ remap = [
     containers.Map(polist, num2cell(out_range.po));
     ];
 
+edges = edges(:, 1:edgesindex);
 
-
-for i = 1:size(edges, 2)
-    literal = edges{1, i};
-    if (instancemap.isKey(literal)), edges{1, i} = instancemap(literal); end
-    literal = edges{2, i};
-    if (instancemap.isKey(literal)), edges{2, i} = instancemap(literal); end
+for n = 1:size(edges, 2)
+    literal = edges{1, n};
+    if (instancemap.isKey(literal)), edges{1, n} = instancemap(literal); end
+    literal = edges{2, n};
+    if (instancemap.isKey(literal)), edges{2, n} = instancemap(literal); end
 end
 
 edgelist = signal2uid.values(edges);
@@ -131,42 +100,59 @@ out_delay = sparse([edgelist{1, :}], [edgelist{2, :}], 1, n, n);
 s2uk = signal2uid.keys();
 out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
 
-
-
-
-
-
-
-    
     function push_signal(in_signal)
-        if (signal2uid.isKey(in_signal)), return; end
-        uid = uid + 1;
-        signal2uid(in_signal) = uid;
+    if (signal2uid.isKey(in_signal)), return; end
+    uid = uid + 1;
+    signal2uid(in_signal) = uid;
     end
 
     function push_instance(in_inst, in_signal)
-        if (instancemap.isKey(in_inst)), error('DUP'); end
-        instancemap(in_inst) = in_signal;
-    end
-
-    function try_push_inverter(in_inst)
-        val = str2double(in_inst);
-        if (iseven(val)), return; end
-        
-        if (instancemap.isKey(in_inst)), return; end
-        ss = ['inv_1_' in_inst];
-        push_instance(in_inst, ss);
-        push_signal(ss);
-        
-        
-        newval = val - 1;
-        
-        push_edge(num2str(newval), in_inst);
-        inlist = [inlist, signal2uid(ss)];
+    if (instancemap.isKey(in_inst)), error(['Duplicate instance ' in_inst]); end
+    instancemap(in_inst) = in_signal;
     end
 
     function push_edge(in_head, in_tail)
-        edges = [edges, {in_head; in_tail}];
+    edgesindex = edgesindex + 1;
+    edges(:, edgesindex) = {in_head; in_tail};
     end
 
+    function try_push_inverter(in_inst)
+    val = str2double(in_inst);
+    if (iseven(val) || instancemap.isKey(in_inst)), return; end
+    push_node(in_inst, 'inv1_');
+    push_edge(num2str(val - 1), in_inst);
+    end
+
+    function make_and_input(in_input, in_literal)
+    try_push_inverter(in_input);
+    push_edge(in_input, in_literal);
+    end
+
+    function push_head_node(in_literal, in_signal)
+    push_instance(in_literal, in_signal);
+    push_signal(in_signal);
+    end
+
+    function push_input_port(in_literal, in_prefix)
+    signal = [in_prefix in_literal];
+    push_head_node(in_literal, signal);
+    piindex = piindex + 1;
+    pilist(piindex) = signal2uid(signal);
+    end
+
+    function push_output_port(in_literal, in_prefix)
+    signal = [in_prefix in_literal];
+    push_signal(signal);
+    try_push_inverter(in_literal);
+    push_edge(in_literal, signal);
+    poindex = poindex + 1;
+    polist(poindex) = signal2uid(signal);
+    end
+
+    function push_node(in_literal, in_prefix)
+    signal = [in_prefix in_literal];
+    push_head_node(in_literal, signal);
+    inindex = inindex + 1;
+    inlist(inindex) = signal2uid(signal);
+    end
 end
