@@ -4,7 +4,7 @@
 % 2016
 %**************************************************************************
 
-function [out_graph, out_labels, out_range, out_edges] = edif2mat(in_filename, in_flatten)
+function [out_delay, out_labels, out_range, out_edges] = edif2mat(in_filename, in_flatten)
 edifenv = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
 topcell = edifenv.getTopCell();
 if (in_flatten), topcell = edu.byu.ece.edif.tools.flatten.FlattenedEdifCell(topcell); end
@@ -104,7 +104,7 @@ edgelist = [edgelist{:}];
 n = max(edgelist(:));
 edgelist = remap.values(num2cell(edgelist));
 
-out_graph = sparse([edgelist{1, :}], [edgelist{2, :}], 1, n, n);
+out_delay = sparse([edgelist{1, :}], [edgelist{2, :}], 1, n, n);
 
 s2uk = signal2uid.keys();
 out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;

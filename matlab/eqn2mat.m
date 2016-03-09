@@ -113,7 +113,7 @@ out_label = uid2signal.values(mapallinv.values(num2cell(out_range.all)));
         if (out_equation.isKey(lstr)), parse_error(['Duplicate signal ''' in_str '''']); end
         out_equation(lstr) = rstr;
         if (~signal2uid.isKey(lstr)), try_add_signal(lstr, true, true, false); end
-        inputs = strtrim(strsplit(rstr, {'*','+','^'}));
+        inputs = strtrim(strsplit(rstr, {'*','&','+','^'}));
         for list = inputs
             ss = list{1};
             if (~signal2uid.isKey(ss))

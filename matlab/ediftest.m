@@ -1,15 +1,59 @@
 
+K = 4;
+DF = false;
+mode = 1;
+alpha = 1.5; %1.5-2.5
+maxi = 20; %20
+epsrand = [0.001, 0.005]; %small
+
+
 t = tic();
-[graph, labels, range, edges] = ediftools('C:/Users/jcds/desktop/example-special.edif', false);
+[delay, labels, range, edges] = edif2mat('C:/Users/jcds/desktop/example.edif', false);
 toc(t)
 
 
-bg = build_graph(graph, labels, range);
+%bg = build_graph(graph, labels, range);
+%view(bg);
+
+
+t = tic();
+%[labels] = node_labels(range);
+[iedge, oedge] = prepare_edges(delay);
+order = graphtopoorder(delay);
+redro = fliplr(order);
+
+depth = fill_depth(order, iedge, delay, range);
+height = fill_height(redro, oedge, delay, range);
+[af, noedge] = fill_af(order, iedge, oedge, range);
+toc(t)
+
+t = tic();
+[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
+toc(t)
+
+t = tic();
+[resultdelay, resulttag, resultrange] = rebuild_graph_from_cones(s, cv, delay, range);
+toc(t)
+
+[resultiedge, resultoedge] = prepare_edges(resultdelay);
+resultorder = graphtopoorder(resultdelay);
+resultredro = fliplr(resultorder);
+
+resultdepth = fill_depth(resultorder, resultiedge, resultdelay, resultrange);
+resultheight = fill_height(resultredro, resultoedge, resultdelay, resultrange);
+[resultaf, resultnoedge] = fill_af(resultorder, resultiedge, resultoedge, resultrange);
+
+t = tic();
+indices = find(resulttag);
+[~, I] = sort(resulttag(indices));
+newlabels = [labels(range.pi), labels(indices(I)+double(range.szpi)), labels(range.po)];
+
+bg = build_graph(delay, labels, range);
 view(bg);
 
-
-
-
+br = build_graph(resultdelay, newlabels, resultrange);
+view(br);
+toc(t)
 
 %edges.size()
 
