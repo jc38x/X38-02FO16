@@ -18,6 +18,7 @@ feqn = fopen('alu4_i.eqn', 'rt');
 fclose(feqn);
 toc(t)
 
+%{
 t = tic();
 [iedge, oedge] = prepare_edges(delay);
 order = graphtopoorder(delay);
@@ -44,7 +45,7 @@ resultdepth = fill_depth(resultorder, resultiedge, resultdelay, resultrange);
 resultheight = fill_height(resultredro, resultoedge, resultdelay, resultrange);
 [resultaf, resultnoedge] = fill_af(resultorder, resultiedge, resultoedge, resultrange);
 
-
+%}
 
 
 

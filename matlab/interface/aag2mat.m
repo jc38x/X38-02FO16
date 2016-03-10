@@ -4,12 +4,11 @@
 % 2016
 %**************************************************************************
 
-function [out_delay, out_labels, out_range] = aiger2mat(in_filename)
+function [out_delay, out_labels, out_range] = aag2mat(in_filename)
 fid = fopen(in_filename, 'rt');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
-nline = fgetl(fid);
-header = strsplitntrim(nline, ' ');
-if (~strcmp(header{1}, 'aag')), error('File is not ASCII AIGER'); end
+header = strsplitntrim(fgetl(fid), ' ');
+if (~strcmp(header{1}, 'aag')), error('File is not ASCII AIGER.'); end
 
 m = str2double(header{2});
 i = str2double(header{3});
@@ -17,11 +16,11 @@ l = str2double(header{4});
 o = str2double(header{5});
 a = str2double(header{6});
 
-if (m < 0), error('M < 0'); end
-if (i < 0), error('I < 0'); end
-if (l < 0), error('L < 0'); end
-if (o < 0), error('O < 0'); end
-if (a < 0), error('A < 0'); end
+if (m < 0), error('M < 0.'); end
+if (i < 0), error('I < 0.'); end
+if (l < 0), error('L < 0.'); end
+if (o < 0), error('O < 0.'); end
+if (a < 0), error('A < 0.'); end
 
 instancemap = containers.Map('KeyType', 'char', 'ValueType', 'char');
 signal2uid = containers.Map();
@@ -35,10 +34,7 @@ poindex = 0;
 inlist = zeros(1, (2 * a) + i);
 inindex = 0;
 
-for k = 1:i
-    nline = strtrim(fgetl(fid));
-    push_input_port(nline, ['i' num2str(k) '_']);
-end
+for k = 1:i, push_input_port(strtrim(fgetl(fid)), ['i' num2str(k) '_']); end
 
 for k = 1:l
     nline = strsplitntrim(fgetl(fid), ' ');
@@ -47,10 +43,7 @@ for k = 1:l
     push_output_port(nline{2}, ['latch' sk 'o_']);
 end
 
-for k = 1:o
-    nline = strtrim(fgetl(fid));
-    push_output_port(nline, ['o' num2str(k) '_']);
-end
+for k = 1:o, push_output_port(strtrim(fgetl(fid)), ['o' num2str(k) '_']); end
 
 for k = 1:a
     nline = strsplitntrim(fgetl(fid), ' ');
@@ -107,7 +100,7 @@ out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
     end
 
     function push_instance(in_inst, in_signal)
-    if (instancemap.isKey(in_inst)), error(['Duplicate instance ' in_inst]); end
+    if (instancemap.isKey(in_inst)), error(['Duplicate instance ' in_inst '.']); end
     instancemap(in_inst) = in_signal;
     end
 
