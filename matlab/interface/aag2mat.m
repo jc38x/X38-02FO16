@@ -3,6 +3,9 @@
 % jcds (jcds.x38e@gmail.com)
 % 2016
 %**************************************************************************
+% References
+% http://fmv.jku.at/aiger/
+%**************************************************************************
 
 function [out_delay, out_labels, out_range] = aag2mat(in_filename)
 fid = fopen(in_filename, 'rt');

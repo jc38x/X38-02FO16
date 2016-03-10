@@ -3,6 +3,9 @@
 % jcds (jcds.x38e@gmail.com)
 % 2016
 %**************************************************************************
+% References
+% http://reliability.ee.byu.edu/edif/
+%**************************************************************************
 
 function [out_delay, out_labels, out_range, out_edges] = edif2mat(in_filename, in_flatten)
 edifenv = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);

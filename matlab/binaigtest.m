@@ -1,7 +1,55 @@
 
-[aigdelay, aiglabels, aigrange] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/i10.aig');
-[aagdelay, aaglabels, aagrange] = aag2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/i10.aag');
+K = 4;
+DF = false;
+mode = 1;
+alpha = 1.5; %1.5-2.5
+maxi = 20; %20
+epsrand = [0.001, 0.005]; %small
 
+[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/i10.aig');
+
+t = tic();
+[iedge, oedge] = prepare_edges(delay);
+order = graphtopoorder(delay);
+redro = fliplr(order);
+
+depth = fill_depth(order, iedge, delay, range);
+height = fill_height(redro, oedge, delay, range);
+[af, noedge] = fill_af(order, iedge, oedge, range);
+toc(t)
+
+t = tic();
+[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
+toc(t)
+
+t = tic();
+[resultdelay, resulttag, resultrange] = rebuild_graph_from_cones(s, cv, delay, range);
+toc(t)
+
+[resultiedge, resultoedge] = prepare_edges(resultdelay);
+resultorder = graphtopoorder(resultdelay);
+resultredro = fliplr(resultorder);
+
+resultdepth = fill_depth(resultorder, resultiedge, resultdelay, resultrange);
+resultheight = fill_height(resultredro, resultoedge, resultdelay, resultrange);
+[resultaf, resultnoedge] = fill_af(resultorder, resultiedge, resultoedge, resultrange);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%[aagdelay, aaglabels, aagrange] = aag2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/i10.aag');
+%{
 s = sum(aigdelay > 0, 2);
 f = find(s < 1);
 
@@ -22,7 +70,7 @@ s = sum(aagdelay > 0, 1);
 f = find(s < 1);
 
 aagilab = aaglabels(f).';
-
+%}
 
 
 %literal = num2str(next_sequence());
