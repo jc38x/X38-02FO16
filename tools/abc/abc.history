@@ -36,11 +36,21 @@ rewrite -h
 resyn2rs -h
 resyn2 -h
 resyn -h
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\blif\alu4.blif
 collapse
 resyn2rs
 write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_hc.aig
-source abc.rc
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_rs.blif
 strash
 write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_rs.aig
+refactor
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_rsrf.aig
+help
+speedup -h
+source abc.rc
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\blif\alu4.blif
+sweep
+speedup
+resyn
+resyn2rs-h
+resyn2rs -h
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_ssuresyn.aig
