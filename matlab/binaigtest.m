@@ -6,7 +6,20 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/i10.aig');
+[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/alu4_resynresyn2.aig');
+
+s = sum(delay > 0, 2);
+f = find(s < 1);
+
+aigolab = labels(f).';
+
+s = sum(delay > 0, 1);
+f = find(s < 1);
+
+aigilab = labels(f).';
+
+
+
 
 t = tic();
 [iedge, oedge] = prepare_edges(delay);

@@ -1,0 +1,6 @@
+https://bitbucket.org/alanmi/abc/src
+Commit 6e9ebe7
+Compiled 03/10/2016
+Visual C++ 2008 Express Edition
+Release
+x86

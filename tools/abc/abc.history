@@ -1,0 +1,14 @@
+strash
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_aiger.aig
+write_aiger s = sum(aigdelay > 0, 2);
+aigolab = aiglabels(f).';
+s = sum(aigdelay > 0, 1);
+f = find(s < 1);
+aigilab = aiglabels(f).';
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resyn.aig
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resyn2.aig
+source abc.rc
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\blif\alu4.blif
+resyn
+resyn2
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resynresyn2.aig
