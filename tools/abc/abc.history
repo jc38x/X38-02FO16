@@ -7,8 +7,40 @@ f = find(s < 1);
 aigilab = aiglabels(f).';
 write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resyn.aig
 write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resyn2.aig
-source abc.rc
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\blif\alu4.blif
 resyn
 resyn2
 write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resynresyn2.aig
+help resyn
+help -h resyn
+help -h
+help -h read_blif
+help read_blif -h
+help h
+strash
+comb
+rw -l
+rw -lz
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_brw.aig
+b ps
+-rw z
+rw -z
+refactor
+strash
+resyn2
+resyn
+resyn2rs
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resyn2rs.aig
+rw help
+rw -asdsa
+rewrite -h
+resyn2rs -h
+resyn2 -h
+resyn -h
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\blif\alu4.blif
+collapse
+resyn2rs
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_hc.aig
+source abc.rc
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_rs.blif
+strash
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_rs.aig

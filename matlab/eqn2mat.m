@@ -3,6 +3,7 @@
 % jcds (jcds.x38e@gmail.com)
 % 2016
 %**************************************************************************
+% THIS FORMAT IS NOT SUITABLE FOR SEQUENTIAL CIRCUITS
 
 function [out_delay, out_range, out_label, out_equation] = eqn2mat(in_feqn)
 global CONFIG
