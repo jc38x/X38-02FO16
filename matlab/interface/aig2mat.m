@@ -121,7 +121,7 @@ out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
 
     function try_push_inverter(in_inst)
     val = str2double(in_inst);
-    if (iseven(val) || instancemap.isKey(in_inst)), return; end
+    if (is_even(val) || instancemap.isKey(in_inst)), return; end
     push_node(in_inst, 'inv1_');
     push_edge(num2str(val - 1), in_inst);
     end

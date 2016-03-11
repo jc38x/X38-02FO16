@@ -6,7 +6,7 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/alu4_resynresyn2.aig');
+[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/alu4_resyn2.aig');
 
 s = sum(delay > 0, 2);
 f = find(s < 1);
