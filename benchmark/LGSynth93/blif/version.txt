@@ -1,0 +1,9 @@
+diffeq_vtr.blif
+elliptic_vtr.blif
+frisc_vtr.blif
+
+https://github.com/verilog-to-routing/vtr-verilog-to-routing/tree/master/vtr_flow/benchmarks/verilog_writer_benchmarks_blif
+
+tseng_zuma.blif
+
+https://github.com/adbrant/zuma-fpga/tree/master/tests/blif
