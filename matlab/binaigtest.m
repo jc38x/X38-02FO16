@@ -6,8 +6,12 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-[delay, labels, range] = aig2mat('C:/Users/jcds/desktop/i10.aig');
+[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/benchmark/LGSynth93/blif-aig/sis_frisc_vtr_comb.aig');
 
+%bg = build_graph(delay, labels, range);
+%view(bg);
+
+%{
 s = sum(delay > 0, 2);
 f = find(s < 1);
 
@@ -17,7 +21,7 @@ s = sum(delay > 0, 1);
 f = find(s < 1);
 
 aigilab = labels(f).';
-
+%}
 
 
 
@@ -31,6 +35,7 @@ height = fill_height(redro, oedge, delay, range);
 [af, noedge] = fill_af(order, iedge, oedge, range);
 toc(t)
 
+%{
 t = tic();
 [s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
 toc(t)
@@ -46,7 +51,7 @@ resultredro = fliplr(resultorder);
 resultdepth = fill_depth(resultorder, resultiedge, resultdelay, resultrange);
 resultheight = fill_height(resultredro, resultoedge, resultdelay, resultrange);
 [resultaf, resultnoedge] = fill_af(resultorder, resultiedge, resultoedge, resultrange);
-
+%}
 
 
 

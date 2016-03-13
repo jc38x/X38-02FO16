@@ -1,0 +1,309 @@
+(edif myedif
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timeStamp 2009 11 23 14 18 26)
+      (program "edif-gnet library")
+    )
+  )
+  (external gatelib
+    (edifLevel 0)
+    (technology (numberDefinition))
+    (cell inv1x
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell inv2x
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell inv4x
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell nand2
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell and2
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell nand3
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port c (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell nand4
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port c (direction INPUT))
+          (port d (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell nor2
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell or2
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell nor3
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port c (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell or3
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port c (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell nor4
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port c (direction INPUT))
+          (port d (direction INPUT))
+          (port O (direction OUTPUT))
+        )
+      )
+    )
+    (cell dff_high_reset
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port D (direction INPUT))
+          (port R (direction INPUT))
+          (port Q (direction OUTPUT))
+          (port CLK (direction INPUT))
+        )
+      )
+    )
+    (cell dff_high_set
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port D (direction INPUT))
+          (port S (direction INPUT))
+          (port Q (direction OUTPUT))
+          (port CLK (direction INPUT))
+        )
+      )
+    )
+  )
+  (library mylib
+    (edifLevel 0)
+    (technology (numberDefinition))
+    (cell mydesign
+      (cellType GENERIC)
+      (view symbol
+        (viewType NETLIST)
+        (interface
+          (port a (direction INPUT))
+          (port b (direction INPUT))
+          (port c (direction INPUT))
+          (port y1 (direction OUTPUT))
+          (port y2 (direction OUTPUT))
+          (port y3 (direction OUTPUT))
+          (port y4 (direction OUTPUT))
+          (port y5 (direction OUTPUT))
+          (port y6 (direction OUTPUT))
+          (port y7 (direction OUTPUT))
+        )
+        (contents
+          (instance I00000005 (viewRef symbol (cellRef inv1x (libraryRef gatelib))))
+          (instance I00000011 (viewRef symbol (cellRef inv1x (libraryRef gatelib))))
+          (instance I00000014 (viewRef symbol (cellRef inv1x (libraryRef gatelib))))
+          (instance I00000021 (viewRef symbol (cellRef and2 (libraryRef gatelib))))
+          (instance I00000022 (viewRef symbol (cellRef or2 (libraryRef gatelib))))
+          (instance I00000023 (viewRef symbol (cellRef and2 (libraryRef gatelib))))
+          (instance I00000025 (viewRef symbol (cellRef and2 (libraryRef gatelib))))
+          (instance I00000026 (viewRef symbol (cellRef or2 (libraryRef gatelib))))
+          (instance I00000027 (viewRef symbol (cellRef or2 (libraryRef gatelib))))
+          (instance I00000028 (viewRef symbol (cellRef or2 (libraryRef gatelib))))
+          (instance I00000029 (viewRef symbol (cellRef nor2 (libraryRef gatelib))))
+          (net N00000000
+            (joined
+              (portRef a)
+              (portRef a (instanceRef I00000005))
+              (portRef a (instanceRef I00000023))
+              (portRef a (instanceRef I00000025))
+              (portRef b (instanceRef I00000029))
+            )
+          )
+          (net N00000001
+            (joined
+              (portRef b)
+              (portRef a (instanceRef I00000011))
+              (portRef a (instanceRef I00000021))
+              (portRef b (instanceRef I00000023))
+              (portRef a (instanceRef I00000029))
+            )
+          )
+          (net N00000002
+            (joined
+              (portRef O (instanceRef I00000011))
+              (portRef b (instanceRef I00000025))
+            )
+          )
+          (net N00000003
+            (joined
+              (portRef O (instanceRef I00000021))
+              (portRef b (instanceRef I00000022))
+            )
+          )
+          (net N00000004
+            (joined
+              (portRef c)
+              (portRef a (instanceRef I00000014))
+            )
+          )
+          (net N00000005
+            (joined
+              (portRef O (instanceRef I00000014))
+              (portRef b (instanceRef I00000021))
+            )
+          )
+          (net N00000009
+            (joined
+              (portRef y3)
+              (portRef O (instanceRef I00000005))
+              (portRef b (instanceRef I00000028))
+            )
+          )
+          (net N00000012
+            (joined
+              (portRef a (instanceRef I00000022))
+              (portRef O (instanceRef I00000025))
+            )
+          )
+          (net N00000017
+            (joined
+              (portRef O (instanceRef I00000022))
+              (portRef a (instanceRef I00000027))
+              (portRef a (instanceRef I00000028))
+            )
+          )
+          (net N00000019
+            (joined
+              (portRef y1)
+              (portRef O (instanceRef I00000023))
+              (portRef a (instanceRef I00000026))
+              (portRef b (instanceRef I00000027))
+            )
+          )
+          (net N00000021
+            (joined
+              (portRef b (instanceRef I00000026))
+              (portRef O (instanceRef I00000029))
+            )
+          )
+          (net N00000023
+            (joined
+              (portRef y4)
+              (portRef y6)
+              (portRef y7)
+              (portRef O (instanceRef I00000026))
+            )
+          )
+          (net N00000025
+            (joined
+              (portRef y2)
+              (portRef O (instanceRef I00000027))
+            )
+          )
+          (net N00000027
+            (joined
+              (portRef y5)
+              (portRef O (instanceRef I00000028))
+            )
+          )
+        )
+      )
+    )
+  )
+  (design mydesign
+    (cellRef mydesign (libraryRef mylib))
+  )
+)

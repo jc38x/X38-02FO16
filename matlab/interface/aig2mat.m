@@ -11,7 +11,7 @@ function [out_delay, out_labels, out_range] = aig2mat(in_filename)
 fid = fopen(in_filename, 'r');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
 header = strsplitntrim(fgetl(fid), ' ');
-if (~strcmp(header{1}, 'aig')), error('File is not binary AIGER.'); end
+if (~strcmp(header{1}, 'aig')), error_handler('File is not binary AIGER.'); end
 
 m = str2double(header{2});
 i = str2double(header{3});
@@ -19,11 +19,11 @@ l = str2double(header{4});
 o = str2double(header{5});
 a = str2double(header{6});
 
-if (m < 0), error('M < 0.'); end
-if (i < 0), error('I < 0.'); end
-if (l < 0), error('L < 0.'); end
-if (o < 0), error('O < 0.'); end
-if (a < 0), error('A < 0.'); end
+if (m < 0), error_handler('M < 0.'); end
+if (i < 0), error_handler('I < 0.'); end
+if (l < 0), error_handler('L < 0.'); end
+if (o < 0), error_handler('O < 0.'); end
+if (a < 0), error_handler('A < 0.'); end
 
 input = 2*(1:i);
 latch = 2*((i + 1):(i + l));
@@ -103,6 +103,11 @@ out_delay = sparse([edgelist{1, :}], [edgelist{2, :}], 1, n, n);
 s2uk = signal2uid.keys();
 out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
 
+    function error_handler(in_msg)
+    fclose(fid);
+    error(in_msg);
+    end
+
     function push_signal(in_signal)
     if (signal2uid.isKey(in_signal)), return; end
     uid = uid + 1;
@@ -110,7 +115,7 @@ out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
     end
 
     function push_instance(in_inst, in_signal)
-    if (instancemap.isKey(in_inst)), error(['Duplicate instance ' in_inst '.']); end
+    if (instancemap.isKey(in_inst)), error_handler(['Duplicate instance ' in_inst '.']); end
     instancemap(in_inst) = in_signal;
     end
 
@@ -160,9 +165,9 @@ out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
     end
 
     function [out_byte] = next_byte()
-    if (feof(fid)), error('Unexpected EOF.'); end
+    if (feof(fid)), error_handler('Unexpected EOF.'); end
     out_byte = fread(fid, 1, 'uint8');
-    if (isempty(out_byte)), error('File read failed.'); end
+    if (isempty(out_byte)), error_handler('File read failed.'); end
     end
 
     function [out_seq] = next_sequence()
