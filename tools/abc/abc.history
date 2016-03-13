@@ -77,8 +77,10 @@ write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-a
 write_aiger -h
 write_aiger -u C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_canon.aig
 write_aiger -c C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_compact.aig
-source abc.rc
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr.blif
 comb
 strash
 write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_comb.aig
+source abc.rc
+help
+write_dot -h

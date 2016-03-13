@@ -4,20 +4,21 @@ DF = false;
 
 
 t = tic();
-[delay, range] = sample_valavan();
-[labels] = node_labels(range);
+
+
+
+[delay, labels, range] = sample_aaghalfadder();
 
 [iedge, oedge] = prepare_edges(delay);
 order = graphtopoorder(delay);
 redro = fliplr(order);
-
 depth = fill_depth(order, iedge, delay, range);
 height = fill_height(redro, oedge, delay, range);
 [af, noedge] = fill_af(order, iedge, oedge, range);
 
+[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
 
 
-[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, 20);
 
 [result_delay, resulttag, result_range] = rebuild_graph_from_cones(s, cv, delay, range);
 

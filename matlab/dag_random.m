@@ -1,21 +1,21 @@
 
 K = 4;
 DF = false;
-mode = 2;
+mode = 1;
 alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-rng(RNG);
+%rng(RNG);
 
 t = tic();
 %[delay, range] = sample_valavan();
 %[delay, range] = random_dag(20, 30, 5, 1, 10); %ok
-[delay, range] = random_dag(30, 1950, 20, 1, 10); %ok
+[delay, labels, range] = random_dag(20, 30, 10, 1, 10); %ok
 toc(t)
 
 t = tic();
-[labels] = node_labels(range);
+%[labels] = node_labels(range);
 [iedge, oedge] = prepare_edges(delay);
 order = graphtopoorder(delay);
 redro = fliplr(order);
@@ -33,7 +33,7 @@ t = tic();
 [resultdelay, resulttag, resultrange] = rebuild_graph_from_cones(s, cv, delay, range);
 toc(t)
 
-%{
+
 t = tic();
 indices = find(resulttag);
 [~, I] = sort(resulttag(indices));
@@ -45,7 +45,7 @@ view(bg);
 br = build_graph(resultdelay, newlabels, resultrange);
 view(br);
 toc(t)
-%}
+
 
 [resultiedge, resultoedge] = prepare_edges(resultdelay);
 resultorder = graphtopoorder(resultdelay);

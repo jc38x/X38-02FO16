@@ -4,7 +4,7 @@
 % 2016
 %**************************************************************************
 
-function [out_delay, out_range] = random_dag(in_npi, in_nin, in_npo, in_mind, in_maxd)
+function [out_delay, out_labels, out_range] = random_dag(in_npi, in_nin, in_npo, in_mind, in_maxd)
 sz = in_npi + in_nin + in_npo;
 inofs = in_npi;
 inbse = in_npi + 1;
@@ -60,6 +60,7 @@ o1 = vn + 1;
 on = vn + in_npo;
 
 out_range = prepare_range(i1, in, v1, vn, o1, on);
+out_labels = node_labels(out_range);
 
     function [out_delay] = random_delay()
     out_delay = randi([in_mind, in_maxd]);
