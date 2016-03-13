@@ -53,7 +53,6 @@ collapse
 speedup
 resyn
 write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_scsurs.aig
-source abc.rc
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\blif\alu4.blif
 sweep
 fraig
@@ -61,3 +60,25 @@ rr -h
 balace
 balance
 refactor
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_alu4.blif
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_alu4.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_diffeq_vtr.blif
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_diffeq_vtr.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_i10.blif
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_i10.aig
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_dsip.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_dsip.blif
+comb -h
+comb
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_dsip_comb.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_C6288.blif
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_C6288.aig
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr.aig
+write_aiger -h
+write_aiger -u C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_canon.aig
+write_aiger -c C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_compact.aig
+source abc.rc
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr.blif
+comb
+strash
+write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_comb.aig
