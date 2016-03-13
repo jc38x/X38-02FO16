@@ -3,3 +3,5 @@
 *.history
 *.history
 tools/abc/abc.history
+*.history
+tools/abc/abc.history
