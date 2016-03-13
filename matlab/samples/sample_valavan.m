@@ -7,7 +7,7 @@
 % 10.1109/TCAD.2006.882119
 %**************************************************************************
 
-function [out_delay, out_range] = sample_valavan()
+function [out_delay, out_labels, out_range] = sample_valavan()
 npi = 6;
 nin = 6;
 npo = 2;
@@ -15,6 +15,7 @@ npo = 2;
 nodos = npi + nin + npo;
 out_delay = sparse(nodos, nodos);
 id = 1;
+
 i = zeros(1, npi);
 v = zeros(1, nin);
 o = zeros(1, npo);
@@ -41,4 +42,5 @@ out_delay(v(6), o(1)) = 1;
 out_delay(v(4), o(2)) = 1;
 
 out_range = prepare_range(i(1), i(6), v(1), v(6), o(1), o(2));
+out_labels = node_labels(out_range);
 end

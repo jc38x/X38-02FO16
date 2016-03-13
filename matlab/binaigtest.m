@@ -6,7 +6,7 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/alu4_scsurs.aig');
+[delay, labels, range] = aig2mat('C:/Users/jcds/desktop/i10.aig');
 
 s = sum(delay > 0, 2);
 f = find(s < 1);

@@ -8,14 +8,14 @@ epsrand = [0.001, 0.005]; %small
 
 
 t = tic();
-[delay, labels, range, edges] = edif2mat('C:/Users/jcds/desktop/example.edif', false);
+[delay, labels, range, edges] = edif2mat('C:/Users/jcds/desktop/top.edif', false);
 toc(t)
 
 
-%bg = build_graph(graph, labels, range);
-%view(bg);
+bg = build_graph(delay, labels, range);
+view(bg);
 
-
+%{
 t = tic();
 %[labels] = node_labels(range);
 [iedge, oedge] = prepare_edges(delay);
@@ -54,6 +54,9 @@ view(bg);
 br = build_graph(resultdelay, newlabels, resultrange);
 view(br);
 toc(t)
+%}
+
+
 
 %edges.size()
 
