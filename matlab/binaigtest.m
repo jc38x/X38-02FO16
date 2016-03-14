@@ -6,7 +6,7 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/benchmark/LGSynth93/blif-aig/sis_frisc_vtr_comb.aig');
+[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/benchmark/LGSynth93/blif-aig/sis_alu4.aig');
 
 %bg = build_graph(delay, labels, range);
 %view(bg);
@@ -22,8 +22,6 @@ f = find(s < 1);
 
 aigilab = labels(f).';
 %}
-
-
 
 t = tic();
 [iedge, oedge] = prepare_edges(delay);
@@ -52,19 +50,6 @@ resultdepth = fill_depth(resultorder, resultiedge, resultdelay, resultrange);
 resultheight = fill_height(resultredro, resultoedge, resultdelay, resultrange);
 [resultaf, resultnoedge] = fill_af(resultorder, resultiedge, resultoedge, resultrange);
 %}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 %[aagdelay, aaglabels, aagrange] = aag2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/i10.aag');
 %{

@@ -19,11 +19,11 @@ for spo = randperm(in_npo)
     oein(sin) = oein(sin) + 1;
 end
 
-if (~try_fill()), error('Imposible'); end
+if (~try_fill()), error('Imposible.'); end
 
 for spi = randperm(in_npi);
     fin = find(iein < 2);
-    if (isempty(fin)), error('Imposible'); end
+    if (isempty(fin)), error('Imposible.'); end
     sin = datasample(fin, 1);    
     out_delay(spi, sin + inofs) = random_delay();
     iein(sin) = iein(sin) + 1;

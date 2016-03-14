@@ -23,6 +23,7 @@ out_range.szpo = out_range.pohi - out_range.polo + 1;
 out_range.sz   = out_range.pohi - out_range.pilo + 1;
 
 out_range.CONE_NODE    = 1;
+out_range.CONE_EDGE    = 2;
 out_range.CONE_IEDGE   = 6;
 out_range.CONE_OEDGE   = 4;
 out_range.CONE_ENTRIES = 6;
