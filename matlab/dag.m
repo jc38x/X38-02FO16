@@ -1,6 +1,10 @@
 
 K = 3;
 DF = false;
+mode = 1;
+alpha = 1.5; %1.5-2.5
+maxi = 20; %20
+epsrand = [0.001, 0.005]; %small
 
 
 t = tic();
@@ -8,8 +12,8 @@ t = tic();
 
 
 %[delay, labels, range] = sample_valavan();
-[delay, labels, range] = sample_aaghalfadder();
-
+%[delay, labels, range] = sample_aaghalfadder();
+[delay, labels, range] = sample_aaglatch();
 
 [iedge, oedge] = prepare_edges(delay);
 order = graphtopoorder(delay);
