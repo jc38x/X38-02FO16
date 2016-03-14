@@ -28,6 +28,14 @@ out_equations(k) = {''};
 
 out_tag = sparse(1, adjS, (1:nin) + ofs);
 
+for i = in_range.pi
+    for j = in_range.po
+        if (in_delay(i, j) > 0)
+            push_edge(i, j - poofs, in_delay(i, j));
+        end
+    end
+end
+
 
 
 for cvidx = adjS
