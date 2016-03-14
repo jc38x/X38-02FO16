@@ -18,7 +18,10 @@ edgesj = zeros(1, maxedges);
 edgesd = zeros(1, maxedges);
 
 out_equations = cell(1, nsz);
-
+k = in_range.pi;
+out_equations(k) = in_equations(k);
+k = in_range.inlo:nsz;
+out_equations(k) = {''};
 
 %node2uid = containers.Map(in_labels, num2cell(1:in_range.sz));
 

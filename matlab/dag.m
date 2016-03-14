@@ -30,7 +30,7 @@ toc(t)
 
 
 
-bg = build_graph(delay, labels, range);
+bg = build_graph(delay, labels, range, equations);
 view(bg);
 
 
@@ -42,7 +42,7 @@ indices = find(resulttag);
 
 newlabels = [labels(range.pi), labels(indices(I)+double(range.szpi)), labels(range.po)];
 
-br = build_graph(result_delay, newlabels, result_range);
+br = build_graph(result_delay, newlabels, result_range, resultequations);
 
 view(br);
 
