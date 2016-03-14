@@ -13,7 +13,6 @@ for n = 1:numel(out_bg.nodes)
     elseif (n <= in_range.inhi), out_bg.Nodes(n).Color = [1.0 1.0 0.5];
     else                         out_bg.Nodes(n).Color = [1.0 0.5 0.5];
     end
-    %in_equations{n}
     out_bg.Nodes(n).Description = in_equations{n};
 end
 out_bg.ShowWeights = 'on';
