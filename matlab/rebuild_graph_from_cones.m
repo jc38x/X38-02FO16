@@ -7,10 +7,9 @@
 function [out_delay, out_labels, out_range, out_equations] = rebuild_graph_from_cones(in_S, in_Cv, in_delay, in_range, in_labels, in_equations)
 nin = numel(in_S);
 nsz = in_range.szpi + nin + in_range.szpo;
-ofs = in_range.pihi;
 poofs = in_range.szin - nin;
-adjS = in_S - ofs;
-tag = sparse(1, adjS, (1:nin) + ofs);
+adjS = in_S - in_range.pihi;
+tag = sparse(1, adjS, (1:nin) + in_range.pihi);
 
 maxedges = sum(in_delay(:) > 0);
 edgesindex = 0;
@@ -37,9 +36,10 @@ for cvidx = adjS
     
     for e = vcone{in_range.CONE_IEDGE}
         e1 = e(1);
-        if (is_in(e1, in_range)), i1 = tag(e1 - ofs); else i1 = e1; end
+        if (is_in(e1, in_range)), i1 = tag(e1 - in_range.pihi); else i1 = e1; end
         push_edge(i1, i2, in_delay(e1, e(2)));
     end
+    
     for e = vcone{in_range.CONE_OEDGE}
         e2 = e(2);
         if (is_in(e2, in_range)), continue; end
@@ -47,19 +47,17 @@ for cvidx = adjS
     end
     
     node = vcone{in_range.CONE_NODE};
-    subn = numel(node);   
+    subn = numel(node);
     noderemap = containers.Map(num2cell(node), 1:subn);
     edge = vcone{in_range.CONE_EDGE};
-    conegraph = sparse(cell2mat(noderemap.values(num2cell(edge(1, :)))), cell2mat(noderemap.values(num2cell(edge(2, :)))), 1, subn, subn);    
-    coneorder = graphtopoorder(conegraph);
-    coneorder = coneorder(1:(subn-1));
-    redroenoc = fliplr(coneorder);
+    coneorder = graphtopoorder(sparse(cell2mat(noderemap.values(num2cell(edge(1, :)))), cell2mat(noderemap.values(num2cell(edge(2, :)))), 1, subn, subn));
+    redroenoc = fliplr(coneorder(1:(subn-1)));
     keys = noderemap.keys();
-    remapnode = containers.Map(noderemap.values(keys), keys);
-    redroenoc = cell2mat(remapnode.values(num2cell(redroenoc)));
-
-    equation = in_equations{cvidx + ofs};
-    for l = redroenoc, equation = strrep(equation, ['[' in_labels{l} ']'], ['(' in_equations{l} ')']); end
+    remapnode = zeros(1, numel(keys));
+    remapnode(cell2mat(noderemap.values(keys))) = cell2mat(keys);
+    
+    equation = in_equations{cvidx + in_range.pihi};
+    for l = remapnode(redroenoc), equation = strrep(equation, ['[' in_labels{l} ']'], ['(' in_equations{l} ')']); end
     out_equations{i2} = equation;
 end
 

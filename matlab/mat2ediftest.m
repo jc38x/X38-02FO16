@@ -39,3 +39,18 @@ edifequations(1:end) = {''};
 be = build_graph(edifdelay, ediflabels, edifrange, edifequations);
 view(be);
 
+
+
+%redroenoc = ;
+    %keys = noderemap.keys();
+    %remapnode = containers.Map(noderemap.values(keys), keys);
+    %redroenoc = cell2mat(remapnode.values(num2cell(redroenoc)));
+    
+    
+    %equation = in_equations{cvidx + in_range.pihi};
+    %for l = redroenoc, equation = strrep(equation, ['[' in_labels{l} ']'], ['(' in_equations{l} ')']); end
+    %out_equations{i2} = equation;
+    
+    %conegraph = 0;
+	%coneorder = ;
+    %ofs = in_range.pihi;
