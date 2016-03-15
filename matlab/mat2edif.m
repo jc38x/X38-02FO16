@@ -1,5 +1,5 @@
 
-function mat2edif(in_filename, in_delay, in_labels, in_range, in_ttinit)
+function mat2edif(in_filename, in_delay, in_labels, in_range, in_luts)
 fid = fopen(in_filename, 'w');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
 
@@ -159,7 +159,7 @@ for k = in_range.in
     fprintf(fid, [indent(6) '(instance ' in_labels{k} '_LUT4\n']);
     fprintf(fid, [indent(7) '(viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))\n']);
     fprintf(fid, [indent(7) '(property XSTLIB (boolean (true)) (owner "Xilinx"))\n']);
-    fprintf(fid, [indent(7) '(property INIT (string "' in_ttinit{k - in_range.pihi} '") (owner "Xilinx"))\n']);
+    fprintf(fid, [indent(7) '(property INIT (string "' in_luts{k - in_range.pihi} '") (owner "Xilinx"))\n']);
     fprintf(fid, [indent(6) ')\n']);
 end
 
