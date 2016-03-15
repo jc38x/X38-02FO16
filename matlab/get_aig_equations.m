@@ -10,8 +10,8 @@ for k = in_range.in
     label = in_labels{k};
     ie = in_iedge{k};
     switch (label(1:3))
-        case 'and', out_equation{k} = [in_labels{ie(1, 1)} ' & ' in_labels{ie(1, 2)}];
-        case 'inv', out_equation{k} = ['~' in_labels{ie(1, 1)}];
+        case 'and', out_equation{k} = ['[' in_labels{ie(1, 1)} ']' ' & '  '[' in_labels{ie(1, 2)} ']'];
+        case 'inv', out_equation{k} = ['~[' in_labels{ie(1, 1)} ']'];
         otherwise,  error(['Unexpected label ' label '.']);
     end
 end

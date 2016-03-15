@@ -1,0 +1,226 @@
+(edif top
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timeStamp 2016 3 14 15 17 21)
+      (author "author")
+      (program "matlab")
+    )
+  )
+  (external UNISIMS
+    (edifLevel 0)
+    (technology (numberDefinition))
+    (cell LUT4
+      (cellType GENERIC)
+        (view view_1
+          (viewType NETLIST)
+          (interface 
+            (port I0
+              (direction INPUT)
+            )
+            (port I1
+              (direction INPUT)
+            )
+            (port I2
+              (direction INPUT)
+            )
+            (port I3
+              (direction INPUT)
+            )
+            (port O
+              (direction OUTPUT)
+            )
+          )
+        )
+    )
+    (cell IBUF
+      (cellType GENERIC)
+        (view view_1
+          (viewType NETLIST)
+          (interface
+            (port I
+              (direction INPUT)
+            )
+            (port O
+              (direction OUTPUT)
+            )
+          )
+        )
+    )
+    (cell OBUF
+      (cellType GENERIC)
+        (view view_1
+          (viewType NETLIST)
+          (interface
+            (port I
+              (direction INPUT)
+            )
+            (port O
+              (direction OUTPUT)
+            )
+          )
+        )
+    )
+  )
+  (library top_lib
+    (edifLevel 0)
+    (technology (numberDefinition))
+    (cell top
+      (cellType GENERIC)
+        (view view_1
+          (viewType NETLIST)
+          (interface
+            (port i1
+              (direction INPUT)
+            )
+            (port i2
+              (direction INPUT)
+            )
+            (port i3
+              (direction INPUT)
+            )
+            (port i4
+              (direction INPUT)
+            )
+            (port i5
+              (direction INPUT)
+            )
+            (port i6
+              (direction INPUT)
+            )
+            (port o1
+              (direction OUTPUT)
+            )
+            (port o2
+              (direction OUTPUT)
+            )
+            (designator "xc3s700a-4-fg484")
+            (property TYPE (string "top") (owner "Xilinx"))
+            (property NLW_UNIQUE_ID (integer 0) (owner "Xilinx"))
+            (property NLW_MACRO_TAG (integer 0) (owner "Xilinx"))
+            (property NLW_MACRO_ALIAS (string "top_top") (owner "Xilinx"))
+          )
+          (contents
+            (instance v1_LUT4
+              (viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+              (property INIT (string "FFFF") (owner "Xilinx"))
+            )
+            (instance v2_LUT4
+              (viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+              (property INIT (string "FFFF") (owner "Xilinx"))
+            )
+            (instance v3_LUT4
+              (viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+              (property INIT (string "FFFF") (owner "Xilinx"))
+            )
+            (instance v4_LUT4
+              (viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+              (property INIT (string "FFFF") (owner "Xilinx"))
+            )
+            (instance v5_LUT4
+              (viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+              (property INIT (string "FFFF") (owner "Xilinx"))
+            )
+            (instance v6_LUT4
+              (viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+              (property INIT (string "FFFF") (owner "Xilinx"))
+            )
+            (instance i1_IBUF
+              (viewRef view_1 (cellRef IBUF (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+            )
+            (instance i2_IBUF
+              (viewRef view_1 (cellRef IBUF (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+            )
+            (instance i3_IBUF
+              (viewRef view_1 (cellRef IBUF (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+            )
+            (instance i4_IBUF
+              (viewRef view_1 (cellRef IBUF (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+            )
+            (instance i5_IBUF
+              (viewRef view_1 (cellRef IBUF (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+            )
+            (instance i6_IBUF
+              (viewRef view_1 (cellRef IBUF (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+            )
+            (instance o1_OBUF
+              (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+            )
+            (instance o2_OBUF
+              (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
+              (property XSTLIB (boolean (true)) (owner "Xilinx"))
+            )
+            (net N_i1
+              (joined
+                (portRef i1)
+                (portRef I (instanceRef i1_IBUF))
+              )
+            )
+            (net N_i2
+              (joined
+                (portRef i2)
+                (portRef I (instanceRef i2_IBUF))
+              )
+            )
+            (net N_i3
+              (joined
+                (portRef i3)
+                (portRef I (instanceRef i3_IBUF))
+              )
+            )
+            (net N_i4
+              (joined
+                (portRef i4)
+                (portRef I (instanceRef i4_IBUF))
+              )
+            )
+            (net N_i5
+              (joined
+                (portRef i5)
+                (portRef I (instanceRef i5_IBUF))
+              )
+            )
+            (net N_i6
+              (joined
+                (portRef i6)
+                (portRef I (instanceRef i6_IBUF))
+              )
+            )
+            (net N_o1
+              (joined
+                (portRef o1)
+                (portRef O (instanceRef o1_OBUF))
+              )
+            )
+            (net N_o2
+              (joined
+                (portRef o2)
+                (portRef O (instanceRef o2_OBUF))
+              )
+            )
+          )
+        )
+    )
+  )
+  (design top
+    (cellRef top
+      (libraryRef top_lib)
+    )
+    (property PART (string "xc3s700a-4-fg484") (owner "Xilinx"))
+  )
+)

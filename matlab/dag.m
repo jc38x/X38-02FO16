@@ -50,4 +50,20 @@ br = build_graph(result_delay, newlabels, result_range, resultequations);
 
 view(br);
 
+[LUTS, lutinputs] = cones2luts(result_range, resultequations);
 
+
+%out_x = [];
+%res
+    
+    %outi = 0;
+    %signalmap = containers.Map(signals, num2cell(0:(ns - 1)));
+    %outi = outi + 1;
+    %x = inputs
+    %zeros(4, numel(inputs) / 4); 
+    
+    
+    
+    
+    %signals
+    %inputs

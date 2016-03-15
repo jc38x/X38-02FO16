@@ -62,7 +62,7 @@ for cvidx = adjS
     
     tmpstr = in_equations{cvidx + ofs};
     for l = redroenoc
-        tmpstr = strrep(tmpstr,  in_labels{l}, ['(' in_equations{l} ')']);
+        tmpstr = strrep(tmpstr, ['[' in_labels{l} ']'], ['(' in_equations{l} ')']);
         %out_equation{i2} = strrep(out_equation{i2}, in_labels{l}, ['(' in_equations{l} ')']);
     end
     out_equations{i2} = tmpstr;
