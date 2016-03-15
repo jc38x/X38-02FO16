@@ -1,5 +1,5 @@
 
-function mat2edif(in_filename, in_delay, in_labels, in_range, in_luts)
+function mat2edif(in_filename, in_delay, in_labels, in_range, in_luts, in_inputs)
 fid = fopen(in_filename, 'w');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
 
@@ -89,9 +89,7 @@ obufcell = [
     {2, ')'};
     ];
 
-headerstop = [
-    {1, ')'};
-    ];
+headerstop = {1, ')'};
 
 librarybegin = [
     {1, '(library top_lib'};
@@ -103,7 +101,6 @@ librarybegin = [
     {5, '(viewType NETLIST)'};
     {5, '(interface'};
     ];
-
 
 designator = [
     {6, '(designator "xc3s700a-4-fg484")'};
@@ -132,6 +129,12 @@ design = [
     {0, ')'};
     ];
 
+rs = containers.Map('KeyType', 'char', 'ValueType', 'char');
+
+for k = in_range.pi, rs(in_labels{k}) = [in_labels{k} '_IBUF']; end
+for k = in_range.in, rs(in_labels{k}) = [in_labels{k} '_LUT']; end
+for k = in_range.po, rs(in_labels{k}) = [in_labels{k} '_OBUF']; end
+
 write_block(headerbegin);
 write_block(lut4cell);
 write_block(ibufcell);
@@ -156,7 +159,7 @@ write_block(designator);
 
 %instances
 for k = in_range.in
-    fprintf(fid, [indent(6) '(instance ' in_labels{k} '_LUT4\n']);
+    fprintf(fid, [indent(6) '(instance ' in_labels{k} '_LUT\n']);
     fprintf(fid, [indent(7) '(viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))\n']);
     fprintf(fid, [indent(7) '(property XSTLIB (boolean (true)) (owner "Xilinx"))\n']);
     fprintf(fid, [indent(7) '(property INIT (string "' in_luts{k - in_range.pihi} '") (owner "Xilinx"))\n']);
@@ -196,20 +199,44 @@ for k = in_range.po
     fprintf(fid, [indent(6) ')\n']);
 end
 
-for k = in_range.in
+for k = in_range.pi    
+    fprintf(fid, [indent(6) '(net N_' rs(in_labels{k}) '\n']);
+    fprintf(fid, [indent(7) '(joined\n']);
+    fprintf(fid, [indent(8) '(portRef O (instanceRef ' rs(in_labels{k}) '))\n']);
+    for drives = find(in_delay(k, :))
+        if (is_in(drives, in_range))
+            fprintf(fid, [indent(8) '(portRef I' num2str(find(strcmp(in_inputs{drives - in_range.pihi}, in_labels{k})) - 1) ' (instanceRef ' rs(in_labels{drives}) '))\n']);
+        elseif (is_po(drives, in_range))
+            fprintf(fid, [indent(8) '(portRef I (instanceRef ' rs(in_labels{drives}) '))\n']);
+        else
+            error('!!!!!!');
+        end
+    end
+    fprintf(fid, [indent(7) ')\n']);
+    fprintf(fid, [indent(6) ')\n']);
 end
 
-
-
+for k = in_range.in
+    fprintf(fid, [indent(6) '(net N_' rs(in_labels{k}) '\n']);
+    fprintf(fid, [indent(7) '(joined\n']);
+    fprintf(fid, [indent(8) '(portRef O (instanceRef ' rs(in_labels{k}) '))\n']);
+    for drives = find(in_delay(k, :))
+        if (is_in(drives, in_range))
+            fprintf(fid, [indent(8) '(portRef I' num2str(find(strcmp(in_inputs{drives - in_range.pihi}, in_labels{k})) - 1) ' (instanceRef ' rs(in_labels{drives}) '))\n']);
+        elseif (is_po(drives, in_range))
+            fprintf(fid, [indent(8) '(portRef I (instanceRef ' rs(in_labels{drives}) '))\n']);
+        else
+            error('!!!!!!');
+        end
+    end    
+    fprintf(fid, [indent(7) ')\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
 
 write_block(librarystop);
 write_block(design);
 
 fclose(fid);
-
-
-
-
 
 %{
 fprintf(fid, '(edif top\n');
@@ -226,22 +253,18 @@ fprintf(fid, '(written\n');
 indent(3);
 fprintf(fid, '(timeStamp '
 %}
-    function write_block(in_block)
-        for c = in_block.'
-            fprintf(fid, [indent(c{1}) c{2} '\n']);
-        end
-    end
-
-
-    function [out_ws] = indent(in_level)
-        out_ws = repmat('  ', 1, in_level);
     %if (in_level <= 0), return; end
     %fprintf(fid, repmat('    ', 1, in_level));
+    
+    function write_block(in_block)
+    for c = in_block.', fprintf(fid, [indent(c{1}) c{2} '\n']); end
+    end
+
+    function [out_ws] = indent(in_level)
+    out_ws = repmat('  ', 1, in_level);
     end
 
     function [out_str] = removelz(in_str)
     if (in_str(1) == '0'), out_str = in_str(2); else out_str = in_str; end
     end
-
-
 end
