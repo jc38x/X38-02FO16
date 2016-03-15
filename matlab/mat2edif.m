@@ -55,6 +55,49 @@ lut4cell = [
     {2, ')'};    
     ];
 
+lut3cell = [
+    {2, '(cell LUT3'};
+    {3, '(cellType GENERIC)'};
+    {4, '(view view_1'};
+    {5, '(viewType NETLIST)'};
+    {5, '(interface '};
+    {6, '(port I0'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port I1'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port I2'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port O'};
+    {7, '(direction OUTPUT)'};
+    {6, ')'};
+    {5, ')'};
+    {4, ')'};
+    {2, ')'};    
+    ];
+
+lut2cell = [
+    {2, '(cell LUT2'};
+    {3, '(cellType GENERIC)'};
+    {4, '(view view_1'};
+    {5, '(viewType NETLIST)'};
+    {5, '(interface '};
+    {6, '(port I0'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port I1'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port O'};
+    {7, '(direction OUTPUT)'};
+    {6, ')'};
+    {5, ')'};
+    {4, ')'};
+    {2, ')'};    
+    ];
+
 ibufcell = [
     {2, '(cell IBUF'};
     {3, '(cellType GENERIC)'};
@@ -137,6 +180,8 @@ for k = in_range.po, rs(in_labels{k}) = [in_labels{k} '_OBUF']; end
 
 write_block(headerbegin);
 write_block(lut4cell);
+write_block(lut3cell);
+write_block(lut2cell);
 write_block(ibufcell);
 write_block(obufcell);
 write_block(headerstop);
@@ -160,7 +205,7 @@ write_block(designator);
 %instances
 for k = in_range.in
     fprintf(fid, [indent(6) '(instance ' in_labels{k} '_LUT\n']);
-    fprintf(fid, [indent(7) '(viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))\n']);
+    fprintf(fid, [indent(7) '(viewRef view_1 (cellRef LUT' num2str(numel(in_inputs{k - in_range.pihi})) ' (libraryRef UNISIMS)))\n']);
     fprintf(fid, [indent(7) '(property XSTLIB (boolean (true)) (owner "Xilinx"))\n']);
     fprintf(fid, [indent(7) '(property INIT (string "' in_luts{k - in_range.pihi} '") (owner "Xilinx"))\n']);
     fprintf(fid, [indent(6) ')\n']);

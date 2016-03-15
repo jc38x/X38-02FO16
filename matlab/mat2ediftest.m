@@ -33,9 +33,9 @@ mat2edif(ediffname, resultdelay, resultlabels, resultrange, luts, inputs);
 
 [edifdelay, ediflabels, edifrange] = edif2mat(ediffname, false);
 
-equations = cell(1, edifrange.sz);
-equations(1:end) = {''};
+edifequations = cell(1, edifrange.sz);
+edifequations(1:end) = {''};
 
-be = build_graph(edifdelay, ediflabels, edifrange, equations);
+be = build_graph(edifdelay, ediflabels, edifrange, edifequations);
 view(be);
 

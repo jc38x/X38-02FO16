@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timeStamp 2016 3 14 22 8 54)
+      (timeStamp 2016 3 15 15 4 42)
       (author "author")
       (program "matlab")
     )
@@ -27,6 +27,43 @@
               (direction INPUT)
             )
             (port I3
+              (direction INPUT)
+            )
+            (port O
+              (direction OUTPUT)
+            )
+          )
+        )
+    )
+    (cell LUT3
+      (cellType GENERIC)
+        (view view_1
+          (viewType NETLIST)
+          (interface 
+            (port I0
+              (direction INPUT)
+            )
+            (port I1
+              (direction INPUT)
+            )
+            (port I2
+              (direction INPUT)
+            )
+            (port O
+              (direction OUTPUT)
+            )
+          )
+        )
+    )
+    (cell LUT2
+      (cellType GENERIC)
+        (view view_1
+          (viewType NETLIST)
+          (interface 
+            (port I0
+              (direction INPUT)
+            )
+            (port I1
               (direction INPUT)
             )
             (port O
@@ -92,12 +129,12 @@
           )
           (contents
             (instance and2_6_LUT
-              (viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))
+              (viewRef view_1 (cellRef LUT2 (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
               (property INIT (string "6") (owner "Xilinx"))
             )
             (instance and2_12_LUT
-              (viewRef view_1 (cellRef LUT4 (libraryRef UNISIMS)))
+              (viewRef view_1 (cellRef LUT2 (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
               (property INIT (string "8") (owner "Xilinx"))
             )
