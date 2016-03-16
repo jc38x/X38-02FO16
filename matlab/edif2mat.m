@@ -27,6 +27,9 @@ edgesindex = 0;
 preprocess = cell(8, edges.size());
 ppindex = 0;
 
+
+
+
 while (edgesiter.hasNext())
     edge = char(edgesiter.next().toString());
     signals = strsplitntrim(edge, '->');
@@ -56,6 +59,11 @@ while (edgesiter.hasNext())
     ppindex = ppindex + 1;
     preprocess(:, ppindex) = {hinst; hio; histop; head; tinst; tio; tistop; tail};
 end
+
+
+
+
+
 
 for c = preprocess
     head = c{4};
