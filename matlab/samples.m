@@ -3,7 +3,7 @@
 %[delay, labels, range] = sample_aaghalfadder();
 %[delay, labels, range] = sample_aaglatch();
 %[delay, labels, range, edges] = sample_edif(false);
-%[delay, labels, range, edges] = sample_edif_special(false);
+[delay, labels, range, edges] = sample_edif_special(false);
 %[delay, labels, range, edges] = sample_ISE_mapped(false);
 
 eq = cell(1, size(delay, 2));
@@ -26,3 +26,14 @@ cone
 
 
 %}
+ %qualified = port{1};
+    %bp = find(qualified == '(');
+    %be = find(qualified == ')');
+    %out_instance = qualified([1:(bp - 1), (be + 1):end]);
+    %out_cell = strremovespaces(qualified((bp + 1):(be - 1)));
+    
+    
+    
+    
+    
+    %out_istop = strcmp(qualified, topname);

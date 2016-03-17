@@ -11,10 +11,49 @@ function [out_delay, out_labels, out_range, out_edges] = edif2mat(in_filename, i
 edifenv = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
 topcell = edifenv.getTopCell();
 if (in_flatten), topcell = edu.byu.ece.edif.tools.flatten.FlattenedEdifCell(topcell); end
-topname = ['top(' strremovespaces(char(topcell.toString())) ')'];
 edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
+
+
+
+
+
+
+
+
+topname = ['top(' strremovespaces(char(topcell.toString())) ')'];
+
 edges = edifgraph.getEdges();
 edgesiter = edges.iterator();
+
+
+topcellinstance = edifenv.getTopCellInstance();
+primitivelist = topcellinstance.getHierarchicalPrimitiveList();
+primitiveiter = primitivelist.iterator();
+%epw = edu.byu.ece.edif.core.EdifPrintWriter('C:/Users/jcds/Documents/GitHub/X38-02FO16/primitive.edif');
+%epw.printQuote('a');
+
+while (primitiveiter.hasNext())
+    list = primitiveiter.next();
+    listiter = list.iterator();
+    while (listiter.hasNext())
+        obj = listiter.next();
+        ec = char(obj.getType());
+        if (strcmp(ec(1:3), 'LUT'))
+            prop = obj.getProperty('INIT');
+            disp(prop);
+        end
+
+        
+        %obj.toEdif(epw);
+        %disp(obj);
+    end
+end
+
+
+
+
+
+
 
 signal2uid = containers.Map();
 uid = 0;
@@ -31,8 +70,16 @@ ppindex = 0;
 
 
 while (edgesiter.hasNext())
-    edge = char(edgesiter.next().toString());
+    edgeobj = edgesiter.next();
+    edge = char(edgeobj.toString());
     signals = strsplitntrim(edge, '->');
+    
+    %sourceepr = edgeobj.getSourceEPR();
+    %sinkepr = edgeobj.getSinkEPR();
+    %sourceepr = sourceepr.getCellInstance();
+    %sinkepr = sinkepr.getCellInstance();
+    %disp(sourceepr);
+    %disp(sinkepr);
 
     [hinst, hio, histop] = translate_port(signals{1});
     [tinst, tio, tistop] = translate_port(signals{2});
@@ -59,11 +106,6 @@ while (edgesiter.hasNext())
     ppindex = ppindex + 1;
     preprocess(:, ppindex) = {hinst; hio; histop; head; tinst; tio; tistop; tail};
 end
-
-
-
-
-
 
 for c = preprocess
     head = c{4};
@@ -123,6 +165,17 @@ out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
 edgescell = edgescell(:, 1:edgesindex);
 edgescell = [remap.values(edgescell(1:2, :)); edgescell(3, :)];
 out_edges = edgescell;
+
+
+
+%for k = in_range.pi
+%end
+
+
+
+
+
+
 
     function [out_instance, out_io, out_istop] = translate_port(in_port)
     port = strsplitntrim(in_port(2:end-1), ',');

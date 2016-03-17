@@ -31,7 +31,7 @@ view(br);
 ediffname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\ediftest.edif';
 mat2edif(ediffname, resultdelay, resultlabels, resultrange, luts, inputs);
 
-[edifdelay, ediflabels, edifrange] = edif2mat(ediffname, false);
+[edifdelay, ediflabels, edifrange, edifedges] = edif2mat(ediffname, false);
 
 edifequations = cell(1, edifrange.sz);
 edifequations(1:end) = {''};
