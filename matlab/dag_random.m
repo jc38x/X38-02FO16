@@ -11,9 +11,13 @@ epsrand = [0.001, 0.005]; %small
 t = tic();
 %[delay, range] = sample_valavan();
 %[delay, range] = random_dag(20, 30, 5, 1, 10); %ok
-[delay, labels, range] = random_dag(20, 30, 10, 1, 10); %ok
+[delay, labels, range, equations] = random_dag(10, 20, 5, 1, 10); %ok
 toc(t)
 
+bg = build_graph(delay, labels, range, equations);
+view(bg);
+
+%{
 t = tic();
 %[labels] = node_labels(range);
 [iedge, oedge] = prepare_edges(delay);
@@ -82,7 +86,7 @@ resultheight = fill_height(resultredro, resultoedge, resultdelay, resultrange);
 %[depthcones] = fill_depth_cones(cones, delay, depth);
 %[afcones] = fill_af_cones(cones, af, noedge);
 
-
+%}
 
 
 
