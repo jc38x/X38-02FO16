@@ -1,30 +1,31 @@
 
-function [out_test, out_labels] = edifimport(in_filename, in_flatten)
+function [out_test, out_labels, out_types, out_edges, out_nets] = edifimport(in_filename, in_flatten)
 edifenv = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
 topcell = edifenv.getTopCell();
 if (in_flatten), topcell = edu.byu.ece.edif.tools.flatten.FlattenedEdifCell(topcell); end
-
-
-
-
-
-
-
 edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
+
+
+
+
+
+
+
 
 edges = edifgraph.getEdges();
 signal2uid = containers.Map();
-instancemap = containers.Map();
+instancecopy = containers.Map();
+instancecell = containers.Map();
 instancetype = containers.Map();
 uid = 0;
 
+topname =  char(topcell.getName());
 pilist = topcell.getInputPorts();
 inlist = topcell.getCellInstanceList();
 polist = topcell.getOutputPorts();
 
 
-%out_equations = cell(1, pilist.size() + inlist.size() + polist.size());
-%out_equations{uid} = '';
+
 
 
 piiterator = pilist.iterator();
@@ -34,27 +35,18 @@ while (piiterator.hasNext())
     push_port('', port, suffix);
 end
 
-
 initerator = inlist.iterator();
 while (initerator.hasNext())
     instance = initerator.next();
-    prefix = [char(instance.getName()) ','];
-    
-    celloutiterator = instance.getCellType().getOutputPorts().iterator();
-    
-    %celltype = ;
-    
-    
-
-    while (celloutiterator.hasNext())
-        port = celloutiterator.next();
-        
-        push_port(prefix, port, suffix);
-    end
+    instancename = char(instance.getName());
+    celltype = instance.getCellType();
+    prefix = [instancename ','];
+    instancetype(instancename) = char(celltype.getName());
+    celloutiterator = celltype.getOutputPorts().iterator();
+    beginuid = uid;
+    while (celloutiterator.hasNext()), push_port(prefix, celloutiterator.next(), ''); end
+    instancecopy(instancename) = (beginuid + 1):uid;
 end
-
-
-%if (~port.isOutputOnly()), suffix = '@O'; else suffix = ''; end 
 
 poiterator = polist.iterator();
 while (poiterator.hasNext())
@@ -62,6 +54,107 @@ while (poiterator.hasNext())
     if (~port.isOutputOnly()), suffix = '@I'; else suffix = ''; end
     push_port('', port, suffix);
 end
+
+out_labels = cell(1, uid);
+keys = signal2uid.keys();
+out_labels(cell2mat(signal2uid.values(keys))) = keys;
+
+
+
+
+
+
+
+
+
+
+
+%out_nets = cell(1, uid);%
+%out_equations = cell(1, pilist.size() + inlist.size() + polist.size());
+%out_equations{uid} = '';
+out_nets = [];
+
+
+edgesiterator = edges.iterator();
+graphedges = cell(3, edges.size());
+edgesindex = 0;
+
+while (edgesiterator.hasNext())
+    edge = edgesiterator.next();
+    
+    sourceepr = edge.getSourceEPR();
+    sinkepr = edge.getSinkEPR();
+    sourceport = sourceepr.getPort();
+    sinkport = sinkepr.getPort();
+    
+    sourcename = char(sourceport.getName());
+    if (sourceport.isBus()), sourceindex = ['(' num2str(sourceepr.getSingleBitPort().bitPosition()) ')']; else sourceindex = []; end
+    if (~sourceepr.isTopLevelPortRef())
+        sourceprefix = [char(sourceepr.getCellInstance().getName()) ','];
+        sourcesuffix = '';
+    else
+        sourceprefix = [];
+        if (~sourceport.isInputOnly()), sourcesuffix = '@O'; else sourcesuffix = []; end
+    end
+    headuid = signal2uid([sourceprefix sourcename sourceindex sourcesuffix]);
+
+    sinkname = char(sinkport.getName());
+    if (sinkport.isBus()), sinkindex = ['(' num2str(sinkepr.getSingleBitPort().bitPosition()) ')']; else sinkindex = []; end
+    sinkportid = [sinkname sinkindex];
+    if (~sinkepr.isTopLevelPortRef())
+        instancename = char(sinkepr.getCellInstance().getName());
+        tailuids = instancecopy(instancename);
+        prefix = [instancename ','];
+    else        
+        if (~sinkport.isOutputOnly()), sinksuffix = '@I'; else sinksuffix = []; end
+        tailuids = signal2uid([sinkportid sinksuffix]);
+        prefix = '';
+    end
+    
+
+    
+    for tailuid = tailuids
+        edgesindex = edgesindex + 1;
+
+        graphedges(:, edgesindex) = [{headuid}; {tailuid}; {[prefix sinkportid]}];
+    end
+end
+
+
+
+
+
+out_edges = graphedges;
+
+
+
+
+
+pilo = 1;
+pihi = pilist.size();
+inlo = pihi + 1;
+inhi = pihi + uid - (pilist.size() + polist.size());
+polo = inhi + 1;
+pohi = inhi + polist.size();
+
+
+
+
+%ids = zeros(1, cellout.size());
+    %idindex = 0;
+    
+    
+    
+    
+    
+    
+    %celltype = ;
+    
+out_types = instancetype;
+out_test = signal2uid;
+%if (~port.isOutputOnly()), suffix = '@O'; else suffix = ''; end 
+
+
 
 
 
@@ -83,179 +176,18 @@ end
     end
 
 
+
+
+
+
+
+
+
 %{
-    if (port.isBus())
-        bitportlist = port.getSingleBitPortList();
-        bitportlistiterator = bitportlist.iterator();
-        while (bitportlistiterator.hasNext())
-            bitport = bitportlistiterator.next();
-            portindex = ['(' num2str(bitport.bitPosition()) ')'];
-            signalname = [port.GetName() portindex suffix];
-            push_signal(signalname);
-        end
-    else
-        portindex = '';
-        signalname = [port.getName() portindex suffix];
-        push_signal(signalname);
-    end
-    %}
-%{
-piiterator = pilist.iterator();
-while (piiterator.hasNext())
-    port = piiterator.next();
-    if (~port.isInputOnly()), suffix = '@O'; else suffix = ''; end
-    
-    
-    bitportlist = port.getSingleBitPortList();
-    bitportlistiterator = bitportlist.iterator();   
-    
-    if (port.isBus())
-        while (bitportlistiterator.hasNext())
-            bitport = bitportlistiterator.next();            
-            portindex = ['(' num2str(bitport.bitPosition()) ')'];            
-            signalname = [port.GetName() portindex suffix];
-            push_signal(signalname);
-        end
-    else
-        while (bitportlistiterator.hasNext())
-            bitport = bitportlistiterator.next();
-            portindex = '';
-            signalname = [port.getName() portindex suffix];
-            push_signal(signalname);
-        end
-    end
-end
-%}
-%{
-initerator = inlist.iterator();
-while (initerator.hasNext())
-    instance = initerator.next();
-    instancename = char(instance.getName());
-    
-    celltype = instance.getCellType();
-    cellout = celltype.getOutputPorts();
-    celloutiterator = cellout.iterator();
-    prefix = [instancename ','];
-    
-    
-    while (celloutiterator.hasNext())
-        port = celloutiterator.next();
-        if (~port.isOutputOnly()), suffix = '@O'; else suffix = ''; end 
-        
-        bitportlist = port.getSingleBitPortList();
-        bitportlistiterator = bitportlist.iterator();
-        
-        if (port.isBus())
-            while (bitportlistiterator.hasNext())
-                bitport = bitportlistiterator.next();
-                portindex = ['(' num2str(bitport.bitPosition()) ')'];
-                signalname = [prefix char(bitport.toString()) portindex suffix];
-                push_signal(signalname);
-            end
-        else
-        end
-    end
-end
+
 %}
 
 
-
-
-
-
-
-%net = bitport.getInnerNet();
-    
-
-
-%{
-poiterator = polist.iterator();
-while (poiterator.hasNext())
-    port = poiterator.next();
-    if (~port.isOutputOnly()), suffix = '@I'; else suffix = ''; end
-    bitportlist = port.getSingleBitPortList();
-    bitportlistiterator = bitportlist.iterator();
-    while (bitportlistiterator.hasNext())
-        bitport = bitportlistiterator.next();
-        signalname = [char(bitport.toString()) suffix];
-        push_signal(signalname);
-    end
-end
-%}
-
-
-
-%{
-edgesiterator = edges.iterator();
-while (edgesiterator.hasNext())
-    edge = edgesiterator.next();
-    
-    %disp(edge.toString());
-    
-    sourceepr = edge.getSourceEPR();
-    sinkepr = edge.getSinkEPR();
-    sourcesbp = sourceepr.getSingleBitPort();
-    sinksbp = sinkepr.getSingleBitPort();
-    sourceport = sourceepr.getPort();
-    sinkport = sinkepr.getPort();
-    
-    
-    sourcename = char(sourceport.getName());
-    if (sourceport.isBus()), sourceindex = ['(' num2str(sourcesbp.bitPosition()) ')']; else sourceindex = []; end
-    if (~sourceepr.isTopLevelPortRef())
-        sourceinstance = sourceepr.getCellInstance();
-        sourceprefix = [char(sourceinstance.getName()) ','];
-        if (~sourceport.isOutputOnly()), sourcesuffix = '@O'; else sourcesuffix = []; end
-    else
-        sourceprefix = [];
-        if (~sourceport.isInputOnly()), sourcesuffix = '@O'; else sourcesuffix = []; end
-    end
-    head = [sourceprefix sourcename sourceindex sourcesuffix];
-    
-    
-    sinkname = char(sinkport.getName());
-    if (sinkport.isBus()), sinkindex = ['(' num2str(sinksbp.bitPosition()) ')']; else sinkindex = []; end
-    if (~sinkepr.isTopLevelPortRef())
-        sinkinstance = sinkepr.getCellInstance();
-        sinkprefix = [char(sinkinstance.getName()) ','];
-        if (~sinkport.isInputOnly()), sinksuffix = '@I'; else sinksuffix = []; end        
-    else
-        sinkprefix = [];
-        if (~sinkport.isOutputOnly()), sinksuffix = '@I'; else sinksuffix = []; end
-    end
-    tail = [sinkprefix sinkname sinkindex sinksuffix];
-        
-    
-    
-    
-    
-    %else
-    %    suffix = [];
-    %end
-    
-    disp([head '->' tail]);
-    
-    
-    
-
-    
-    
-    
-    
-    %disp(edge);
-end
-%}
-
-keys = signal2uid.keys();
-out_labels(cell2mat(signal2uid.values(keys))) = keys;
-
-
-
-    function push_input_port(in_port)
-    end
-
-    function push_output_port(in_port)
-    end
 
 
 
@@ -293,11 +225,11 @@ out_labels(cell2mat(signal2uid.values(keys))) = keys;
     
 %}
 
-edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
+%edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
 
 
 
-out_test = signal2uid;
+
 
 
 
