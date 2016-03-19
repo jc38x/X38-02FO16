@@ -5,10 +5,9 @@
 %**************************************************************************
 
 function [out_delay, out_labels, out_range, out_equations] = random_dag(in_npi, in_nin, in_npo, in_mind, in_maxd)
-sz = in_npi + in_nin + in_npo;
-inofs = in_npi;
-inbse = in_npi + 1;
 poofs = in_npi + in_nin;
+sz = poofs + in_npo;
+inofs = in_npi;
 iein = zeros(1, in_nin);
 oein = zeros(1, in_nin);
 out_delay = spalloc(sz, sz, (2 * in_nin) + in_npo);
@@ -29,7 +28,7 @@ for spi = randperm(in_npi);
     iein(sin) = iein(sin) + 1;
 end
 
-takeninin = full(out_delay(1:(poofs), (inbse):(poofs)).' <= 0);
+takeninin = full(out_delay(1:(poofs), (in_npi + 1):(poofs)).' <= 0);
 takeninin((1:(in_nin + 1):(in_nin ^ 2)) + (in_npi * in_nin)) = false;
 piin = 1:poofs;
 
@@ -45,23 +44,11 @@ while (~all(iein >= 2))
     takeninin(tail, head) = false;
     adjtail = tail + inofs;
     out_delay(head, adjtail) = random_delay();
-    if ((head > in_npi) && ~graphisdag(out_delay))
-        out_delay(head, adjtail) = 0;
-    else
-        iein(tail) = iein(tail) + 1;
-    end
+    if ((head > in_npi) && ~graphisdag(out_delay)), out_delay(head, adjtail) = 0; else iein(tail) = iein(tail) + 1; end
 end
 
-i1 = 1;
-in = in_npi;
-v1 = inbse;
-vn = poofs;
-o1 = vn + 1;
-on = vn + in_npo;
-
-out_range = prepare_range(i1, in, v1, vn, o1, on);
+out_range = prepare_range(in_npi, in_nin, in_npo);
 out_labels = node_labels(out_range);
-
 out_equations = cell(1, out_range.sz);
 out_equations([out_range.pi, out_range.po]) = {''};
 
@@ -73,13 +60,14 @@ gates = [
     {'not(or('}, {'))'};
     {'not(xor('}, {'))'}
     ];
+gaterange = 1:size(gates, 1);
 
 for in = out_range.in
     input = find(out_delay(:, in));
     if (numel(input) < 2)
         out_equations(in) = {['not([' out_labels{input} '])']};
     else
-        gate = datasample(1:size(gates, 1), 1);
+        gate = datasample(gaterange, 1);
         out_equations(in) = {[gates{gate, 1} '[' out_labels{input(1)} '],[' out_labels{input(2)} ']' gates{gate, 2}]};
     end
 end
