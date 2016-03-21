@@ -1,5 +1,6 @@
 
-function [out_delay, out_labels, out_range, out_descriptor] = edifimport(in_filename)
+function [out_delay, out_labels, out_range, out_descriptor] = ngcedif2mat(in_filename)
+
 edifenvironment = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
 nftopcell = edifenvironment.getTopCell();
 topcell = edu.byu.ece.edif.tools.flatten.FlattenedEdifCell(nftopcell);
@@ -11,12 +12,17 @@ pilist = topcell.getInputPorts();
 inlist = topcell.getCellInstanceList();
 polist = topcell.getOutputPorts();
 
+
+
+
 estimatededges = pilist.size() + (2 * polist.size()) - alllist.size();
 signal2uid = containers.Map();
 uid = 0;
 instancecopy = containers.Map();
 instancecell = containers.Map();
 edgesmap = containers.Map();
+
+
 
 piiterator = pilist.iterator();
 while (piiterator.hasNext())
@@ -31,16 +37,18 @@ while (initerator.hasNext())
     instance = initerator.next();
     instancename = char(instance.getName());
     celltype = instance.getCellType();
-    beginuid = uid;
     prefix = [instancename ','];
+    beginuid = uid;
+    instancecell(instancename) = instance;
+    
     celloutiterator = celltype.getOutputPorts().iterator();
     while (celloutiterator.hasNext()), push_port(prefix, celloutiterator.next(), ''); end
     instancecopy(instancename) = (beginuid + 1):uid;
+    
     celliniterator = celltype.getInputPorts().iterator();
     inputedges = 0;
     while (celliniterator.hasNext()), inputedges = inputedges + celliniterator.next().getWidth(); end
     estimatededges = estimatededges + ((uid - beginuid) * inputedges);
-    instancecell(instancename) = instance;
 end
 szin = uid - szpi;
 
@@ -50,12 +58,31 @@ while (poiterator.hasNext())
     if (~port.isOutputOnly()), suffix = '@I'; else suffix = ''; end
     push_port('', port, suffix);
 end
-szpo = uid - szin - szpi;
+szpo = uid - szin - szpi;   
 
-out_labels = cell(1, uid);
+out_range = prepare_range(szpi, szin, szpo);
+
+out_labels = cell(1, out_range.sz);
 keys = signal2uid.keys();
 out_labels(cell2mat(signal2uid.values(keys))) = keys;
-out_range = prepare_range(szpi, szin, szpo);
+
+instancelist = cell(1, out_range.sz);
+for k = out_range.in
+    label = out_labels{k};
+    instancelist{k} = instancecell(label(1:(find(label == ',') - 1)));
+end
+
+
+
+
+
+
+
+
+
+
+
+
 
 graphedges = zeros(2, estimatededges);
 edgesindex = 0;
@@ -101,6 +128,12 @@ while (edgesiterator.hasNext())
 end
 
 out_delay = sparse(graphedges(1, :), graphedges(2, :), 1, uid, uid);
+
+
+
+
+order = graphtopoorder(out_delay);
+
 
 
 

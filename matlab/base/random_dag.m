@@ -53,12 +53,12 @@ out_equations = cell(1, out_range.sz);
 out_equations([out_range.pi, out_range.po]) = {''};
 
 gates = [
-    {'and('}, {')'};
-    {'or('}, {')'};
-    {'xor('}, {')'};
-    {'not(and('}, {'))'};
-    {'not(or('}, {'))'};
-    {'not(xor('}, {'))'}
+    {'and('},     {','}, {')'};
+    {'or('},      {','}, {')'};
+    {'xor('},     {','}, {')'};
+    {'not(and('}, {','}, {'))'};
+    {'not(or('},  {','}, {'))'};
+    {'not(xor('}, {','}, {'))'}
     ];
 gaterange = 1:size(gates, 1);
 
@@ -68,7 +68,7 @@ for in = out_range.in
         out_equations(in) = {['not([' out_labels{input} '])']};
     else
         gate = datasample(gaterange, 1);
-        out_equations(in) = {[gates{gate, 1} '[' out_labels{input(1)} '],[' out_labels{input(2)} ']' gates{gate, 2}]};
+        out_equations(in) = {[gates{gate, 1} '[' out_labels{input(1)} ']' gates{gate, 2} '[' out_labels{input(2)} ']' gates{gate, 3}]};
     end
 end
 
