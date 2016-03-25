@@ -7,10 +7,75 @@ topcell = edu.byu.ece.edif.tools.flatten.FlattenedEdifCell(nftopcell);
 edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
 edges = edifgraph.getEdges();
 
+
+lut2uid = containers.Map();
+uid = 0;
+
+    function push_lut(in_instancename)
+    if (lut2uid.isKey(in_instancename)), return; end
+    uid = uid + 1;
+    lut2uid(in_instancename) = uid;
+    end
+
+
+
+edgesiterator = edges.iterator();
+while (edgesiterator.hasNext())
+    edge = edgesiterator.next();
+    sourceepr = edge.getSourceEPR();
+    sinkepr = edge.getSinkEPR();
+    sourceport = sourceepr.getPort();
+    sinkport = sinkepr.getPort();
+
+    
+    
+    sourceinstance = getCellInstance();
+    sourcetype = sourceinstance.getCellType();
+    
+    switch (lower(char(sourcetype.getName())))
+        case 'lut2'
+        case 'lut3'
+        case 'lut4'
+        case 'lut5'
+        case 'lut6'
+        otherwise
+    end
+    
+    
+    
+    
+    sinkinstance = getCellInstance();
+    sourceinstance = sinkinstance.getCellType();
+    
+
+
+
+
+
+
+end
+
+
+
+
+
+
+
+%{
+edifenvironment = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
+nftopcell = edifenvironment.getTopCell();
+topcell = edu.byu.ece.edif.tools.flatten.FlattenedEdifCell(nftopcell);
+edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
+edges = edifgraph.getEdges();
+
 alllist = topcell.getPortList();
 pilist = topcell.getInputPorts();
 inlist = topcell.getCellInstanceList();
 polist = topcell.getOutputPorts();
+
+
+
+
 
 
 
@@ -21,7 +86,6 @@ uid = 0;
 instancecopy = containers.Map();
 instancecell = containers.Map();
 edgesmap = containers.Map();
-
 
 
 piiterator = pilist.iterator();
@@ -74,20 +138,11 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
 graphedges = zeros(2, estimatededges);
 edgesindex = 0;
-
 edgesiterator = edges.iterator();
+
+
 while (edgesiterator.hasNext())
     edge = edgesiterator.next();
     sourceepr = edge.getSourceEPR();
@@ -129,22 +184,80 @@ end
 
 out_delay = sparse(graphedges(1, :), graphedges(2, :), 1, uid, uid);
 
-
-
-
 order = graphtopoorder(out_delay);
-
-
-
-
-
-
-
-
 
 out_descriptor.environment = edifenvironment;
 out_descriptor.instances = instancecell;
 out_descriptor.edges = edgesmap;
+%}
+    
+
+
+
+
+
+
+
+
+
+
+
+%{
+
+%}
+
+
+
+
+
+%{
+
+%}
+
+
+
+
+%{
+not(not(A OR B))
+not(notA and notB)
+not(and(notA, notB))
+A
+  OR
+B
+A INV
+      AND INV
+B INV
+%}
+
+
+%{
+
+
+
+
+
+
+initerator = inlist.iterator();
+while (initerator.hasNext())
+    instance = initerator.next();
+    instancename = char(instance.getName());
+    celltype = instance.getCellType();
+    prefix = [instancename ','];
+    beginuid = uid;
+    instancecell(instancename) = instance;
+    
+    celloutiterator = celltype.getOutputPorts().iterator();
+    while (celloutiterator.hasNext()), push_port(prefix, celloutiterator.next(), ''); end
+    instancecopy(instancename) = (beginuid + 1):uid;
+    
+    celliniterator = celltype.getInputPorts().iterator();
+    inputedges = 0;
+    while (celliniterator.hasNext()), inputedges = inputedges + celliniterator.next().getWidth(); end
+    estimatededges = estimatededges + ((uid - beginuid) * inputedges);
+end
+szin = uid - szpi;
+
+
 
 %out_instances = ;
 %out_edges = edgesmap;
@@ -153,7 +266,7 @@ out_descriptor.edges = edgesmap;
 
 
 
-
+%}
 
 %instancetype = containers.Map();
 %topname =  char(topcell.getName());

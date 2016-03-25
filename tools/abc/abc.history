@@ -81,6 +81,9 @@ read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig
 comb
 strash
 write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_comb.aig
+write_dot -h
+read_truth -h
+read_truth FF
+read_truth -x FF
 source abc.rc
 help
-write_dot -h

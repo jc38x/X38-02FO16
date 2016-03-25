@@ -71,7 +71,8 @@ inhi = in_range.pihi + nin;
 polo = inhi + 1;
 pohi = inhi + in_range.szpo;
 
-out_range = prepare_range(pilo, pihi, inlo, inhi, polo, pohi);
+%out_range = prepare_range(pilo, pihi, inlo, inhi, polo, pohi);
+out_range = prepare_range(in_range.szpi, nin, in_range.szpo);
 
     function push_edge(in_o, in_i, in_d)
     edgesindex = edgesindex + 1;
