@@ -1,11 +1,11 @@
 clear all
-[delay, labels, range, descriptor] = ngcedif2mat('C:\Users\jcds\Documents\GitHub\X38-02FO16\matlab\sample_edif_special.edif');
+[delay, labels, range, descriptor] = ngcedif2mat('C:\Users\jcds\Documents\GitHub\X38-02FO16\matlab\sample_ISE_mapped.edif');
 
-equations = cell(1, numel(labels));
-equations(1:end) = {''};
+%equations = cell(1, numel(labels));
+%equations(1:end) = {''};
 
-bg = build_graph(delay, labels, range, equations);
-view(bg);
+%bg = build_graph(delay, labels, range, equations);
+%view(bg);
 
 
 %inbse = 0;

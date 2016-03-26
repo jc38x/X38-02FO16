@@ -1,5 +1,5 @@
 
-function [out_delay, out_labels, out_range, out_descriptor] = ngcedif2mat(in_filename)
+function [out_delay, out_labels, out_range, out_equations] = ngcedif2mat(in_filename)
 
 edifenvironment = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
 nftopcell = edifenvironment.getTopCell();
@@ -9,51 +9,171 @@ edges = edifgraph.getEdges();
 
 
 lut2uid = containers.Map();
+uid2instance = containers.Map('KeyType', 'double', 'ValueType', 'any'); 
 uid = 0;
 
-    function push_lut(in_instancename)
-    if (lut2uid.isKey(in_instancename)), return; end
+    function push_lut(in_instance)
+    instancename = char(in_instance.getName());        
+    if (lut2uid.isKey(instancename)), return; end
     uid = uid + 1;
-    lut2uid(in_instancename) = uid;
+    lut2uid(instancename) = uid;
+    uid2instance(uid) = in_instance;
+    end
+
+    function [out_uid] = test_lut(in_epr)
+    out_uid = [];
+    if (in_epr.isTopLevelPortRef()), return; end
+    instance = in_epr.getCellInstance();
+    if (~any(strcmpi(char(instance.getCellType().getName()), {'LUT2', 'LUT3', 'LUT4', 'LUT5', 'LUT6'}))), return; end
+    
+    disp(['Found: ' char(instance.getCellType().getName())]);
+    
+    push_lut(instance);
+    out_uid = lut2uid(char(instance.getName()));
     end
 
 
 
 edgesiterator = edges.iterator();
+edges = zeros(2, 200);
+edgesindex = 0;
+edgesmap = containers.Map();
+
+
 while (edgesiterator.hasNext())
     edge = edgesiterator.next();
     sourceepr = edge.getSourceEPR();
     sinkepr = edge.getSinkEPR();
-    sourceport = sourceepr.getPort();
-    sinkport = sinkepr.getPort();
+    
+    head = test_lut(sourceepr);
+    tail = test_lut(sinkepr);
+    
+    if (isempty(head) || isempty(tail)), continue; end
+    
+    edgesindex = edgesindex + 1;
+    edges(1, edgesindex) = head;
+    edges(2, edgesindex) = tail;
+    key = [num2str(head) '->' num2str(tail)];
+    
+    if (edgesmap.isKey(key))
+        edgesmap(key) = [edgesmap(key), {sinkepr.getPort().getName()}];
+    else
+        edgesmap(key) = {sinkepr.getPort().getName()};
+    end
+end
 
+edges = edges(:, 1:edgesindex);
+
+out_delay = sparse(edges(1, :), edges(2, :), 1, uid, uid);
+
+keys = lut2uid.keys();
+values = cell2mat(lut2uid.values(keys));
+
+out_labels = cell(1, uid);
+out_labels(values) = keys;
+
+out_equations = cell(1, uid);
+
+for k = 1:uid
+    inst = uid2instance(k);
+    init = char(inst.getProperty('INIT').getValue().getStringValue());
+    total = numel(init) * 4;
+    ns = log2(total);
+    inputs = num2cell(repmat([1, 0], ns, 1), 2);
+    inputs = combvec(inputs{:});
+    mint = zeros(1, total);
+    minti = 1;
     
+    for c = lower(init)
+        switch (c)
+        case 'f', keep = [1, 1, 1, 1];
+        case 'e', keep = [1, 1, 1, 0];
+        case 'd', keep = [1, 1, 0, 1];
+        case 'c', keep = [1, 1, 0, 0];
+        case 'b', keep = [1, 0, 1, 1];
+        case 'a', keep = [1, 0, 1, 0];
+        case '9', keep = [1, 0, 0, 1];
+        case '8', keep = [1, 0, 0, 0];
+        case '7', keep = [0, 1, 1, 1];
+        case '6', keep = [0, 1, 1, 0];
+        case '5', keep = [0, 1, 0, 1];
+        case '4', keep = [0, 1, 0, 0];
+        case '3', keep = [0, 0, 1, 1];
+        case '2', keep = [0, 0, 1, 0];
+        case '1', keep = [0, 0, 0, 1];
+        case '0', keep = [0, 0, 0, 0];
+        end
+        mint(minti:(minti + 3)) = keep;
+        minti = minti + 4;
+    end
     
-    sourceinstance = getCellInstance();
-    sourcetype = sourceinstance.getCellType();
+    inputs = inputs(:, logical(mint));
+    ni = size(inputs, 2);
+    mintcell = cell(1, ni);
     
-    switch (lower(char(sourcetype.getName())))
-        case 'lut2'
-        case 'lut3'
-        case 'lut4'
-        case 'lut5'
-        case 'lut6'
-        otherwise
+    for n = 1:ni
+        input = inputs(:, n);
+        mini = ['and(' operand(input(1), 'I0') ',' operand(input(2), 'I1') ')'];
+        for i = 3:numel(input)
+            mini = strcat('and(', mini, ',', operand(input(i), ['I' num2str(i - 1)]), ')');
+        end
+        mintcell{n} = mini;
+    end
+   
+    if (ni < 2)
+        
+    else
+        
     end
     
     
     
+    %16 -> 6
+    %8 -> 5
+    %4 -> 4
+    %2 -> 3
+    %1 -> 2
     
-    sinkinstance = getCellInstance();
-    sourceinstance = sinkinstance.getCellType();
     
-
-
-
-
-
-
+    
+    
+    out_equations{k} = mintcell;
 end
+
+
+    function [out_name] = operand(in_input, in_name)
+        if (in_input == 0)
+            out_name = ['not(' in_name ')'];
+        else
+            out_name = in_name;
+        end
+    end
+
+
+
+out_range = [];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

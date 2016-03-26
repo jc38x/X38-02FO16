@@ -4,13 +4,13 @@
 % 2016
 %**************************************************************************
 
-function [out_luts, out_inputs] = cones2luts(in_range, in_equations)
+function [out_luts, out_inputs] = cones2luts(in_range, in_equations, signals)
 out_luts = cell(1, in_range.szin);
 out_inputs = cell(1, in_range.szin);
 
 for k = in_range.in
     equation = in_equations{k};
-    signals = unique(regexp(equation, '\[\w+\]', 'match'));
+    %signals = unique(regexp(equation, '\[\w+\]', 'match'));
     ns = numel(signals);
     inputs = num2cell(repmat([1, 0], ns, 1), 2);
     inputs = combvec(inputs{:});

@@ -57,7 +57,8 @@ for cvidx = adjS
     remapnode(cell2mat(noderemap.values(keys))) = cell2mat(keys);
     
     equation = in_equations{cvidx + in_range.pihi};
-    for l = remapnode(redroenoc), equation = strrep(equation, ['[' in_labels{l} ']'], ['(' in_equations{l} ')']); end
+    %for l = remapnode(redroenoc), equation = strrep(equation, ['[' in_labels{l} ']'], ['(' in_equations{l} ')']); end
+    for l = remapnode(redroenoc), equation = strrep(equation, ['[' in_labels{l} ']'], [in_equations{l}]); end
     out_equations{i2} = equation;
 end
 
