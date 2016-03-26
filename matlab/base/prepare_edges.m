@@ -4,11 +4,10 @@
 % 2016
 %**************************************************************************
 
-function [out_iedge, out_oedge] = prepare_edges(in_delay)
-gsz = size(in_delay, 1);
-out_iedge = cell(1, gsz);
-out_oedge = cell(1, gsz);
-for n = 1:gsz
+function [out_iedge, out_oedge] = prepare_edges(in_delay, in_range)
+out_iedge = cell(1, in_range.sz);
+out_oedge = cell(1, in_range.sz);
+for n = 1:in_range.sz
     nv = find(in_delay(:, n).');
     out_iedge{n} = [nv; repmat(n, 1, numel(nv))];
     nv = find(in_delay(n, :));
