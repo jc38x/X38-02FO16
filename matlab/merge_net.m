@@ -53,7 +53,7 @@ replacemap.keys()
 
 for k = in_ranget.in
     equation = reqt{k};
-    signals = unique(regexp(equation, '\[\w+\]', 'match'));
+    signals = unique(regexp(equation, '\[\w*,?\w+\]', 'match'));
     signals = regexprep(signals, '[\[\]]', '');
 
     for j = numel(signals)

@@ -1,7 +1,7 @@
 
 function [out_equations] = random_equations(in_delay, in_labels, in_range)
 out_equations = cell(1, in_range.sz);
-out_equations([in_range.pi, in_range.po]) = {''};
+out_equations(in_range.top) = {''};
 
 constants = [
     {'0'};
@@ -36,12 +36,13 @@ gates = [
     ];
 
 gaterange = 1:size(gates, 1);
+constantrange = 1:size(constants, 1);
 
 for in = in_range.in
     input = find(in_delay(:, in));
     switch (numel(input))
     case 0
-        out_equations(in) = constants{datasample(1:size(constants, 1), 1)};
+        out_equations(in) = constants{datasample(constantrange, 1)};
     case 1
         out_equations(in) = {['not([' in_labels{input} '])']};
     case 2

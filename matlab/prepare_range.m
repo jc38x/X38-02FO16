@@ -22,6 +22,7 @@ out_range.in  = out_range.inlo:out_range.inhi;
 out_range.po  = out_range.polo:out_range.pohi;
 out_range.all = out_range.pilo:out_range.pohi;
 
+out_range.top = [out_range.pi, out_range.po];
 
 
 
