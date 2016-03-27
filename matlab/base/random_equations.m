@@ -1,3 +1,8 @@
+%**************************************************************************
+% X38-02FO16
+% jcds (jcds.x38e@gmail.com)
+% 2016
+%**************************************************************************
 
 function [out_equations] = random_equations(in_delay, in_labels, in_range)
 out_equations = cell(1, in_range.sz);

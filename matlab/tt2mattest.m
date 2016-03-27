@@ -6,7 +6,10 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-[delay, labels, range, equations] = tt2mat('D7FF');
+[delay, labels, range, equations] = tt2mat('ADBF');
+
+[labels, equations] = make_instance('LUT4_B', labels, range, equations);
+
 
 [iedge, oedge] = prepare_edges(delay, range);
 order = graphtopoorder(delay);
@@ -29,7 +32,7 @@ view(bg);
 br = build_graph(resultdelay, resultlabels, resultrange, resultequations);
 view(br);
 
-[luts, inputs] = cones2luts(resultrange, resultequations, {'[i0]', '[i1]', '[i2]', '[i3]'});
+[luts, inputs] = cones2luts(resultrange, resultequations, {'[LUT4_B,i0]', '[LUT4_B,i1]', '[LUT4_B,i2]', '[LUT4_B,i3]'});
 
 
 

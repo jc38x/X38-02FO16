@@ -12,7 +12,7 @@ for n = in_range.all
     node.Shape = 'circle';   
     if     (is_pi(n, in_range)), node.Color = [0.5 0.5 1.0];
     elseif (is_in(n, in_range)), node.Color = [1.0 1.0 0.5];
-    else                         node.Color = [1.0 0.5 0.5];
+    elseif (is_po(n, in_range)), node.Color = [1.0 0.5 0.5];
     end
     node.Description = in_equations{n};
 end
