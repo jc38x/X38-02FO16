@@ -1,12 +1,14 @@
+%**************************************************************************
+% X38-02FO16
+% jcds (jcds.x38e@gmail.com)
+% 2016
+%**************************************************************************
 
 function [out_labels, out_equations] = make_instance(in_name, in_labels, in_range, in_equations)
 out_labels = cell(1, in_range.sz);
 out_equations = cell(1, in_range.sz);
-out_equations([in_range.pi, in_range.po]) = {''};
-
+out_equations(in_range.top) = {''};
 translatemap = containers.Map();
-
-
 
 for k = in_range.all
     label = in_labels{k};
@@ -14,8 +16,6 @@ for k = in_range.all
     out_labels{k} = newlabel;
     translatemap(label) = newlabel;
 end
-
-
 
 for k = in_range.in
     equation = in_equations{k};
@@ -26,11 +26,4 @@ for k = in_range.in
     end
     out_equations{k} = equation;
 end
-
-
-
-
-    %signals
-        %if (translatemap.isKey(signal))
-        %end
 end

@@ -8,7 +8,7 @@ epsrand = [0.001, 0.005]; %small
 
 [delay, labels, range, equations] = tt2mat('D7FF');
 
-[iedge, oedge] = prepare_edges(delay);
+[iedge, oedge] = prepare_edges(delay, range);
 order = graphtopoorder(delay);
 redro = fliplr(order);
 depth = fill_depth(order, iedge, delay, range);

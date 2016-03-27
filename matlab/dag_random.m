@@ -1,5 +1,5 @@
 
-K = 3;
+K = 4;
 DF = false;
 mode = 1;
 alpha = 1.5; %1.5-2.5
@@ -7,10 +7,10 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 %[delay, range] = sample_valavan();
-%[delay, range] = random_dag(20, 30, 5, 1, 10); %ok
-[delay, labels, range, equations] = sample_valavan();%random_dag(20, 50, 10, 1, 9); %ok
+[delay, labels, range, equations] = random_dag(20, 30, 5, 1, 9); %ok
+%[delay, labels, range, equations] = sample_valavan();%random_dag(20, 50, 10, 1, 9); %ok
 
-[iedge, oedge] = prepare_edges(delay);
+[iedge, oedge] = prepare_edges(delay, range);
 order = graphtopoorder(delay);
 redro = fliplr(order);
 depth = fill_depth(order, iedge, delay, range);
