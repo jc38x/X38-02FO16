@@ -47,14 +47,18 @@ for in = in_range.in
     input = find(in_delay(:, in));
     switch (numel(input))
     case 0
-        out_equations(in) = constants{datasample(constantrange, 1)};
+        equation = constants{datasample(constantrange, 1)};
     case 1
-        out_equations(in) = {['not([' in_labels{input} '])']};
-    case 2
-        gate = datasample(gaterange, 1);
-        out_equations(in) = {[gates{gate, 1} '[' in_labels{input(1)} ']' gates{gate, 2} '[' in_labels{input(2)} ']' gates{gate, 3}]};
+        equation = ['not([' in_labels{input} '])'];
     otherwise
-        error('Gates with more than 2 inputs are not supported.');
+        equation = make_gate(['[' in_labels{input(1)} ']'], ['[' in_labels{input(2)} ']']);
+        for i = input(3:end).', equation = make_gate(equation, ['[', in_labels{i}, ']']); end
     end
+    out_equations(in) = {equation};
 end
+
+    function out_equation = make_gate(in_a, in_b)
+    gate = datasample(gaterange, 1);
+    out_equation = [gates{gate, 1} in_a gates{gate, 2} in_b gates{gate, 3}];
+    end
 end

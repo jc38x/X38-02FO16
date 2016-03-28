@@ -19,14 +19,14 @@ join = [{'LUT0090,o'; 'LUTD7FF,i0'}];
 
 
 
-%[delay, labels, range, equations] = merge_net(delay, labels, range, equations, d2, l2, r2, e2, join);
+
 
 
 
 bg = build_graph(dx, lx, rx, ex);
 view(bg);
 
-
+%[delay, labels, range, equations] = merge_net(delay, labels, range, equations, d2, l2, r2, e2, join);
 %uidremap = containers.Map(num2cell([in_rd.pi, in_rs.pi + offset, in_rd.in, in_rs.in + offset, in_rd.po, in_rs.po + offset]), num2cell(uidall));
 %out_delay = sparse(cell2mat(uidremap.values(num2cell([id.', it.' + offset, edges(1, :)]))), cell2mat(uidremap.values(num2cell([jd.', jt.' + offset, replacelist]))), 1, sz, sz);
 %out_labels(cell2mat(uidremap.values(num2cell(uidall)))) = [in_ld, in_ls];
