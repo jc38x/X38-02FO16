@@ -21,8 +21,7 @@ for j = in_join
 end
 
 [id, jd] = find(in_dd);
-[it, jt] = find(in_ds);
-    
+[it, jt] = find(in_ds);    
 edges = edgesmap.values();
 edges = [edges{:}];
 replacelist = edges(2, :);
@@ -53,5 +52,5 @@ out_range = prepare_range(in_rd.szpi + in_rs.szpi, in_rd.szin + in_rs.szin, in_r
 
 remove = removemap.values();
 remove = [remove{:}];
-[out_delay, out_labels, out_range, out_equations] = remove_port(out_delay, out_labels, out_range, out_equations, cell2mat(uidremap.values(num2cell(remove))));
+[out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, cell2mat(uidremap.values(num2cell(remove))));
 end
