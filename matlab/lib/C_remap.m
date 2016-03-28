@@ -1,3 +1,8 @@
+%**************************************************************************
+% X38-02FO16
+% jcds (jcds.x38e@gmail.com)
+% 2016
+%**************************************************************************
 
 classdef (Sealed = true) C_remap
     properties (SetAccess = immutable, GetAccess = private)
