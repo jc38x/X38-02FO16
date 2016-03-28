@@ -6,10 +6,11 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
+t = tic();
 [delay, labels, range, equations] = tt2mat('ADBF');
 
 [labels, equations] = make_instance('LUT4_B', labels, range, equations);
-
+toc(t)
 
 [iedge, oedge] = prepare_edges(delay, range);
 order = graphtopoorder(delay);

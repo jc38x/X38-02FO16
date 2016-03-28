@@ -1,3 +1,8 @@
+%**************************************************************************
+% X38-02FO16
+% jcds (jcds.x38e@gmail.com)
+% 2016
+%**************************************************************************
 
 function [out_delay, out_labels, out_range, out_equations] = attach_net(in_dd, in_ld, in_rd, in_ed, in_ds, in_ls, in_rs, in_es, in_join)
 signal2uidd = containers.Map(in_ld, num2cell(in_rd.all));
@@ -27,12 +32,13 @@ edges = [edges{:}];
 replacelist = edges(2, :);
 sz = in_rd.sz + in_rs.sz;
 uidall = 1:sz;
-uidremap = containers.Map(num2cell([in_rd.pi, in_rs.pi + offset, in_rd.in, in_rs.in + offset, in_rd.po, in_rs.po + offset]), num2cell(uidall));
+uidremap = C_remap([in_rd.pi, in_rs.pi + offset, in_rd.in, in_rs.in + offset, in_rd.po, in_rs.po + offset], uidall);
+allremap = uidremap.remap(uidall);
 
-out_delay = sparse(cell2mat(uidremap.values(num2cell([id.', it.' + offset, edges(1, :)]))), cell2mat(uidremap.values(num2cell([jd.', jt.' + offset, replacelist]))), 1, sz, sz);
+out_delay = sparse(uidremap.remap([id.', it.' + offset, edges(1, :)]), uidremap.remap([jd.', jt.' + offset, replacelist]), 1, sz, sz);
 
 out_labels = cell(1, sz);
-out_labels(cell2mat(uidremap.values(num2cell(uidall)))) = [in_ld, in_ls];
+out_labels(allremap) = [in_ld, in_ls];
 
 nes = in_es;
 for k = unique(replacelist - offset)
@@ -46,11 +52,11 @@ for k = unique(replacelist - offset)
 end
 
 out_equations = cell(1, sz);
-out_equations(cell2mat(uidremap.values(num2cell(uidall)))) = [in_ed, nes];
+out_equations(allremap) = [in_ed, nes];
 
 out_range = prepare_range(in_rd.szpi + in_rs.szpi, in_rd.szin + in_rs.szin, in_rd.szpo + in_rs.szpo);
 
 remove = removemap.values();
 remove = [remove{:}];
-[out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, cell2mat(uidremap.values(num2cell(remove))));
+[out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, uidremap.remap(remove));
 end

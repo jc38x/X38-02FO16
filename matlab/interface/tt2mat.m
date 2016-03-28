@@ -54,13 +54,12 @@ out_labels = cell(1, out_range.sz);
 keys = node2uid.keys();
 out_labels(cell2mat(node2uid.values(keys))) = keys;
 
-out_equations = cell(1, out_range.sz);
-for k = out_range.all, out_equations{k} = nodeequations(out_labels{k}); end
+out_equations = nodeequations.values(out_labels);
 
 edges = zeros(2, out_range.szin * 2 + 1);
 edgesindex = 0;
 
-for k = [out_range.in, out_range.po]
+for k = out_range.notpi
     for e = nodeiedges(out_labels{k})
         edgesindex = edgesindex + 1;
         edges(1, edgesindex) = e;
@@ -72,9 +71,7 @@ edges = edges(:, 1:edgesindex);
 out_delay = sparse(edges(1, :), edges(2, :), 1, out_range.sz, out_range.sz);
 
     function [out_name] = push_and(in_a, in_b)
-    nodeaid = node2uid(in_a);
-    nodebid = node2uid(in_b);
-    nodeid = sort([nodeaid, nodebid]);
+    nodeid = sort([node2uid(in_a), node2uid(in_b)]);
     out_name = ['and_' num2str(nodeid(1)) '_' num2str(nodeid(2))];
     push_node(out_name, ['and([' in_a '],[' in_b '])'], nodeid);
     end
