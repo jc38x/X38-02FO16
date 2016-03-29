@@ -7,7 +7,7 @@
 % http://fmv.jku.at/aiger/
 %**************************************************************************
 
-function [out_delay, out_labels, out_range] = aig2mat(in_filename)
+function [out_delay, out_labels, out_range, out_equations] = aig2mat(in_filename)
 fid = fopen(in_filename, 'r');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
 header = strsplitntrim(fgetl(fid), ' ');
@@ -88,8 +88,7 @@ while (~feof(fid))
     case 'l', base = out_range.inlo - l;
     end
     split = find(symbol == ' ', 1);
-    index = symbol(2:(split - 1));
-    index = str2double(index);
+    index = str2double(symbol(2:(split - 1)));
     label = symbol((split + 1):end);
     out_labels{base + index} = label;
 end
@@ -97,14 +96,7 @@ end
 
 fclose(fid);
 
-%pilo = 1;
-%pihi = size(pilist, 2);
-%inlo = pihi + 1;
-%inhi = pihi + size(inlist, 2);
-%polo = inhi + 1;
-%pohi = inhi + size(polist, 2);
 
-%out_range = prepare_range(pilo, pihi, inlo, inhi, polo, pohi);
 
 
 
@@ -125,7 +117,20 @@ edgelist = remap.values(num2cell(edgelist));
 
 out_delay = sparse([edgelist{1, :}], [edgelist{2, :}], 1, n, n);
 
+out_equations = cell(1, out_range.sz);
+k = out_range.pi;
+out_equations(k) = {''};
+k = out_range.po;
+out_equations(k) = {''};
 
+for k = out_range.in
+    label = out_labels{k};
+    ie = find(out_delay(:, k));
+    switch (label(1:3))
+    case 'and', out_equations{k} = ['and([' out_labels{ie(1)} '],[' out_labels{ie(2)} '])'];   
+    case 'not', out_equations{k} = ['not([' out_labels{ie(1)} '])'];
+    end
+end
 
     function error_handler(in_msg)
     fclose(fid);

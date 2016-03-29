@@ -1,20 +1,68 @@
 
-[delay, labels, range, equations] = tt2mat('0090');
-[labels, equations] = make_instance('LUT4_01', labels, range, equations);
- 
+K = 4;
+DF = false;
+mode = 1;
+alpha = 1.5; %1.5-2.5
+maxi = 20; %20
+epsrand = [0.001, 0.005]; %small
+
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090.aig';
 
-mat2aig(filename, delay, labels, range, equations);
+[do, lo, ro, eo] = tt2mat('FFFE');
+[lo, eo] = make_instance('LUT4_01', lo, ro, eo);
+ 
+mat2aig(filename, do, lo, ro, eo);
 
-bg = build_graph(delay, labels, range, equations);
-view(bg);
+%bg = build_graph(do, lo, ro, eo);
+%view(bg);
 
-[df, lf, rf] = aig2mat(filename);
+[df, lf, rf, ef] = aig2mat(filename);
 
-bf = build_graph(df, lf, rf, equations);
-view(bf);
+%bf = build_graph(df, lf, rf, ef);
+%view(bf);
+
+[iedgeo, oedgeo] = prepare_edges(do, ro);
+ordero = graphtopoorder(do);
+redroo = fliplr(ordero);
+deptho = fill_depth(ordero, iedgeo, do, ro);
+heighto = fill_height(redroo, oedgeo, do, ro);
+[afo, noedgeo] = fill_af(ordero, iedgeo, oedgeo, ro);
+
+[so, cvo] = hara(ordero, iedgeo, oedgeo, noedgeo, do, deptho, heighto, afo, ro, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
+[resultdo, resultlo, resultro, resulteo] = rebuild_graph_from_cones(so, cvo, do, ro, lo, eo);
+
+[lutso, inputso] = cones2luts(resultro, resulteo, {'[LUT4_01,i0]', '[LUT4_01,i1]', '[LUT4_01,i2]', '[LUT4_01,i3]'});
+
+[iedgef, oedgef] = prepare_edges(df, rf);
+orderf = graphtopoorder(df);
+redrof = fliplr(orderf);
+depthf = fill_depth(orderf, iedgef, df, rf);
+heightf = fill_height(redrof, oedgef, df, rf);
+[aff, noedgef] = fill_af(orderf, iedgef, oedgef, rf);
+
+[sf, cvf] = hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
+[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
+
+[lutsf, inputsf] = cones2luts(resultrf, resultef, {'[LUT4_01,i0]', '[LUT4_01,i1]', '[LUT4_01,i2]', '[LUT4_01,i3]'});
 
 
+
+
+
+
+
+
+
+%in_iedge{k};
+%out_equation{k} = ['[' out_labels{ie(1)} ']' ' & '  '[' out_labels{ie(2)} ']'];
+%out_equation{k} = ['~[' out_labels{ie(1)} ']'];
+%pilo = 1;
+%pihi = size(pilist, 2);
+%inlo = pihi + 1;
+%inhi = pihi + size(inlist, 2);
+%polo = inhi + 1;
+%pohi = inhi + size(polist, 2);
+%out_range = prepare_range(pilo, pihi, inlo, inhi, polo, pohi);
             %wp = wp + 1;
         %out_bytes(wp) = uint8(bitor(bitand(x, 127), 128));
     %wp = wp + 1;
@@ -29,7 +77,6 @@ view(bf);
 
 %for k = in_range.po
 %end
-
     %gate = ;
     %len = numel(equation);
             %if (ns ~= 1 && ns ~= 3)
@@ -53,21 +100,12 @@ view(bf);
             end
             if (isempty(split)), error('Incomplete and definition.'); end
             %}
-
-
-
-
-
-
-
-
 %for k = in_range.pi
 %    equation = in_equations{k};
 %    if (~strcmpi(equation, 'latch')), continue; end
     %latches = latches + 1;
 %    push_literal();
 %end
-
 %literal = literal + 2;
 %signal2literal(label) = literal;
 %literal = literal + 2;
@@ -75,17 +113,8 @@ view(bf);
     %signal2literal(['not(' signal ')']) = literal + 1;
     %literal = literal + 2;
     %signal2literal(in_label) = literal; 
-    
-
 %bdd = make_bdd(equation);
-    
-    
-    
-    
-    
     %signals = [];
-    
-    
     %if (equation == '0' || equation == '1')
     %elseif (strcmpi(equation(
     %end
@@ -93,20 +122,14 @@ view(bf);
     function [out_bdd] = make_bdd(in_equation)
         inputstart = find(in_equation == '(', 1);
         gate = in_equation(1:inputstart);
-        
         if (any(strcmpi(gate, {'and', 'or', 'xor'})))
         elseif (strcmpi(gate, 'not'))
         else
         end
-        
-        
-        
-        
         depth = 1;
         ignore = false;
         index = inputstart + 1;
         len = numel(in_equation);
-        
         while (index <= len)
             ch = in_equation(index);
             switch (ch)
@@ -115,28 +138,11 @@ view(bf);
                 case ')',
                     depth = depth - 1;
                     if (depth == 0)
-                        
                     end
-                    
-                    
                 case '[', ignore = true;
                 case ']', ignore = false;
                 case ',',
             end
-            
         end
-        
-
-            
-                
-                
-
-            
-            
-
-        
-        
     end
 %}
-
-
