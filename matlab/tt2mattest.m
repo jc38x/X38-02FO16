@@ -7,7 +7,7 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 t = tic();
-[delay, labels, range, equations] = tt2mat('ADBF');
+[delay, labels, range, equations] = tt2mat('AEBF');
 
 [labels, equations] = make_instance('LUT4_B', labels, range, equations);
 toc(t)

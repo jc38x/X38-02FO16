@@ -14,12 +14,16 @@ removemap = containers.Map('KeyType', 'double', 'ValueType', 'any');
 index = 0;
 
 for j = in_join
-    pod = signal2uidd(j{1});
-    pit = signal2uids(j{2});
+    sink = j{2};
+    pit = signal2uids(sink);
+    if (~is_pi(pit, in_rs)), error('Sink node must be PI.'); end
     onode = find(in_ds(pit, :));
     if (isempty(onode)), continue; end
-    if (is_pi(pod, in_rd)), inode = pod; else inode = find(in_dd(:, pod)); end    
-    replacemap(j{2}) = in_ld{inode};
+    
+    pod = signal2uidd(j{1});
+    if (is_pi(pod, in_rd)), inode = pod; elseif (is_po(pod, in_rd)), inode = find(in_dd(:, pod)); else error('Source node must be PI or PO.'); end
+    
+    replacemap(sink) = in_ld{inode};
     index = index + 1;
     edgesmap(index) = [repmat(inode, 1, numel(onode)); onode + offset];
     removemap(index) = pit + offset;

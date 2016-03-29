@@ -57,32 +57,57 @@ for k = 1:o, push_output_port(strtrim(fgetl(fid)), ['o' num2str(k) '_']); end
 
 for k = 1:a
     literal = andliteral{k};
-    push_node(literal, 'and2_');  
+    push_node(literal, 'and_');  
     rh0 = and(k) - next_sequence();
     make_and_input(num2str(rh0), literal);      
     make_and_input(num2str(rh0 - next_sequence()), literal);
 end
 
-fclose(fid);
 
 pilist = pilist(1:piindex);
 inlist = inlist(1:inindex);
 polist = polist(1:poindex);
 
-pilo = 1;
-pihi = size(pilist, 2);
-inlo = pihi + 1;
-inhi = pihi + size(inlist, 2);
-polo = inhi + 1;
-pohi = inhi + size(polist, 2);
-
-out_range = prepare_range(pilo, pihi, inlo, inhi, polo, pohi);
+out_range = prepare_range(size(pilist, 2), size(inlist, 2), size(polist, 2));
 
 remap = [
-    containers.Map(pilist, num2cell(out_range.pi));
-    containers.Map(inlist, num2cell(out_range.in));
-    containers.Map(polist, num2cell(out_range.po));
+    containers.Map(num2cell(pilist), num2cell(out_range.pi));
+    containers.Map(num2cell(inlist), num2cell(out_range.in));
+    containers.Map(num2cell(polist), num2cell(out_range.po));
     ];
+
+s2uk = signal2uid.keys();
+out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
+
+while (~feof(fid))
+    symbol = fgetl(fid);
+    if (strcmpi(symbol(1), 'c')), break; end
+    switch (symbol(1))
+    case 'i', base = out_range.pilo;
+    case 'o', base = out_range.polo;
+    case 'l', base = out_range.inlo - l;
+    end
+    split = find(symbol == ' ', 1);
+    index = symbol(2:(split - 1));
+    index = str2double(index);
+    label = symbol((split + 1):end);
+    out_labels{base + index} = label;
+end
+
+
+fclose(fid);
+
+%pilo = 1;
+%pihi = size(pilist, 2);
+%inlo = pihi + 1;
+%inhi = pihi + size(inlist, 2);
+%polo = inhi + 1;
+%pohi = inhi + size(polist, 2);
+
+%out_range = prepare_range(pilo, pihi, inlo, inhi, polo, pohi);
+
+
+
 
 edges = edges(:, 1:edgesindex);
 
@@ -100,8 +125,7 @@ edgelist = remap.values(num2cell(edgelist));
 
 out_delay = sparse([edgelist{1, :}], [edgelist{2, :}], 1, n, n);
 
-s2uk = signal2uid.keys();
-out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
+
 
     function error_handler(in_msg)
     fclose(fid);
@@ -127,7 +151,7 @@ out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
     function try_push_inverter(in_inst)
     val = str2double(in_inst);
     if (is_even(val) || instancemap.isKey(in_inst)), return; end
-    push_node(in_inst, 'inv1_');
+    push_node(in_inst, 'not_');
     push_edge(num2str(val - 1), in_inst);
     end
 

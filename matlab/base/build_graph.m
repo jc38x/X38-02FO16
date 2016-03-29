@@ -10,10 +10,12 @@ for n = in_range.all
     node = out_bg.Nodes(n);
     node.Label = in_labels{n};
     node.Shape = 'circle';   
-    if     (is_pi(n, in_range)), node.Color = [0.5 0.5 1.0];
-    elseif (is_in(n, in_range)), node.Color = [1.0 1.0 0.5];
-    elseif (is_po(n, in_range)), node.Color = [1.0 0.5 0.5];
+    if     (is_pi(n, in_range)), color = [0.5 0.5 1.0];
+    elseif (is_in(n, in_range)), color = [1.0 1.0 0.5];
+    elseif (is_po(n, in_range)), color = [1.0 0.5 0.5];
+    else                         error('Unknown node.');
     end
+    node.Color = color;
     node.Description = in_equations{n};
 end
 out_bg.ShowWeights = 'on';

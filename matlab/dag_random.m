@@ -1,5 +1,5 @@
 
-K = 4;
+K = 5;
 DF = false;
 mode = 1;
 alpha = 1.5; %1.5-2.5
@@ -8,14 +8,15 @@ epsrand = [0.001, 0.005]; %small
 
 %[delay, range] = sample_valavan();
 [delay, labels, range, equations] = random_dag(20, 30, 5, 1, 9, 2); %ok
-%[delay, labels, range, equations] = sample_valavan();%random_dag(20, 50, 10, 1, 9); %ok
 
-[iedge, oedge] = prepare_edges(delay, range);
 order = graphtopoorder(delay);
 redro = fliplr(order);
+[iedge, oedge] = prepare_edges(delay, range);
 depth = fill_depth(order, iedge, delay, range);
 height = fill_height(redro, oedge, delay, range);
 [af, noedge] = fill_af(order, iedge, oedge, range);
+
+
 
 t = tic();
 [s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
@@ -31,7 +32,3 @@ view(bg);
 br = build_graph(resultdelay, resultlabels, resultrange, resultequations);
 view(br);
 
-%gate = datasample(gaterange, 1);
-        %equation = [gates{gate, 1} '[' in_labels{input(1)} ']' gates{gate, 2} '[' in_labels{input(2)} ']' gates{gate, 3}];
-            %gate = datasample(gaterange, 1);
-            %equation = strcat(gates{gate, 1}, equation, gates{gate, 2}, '[', in_labels{i}, ']', gates{gate, 3});
