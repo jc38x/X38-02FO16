@@ -144,11 +144,13 @@ fclose(fid);
     function push_not(in_label, in_a)
         lit = signal2literal(in_a);
         if (is_odd(lit))
+            warning(['INVERTER OF INVERTER ' in_label ' | ' in_a ]);
             lit = lit - 1;
+        else
+            lit = lit + 1;
         end
         
-        if (is_odd(lit)), error(['INVERTER OF INVERTER ' in_label ' | ' in_a ]); end
         
-    signal2literal(in_label) = lit + 1;%signal2literal(in_a) + 1;
+    signal2literal(in_label) = lit;%signal2literal(in_a) + 1;
     end
 end

@@ -7,40 +7,50 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090.aig';
-optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT.aig';
+optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT2.aig';
 path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 
-[do, lo, ro, eo] = tt2mat('FF4F');
+[do, lo, ro, eo] = tt2mat('D7FF');
 [lo, eo] = make_instance('LUT4_01', lo, ro, eo);
 
-[d2, l2, r2, e2] = tt2mat('FF40');
+[d2, l2, r2, e2] = tt2mat('F040');
 [l2, e2] = make_instance('LUT4_02', l2, r2, e2);
 
-join = [{'LUT4_01,o';  'LUT4_02,i3'}, ...
-        {'LUT4_01,i0'; 'LUT4_02,i2'}, ...
-        {'LUT4_01,i1'; 'LUT4_02,i0'}, ...
-        {'LUT4_01,i3'; 'LUT4_02,i1'}  ...
+join = [{'LUT4_01,o'; 'LUT4_02,i0'}, ...
+        {'LUT4_01,i1'; 'LUT4_02,i1'}, ...
+        {'LUT4_01,i2'; 'LUT4_02,i2'}, ...
+        {'LUT4_01,i3'; 'LUT4_02,i3'}  ...
         ];
 
 [do, lo, ro, eo] = attach_net(do, lo, ro, eo, d2, l2, r2, e2, join);
 [do, lo, ro, eo] = remove_node(do, lo, ro, eo, find(strcmpi(lo, 'LUT4_01,o')));
 
-bg = build_graph(do, lo, ro, eo);
-view(bg);
- 
-%disp('AIG');
-
 mat2aig(filename, do, lo, ro, eo);
 
+bo = build_graph(do, lo, ro, eo);
+view(bo);
 
 script = [
     {['read_aiger ' filename]};
+    {'b'};
+    {'b'};
+    {'rw -l'};
+    {'rw -lz'};
+    {'b'};
+    {'rw -lz'};
+    {'b'};
+    {'refactor'};
     {['write_aiger -s ' optname]}
     ];
 stdio_hook(path, false, script, @stdo_callback_echo);
 
+[df, lf, rf, ef] = aig2mat(optname);
 
-[df, lf, rf, ef] = aig2mat(filename);
+bf = build_graph(df, lf, rf, ef);
+view(bf);
+
+
+
 
 
 [iedgeo, oedgeo] = prepare_edges(do, ro);
@@ -54,11 +64,6 @@ heighto = fill_height(redroo, oedgeo, do, ro);
 [resultdo, resultlo, resultro, resulteo] = rebuild_graph_from_cones(so, cvo, do, ro, lo, eo);
 
 [lutso, inputso] = cones2luts(resultro, resulteo, {'[LUT4_01,i0]', '[LUT4_01,i1]', '[LUT4_01,i2]', '[LUT4_01,i3]'});
-
-
-bf = build_graph(df, lf, rf, ef);
-view(bf);
-
 
 [iedgef, oedgef] = prepare_edges(df, rf);
 orderf = graphtopoorder(df);
