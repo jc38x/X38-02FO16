@@ -48,7 +48,7 @@ nes = in_es;
 for k = unique(replacelist - offset)
     equation = nes{k};
     signals = regexprep(unique(regexp(equation, '\[\w*,?\w+\]', 'match')), '[\[\]]', '');
-    for j = numel(signals)
+    for j = 1:numel(signals)
         signal = signals{j};
         if (replacemap.isKey(signal)), equation = regexprep(equation, signal, replacemap(signal)); end
     end

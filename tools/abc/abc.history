@@ -85,5 +85,7 @@ write_dot -h
 read_truth -h
 read_truth FF
 read_truth -x FF
-source abc.rc
 help
+source abc.rc
+read_aiger -h
+write_aiger -h

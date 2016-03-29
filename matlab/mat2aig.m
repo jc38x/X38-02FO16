@@ -108,7 +108,9 @@ fclose(fid);
     signal2literal(in_label) = literal; 
     end
 
-    function push_and(in_label, in_a, in_b)    
+    function push_and(in_label, in_a, in_b)
+        in_a
+        in_b
     andinputs(in_label) = sort([signal2literal(in_a), signal2literal(in_b)], 'descend');
     uid = uid + 1;
     and2uid(in_label) = uid;

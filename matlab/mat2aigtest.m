@@ -7,16 +7,48 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090.aig';
+optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT.aig';
+path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 
-[do, lo, ro, eo] = tt2mat('FFFE');
+[do, lo, ro, eo] = tt2mat('0090');
 [lo, eo] = make_instance('LUT4_01', lo, ro, eo);
+
+[d2, l2, r2, e2] = tt2mat('0300');
+[l2, e2] = make_instance('LUT4_02', l2, r2, e2);
+
+join = [{'LUT4_01,o';  'LUT4_02,i3'}, ...
+        {'LUT4_01,i0'; 'LUT4_02,i2'}, ...
+        {'LUT4_01,i1'; 'LUT4_02,i0'}, ...
+        {'LUT4_01,i3'; 'LUT4_02,i1'}  ...
+        ];
+
+[do, lo, ro, eo] = attach_net(do, lo, ro, eo, d2, l2, r2, e2, join);
+[do, lo, ro, eo] = remove_node(do, lo, ro, eo, find(strcmpi(lo, 'LUT4_01,o')));
+
+bg = build_graph(do, lo, ro, eo);
+view(bg);
  
+disp('AIG');
 mat2aig(filename, do, lo, ro, eo);
 
-%bg = build_graph(do, lo, ro, eo);
-%view(bg);
+script = [
+    {['read_aiger ' filename]};
+    {'b'};
+    {'b'};
+    {'rw -l'};
+    {'rw -lz'};
+    {'b'};
+    {'rw -lz'};
+    {'b'};
+    {['write_aiger -s ' optname]};
+    {'quit'};
+    ];
+stdio_hook(path, false, script, @stdo_callback_echo);
 
-[df, lf, rf, ef] = aig2mat(filename);
+
+
+
+[df, lf, rf, ef] = aig2mat(optname);
 
 %bf = build_graph(df, lf, rf, ef);
 %view(bf);
