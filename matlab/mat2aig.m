@@ -64,7 +64,15 @@ for andgate = andlist
     label = andgate{1};
     inputs = andinputs(label);
     rh0 = inputs(1);
-    fwrite(fid, [encode(uint32(signal2literal(label) - rh0)), encode(uint32(rh0 - inputs(2)))]);
+    %disp('delta 0 ----');
+    delta0 = encode(signal2literal(label) - rh0);
+    if (delta0 < 1)
+        disp(label);
+    end
+    %disp('delta 1 ----');
+    delta1 = encode(rh0 - inputs(2));
+    
+    fwrite(fid, [delta0, delta1]);
 end
 
 piid = 0;
@@ -83,9 +91,26 @@ fclose(fid);
     end
 
     function [out_bytes] = encode(in_u32)
+    if (in_u32 < 0), warning('< 0'); end
+        
+        
     out_bytes = uint8(zeros(1, 8));
     wp = 0;
-    x = in_u32;    
+    x = uint32(in_u32);
+    while (true)
+        b = bitand(x, 127);
+        x = bitshift(x, -7);
+        if (x ~= 0), b = bitor(b, 128); end
+        wp = wp + 1;
+        b = uint8(b);
+        out_bytes(wp) = b;
+        if (x == 0), break; end;        
+    end
+    out_bytes = out_bytes(1:wp);
+    %disp(num2str(in_u32));
+    %disp(num2str(out_bytes));
+        %{
+    
     while (bitand(x, 4294967168) ~= 0)
         putc(uint8(bitor(bitand(x, 127), 128)));
         x = bitshift(x, -7);
@@ -97,6 +122,7 @@ fclose(fid);
         wp = wp + 1;
         out_bytes(wp) = in_ch;
         end
+        %}
     end
 
     function write_line(in_line)
@@ -109,8 +135,6 @@ fclose(fid);
     end
 
     function push_and(in_label, in_a, in_b)
-        in_a
-        in_b
     andinputs(in_label) = sort([signal2literal(in_a), signal2literal(in_b)], 'descend');
     uid = uid + 1;
     and2uid(in_label) = uid;
@@ -118,6 +142,13 @@ fclose(fid);
     end
 
     function push_not(in_label, in_a)
-    signal2literal(in_label) = signal2literal(in_a) + 1;
+        lit = signal2literal(in_a);
+        if (is_odd(lit))
+            lit = lit - 1;
+        end
+        
+        if (is_odd(lit)), error(['INVERTER OF INVERTER ' in_label ' | ' in_a ]); end
+        
+    signal2literal(in_label) = lit + 1;%signal2literal(in_a) + 1;
     end
 end

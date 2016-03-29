@@ -24,6 +24,7 @@ for k = 1:size(in_script, 1)
     stdin.WriteLine(in_script{k});
 end
 
+
 stdin.Close();
 process.WaitForExit();
 process.Close();
