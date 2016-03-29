@@ -1,5 +1,9 @@
+%**************************************************************************
+% X38-02FO16
+% jcds (jcds.x38e@gmail.com)
+% 2016
+%**************************************************************************
 
-function stdo_callback_echo(obj, event)
-disp('echo');
-if (~isempty(event.Data)), disp(event.Data); end
+function stdo_callback_echo(~, event)
+fprintf('%s\n', char(event.Data));
 end

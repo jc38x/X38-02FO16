@@ -7,8 +7,9 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090.aig';
-optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT2.aig';
+optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT4.aig';
 path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
+wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
 
 [do, lo, ro, eo] = tt2mat('D7FF');
 [lo, eo] = make_instance('LUT4_01', lo, ro, eo);
@@ -31,7 +32,8 @@ bo = build_graph(do, lo, ro, eo);
 view(bo);
 
 script = [
-    {['read_aiger ' filename]};
+    {['read_aiger ' filename ';']};
+    {'ps'};
     {'b'};
     {'b'};
     {'rw -l'};
@@ -40,9 +42,23 @@ script = [
     {'rw -lz'};
     {'b'};
     {'refactor'};
-    {['write_aiger -s ' optname]}
+    {'ps'}
+    {['write_aiger -s ' optname]};
+    {'quit'};
     ];
-stdio_hook(path, false, script, @stdo_callback_echo);
+
+cmdfifo = C_cmdfifo(script);
+lh = spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
+%process = spawn_process(path, '', wd, true);
+
+
+
+%process.StandardOutput.ReadToEnd();
+
+
+
+
+
 
 [df, lf, rf, ef] = aig2mat(optname);
 
@@ -76,7 +92,6 @@ heightf = fill_height(redrof, oedgef, df, rf);
 [resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
 
 [lutsf, inputsf] = cones2luts(resultrf, resultef, {'[LUT4_01,i0]', '[LUT4_01,i1]', '[LUT4_01,i2]', '[LUT4_01,i3]'});
-
 
 
 

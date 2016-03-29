@@ -11,11 +11,12 @@ ttinputs = num2cell(repmat([1, 0], npi, 1), 2);
 ttinputs = combvec(ttinputs{:});
 ttinputs = ttinputs(:, logical(hexToBinaryVector(in_tthex, rows)));
 nt = size(ttinputs, 2);
+pi = cell(1, npi);
+
 node2uid = containers.Map();
 uid = 0;
 nodeequations = containers.Map();
 nodeiedges = containers.Map();
-pi = cell(1, npi);
 
 for k = 1:npi
     pi{k} = ['i' num2str(k - 1)];
