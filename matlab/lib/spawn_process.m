@@ -8,7 +8,7 @@
 % https://msdn.microsoft.com/en-us/library/system.diagnostics.process
 %**************************************************************************
 
-function [lh] = spawn_process(in_path, in_cmdline, in_wd, in_cmdshow, in_stdinscript, in_stdoutcallback)
+function [out_lh] = spawn_process(in_path, in_cmdline, in_wd, in_cmdshow, in_stdinscript, in_stdoutcallback)
 process = System.Diagnostics.Process;
 
 process.EnableRaisingEvents = true;
@@ -22,18 +22,15 @@ process.StartInfo.Arguments = in_cmdline;
 process.StartInfo.WorkingDirectory = in_wd;
 process.StartInfo.CreateNoWindow = in_cmdshow;
 
-
-
-
-lh = process.addlistener('OutputDataReceived', in_stdoutcallback);
+out_lh = process.addlistener('OutputDataReceived', in_stdoutcallback);
 
 process.Start();
 process.BeginOutputReadLine();
 
 stdin = process.StandardInput;
 for line = in_stdinscript.', stdin.WriteLine([line{:}]); end
-
 stdin.Close();
+
 process.WaitForExit();
 process.Close();
 end

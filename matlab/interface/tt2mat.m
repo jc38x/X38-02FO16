@@ -12,7 +12,6 @@ ttinputs = combvec(ttinputs{:});
 ttinputs = ttinputs(:, logical(hexToBinaryVector(in_tthex, rows)));
 nt = size(ttinputs, 2);
 pi = cell(1, npi);
-
 node2uid = containers.Map();
 uid = 0;
 nodeequations = containers.Map();

@@ -34,13 +34,6 @@ view(bo);
 script = [
     {['read_aiger ' filename ';']};
     {'ps'};
-    {'b'};
-    {'b'};
-    {'rw -l'};
-    {'rw -lz'};
-    {'b'};
-    {'rw -lz'};
-    {'b'};
     {'refactor'};
     {'ps'}
     {['write_aiger -s ' optname]};
@@ -49,25 +42,11 @@ script = [
 
 cmdfifo = C_cmdfifo(script);
 lh = spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
-%process = spawn_process(path, '', wd, true);
-
-
-
-%process.StandardOutput.ReadToEnd();
-
-
-
-
-
 
 [df, lf, rf, ef] = aig2mat(optname);
 
 bf = build_graph(df, lf, rf, ef);
 view(bf);
-
-
-
-
 
 [iedgeo, oedgeo] = prepare_edges(do, ro);
 ordero = graphtopoorder(do);
@@ -95,11 +74,18 @@ heightf = fill_height(redrof, oedgef, df, rf);
 
 
 
+%{
+{'b'};
+    {'b'};
+    {'rw -l'};
+    {'rw -lz'};
+    {'b'};
+    {'rw -lz'};
+    {'b'};
+%}
 
-
-
-
-
+%process = spawn_process(path, '', wd, true);
+%process.StandardOutput.ReadToEnd();
 %in_iedge{k};
 %out_equation{k} = ['[' out_labels{ie(1)} ']' ' & '  '[' out_labels{ie(2)} ']'];
 %out_equation{k} = ['~[' out_labels{ie(1)} ']'];

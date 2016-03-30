@@ -4,6 +4,6 @@
 % 2016
 %**************************************************************************
 
-function stdo_callback_echo(~, event)
+function stdout_callback_echo(~, event)
 fprintf('%s\n', char(event.Data));
 end
