@@ -2,13 +2,255 @@
 function [out_delay, out_labels, out_range, out_equations] = ngcedif2mat(in_filename)
 
 edifenvironment = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
-nftopcell = edifenvironment.getTopCell();
-topcell = edu.byu.ece.edif.tools.flatten.FlattenedEdifCell(nftopcell);
+topcell = edifenvironment.getTopCell();
 edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
 edges = edifgraph.getEdges();
 
+alllist = topcell.getPortList();
+pilist = topcell.getInputPorts();
+inlist = topcell.getCellInstanceList();
+polist = topcell.getOutputPorts();
 
 lut2uid = containers.Map();
+uid2lut = containers.Map();
+lut2net = containers.Map();
+uid = 0;
+piindex = 0;
+poindex = 0;
+
+
+
+
+out_delay = [];
+out_labels = [];
+out_range = [];
+out_equations = [];
+
+initerator = inlist.iterator();
+while (initerator.hasNext())
+    instance = initerator.next();
+    if (~any(strcmpi(char(instance.getType()), {'LUT2', 'LUT3', 'LUT4', 'LUT5', 'LUT6'}))), continue; end
+    
+    instancename = char(instance.getName());
+
+    [d, l, r, e] = tt2mat(char(instance.getProperty('INIT').getValue().getStringValue()));
+    [l, e] = make_instance(instancename, l, r, e);
+    
+    uid = uid + 1;
+    if (uid == 1)
+        out_delay = d;
+        out_labels = l;
+        out_range = r;
+        out_equations = e;
+    else
+        [out_delay, out_labels, out_range, out_equations] = join_net(out_delay, out_labels, out_range, out_equations, d, l, r, e, []);
+    end
+    
+    lut2uid(instancename) = uid;
+end
+
+
+    
+
+edgesiterator = edges.iterator();
+while (edgesiterator.hasNext())
+    edge = edgesiterator.next();
+    sourceepr = edge.getSourceEPR();
+    sinkepr = edge.getSinkEPR();
+    
+    
+    
+    if (sourceepr.isTopLevelPortRef())
+        sourcelut = false;
+    else
+        sourceinstance = sourceepr.getCellInstance();
+        sourceinstancename = char(sourceinstance.getName());
+        sourcelut = lut2uid.isKey(sourceinstancename);
+    end
+    
+    if (sinkepr.isTopLevelPortRef())
+        sinklut = false;
+    else
+        sinkinstance = sinkepr.getCellInstance();
+        sinkinstancename = char(sinkinstance.getName());
+        sinklut = lut2uid.isKey(sinkinstancename);
+    end
+    
+    
+    
+    
+    sourcefullportname = make_port_name(sourceepr, true);
+    sinkfullportname = make_port_name(sinkepr, false);
+    
+    
+    
+    
+    
+    
+    
+    if (sourcelut && ~sinklut)
+        sourceindex = find(strcmpi(sourcefullportname, out_labels));
+        assert(numel(sourceindex) == 1);
+        sinkindex = find(strcmpi(sinkfullportname, out_labels));
+        if (numel(sinkindex) == 1)
+            out_delay(sourceindex, sinkindex) = 1;
+        elseif (numel(sinkindex) == 0)
+            d = sparse([],[],[],1,1,1);
+            l = {sinkfullportname};
+            r = prepare_range(0, 0, 1);
+            e = {''};
+            
+            [out_delay, ...
+                out_labels, ...
+                out_range, ...
+                out_equations] = join_net(out_delay, out_labels, out_range, out_equations, d, l, r, e, {sourcefullportname; sinkfullportname});
+        else
+            error('???');
+        end
+    elseif (~sourcelut && sinklut)
+        sinkindex = find(strcmpi(sinkfullportname, out_labels));
+        assert(numel(sinkindex) == 1);
+        sourceindex = find(strcmpi(sourcefullportname, out_labels));
+        if (numel(sourceindex) == 1)
+            out_delay(sourceindex, sinkindex) = 1;
+        elseif (numel(sourceindex) == 0)
+            d = sparse([],[],[],1,1,1);
+            l = {sourcefullportname};
+            r = prepare_range(1,0,0);
+            e = {''};
+            
+            sinkfullportname
+            out_labels
+            [out_delay, ...
+                out_labels, ...
+                out_range, ...
+                out_equations] = join_net(d, l, r, e, out_delay, out_labels, out_range, out_equations, {sourcefullportname; sinkfullportname});
+        else
+            error('???');
+        end
+    elseif (sourcelut && sinklut)
+        sinkindex = find(strcmpi(sinkfullportname, out_labels));
+        assert(numel(sinkindex) == 1);
+        sourceindex = find(strcmpi(sourcefullportname, out_labels));
+        assert(numel(sourceindex) == 1);
+        
+        out_delay(sourceindex, sinkindex) = 1;
+    else
+    end
+end
+
+
+    function [out_name] = make_port_name(in_portepr, in_source)
+    port = in_portepr.getPort();
+    name = char(port.getName());
+    if (port.isBus()), bit = ['(' num2str(in_portepr.getSingleBitPort().bitPosition()) ')']; else bit = ''; end
+    if (~in_portepr.isTopLevelPortRef())
+        prefix = [char(in_portepr.getCellInstance().getName()) ','];
+        suffix = '';
+	else
+        prefix = '';
+        if (in_source)
+            if (~port.isInputOnly()),  suffix = '@O'; else suffix = ''; end
+        else
+            if (~port.isOutputOnly()), suffix = '@I'; else suffix = ''; end
+        end
+    end
+    out_name = [prefix name bit suffix];
+    end
+    
+
+
+
+
+
+
+   
+    
+    
+    
+    
+    %uid2lut(uid) = in_instance;
+    
+    
+    
+    
+    
+    
+    
+    %sourceportname = [sourceinstance.getName() ',' char(sourceepr.getPort().getName())];
+    
+    
+    
+    
+%push_lut(instance);
+    %assert(~lut2uid.isKey(instancename));
+    %function push_lut(in_instance)
+    
+    %end
+
+
+%{
+for instance = uid2lut.values()
+    lut = instance{:};
+    lutname = char(lut.getName());
+    
+    
+    ieprlist = lut.getInputEPRs();
+    iepriterator = ieprlist.iterator();
+    tail = lut2uid(lutname);
+    
+    while (iepriterator.hasNext())
+        epr = iepriterator.next();
+        ii = epr.getCellInstance();
+        
+        
+        
+    end
+    
+    
+    
+    oepr = lut.getOutputEPRs();
+    
+    
+    
+    
+end
+%}
+
+
+
+
+
+
+
+    
+
+%instancename = char(instance.getName());
+%init = char(instance.getProperty('INIT').getValue().getStringValue());
+    
+    
+    
+    %
+    %make_instance(instancename, labels, range, equations);
+
+
+%{
+    prefix = [instancename ','];
+    beginuid = uid;
+    instancecell(instancename) = instance;
+    
+    celloutiterator = celltype.getOutputPorts().iterator();
+    while (celloutiterator.hasNext()), push_port(prefix, celloutiterator.next(), ''); end
+    instancecopy(instancename) = (beginuid + 1):uid;
+    
+    celliniterator = celltype.getInputPorts().iterator();
+    inputedges = 0;
+    while (celliniterator.hasNext()), inputedges = inputedges + celliniterator.next().getWidth(); end
+    estimatededges = estimatededges + ((uid - beginuid) * inputedges);
+    %}
+%topcell = edu.byu.ece.edif.tools.flatten.FlattenedEdifCell(nftopcell);
+
+%{
 uid2instance = containers.Map('KeyType', 'double', 'ValueType', 'any'); 
 uid = 0;
 
@@ -158,7 +400,7 @@ out_range = [];
 
 
 
-
+%}
 
 
 
@@ -412,13 +654,7 @@ for k = out_range.in
     end
 end
 %}
-
-
-
-
-
-
-
+%{
     function push_port(in_prefix, in_port, in_suffix)
     name = char(in_port.getName());
     if (in_port.isBus())
@@ -434,7 +670,5 @@ end
     uid = uid + 1;
     signal2uid(in_signal) = uid;
     end
-
-
+%}
 end
-

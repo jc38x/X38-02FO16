@@ -6,8 +6,9 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090.aig';
-optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT4.aig';
+filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040.aig';
+optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040_SIM.aig';
+
 path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
 

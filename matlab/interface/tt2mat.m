@@ -18,7 +18,7 @@ nodeequations = containers.Map();
 nodeiedges = containers.Map();
 
 for k = 1:npi
-    pi{k} = ['i' num2str(k - 1)];
+    pi{k} = ['I' num2str(k - 1)];
     push_node(pi{k}, '', []);
 end
 
@@ -32,7 +32,7 @@ else
     miniterms = cell(1, nt);
     for k = 1:nt
         input = ttinputs(:, k);
-        nodename = push_and(operand(input(1), 'i0'), operand(input(2), 'i1'));
+        nodename = push_and(operand(input(1), 'I0'), operand(input(2), 'I1'));
         for i = 3:numel(input), nodename = push_and(nodename, operand(input(i), pi{i})); end
         miniterms{k} = nodename;
     end
@@ -46,7 +46,7 @@ else
     end
 end
 
-push_node('o', '', node2uid(nodename));
+push_node('O', '', node2uid(nodename));
 
 out_range = prepare_range(npi, uid - npi - 1, 1);
 
