@@ -15,7 +15,7 @@ index = 0;
 
 for j = in_join
     sink = j{2};
-    sink
+    %sink
     pit = signal2uids(sink);
     %if (~is_pi(pit, in_rs)), error('Sink node must be PI.'); end
     onode = pit;%find(in_ds(pit, :));
