@@ -1,10 +1,196 @@
 
+t = tic();
 [d, l, r, e] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
+toc(t)
 
 bg = build_graph(d, l, r, e);
 view(bg);
 
 
+%jl = [in_ll{:}];
+%je = [in_el{:}];
+%jr = [in_rl{:}];
+%{
+offset = in_rd.sz;
+jl = [in_ld, in_ls];
+
+
+
+[id, jd] = find(in_dd);
+[is, js] = find(in_ds);
+
+
+
+sz = in_rd.sz + in_rs.sz;
+uidall = 1:sz;
+uidremap = C_remap([in_rd.pi, in_rs.pi + offset, in_rd.in, in_rs.in + offset, in_rd.po, in_rs.po + offset], uidall);
+allremap = uidremap.remap(uidall);
+
+%out_delay = sparse(uidremap.remap([id.', is.' + offset, edgesi]), uidremap.remap([jd.', js.' + offset, edgesj]), 1, sz, sz);
+out_delay = sparse(uidremap.remap([id.', is.' + offset]), uidremap.remap([jd.', js.' + offset]), 1, sz, sz);
+
+out_labels = cell(1, sz);
+out_labels(allremap) = jl;
+
+out_equations = cell(1, sz);
+out_equations(allremap) = [in_ed, in_es];
+
+out_range = prepare_range(in_rd.szpi + in_rs.szpi, in_rd.szin + in_rs.szin, in_rd.szpo + in_rs.szpo);
+%}
+
+%signal2uid = containers.Map(jl, num2cell([in_rd.all, in_rs.all]));
+%nj = size(in_join, 2);
+%edges = zeros(2, nj);
+
+%for edgesindex = 1:nj, edges(:, edgesindex) = [signal2uid(in_join{1, edgesindex}), signal2uid(in_join{2, edgesindex})]; end
+%if (isempty(edges))
+%    edgesi = [];
+%    edgesj = [];
+%else
+%    edgesi = edges(1, :);
+%    edgesj = edges(2, :);
+%end
+
+
+%alllist = topcell.getPortList();
+%pilist = topcell.getInputPorts();
+%polist = topcell.getOutputPorts();
+%uid2lut = containers.Map();
+%lut2net = containers.Map();
+%piindex = 0;
+%poindex = 0;
+%edges = edgesmap.values();
+%edges = [edges{:}];
+%replacelist = [];
+%replacelist = edges(2, :);
+%{
+nes = in_es;
+if (~isempty(replacelist))
+for k = unique(replacelist - offset)
+    equation = nes{k};
+    signals = regexprep(unique(regexp(equation, '\[\w*,?\w+\]', 'match')), '[\[\]]', '');
+    for j = 1:numel(signals)
+        signal = signals{j};
+        if (replacemap.isKey(signal)), equation = regexprep(equation, signal, replacemap(signal)); end
+    end
+    nes{k} = equation;
+end
+end
+%}
+
+
+
+
+
+%remove = removemap.values();
+%remove = [remove{:}];
+%[out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, uidremap.remap(remove));
+%edgesindex = 0;
+
+%edgesmap = containers.Map('KeyType', 'double', 'ValueType', 'any');
+
+
+
+    %edgesindex = edgesindex + 1;
+
+
+%signal2uidd = containers.Map(in_ld, num2cell(in_rd.all));
+%signal2uids = containers.Map(in_ls, num2cell(in_rs.all));
+
+%replacemap = containers.Map();
+%removemap = containers.Map('KeyType', 'double', 'ValueType', 'any');
+%sink = j{2};
+    
+    %pit = signal2uids(sink);
+    
+    
+    %onode = pit;
+    
+    
+    %pod = signal2uidd(j{1});
+    %inode = pod;
+    
+    %if (isempty(onode)), continue; end
+    %find(in_ds(pit, :));
+    %sink
+    %if (~is_pi(pit, in_rs)), error('Sink node must be PI.'); end
+    %if (is_pi(pod, in_rd)), inode = pod; elseif (is_po(pod, in_rd)), inode = pod; else error('Source node must be PI or PO.'); end
+        %find(in_dd(:, pod)); 
+    
+    %replacemap(sink) = in_ld{inode};
+    
+    %removemap(index) = pit + offset;
+    %assert(numel(sinkindex) == 1);
+    
+    %assert(numel(sourceindex) == 1);
+
+    %{
+        d = sparse([],[],[],1,1,1);
+        l = {sourcefullportname};
+        r = prepare_range(1,0,0);
+        e = {''};
+        
+        [out_delay, out_labels, out_range, out_equations] = join_net(d, l, r, e, out_delay, out_labels, out_range, out_equations, {sourcefullportname; sinkfullportname});
+        %}
+        %{
+        d = sparse([],[],[],1,1,1);
+        l = {sinkfullportname};
+        r = prepare_range(0, 0, 1);
+        e = {''};
+        
+        [out_delay, out_labels, out_range, out_equations] = join_net(out_delay, out_labels, out_range, out_equations, d, l, r, e, {sourcefullportname; sinkfullportname});
+        %}
+    %{
+    if (issourcelut && ~issinklut)
+        sourceindex = find(strcmpi(sourcefullportname, out_labels));
+        assert(numel(sourceindex) == 1);
+        sinkindex = find(strcmpi(sinkfullportname, out_labels));
+        if (numel(sinkindex) == 1)
+            out_delay(sourceindex, sinkindex) = 1;
+        elseif (numel(sinkindex) == 0)
+            d = sparse([],[],[],1,1,1);
+            l = {sinkfullportname};
+            r = prepare_range(0, 0, 1);
+            e = {''};
+            
+            [out_delay, ...
+                out_labels, ...
+                out_range, ...
+                out_equations] = join_net(out_delay, out_labels, out_range, out_equations, d, l, r, e, {sourcefullportname; sinkfullportname});
+        else
+            error('???');
+        end
+    elseif (~issourcelut && issinklut)
+        sinkindex = find(strcmpi(sinkfullportname, out_labels));
+        assert(numel(sinkindex) == 1);
+        sourceindex = find(strcmpi(sourcefullportname, out_labels));
+        if (numel(sourceindex) == 1)
+            out_delay(sourceindex, sinkindex) = 1;
+        elseif (numel(sourceindex) == 0)
+            d = sparse([],[],[],1,1,1);
+            l = {sourcefullportname};
+            r = prepare_range(1,0,0);
+            e = {''};
+            
+            %sinkfullportname
+            %out_labels
+            [out_delay, ...
+                out_labels, ...
+                out_range, ...
+                out_equations] = join_net(d, l, r, e, out_delay, out_labels, out_range, out_equations, {sourcefullportname; sinkfullportname});
+        else
+            error('???');
+        end
+    elseif (issourcelut && issinklut)
+        sinkindex = find(strcmpi(sinkfullportname, out_labels));
+        assert(numel(sinkindex) == 1);
+        sourceindex = find(strcmpi(sourcefullportname, out_labels));
+        assert(numel(sourceindex) == 1);
+        
+        out_delay(sourceindex, sinkindex) = 1;
+    else
+    end
+    %}
 
 
 
