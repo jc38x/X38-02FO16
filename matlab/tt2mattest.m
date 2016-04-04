@@ -7,10 +7,18 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 t = tic();
-[delay, labels, range, equations] = tt2mat('AEBF');
+[delay, labels, range, equations] = tt2mat('0090');
+
+[labels, equations] = rename_node(delay, labels, equations, [1,2,3,4], {'I0', 'I1', 'I2', 'I3'});
+
 
 [labels, equations] = make_instance('LUT4_B', labels, range, equations);
 toc(t)
+
+%bg = build_graph(delay, labels, range, equations);
+%view(bg);
+
+
 
 [iedge, oedge] = prepare_edges(delay, range);
 order = graphtopoorder(delay);
@@ -33,7 +41,7 @@ view(bg);
 br = build_graph(resultdelay, resultlabels, resultrange, resultequations);
 view(br);
 
-[luts, inputs] = cones2luts(resultrange, resultequations, {'[LUT4_B,i0]', '[LUT4_B,i1]', '[LUT4_B,i2]', '[LUT4_B,i3]'});
+[luts, inputs] = cones2luts(resultrange, resultequations, {'[LUT4_B,I0]', '[LUT4_B,I1]', '[LUT4_B,I2]', '[LUT4_B,I3]'});
 
 
 
