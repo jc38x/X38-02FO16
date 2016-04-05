@@ -57,11 +57,9 @@ for k = out_range.pi
     label = out_labels{k};
     if (~test_lut(label)), continue; end
     mapremove(k) = k;
-
     inode = find(out_delay(:, k));
     if (isempty(inode)), error(['Unconnected LUT input ' label '.']); end
     newlabel = out_labels{inode};
-
 	onode = find(out_delay(k, :));
     if (isempty(onode)), continue; end
     for n = onode, out_equations{n} = strrep(out_equations{n}, label, newlabel); end
@@ -94,6 +92,10 @@ out_edif = edifenvironment;
     pivot = find(in_fullportname == ',');
     out_isit = ~isempty(pivot) && lut2uid.isKey(in_fullportname(1:(pivot - 1)));
     end
+
+
+
+
 
 
     function [out_name] = make_port_name(in_portepr, in_source)

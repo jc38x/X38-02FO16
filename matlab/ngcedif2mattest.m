@@ -6,6 +6,62 @@ toc(t)
 bg = build_graph(d, l, r, e);
 view(bg);
 
+filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.aig';
+optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped_SIM.aig';
+path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
+wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
+
+mat2aig(filename, d, l, r, e);
+
+script = [
+    {['read_aiger ' filename ';']};
+    {'ps'};
+    {'refactor'};
+    {'ps'}
+    {['write_aiger -s ' optname]};
+    {'quit'};
+    ];
+
+cmdfifo = C_cmdfifo(script);
+lh = spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
+
+[d, l, r, e] = aig2mat(optname);
+
+bf = build_graph(d, l, r, e);
+view(bf);
+
+
+
+
+
+
+%[do, lo, ro, eo] = tt2mat('D7FF');
+%[lo, eo] = make_instance('LUT4_01', lo, ro, eo);
+
+%[d2, l2, r2, e2] = tt2mat('F040');
+%[l2, e2] = make_instance('LUT4_02', l2, r2, e2);
+
+%join = [{'LUT4_01,o'; 'LUT4_02,i0'}, ...
+%        {'LUT4_01,i1'; 'LUT4_02,i1'}, ...
+%        {'LUT4_01,i2'; 'LUT4_02,i2'}, ...
+%        {'LUT4_01,i3'; 'LUT4_02,i3'}  ...
+%        ];
+
+%[do, lo, ro, eo] = attach_net(do, lo, ro, eo, d2, l2, r2, e2, join);
+%[do, lo, ro, eo] = remove_node(do, lo, ro, eo, find(strcmpi(lo, 'LUT4_01,o')));
+
+
+
+%bo = build_graph(do, lo, ro, eo);
+%view(bo);
+
+
+
+
+
+
+
+
 
 
 

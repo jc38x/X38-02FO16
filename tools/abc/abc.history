@@ -96,7 +96,9 @@ rw -l
 rw -lz
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090.aig;
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT4.aig
-source abc.rc
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040.aig;
-refactor
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040_SIM.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.aig;
+refactor
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped_SIM.aig
