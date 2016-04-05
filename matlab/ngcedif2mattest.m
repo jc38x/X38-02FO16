@@ -8,6 +8,130 @@ view(bg);
 
 
 
+
+%merge_edges(get_graph_edges(out_delay), cell_collapse(mapproxy.values()), out_range.sz)
+%{
+newedges = zeros(2, edgecount);
+
+for k = 1:edgecount, newedges(:, k) = [signal2index(lutedges{1, k}); signal2index(lutedges{2, k})]; end
+
+out_delay = merge_edges(get_graph_edges(out_delay), newedges, out_range.sz);
+
+for k = out_range.pi
+    label = out_labels{k};
+    if (~test_lut(label)), continue; end
+    mapremove(k) = k;
+
+    inode = find(out_delay(:, k));
+    if (isempty(inode)), error(['Unconnected LUT input ' label '.']); end
+    newlabel = out_labels{inode};
+
+	onode = find(out_delay(k, :));
+    if (isempty(onode)), continue; end
+    for n = onode, out_equations{n} = strrep(out_equations{n}, label, newlabel); end
+    mapproxy(k) = [repmat(inode, 1, numel(onode)); onode];
+end
+
+for k = out_range.po
+    label = out_labels{k};
+    if (~test_lut(label)), continue; end
+    mapremove(k) = k;
+    onode = find(out_delay(k, :));
+    if (isempty(onode)), continue; end
+    mapproxy(k) = [find(out_delay(:, k)); onode];
+end
+
+[out_delay, out_labels, out_range, out_equations] = remove_node(merge_edges(get_graph_edges(out_delay), cell_collapse(mapproxy.values()), out_range.sz), out_labels, out_range, out_equations, cell_collapse(mapremove.values()));
+%}
+
+
+%{
+    function [out_index] = flatten_index(in_i, in_j)
+    end
+
+    function out_edges = get_graph_edges(in_graph)
+    [di, dj] = find(in_graph);
+    out_edges = [di.'; dj.'];
+    end
+
+    function [out_graph] = merge_edges(in_oldedges, in_newedges, in_sz)
+    out_graph = sparse([in_oldedges(1, :), in_newedges(1, :)], [in_oldedges(2, :), in_newedges(2, :)], 1, in_sz, in_sz);
+    end
+%}
+%[di, dj] = find(out_delay);
+%[di, dj] = find(out_delay);
+%out_delay = sparse([di.', newedges(1, :)], [dj.', newedges(2, :)], 1, out_range.sz, out_range.sz);
+
+
+
+
+
+%[di, dj] = find(out_delay);
+%proxyedges = cell_collapse(mapproxy.values());
+%out_delay = sparse([dk.', proxyedges(1, :)], [dj.', proxyedges(2, :)], 1, out_range.sz, out_range.sz);
+%{
+piremove = false(1, out_range.szpi);
+    piremove(k) = 1;
+%}
+
+%{
+    function [out_portindex] = connect_lut_port(in_fullportname, in_source, in_node)
+    pd = sparse([], [], [], 1, 1, 1);
+    pl = {in_fullportname};
+    pe = {''};
+    
+    if (in_source)
+        [out_delay, out_labels, out_range, out_equations] = join_net(pd, pl, prepare_range(1, 0, 0), pe, out_delay, out_labels, out_range, out_equations, {in_fullportname; in_node});
+    else
+        [out_delay, out_labels, out_range, out_equations] = join_net(out_delay, out_labels, out_range, out_equations, pd, pl, prepare_range(0, 0, 1), pe, {in_node; in_fullportname});
+    end
+    
+    out_portindex = find(strcmpi(in_fullportname, out_labels));
+    end
+%}
+
+%labels = mapl.values();
+%labels = [labels{:}];
+%{
+    sourceindex = find(strcmpi(sourcefullportname, out_labels));
+    if (isempty(sourceindex))
+    end
+    sinkindex = find(strcmpi(sinkfullportname, out_labels));
+    if (isempty(sinkindex))
+    end
+    %}
+    
+    
+    
+    %{
+    connect = false;
+    sourceindex = find(strcmpi(sourcefullportname, out_labels));
+    if (isempty(sourceindex)), sourceindex = connect_lut_port(sourcefullportname, true, sinkfullportname); connect = true; end    
+    sinkindex = find(strcmpi(sinkfullportname, out_labels));
+    if (isempty(sinkindex)), sinkindex = connect_lut_port(sinkfullportname, false, sourcefullportname); connect = true; end
+    
+    %
+    if (~connect)
+    out_delay(sourceindex, sinkindex) = 1;
+    end
+    %}
+%{
+    uid = uid + 1;
+    uid2d(uid) = d;
+    uid2l(uid) = l;
+    uid2r(uid) = r;
+    uid2e(uid) = e;
+    %}
+
+%uid2d = containers.Map('KeyType', 'double', 'ValueType', 'any');
+%uid2l = containers.Map('KeyType', 'double', 'ValueType', 'any');
+%uid2r = containers.Map('KeyType', 'double', 'ValueType', 'any');
+%uid2e = containers.Map('KeyType', 'double', 'ValueType', 'any');
+
+%out_delay = [];
+%out_labels = [];
+%out_range = [];
+%out_equations = [];
 %{
     if (uid == 1)
         out_delay = d;

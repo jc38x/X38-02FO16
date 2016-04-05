@@ -43,24 +43,13 @@ end
 
 uidall = 1:sz;
 keys = num2cell(nets);
-
-pi = mappi.values(keys);
-in = mapin.values(keys);
-po = mappo.values(keys);
-
-uidremap = C_remap([[pi{:}], [in{:}], [po{:}]], uidall);
+uidremap = C_remap([cell_collapse(mappi.values(keys)), cell_collapse(mapin.values(keys)), cell_collapse(mappo.values(keys))], uidall);
 allremap = uidremap.remap(uidall);
 
-i = mapi.values(keys);
-j = mapj.values(keys);
-
-out_delay = sparse(uidremap.remap([i{:}]), uidremap.remap([j{:}]), 1, sz, sz);
-
+out_delay = sparse(uidremap.remap(cell_collapse(mapi.values(keys))), uidremap.remap(cell_collapse(mapj.values(keys))), 1, sz, sz);
 out_labels = cell(1, sz);
-out_labels(allremap) = [in_ll{:}];
-
+out_labels(allremap) = cell_collapse(in_ll);
 out_equations = cell(1, sz);
-out_equations(allremap) = [in_el{:}];
-
+out_equations(allremap) = cell_collapse(in_el);
 out_range = prepare_range(szpi, szin, szpo);
 end

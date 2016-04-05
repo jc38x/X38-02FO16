@@ -2,46 +2,41 @@
 function [out_delay, out_labels, out_range, out_equations, out_edif] = ngcedif2mat(in_filename)
 
 edifenvironment = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
-out_edif = edifenvironment;
 topcell = edifenvironment.getTopCell();
 edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
-edges = edifgraph.getEdges();
 
 
 inlist = topcell.getCellInstanceList();
-
-
-
-lut2uid = containers.Map();
-uid = 0;
-%uid2d = containers.Map('KeyType', 'double', 'ValueType', 'any');
-%uid2l = containers.Map('KeyType', 'double', 'ValueType', 'any');
-%uid2r = containers.Map('KeyType', 'double', 'ValueType', 'any');
-%uid2e = containers.Map('KeyType', 'double', 'ValueType', 'any');
-
-
-
-
-
-
-%out_delay = [];
-%out_labels = [];
-%out_range = [];
-%out_equations = [];
-
-
-mapd = containers.Map('KeyType', 'double', 'ValueType', 'any');
-mapl = containers.Map('KeyType', 'double', 'ValueType', 'any');
-mapr = containers.Map('KeyType', 'double', 'ValueType', 'any');
-mape = containers.Map('KeyType', 'double', 'ValueType', 'any');
-maplabel = containers.Map();
-mapedge = containers.Map('KeyType', 'double', 'ValueType', 'any');
-edgecount = 0;
-
 initerator = inlist.iterator();
+edges = edifgraph.getEdges();
 edgesiterator = edges.iterator();
 
 
+
+
+
+
+
+
+
+
+out_edif = edifenvironment;
+
+
+
+
+lut2uid   = containers.Map();
+mapd      = containers.Map('KeyType', 'double', 'ValueType', 'any');
+mapl      = containers.Map('KeyType', 'double', 'ValueType', 'any');
+mapr      = containers.Map('KeyType', 'double', 'ValueType', 'any');
+mape      = containers.Map('KeyType', 'double', 'ValueType', 'any');
+maplabel  = containers.Map();
+mapremove = containers.Map('KeyType', 'double', 'ValueType', 'any');
+mapproxy  = containers.Map('KeyType', 'double', 'ValueType', 'any');
+mapedges  = containers.Map('KeyType', 'double', 'ValueType', 'any');
+
+uid = 0;
+edgecount = 0;
 
 while (initerator.hasNext())
     instance = initerator.next();
@@ -54,30 +49,52 @@ while (initerator.hasNext())
     lut2uid(instancename) = uid;
 end
 
-
-
-
-
-%labels = mapl.values();
-%labels = [labels{:}];
-
 while (edgesiterator.hasNext())
     edge = edgesiterator.next();
-
     sourcefullportname = make_port_name(edge.getSourceEPR(), true);
-    sinkfullportname   = make_port_name(edge.getSinkEPR(),  false);
-    
+    sinkfullportname   = make_port_name(edge.getSinkEPR(),  false);    
     if (~test_lut(sourcefullportname) && ~test_lut(sinkfullportname)), continue; end
-
     if (~maplabel.isKey(sourcefullportname)), push_net(sparse([], [], [], 1, 1, 1), {sourcefullportname}, prepare_range(1, 0, 0), {''}); end
     if (~maplabel.isKey(sinkfullportname)),   push_net(sparse([], [], [], 1, 1, 1), {sinkfullportname},   prepare_range(0, 0, 1), {''}); end
-
     edgecount = edgecount + 1;
-    mapedge(edgecount) = {sourcefullportname; sinkfullportname};
+    mapedges(edgecount) = {sourcefullportname; sinkfullportname};
 end
 
 keys = num2cell(1:uid);
 [out_delay, out_labels, out_range, out_equations] = group_nets(mapd.values(keys), mapl.values(keys), mapr.values(keys), mape.values(keys));
+signal2index = containers.Map(out_labels, 1:numel(out_labels));
+lutedges = cell_collapse(mapedges.values());
+
+newedges = zeros(1, edgecount);
+for k = 1:edgecount, newedges(k) = signal2index(lutedges{1, k}) + ((signal2index(lutedges{2, k}) - 1) * out_range.sz); end
+out_delay(newedges) = 1;
+
+for k = out_range.pi
+    label = out_labels{k};
+    if (~test_lut(label)), continue; end
+    mapremove(k) = k;
+
+    inode = find(out_delay(:, k));
+    if (isempty(inode)), error(['Unconnected LUT input ' label '.']); end
+    newlabel = out_labels{inode};
+
+	onode = find(out_delay(k, :));
+    if (isempty(onode)), continue; end
+    for n = onode, out_equations{n} = strrep(out_equations{n}, label, newlabel); end
+    mapproxy(k) = sum([repmat(inode, 1, numel(onode)); (onode - 1) * out_range.sz], 1);
+end
+
+for k = out_range.po
+    label = out_labels{k};
+    if (~test_lut(label)), continue; end
+    mapremove(k) = k;
+    onode = find(out_delay(k, :));
+    if (isempty(onode)), continue; end
+    mapproxy(k) = find(out_delay(:, k)) + ((onode - 1) * out_range.sz);
+end
+
+out_delay(cell_collapse(mapproxy.values())) = 1;
+[out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, cell_collapse(mapremove.values()));
 
 
 
@@ -85,36 +102,6 @@ keys = num2cell(1:uid);
 
 
 
-%{
-    sourceindex = find(strcmpi(sourcefullportname, out_labels));
-    if (isempty(sourceindex))
-    end
-    sinkindex = find(strcmpi(sinkfullportname, out_labels));
-    if (isempty(sinkindex))
-    end
-    %}
-    
-    
-    
-    %{
-    connect = false;
-    sourceindex = find(strcmpi(sourcefullportname, out_labels));
-    if (isempty(sourceindex)), sourceindex = connect_lut_port(sourcefullportname, true, sinkfullportname); connect = true; end    
-    sinkindex = find(strcmpi(sinkfullportname, out_labels));
-    if (isempty(sinkindex)), sinkindex = connect_lut_port(sinkfullportname, false, sourcefullportname); connect = true; end
-    
-    %
-    if (~connect)
-    out_delay(sourceindex, sinkindex) = 1;
-    end
-    %}
-%{
-    uid = uid + 1;
-    uid2d(uid) = d;
-    uid2l(uid) = l;
-    uid2r(uid) = r;
-    uid2e(uid) = e;
-    %}
 
     function push_net(in_d, in_l, in_r, in_e)
     uid = uid + 1;
@@ -124,24 +111,6 @@ keys = num2cell(1:uid);
     mape(uid) = in_e;
     maplabel = [maplabel; containers.Map(in_l, in_l)];
     end
-
-
-
-
-%{
-
-%}
-
-
-
-
-
-
-    
-
-
-
-
 
     function [out_name] = make_port_name(in_portepr, in_source)
     port = in_portepr.getPort();
@@ -165,24 +134,4 @@ keys = num2cell(1:uid);
     pivot = find(in_fullportname == ',');
     out_isit = ~isempty(pivot) && lut2uid.isKey(in_fullportname(1:(pivot - 1)));
     end
-%{
-    function [out_portindex] = connect_lut_port(in_fullportname, in_source, in_node)
-    pd = sparse([], [], [], 1, 1, 1);
-    pl = {in_fullportname};
-    pe = {''};
-    
-    if (in_source)
-        [out_delay, out_labels, out_range, out_equations] = join_net(pd, pl, prepare_range(1, 0, 0), pe, out_delay, out_labels, out_range, out_equations, {in_fullportname; in_node});
-    else
-        [out_delay, out_labels, out_range, out_equations] = join_net(out_delay, out_labels, out_range, out_equations, pd, pl, prepare_range(0, 0, 1), pe, {in_node; in_fullportname});
-    end
-    
-    out_portindex = find(strcmpi(in_fullportname, out_labels));
-    end
-%}
-
-
-   
-    
-  
 end
