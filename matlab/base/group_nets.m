@@ -20,7 +20,7 @@ szpi = 0;
 szin = 0;
 szpo = 0;
 
-for k = 1:(n - 1), offset(k + 1) = in_rl{k}.sz; end
+for k = 1:(n - 1), offset(k + 1) = offset(k) + in_rl{k}.sz; end
 
 for k = nets
     [di, dj] = find(in_dl{k});
@@ -28,14 +28,14 @@ for k = nets
     
     mapi(k) = di.' + bp;
     mapj(k) = dj.' + bp;
-    
+
     r = in_rl{k};
     
     sz   = sz   + r.sz;
     szpi = szpi + r.szpi;
     szin = szin + r.szin;
     szpo = szpo + r.szpo;
-    
+
     mappi(k) = r.pi + bp;
     mapin(k) = r.in + bp;
     mappo(k) = r.po + bp;

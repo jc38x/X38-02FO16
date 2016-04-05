@@ -7,6 +7,18 @@ bg = build_graph(d, l, r, e);
 view(bg);
 
 
+
+%{
+    if (uid == 1)
+        out_delay = d;
+        out_labels = l;
+        out_range = r;
+        out_equations = e;
+    else
+        [out_delay, out_labels, out_range, out_equations] = join_net(out_delay, out_labels, out_range, out_equations, d, l, r, e, []);
+    end
+    %}
+
 %jl = [in_ll{:}];
 %je = [in_el{:}];
 %jr = [in_rl{:}];
