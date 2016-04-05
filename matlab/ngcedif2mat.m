@@ -1,29 +1,13 @@
 
 function [out_delay, out_labels, out_range, out_equations, out_edif] = ngcedif2mat(in_filename)
-
 edifenvironment = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
 topcell = edifenvironment.getTopCell();
 edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
-
 
 inlist = topcell.getCellInstanceList();
 initerator = inlist.iterator();
 edges = edifgraph.getEdges();
 edgesiterator = edges.iterator();
-
-
-
-
-
-
-
-
-
-
-out_edif = edifenvironment;
-
-
-
 
 lut2uid   = containers.Map();
 mapd      = containers.Map('KeyType', 'double', 'ValueType', 'any');
@@ -66,7 +50,7 @@ signal2index = containers.Map(out_labels, 1:numel(out_labels));
 lutedges = cell_collapse(mapedges.values());
 
 newedges = zeros(1, edgecount);
-for k = 1:edgecount, newedges(k) = signal2index(lutedges{1, k}) + ((signal2index(lutedges{2, k}) - 1) * out_range.sz); end
+for k = 1:edgecount, newedges(k) = flatten_index_2d(signal2index(lutedges{1, k}), signal2index(lutedges{2, k}), out_range.sz); end
 out_delay(newedges) = 1;
 
 for k = out_range.pi
@@ -81,7 +65,7 @@ for k = out_range.pi
 	onode = find(out_delay(k, :));
     if (isempty(onode)), continue; end
     for n = onode, out_equations{n} = strrep(out_equations{n}, label, newlabel); end
-    mapproxy(k) = sum([repmat(inode, 1, numel(onode)); (onode - 1) * out_range.sz], 1);
+    mapproxy(k) = flatten_index_2d(repmat(inode, 1, numel(onode)), onode, out_range.sz);
 end
 
 for k = out_range.po
@@ -90,18 +74,12 @@ for k = out_range.po
     mapremove(k) = k;
     onode = find(out_delay(k, :));
     if (isempty(onode)), continue; end
-    mapproxy(k) = find(out_delay(:, k)) + ((onode - 1) * out_range.sz);
+    mapproxy(k) = flatten_index_2d(find(out_delay(:, k)), onode, out_range.sz);
 end
 
 out_delay(cell_collapse(mapproxy.values())) = 1;
 [out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, cell_collapse(mapremove.values()));
-
-
-
-
-
-
-
+out_edif = edifenvironment;
 
     function push_net(in_d, in_l, in_r, in_e)
     uid = uid + 1;
@@ -111,6 +89,12 @@ out_delay(cell_collapse(mapproxy.values())) = 1;
     mape(uid) = in_e;
     maplabel = [maplabel; containers.Map(in_l, in_l)];
     end
+
+    function [out_isit] = test_lut(in_fullportname)
+    pivot = find(in_fullportname == ',');
+    out_isit = ~isempty(pivot) && lut2uid.isKey(in_fullportname(1:(pivot - 1)));
+    end
+
 
     function [out_name] = make_port_name(in_portepr, in_source)
     port = in_portepr.getPort();
@@ -129,9 +113,6 @@ out_delay(cell_collapse(mapproxy.values())) = 1;
     end
     out_name = [prefix name bit suffix];
     end
+
     
-    function [out_isit] = test_lut(in_fullportname)
-    pivot = find(in_fullportname == ',');
-    out_isit = ~isempty(pivot) && lut2uid.isKey(in_fullportname(1:(pivot - 1)));
-    end
 end
