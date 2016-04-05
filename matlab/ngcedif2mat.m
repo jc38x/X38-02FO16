@@ -24,7 +24,7 @@ edgecount = 0;
 
 while (initerator.hasNext())
     instance = initerator.next();
-    if (~any(strcmpi(char(instance.getType()), {'LUT2', 'LUT3', 'LUT4', 'LUT5', 'LUT6'}))), continue; end
+    if (~any(strcmpi(char(instance.getType()), {'LUT1', 'LUT2', 'LUT3', 'LUT4', 'LUT5', 'LUT6'}))), continue; end
     instancename = char(instance.getName());
     [d, l, r, e] = tt2mat(char(instance.getProperty('INIT').getValue().getStringValue()));
     [l, e] = rename_node(d, l, e, [1, 2, 3, 4, numel(l)], {'I0', 'I1', 'I2', 'I3', 'O'});
