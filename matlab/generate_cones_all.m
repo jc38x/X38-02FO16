@@ -62,7 +62,7 @@ for in = out_keys
             end
             
             cone = unique([in, in_range.all(stack)]);
-            key = char(cone);
+            key = num2str(cone);%char(cone);
             if (dupmap.isKey(key)), continue; end
             dupmap(key) = 1;
             try_add_cone(cone);

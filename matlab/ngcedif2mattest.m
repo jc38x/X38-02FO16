@@ -15,15 +15,13 @@ mat2aig(filename, d, l, r, e);
 
 script = [
     {['read_aiger ' filename ';']};
-    {'ps'};
     {'refactor'};
-    {'ps'}
     {['write_aiger -s ' optname]};
     {'quit'};
     ];
 
 cmdfifo = C_cmdfifo(script);
-lh = spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
+spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
 
 [d, l, r, e] = aig2mat(optname);
 
@@ -33,8 +31,48 @@ view(bf);
 
 
 
+%if (any(strcmpi(in_input, {'0', '1'}))), warning('Constant found'); end
+%{
+    if (val == 0 || val == 1)
+        %warning('Constant');
+        if (instancemap.isKey(in_inst)), return; end
+        switch (val)
+            case 0, push_node('0', 'gnd_');
+            case 1, push_node('1', 'vcc_');
+        end
+        return;
+    end
+    
+    if (is_even(val) || instancemap.isKey(in_inst)), return; end
+    push_node(in_inst, 'not_');
+    push_edge(num2str(val - 1), in_inst);
+    %}
+
+%k = out_range.pi;
+%k = out_range.po;
+%out_equations(k) = {''};
+%out_range.pi
+%out_range.in
+%out_range.po
+%out_range = prepare_range(size(pilist, 2), size(inlist, 2), size(polist, 2));
 
 
+%{
+remap = [
+    containers.Map(num2cell(pilist), num2cell(out_range.pi));
+    containers.Map(num2cell(inlist), num2cell(out_range.in));
+    containers.Map(num2cell(polist), num2cell(out_range.po));
+    ];
+%}
+%{
+s2uk = signal2uid.keys();
+out_labels(cell2mat(remap.values(signal2uid.values(s2uk)))) = s2uk;
+%}
+%edgelist = remap.values(num2cell(edgelist));
+%out_delay = sparse([edgelist{1, :}], [edgelist{2, :}], 1, n, n);
+
+
+%remap = 0;
 
 %[do, lo, ro, eo] = tt2mat('D7FF');
 %[lo, eo] = make_instance('LUT4_01', lo, ro, eo);

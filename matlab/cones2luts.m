@@ -10,7 +10,7 @@ out_inputs = cell(1, in_range.szin);
 
 for k = in_range.in
     equation = in_equations{k};
-    %signals = unique(regexp(equation, '\[\w+\]', 'match'));
+    signals = unique(regexp(equation, '\[\w*,?\w+\]', 'match'));
     ns = numel(signals);
     inputs = num2cell(repmat([1, 0], ns, 1), 2);
     inputs = combvec(inputs{:});

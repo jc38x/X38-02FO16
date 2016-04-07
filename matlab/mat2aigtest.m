@@ -12,6 +12,79 @@ optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040_SIM.aig'
 path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
 
+[do, lo, ro, eo] = tt2mat('FFFE');
+dl = [];
+ll = [];
+rl = [];
+el = [];
+for k = 1:16
+    [loi,  eoi] = make_instance(['LUT4_' num2str(k)], lo, ro, eo);
+    dl = [dl, {do}];
+    ll = [ll, {loi}];
+    rl = [rl, {ro}];
+    el = [el, {eoi}];
+end
+
+%{
+[lo2,  eo2 ] = make_instance('LUT4_02', lo, ro, eo);
+[lo3,  eo3 ] = make_instance('LUT4_03', lo, ro, eo);
+[lo4,  eo4 ] = make_instance('LUT4_04', lo, ro, eo);
+[lo5,  eo5 ] = make_instance('LUT4_05', lo, ro, eo);
+[lo6,  eo6 ] = make_instance('LUT4_06', lo, ro, eo);
+[lo7,  eo7 ] = make_instance('LUT4_07', lo, ro, eo);
+[lo8,  eo8 ] = make_instance('LUT4_08', lo, ro, eo);
+[lo9,  eo9 ] = make_instance('LUT4_09', lo, ro, eo);
+[lo10, eo10] = make_instance('LUT4_10', lo, ro, eo);
+[lo11, eo11] = make_instance('LUT4_11', lo, ro, eo);
+[lo12, eo12] = make_instance('LUT4_12', lo, ro, eo);
+[lo13, eo13] = make_instance('LUT4_13', lo, ro, eo);
+[lo14, eo14] = make_instance('LUT4_14', lo, ro, eo);
+[lo15, eo15] = make_instance('LUT4_15', lo, ro, eo);
+[lo16, eo16] = make_instance('LUT4_16', lo, ro, eo);
+
+dl = {do,  do,  do,  do,  do,  do,  do,  do,  do,  do,   do,   do,   do,   do,   do,   do};
+ll = {lo1, lo2, lo3, lo4, lo5, lo6, lo7, lo8, lo9, lo10, lo11, lo12, lo13, lo14, lo15, lo16};
+rl = {ro,  ro,  ro,  ro,  ro,  ro,  ro,  ro,  ro,  ro,   ro,   ro,   ro,   ro,   ro,   ro};
+el = {eo1, eo2, eo3, eo4, eo5, eo6, eo7, eo8, eo9, eo10, eo11, eo12, eo13, eo14, eo15, eo16};
+%}
+
+[do, lo, ro, eo] = group_nets(dl, ll, rl, el);
+
+
+
+%bo = build_graph(do, lo, ro, eo);
+%view(bo);
+
+mat2aig(filename, do, lo, ro, eo);
+
+script = [
+    {['read_aiger ' filename ';']};
+    {'refactor'};
+    {['write_aiger -s ' optname]};
+    {'quit'};
+    ];
+
+cmdfifo = C_cmdfifo(script);
+spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
+
+[df, lf, rf, ef] = aig2mat(optname);
+
+[iedgef, oedgef] = prepare_edges(df, rf);
+orderf = graphtopoorder(df);
+redrof = fliplr(orderf);
+depthf = fill_depth(orderf, iedgef, df, rf);
+heightf = fill_height(redrof, oedgef, df, rf);
+[aff, noedgef] = fill_af(orderf, iedgef, oedgef, rf);
+
+[sf, cvf] = hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, 1, alpha, epsrand(1), epsrand(2));
+[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
+
+[lutsf, inputsf] = cones2luts(resultrf, resultef, []);
+
+bf = build_graph(df, lf, rf, ef);
+view(bf);
+
+%{
 [do, lo, ro, eo] = tt2mat('D7FF');
 [lo, eo] = make_instance('LUT4_01', lo, ro, eo);
 
@@ -42,13 +115,15 @@ script = [
     ];
 
 cmdfifo = C_cmdfifo(script);
-lh = spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
+spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
 
 [df, lf, rf, ef] = aig2mat(optname);
 
 bf = build_graph(df, lf, rf, ef);
 view(bf);
+%}
 
+%{
 [iedgeo, oedgeo] = prepare_edges(do, ro);
 ordero = graphtopoorder(do);
 redroo = fliplr(ordero);
@@ -72,7 +147,7 @@ heightf = fill_height(redrof, oedgef, df, rf);
 [resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
 
 [lutsf, inputsf] = cones2luts(resultrf, resultef, {'[LUT4_01,i0]', '[LUT4_01,i1]', '[LUT4_01,i2]', '[LUT4_01,i3]'});
-
+%}
 
 
 %{

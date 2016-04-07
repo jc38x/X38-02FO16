@@ -38,7 +38,12 @@ for k = order(is_in(order, in_range))
     case 'not'
         push_not(label, equation((start + 2):(end - 2)));
     otherwise
+            
+        if (equation == '1' || equation == '0')
+            push_constant(label, equation);
+        else
         error_handler('Graph is not AIG.');
+        end
     end
 end
 
@@ -139,6 +144,10 @@ fclose(fid);
     uid = uid + 1;
     and2uid(in_label) = uid;
     push_literal(in_label);
+    end
+
+    function push_constant(in_label, in_equation)
+        signal2literal(in_label) = str2double(in_equation);
     end
 
     function push_not(in_label, in_a)
