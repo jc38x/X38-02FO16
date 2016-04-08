@@ -87,7 +87,7 @@ while (~feof(fid))
     case 'i',  base = out_range.pilo;
     case 'o',  base = out_range.polo;
     case 'l',  base = out_range.inlo - l;
-    otherwise, disp('break'); break;
+    otherwise, break;
     end
     
     split = find(symbol == ' ', 1);
