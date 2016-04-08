@@ -1,0 +1,12 @@
+aig 7 2 1 2 4
+14
+6
+7
+i0 i_1_2
+i1 i_2_4
+l0 latch_1_i_6
+o0 latch_1_o_14
+o1 o_1_6
+o2 o_2_7
+c
+Written by mat2aig

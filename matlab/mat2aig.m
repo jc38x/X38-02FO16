@@ -10,6 +10,7 @@
 function mat2aig(in_filename, in_delay, in_labels, in_range, in_equations)
 fid = fopen(in_filename, 'w');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
+dtor = onCleanup(@()fclose(fid));
 
 signal2literal = containers.Map();
 andinputs      = containers.Map();
@@ -18,9 +19,11 @@ and2uid        = containers.Map();
 literal = 0;
 uid     = 0;
 
+ilatch  = strcmpi('#AIGERLATCH', in_equations(in_range.pi));
+pinodes = in_range.pi(~ilatch);
+pilatch = in_range.pi( ilatch);
 
-
-
+for k = [pinodes, pilatch], push_literal(in_labels{k}); end
 
 
 
@@ -28,12 +31,6 @@ uid     = 0;
 
 
 order = graphtopoorder(in_delay);
-
-latch = strcmpi('#AIGERLATCH', in_equations(in_range.pi));
-pinodes = in_range.pi(~latch);
-pilatch = in_range.pi(latch);
-
-for k = [pinodes, pilatch], push_literal(in_labels{k}); end
 
 for k = order(is_in(order, in_range))
     equation = in_equations{k};
@@ -58,9 +55,10 @@ for k = order(is_in(order, in_range))
     end
 end
 
-i = in_range.szpi;
-l = sum(latch);
-o = in_range.szpo;
+
+l = sum(ilatch);
+i = in_range.szpi - l;
+o = in_range.szpo - l;
 a = uid;
 m = i + l + a;
 
@@ -99,12 +97,16 @@ for k = pinodes, write_line(['i' num2str(piid) ' ' in_labels{k}]); piid = piid +
 for k = pilatch, write_line(['l' num2str(liid) ' ' in_labels{k}]); liid = liid + 1; end
 for k = ponodes, write_line(['o' num2str(poid) ' ' in_labels{k}]); poid = poid + 1; end
 
-fclose(fid);
+write_line('c');
+
+write_line('Written by mat2aig');
+
+%fclose(fid);
 
 
 
     function error_handler(in_msg)
-    fclose(fid);
+    %fclose(fid);
     error(in_msg);
     end
 

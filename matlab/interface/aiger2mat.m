@@ -10,7 +10,7 @@
 function [out_delay, out_labels, out_range, out_equations] = aiger2mat(in_filename)
 fid = fopen(in_filename, 'r');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
-dtor = onCleanup(@()fclose(fid));    
+dtor = onCleanup(@()fclose(fid));
 header = strsplitntrim(fgetl(fid), ' ');
 fmt = header{1};
 if (~strcmp(header{1}, fmt)), error(['Unexpected format identifier ''' fmt '''. Expected ''aig''']); end
@@ -87,7 +87,7 @@ while (~feof(fid))
     case 'i',  base = out_range.pilo;
     case 'o',  base = out_range.polo;
     case 'l',  base = out_range.inlo - l;
-    otherwise, break;
+    otherwise, disp('break'); break;
     end
     
     split = find(symbol == ' ', 1);

@@ -6,10 +6,19 @@
 %[delay, labels, range, edges] = sample_edif_special(false);
 %[delay, labels, range, edges] = sample_ISE_mapped(false);
 
+fname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/latch.aig';
 
 
 bg = build_graph(delay, labels, range, equations);
 view(bg);
+
+mat2aig(fname, delay, labels, range, equations);
+
+
+[df, lf, rf, ef] = aiger2mat(fname);
+
+bf = build_graph(df, lf, rf, ef);
+view(bf);
 
 %[iedge, oedge] = prepare_edges(delay);
 %equations = get_aig_equations(delay, iedge, labels, range);
