@@ -7,6 +7,6 @@
 % http://fmv.jku.at/aiger/
 %**************************************************************************
 
-function [out_delay, out_labels, out_range] = sample_aaglatch()
-[out_delay, out_labels, out_range] = aag2mat([mfilename('fullpath') '.aag']);
+function [out_delay, out_labels, out_range, out_equations] = sample_aiglatch()
+[out_delay, out_labels, out_range, out_equations] = aiger2mat([mfilename('fullpath') '.aig']);
 end

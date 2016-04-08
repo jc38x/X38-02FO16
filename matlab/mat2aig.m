@@ -12,13 +12,24 @@ fid = fopen(in_filename, 'w');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
 
 signal2literal = containers.Map();
+andinputs      = containers.Map();
+and2uid        = containers.Map();
+
 literal = 0;
-andinputs = containers.Map();
-and2uid = containers.Map();
-uid = 0;
+uid     = 0;
+
+
+
+
+
+
+
+
+
+
 order = graphtopoorder(in_delay);
 
-latch = strcmpi('latch', in_equations(in_range.pi));
+latch = strcmpi('#AIGERLATCH', in_equations(in_range.pi));
 pinodes = in_range.pi(~latch);
 pilatch = in_range.pi(latch);
 
@@ -112,22 +123,7 @@ fclose(fid);
         if (x == 0), break; end;        
     end
     out_bytes = out_bytes(1:wp);
-    %disp(num2str(in_u32));
-    %disp(num2str(out_bytes));
-        %{
     
-    while (bitand(x, 4294967168) ~= 0)
-        putc(uint8(bitor(bitand(x, 127), 128)));
-        x = bitshift(x, -7);
-    end
-    putc(uint8(bitand(x, 127)));
-    out_bytes = out_bytes(1:wp);
-    
-        function putc(in_ch)
-        wp = wp + 1;
-        out_bytes(wp) = in_ch;
-        end
-        %}
     end
 
     function write_line(in_line)

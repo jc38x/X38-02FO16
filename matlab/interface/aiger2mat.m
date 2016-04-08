@@ -83,10 +83,10 @@ while (~feof(fid))
     type = symbol(1);
     
     switch (type)
-    case 'i', base = out_range.pilo;
-    case 'o', base = out_range.polo;
-    case 'l', base = out_range.inlo - l;
-    case 'c', break;
+    case 'i',  base = out_range.pilo;
+    case 'o',  base = out_range.polo;
+    case 'l',  base = out_range.inlo - l;
+    otherwise, break;
     end
     
     split = find(symbol == ' ', 1);
@@ -113,6 +113,11 @@ out_delay = sparse(edgelist(1, :), edgelist(2, :), 1, n, n);
 
 out_equations = cell(1, out_range.sz);
 out_equations(out_range.top) = {''};
+
+for k = out_range.top
+    label = out_labels{k};
+    if (label(1) == 'l'), out_equations{k} = '#AIGERLATCH'; end
+end
 
 for k = out_range.in
     label = out_labels{k};

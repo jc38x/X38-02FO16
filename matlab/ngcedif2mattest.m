@@ -30,7 +30,22 @@ view(bf);
 
 
 
-
+%disp(num2str(in_u32));
+    %disp(num2str(out_bytes));
+        %{
+    
+    while (bitand(x, 4294967168) ~= 0)
+        putc(uint8(bitor(bitand(x, 127), 128)));
+        x = bitshift(x, -7);
+    end
+    putc(uint8(bitand(x, 127)));
+    out_bytes = out_bytes(1:wp);
+    
+        function putc(in_ch)
+        wp = wp + 1;
+        out_bytes(wp) = in_ch;
+        end
+        %}
 %if (any(strcmpi(in_input, {'0', '1'}))), warning('Constant found'); end
 %{
     if (val == 0 || val == 1)
