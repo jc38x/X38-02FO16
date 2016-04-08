@@ -29,6 +29,40 @@ bf = build_graph(d, l, r, e);
 view(bf);
 
 
+
+%order = graphtopoorder(in_delay);
+%order(is_in(order, in_range))
+%get_inorder(in_delay, in_range)
+
+
+
+   
+%get_inode(in_delay, k)
+
+
+
+
+ 
+    
+            
+        %if (equation == '1' || equation == '0')
+            
+        %else
+%delta0 = 0;
+    %delta1 = 0;
+%if (delta0 < 1)
+    %    disp(label);
+    %end
+%disp('delta 0 ----');
+    %disp('delta 1 ----');
+%fclose(fid);
+
+
+
+    %function error_handler(in_msg)
+    %fclose(fid);
+    %error(in_msg);
+    %end
 %{
 [lo2,  eo2 ] = make_instance('LUT4_02', lo, ro, eo);
 [lo3,  eo3 ] = make_instance('LUT4_03', lo, ro, eo);

@@ -12,7 +12,7 @@ optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040_SIM.aig'
 path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
 
-[do, lo, ro, eo] = tt2mat('FFFF');
+[do, lo, ro, eo] = tt2mat('FFFE');
 dl = [];
 ll = [];
 rl = [];
@@ -30,7 +30,9 @@ end
 bo = build_graph(do, lo, ro, eo);
 view(bo);
 
-mat2aig(filename, do, lo, ro, eo);
+ro = prepare_range_ex(do, ro);
+
+mat2aig(filename, lo, ro, eo);
 
 script = [
     {['read_aiger ' filename ';']};
@@ -62,6 +64,10 @@ heightf = fill_height(redrof, oedgef, df, rf);
 [lutsf, inputsf] = cones2luts(resultrf, resultef, []);
 
 
+
+%if (in_u32 < 0), warning('< 0'); end
+%warning(['INVERTER OF INVERTER ' in_label ' | ' in_a ]);
+%signal2literal(in_a) + 1;
 %{
 [do, lo, ro, eo] = tt2mat('D7FF');
 [lo, eo] = make_instance('LUT4_01', lo, ro, eo);
