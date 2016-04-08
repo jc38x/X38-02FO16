@@ -67,7 +67,7 @@ script = [
 cmdfifo = C_cmdfifo(script);
 spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
 
-[df, lf, rf, ef] = aig2mat(optname);
+[df, lf, rf, ef] = aiger2mat(optname);
 
 [iedgef, oedgef] = prepare_edges(df, rf);
 orderf = graphtopoorder(df);

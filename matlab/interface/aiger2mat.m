@@ -10,9 +10,10 @@
 function [out_delay, out_labels, out_range, out_equations] = aiger2mat(in_filename)
 fid = fopen(in_filename, 'r');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
+dtor = onCleanup(@()fclose(fid));    
 header = strsplitntrim(fgetl(fid), ' ');
 fmt = header{1};
-if (~strcmp(header{1}, fmt)), error_handler(['Unexpected format identifier ''' fmt '''. Expected ''aig''']); end
+if (~strcmp(header{1}, fmt)), error(['Unexpected format identifier ''' fmt '''. Expected ''aig''']); end
 
 m = str2double(header{2});
 i = str2double(header{3});
@@ -20,11 +21,11 @@ l = str2double(header{4});
 o = str2double(header{5});
 a = str2double(header{6});
 
-if (m < 0), error_handler('M < 0.'); end
-if (i < 0), error_handler('I < 0.'); end
-if (l < 0), error_handler('L < 0.'); end
-if (o < 0), error_handler('O < 0.'); end
-if (a < 0), error_handler('A < 0.'); end
+if (m < 0), error('M < 0.'); end
+if (i < 0), error('I < 0.'); end
+if (l < 0), error('L < 0.'); end
+if (o < 0), error('O < 0.'); end
+if (a < 0), error('A < 0.'); end
 
 ii = 2 * (1:i);
 li = 2 * ((i + 1):(i + l));
@@ -93,8 +94,6 @@ while (~feof(fid))
     out_labels{base + str2double(symbol(2:(split - 1)))} = symbol((split + 1):end);
 end
 
-fclose(fid);
-
 edges = edges(:, 1:edgesindex);
 
 for n = 1:size(edges, 2)
@@ -130,11 +129,6 @@ for k = out_range.in
     end
 end
 
-    function error_handler(in_msg)
-    fclose(fid);
-    error(in_msg);
-    end
-
     function push_signal(in_signal)
     if (signal2uid.isKey(in_signal)), return; end
     uid = uid + 1;
@@ -165,7 +159,7 @@ end
     end
 
     function push_instance(in_inst, in_signal)
-    if (instancemap.isKey(in_inst)), error_handler(['Duplicate instance ' in_inst '.']); end
+    if (instancemap.isKey(in_inst)), error(['Duplicate instance ' in_inst '.']); end
     instancemap(in_inst) = in_signal;
     end
     
@@ -198,9 +192,9 @@ end
     end
 
     function [out_byte] = next_byte()
-    if (feof(fid)), error_handler('Unexpected EOF.'); end
+    if (feof(fid)), error('Unexpected EOF.'); end
     out_byte = fread(fid, 1, 'uint8');
-    if (isempty(out_byte)), error_handler('File read failed.'); end
+    if (isempty(out_byte)), error('File read failed.'); end
     end
 
     function [out_seq] = next_sequence()

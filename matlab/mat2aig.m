@@ -101,6 +101,8 @@ for k = ponodes, write_line(['o' num2str(poid) ' ' in_labels{k}]); poid = poid +
 
 fclose(fid);
 
+
+
     function error_handler(in_msg)
     fclose(fid);
     error(in_msg);
