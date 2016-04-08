@@ -7,7 +7,7 @@
 % http://fmv.jku.at/aiger/
 %**************************************************************************
 
-function mat2aig(in_filename, in_labels, in_range, in_equations)
+function mat2aiger(in_filename, in_labels, in_range, in_equations)
 fid = fopen(in_filename, 'w');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
 dtor = onCleanup(@()fclose(fid));

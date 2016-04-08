@@ -32,7 +32,7 @@ view(bo);
 
 ro = prepare_range_ex(do, ro);
 
-mat2aig(filename, lo, ro, eo);
+mat2aiger(filename, lo, ro, eo);
 
 script = [
     {['read_aiger ' filename ';']};
