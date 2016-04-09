@@ -12,26 +12,37 @@ optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040_SIM.aig'
 path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
 
-[do, lo, ro, eo] = tt2mat('FFFE');
-dl = [];
-ll = [];
-rl = [];
-el = [];
-for k = 1:2
+[do, lo, ro, eo] = tt2mat('D7AD');
+count = 2048;
+dl = cell(1, count);
+ll = cell(1, count);
+rl = cell(1, count);
+el = cell(1, count);
+for k = 1:count
     [loi,  eoi] = make_instance(['LUT4_' num2str(k)], lo, ro, eo);
-    dl = [dl, {do}];
-    ll = [ll, {loi}];
-    rl = [rl, {ro}];
-    el = [el, {eoi}];
+    dl{k} = do;
+    ll{k} = loi;
+    rl{k} = ro;
+    el{k} = eoi;
+    %dl = [dl, {do}];
+    %ll = [ll, {loi}];
+    %rl = [rl, {ro}];
+    %el = [el, {eoi}];
 end
 
+t = tic();
+disp('GROUP');
 [do, lo, ro, eo] = group_nets(dl, ll, rl, el);
+toc(t)
 
-bo = build_graph(do, lo, ro, eo);
-view(bo);
 
+%bo = build_graph(do, lo, ro, eo);
+%view(bo);
+t = tic();
+disp('RANGE');
 ro = prepare_range_ex(do, ro);
-
+toc(t)
+%{
 mat2aiger(filename, lo, ro, eo);
 
 script = [
@@ -46,8 +57,8 @@ spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj,
 
 [df, lf, rf, ef] = aiger2mat(optname);
 
-bf = build_graph(df, lf, rf, ef);
-view(bf);
+%bf = build_graph(df, lf, rf, ef);
+%view(bf);
 
 
 
@@ -62,9 +73,11 @@ heightf = fill_height(redrof, oedgef, df, rf);
 [resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
 
 [lutsf, inputsf] = cones2luts(resultrf, resultef, []);
+%}
 
-
-
+%edgelist = ;
+%edgelist = uidremap.remap(edgelist);
+%out_delay = sparse(edgelist(1, :), edgelist(2, :), 1, n, n);
 %if (in_u32 < 0), warning('< 0'); end
 %warning(['INVERTER OF INVERTER ' in_label ' | ' in_a ]);
 %signal2literal(in_a) + 1;
