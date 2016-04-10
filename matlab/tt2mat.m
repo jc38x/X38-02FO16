@@ -7,8 +7,9 @@
 function [out_delay, out_labels, out_range, out_equations] = tt2mat(in_tthex)
 rows = numel(in_tthex) * 4;
 npi = log2(rows);
-ttinputs = num2cell(repmat([1, 0], npi, 1), 2);
-ttinputs = combvec(ttinputs{:});
+%ttinputs = num2cell(repmat([1, 0], npi, 1), 2);
+%ttinputs = combvec(ttinputs{:});
+ttinputs = tt_inputs(npi);
 ttinputs = ttinputs(:, logical(hexToBinaryVector(in_tthex, rows)));
 nt = size(ttinputs, 2);
 pi = cell(1, npi);
