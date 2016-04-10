@@ -29,6 +29,11 @@ for k = get_inorder(in_delay, in_range)
     equation = in_equations{k};
     label = in_labels{k};
     
+    
+    
+    
+    
+    
     if     (strcmpi(equation(1:3), 'and'))
         signals = regexp_signals(equation, true);
         ina = signals{1};
