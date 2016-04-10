@@ -78,7 +78,7 @@ uidremap = C_remap([pilist, inlist, polist], 1:out_range.sz);
 s2uk = signal2uid.keys();
 out_labels = cell(1, out_range.sz);
 out_labels(uidremap.remap(cell_collapse(signal2uid.values(s2uk)))) = s2uk;
-
+%{
 while (~feof(fid))
     symbol = fgetl(fid);
     type = symbol(1);
@@ -93,7 +93,7 @@ while (~feof(fid))
     split = find(symbol == ' ', 1);
     out_labels{base + str2double(symbol(2:(split - 1)))} = symbol((split + 1):end);
 end
-
+%}
 edges = edges(:, 1:edgesindex);
 
 for n = 1:size(edges, 2)

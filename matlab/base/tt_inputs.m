@@ -5,6 +5,6 @@
 %**************************************************************************
 
 function [out_inputs] = tt_inputs(in_npi)
-vectors = num2cell(repmat([1, 0], in_npi, 1), 2);
-out_inputs = combvec(vectors{:});
+out_inputs = num2cell(repmat([1, 0], in_npi, 1), 2);
+out_inputs = combvec(out_inputs{:});
 end

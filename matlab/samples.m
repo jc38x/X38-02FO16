@@ -12,7 +12,7 @@ fname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/latch.aig';
 bg = build_graph(delay, labels, range, equations);
 view(bg);
 
-mat2aig(fname, delay, labels, range, equations);
+mat2aiger(fname, delay, labels, range, equations);
 
 
 [df, lf, rf, ef] = aiger2mat(fname);

@@ -7,16 +7,17 @@
 function [out_delay, out_labels, out_range, out_equations] = tt2mat(in_tthex)
 rows = numel(in_tthex) * 4;
 npi = log2(rows);
-%ttinputs = num2cell(repmat([1, 0], npi, 1), 2);
-%ttinputs = combvec(ttinputs{:});
+pi = cell(1, npi);
+
+node2uid      = containers.Map();
+nodeequations = containers.Map();
+nodeiedges    = containers.Map();
+
 ttinputs = tt_inputs(npi);
 ttinputs = ttinputs(:, logical(hexToBinaryVector(in_tthex, rows)));
+
 nt = size(ttinputs, 2);
-pi = cell(1, npi);
-node2uid = containers.Map();
 uid = 0;
-nodeequations = containers.Map();
-nodeiedges = containers.Map();
 
 for k = 1:npi
     pi{k} = ['i' num2str(k - 1)];
@@ -39,11 +40,8 @@ else
     end
     
     if (nt > 1)
-    %if (nt == 1)
-    %    nodename = miniterms{1};
-    %else
         nodename = push_and(push_not(miniterms{1}), push_not(miniterms{2}));
-        for k = miniterms(3:end), nodename = push_and(nodename, push_not(k{1})); end
+        for k = miniterms(3:end), nodename = push_and(nodename, push_not(k{:})); end
         nodename = push_not(nodename);
     end
 end
@@ -52,8 +50,8 @@ push_node('o', '', node2uid(nodename));
 
 out_range = prepare_range(npi, uid - npi - 1, 1);
 
-out_labels = cell(1, out_range.sz);
 keys = node2uid.keys();
+out_labels = cell(1, out_range.sz);
 out_labels(cell2mat(node2uid.values(keys))) = keys;
 
 out_equations = nodeequations.values(out_labels);
@@ -63,6 +61,9 @@ edgesindex = 0;
 
 for k = out_range.notpi
     for e = nodeiedges(out_labels{k})
+
+
+
         edgesindex = edgesindex + 1;
         edges(1, edgesindex) = e;
         edges(2, edgesindex) = k;
