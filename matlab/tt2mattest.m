@@ -7,7 +7,7 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 t = tic();
-[delay, labels, range, equations] = tt2mat('0090');
+[delay, labels, range, equations] = tt2mat('D7FF');
 
 [labels, equations] = rename_node(delay, labels, equations, [1,2,3,4], {'I0', 'I1', 'I2', 'I3'});
 

@@ -20,6 +20,9 @@ mat2aiger(fname, delay, labels, range, equations);
 bf = build_graph(df, lf, rf, ef);
 view(bf);
 
+
+
+
 %[iedge, oedge] = prepare_edges(delay);
 %equations = get_aig_equations(delay, iedge, labels, range);
 

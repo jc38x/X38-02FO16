@@ -25,10 +25,12 @@ pilatch = in_range.pi( ilatch);
 
 for k = [pinodes, pilatch], push_literal(in_labels{k}); end
 
-order = graphtopoorder(in_delay);
-inorder = order(is_in(order, in_range));
 
-for k = inorder%in_range.inorder
+
+
+
+
+for k = get_inorder(in_delay, in_range)
     equation = in_equations{k};
     start = find(equation == '(', 1);
     label = in_labels{k};
@@ -53,13 +55,20 @@ o = in_range.szpo - l;
 a = uid;
 m = i + l + a;
 
+    
+
+
+
 write_line(['aig ' num2str(m) ' ' num2str(i) ' ' num2str(l) ' ' num2str(o) ' ' num2str(a)]);
 
 olatch  = strcmpi('#AIGERLATCH', in_equations(in_range.po));
 ponodes = in_range.po(~olatch);
 polatch = in_range.po( olatch);
 
-for k = [polatch, ponodes], write_line(num2str(signal2literal(in_labels{get_inode(in_delay, k)}))); end%in_range.inode{k}}))); end
+for k = [polatch, ponodes], write_line(num2str(signal2literal(in_labels{get_inode(in_delay, k)}))); end
+
+
+%in_range.inode{k}}))); end
 
 keys = and2uid.keys();
 andlist = cell(1, a);

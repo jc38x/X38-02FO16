@@ -29,7 +29,9 @@ bf = build_graph(d, l, r, e);
 view(bf);
 
 
-
+%order = graphtopoorder(in_delay);
+%inorder = order(is_in(order, in_range));
+%inorder%in_range.inorder
 %e = nodeiedges(out_labels{k});
     %ne = numel(e);
     %newindex = edgesindex + ne;
