@@ -28,7 +28,33 @@ spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj,
 bf = build_graph(d, l, r, e);
 view(bf);
 
+        
+        
+        
+        
+        %req = ;
+        
+%push_not(label, equation(6:(end - 2)));
+    %split = strfind(equation, '],[') + 1;
+        %push_and(label, equation(6:(split - 2)), equation((split + 2):(end - 2)));
+    %{
+    equation = in_equations{k};
+    start = find(equation == '(', 1);
+    label = in_labels{k};
 
+    switch (lower(equation(1:(start - 1))))
+    case 'and'
+        split = find(equation == ',');
+        ns = numel(split);
+        if (ns == 3), split = split(2); elseif (ns ~= 1), error('Graph is not AIG.'); end
+        push_and(label, equation((start + 2):(split - 2)), equation((split + 2):(end - 2)));
+    case 'not'
+        push_not(label, equation((start + 2):(end - 2)));
+    otherwise
+        if (~any(strcmpi(equation, {'0', '1'}))), error('Graph is not AIG.'); end
+        push_constant(label, equation);
+    end
+    %}
 %order = graphtopoorder(in_delay);
 %inorder = order(is_in(order, in_range));
 %inorder%in_range.inorder

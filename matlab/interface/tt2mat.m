@@ -13,9 +13,7 @@ node2uid      = containers.Map();
 nodeequations = containers.Map();
 nodeiedges    = containers.Map();
 
-ttinputs = tt_inputs(npi);
-ttinputs = ttinputs(:, logical(hexToBinaryVector(in_tthex, rows)));
-
+ttinputs = tt_inputs(npi, logical(hexToBinaryVector(in_tthex, rows)));
 nt = size(ttinputs, 2);
 uid = 0;
 

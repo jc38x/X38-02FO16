@@ -25,27 +25,27 @@ pilatch = in_range.pi( ilatch);
 
 for k = [pinodes, pilatch], push_literal(in_labels{k}); end
 
-
-
-
-
-
 for k = get_inorder(in_delay, in_range)
     equation = in_equations{k};
-    start = find(equation == '(', 1);
     label = in_labels{k};
-
-    switch (lower(equation(1:(start - 1))))
-    case 'and'
-        split = find(equation == ',');
-        ns = numel(split);
-        if (ns == 3), split = split(2); elseif (ns ~= 1), error('Graph is not AIG.'); end
-        push_and(label, equation((start + 2):(split - 2)), equation((split + 2):(end - 2)));
-    case 'not'
-        push_not(label, equation((start + 2):(end - 2)));
-    otherwise
-        if (~any(strcmpi(equation, {'0', '1'}))), error('Graph is not AIG.'); end
+    
+    if     (strcmpi(equation(1:3), 'and'))
+        signals = regexp_signals(equation, true);
+        ina = signals{1};
+        inb = signals{2};
+        
+        
+        if (numel(['and([' ina '],[' inb '])']) ~= numel(equation)), error('Unsupported network.'); end
+        push_and(label, ina, inb);
+    elseif (strcmpi(equation(1:3), 'not'))
+        signals = regexp_signals(equation, true);
+        ina = signals{:};
+        if (numel(['not([' ina '])']) ~= numel(equation)), error('Unsupported network.'); end
+        push_not(label, ina);
+    elseif (strcmpi(equation, {'0', '1'}))
         push_constant(label, equation);
+    else
+        error('Unsupported network');
     end
 end
 
@@ -54,11 +54,7 @@ i = in_range.szpi - l;
 o = in_range.szpo - l;
 a = uid;
 m = i + l + a;
-
     
-
-
-
 write_line(['aig ' num2str(m) ' ' num2str(i) ' ' num2str(l) ' ' num2str(o) ' ' num2str(a)]);
 
 olatch  = strcmpi('#AIGERLATCH', in_equations(in_range.po));
@@ -66,6 +62,14 @@ ponodes = in_range.po(~olatch);
 polatch = in_range.po( olatch);
 
 for k = [polatch, ponodes], write_line(num2str(signal2literal(in_labels{get_inode(in_delay, k)}))); end
+
+
+
+    
+
+
+
+
 
 
 %in_range.inode{k}}))); end
