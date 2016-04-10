@@ -28,6 +28,7 @@ spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj,
 bf = build_graph(d, l, r, e);
 view(bf);
 
+%find(in_delay(:, in));
     %[di, dj] = find(in_dl{k});
 %find(in_delay(node, :))
 %order = graphtopoorder(in_delay);

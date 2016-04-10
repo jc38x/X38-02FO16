@@ -44,17 +44,15 @@ gaterange = 1:size(gates, 1);
 constantrange = 1:size(constants, 1);
 
 for in = in_range.in
-    input = find(in_delay(:, in));
+    input = get_inode(in_delay, in);
     switch (numel(input))
-    case 0
-        equation = constants{datasample(constantrange, 1)};
-    case 1
-        equation = ['not([' in_labels{input} '])'];
+    case 0, equation = constants{datasample(constantrange, 1)};
+    case 1, equation = ['not([' in_labels{input} '])'];
     otherwise
         equation = make_gate(['[' in_labels{input(1)} ']'], ['[' in_labels{input(2)} ']']);
-        for i = input(3:end).', equation = make_gate(equation, ['[', in_labels{i}, ']']); end
+        for i = input(3:end), equation = make_gate(equation, ['[', in_labels{i}, ']']); end
     end
-    out_equations(in) = {equation};
+    out_equations{in} = equation;
 end
 
     function out_equation = make_gate(in_a, in_b)
