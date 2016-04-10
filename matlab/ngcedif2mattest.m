@@ -30,7 +30,12 @@ view(bf);
 
 
 
-
+%e = nodeiedges(out_labels{k});
+    %ne = numel(e);
+    %newindex = edgesindex + ne;
+    %edges(:, (edgesindex + 1):newindex) = [e; repmat(k, 1, ne)];
+        %edges(1, edgesindex) = e;
+        %edges(2, edgesindex) = k;
 %if (nt == 1)
     %    nodename = miniterms{1};
     %else

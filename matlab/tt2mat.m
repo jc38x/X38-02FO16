@@ -61,12 +61,8 @@ edgesindex = 0;
 
 for k = out_range.notpi
     for e = nodeiedges(out_labels{k})
-
-
-
         edgesindex = edgesindex + 1;
-        edges(1, edgesindex) = e;
-        edges(2, edgesindex) = k;
+        edges(:, edgesindex) = [e; k];
     end
 end
 
