@@ -28,8 +28,28 @@ spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj,
 bf = build_graph(d, l, r, e);
 view(bf);
 
+
+
+
+
+%find(out_delay(:, k));
+     %{
         
+        oldlabeli = out_labels{ii};
+        spliti = find(oldlabeli == '_');
+        out_labels{ii} = [label oldlabeli(spliti(end - 1):end)];
+        %}
+        %{
         
+        oldlabelo = out_labels{io};
+        splito = find(oldlabelo == '_');
+        [label oldlabelo(splito(end - 1):end)];
+%}   
+        %base = [out_range.inlo - l, out_range.polo];
+    %otherwise, break;
+    %base = ;
+    %base = ;
+    %out_labels{base + index} = 'a';
        %in_range.inode{k}}))); end 
     %if (numel() ~= numel(equation)), error('Unsupported network.');
         %end

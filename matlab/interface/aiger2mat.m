@@ -79,39 +79,34 @@ s2uk = signal2uid.keys();
 out_labels = cell(1, out_range.sz);
 out_labels(uidremap.remap(cell_collapse(signal2uid.values(s2uk)))) = s2uk;
 
+out_equations = cell(1, out_range.sz);
+out_equations(out_range.top) = {''};
+
+for k = out_range.top
+    label = out_labels{k};
+    if (label(1) == 'l'), out_equations{k} = '#AIGERLATCH'; end
+end
+
 while (~feof(fid))
     symbol = fgetl(fid);
     type = symbol(1);
     if (~any(strcmpi(type, {'i', 'o', 'l'}))), break; end
-    
+
     split = find(symbol == ' ', 1);
     index = str2double(symbol(2:(split - 1)));
     label = symbol((split + 1):end);
-    
+
     switch (type)
     case 'i',  out_labels{out_range.pilo     + index} = label;
     case 'o',  out_labels{out_range.polo + l + index} = label;
     case 'l'
-        out_labels{out_range.inlo - l + index} = [label '_i_' num2str('0')];
-        out_labels{out_range.polo     + index} = [label '_o_' num2str('0')];
-        
-        
+        ii = out_range.inlo - l + index;
+        io = out_range.polo     + index;
+        out_labels{ii} = rename_latch(ii, label);
+        out_labels{io} = rename_latch(io, label);
     end
-
-    
-
-
-%base = [out_range.inlo - l, out_range.polo];
-    %otherwise, break;
-    %base = ;
-    %base = ;
-    %out_labels{base + index} = 'a';
 end
 
-    
-    
-    
-    
 edges = edges(:, 1:edgesindex);
 
 for n = 1:size(edges, 2)
@@ -125,24 +120,22 @@ edgelist = cell2mat(signal2uid.values(edges));
 n = max(edgelist(:));
 out_delay = sparse(uidremap.remap(edgelist(1, :)), uidremap.remap(edgelist(2, :)), 1, n, n);
 
-out_equations = cell(1, out_range.sz);
-out_equations(out_range.top) = {''};
-
-for k = out_range.top
-    label = out_labels{k};
-    if (label(1) == 'l'), out_equations{k} = '#AIGERLATCH'; end
-end
-
 for k = out_range.in
     label = out_labels{k};
-    ie = find(out_delay(:, k));
+    ie = get_inode(out_delay, k);
     switch (label(1:3))
     case 'and', out_equations{k} = ['and([' out_labels{ie(1)} '],[' out_labels{ie(2)} '])'];
-    case 'not', out_equations{k} = ['not([' out_labels{ie(1)} '])'];
+    case 'not', out_equations{k} = ['not([' out_labels{ie} '])'];
     case 'vcc', out_equations{k} = '1';
     case 'gnd', out_equations{k} = '0';
     end
 end
+
+    function [out_label] = rename_latch(in_index, in_label)
+    oldlabel = out_labels{in_index};
+    tag = find(oldlabel == '_');
+    out_label = [in_label oldlabel(tag(end - 1):end)];
+    end
 
     function push_signal(in_signal)
     if (signal2uid.isKey(in_signal)), return; end
