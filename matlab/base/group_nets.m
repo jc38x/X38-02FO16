@@ -23,11 +23,11 @@ szpo = 0;
 for k = 1:(n - 1), offset(k + 1) = offset(k) + in_rl{k}.sz; end
 
 for k = nets
-    [di, dj] = find(in_dl{k});
+    edges = find(in_dl{k});
     bp = offset(k);
     
-    mapi(k) = di.' + bp;
-    mapj(k) = dj.' + bp;
+    mapi(k) = edges(1, :) + bp;
+    mapj(k) = edges(2, :) + bp;
 
     r = in_rl{k};
     

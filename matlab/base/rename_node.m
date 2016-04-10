@@ -13,6 +13,6 @@ for k = 1:numel(in_node)
     node = in_node(k);
     newlabel = in_newlabels{k};
     label = in_labels{node};
-    for l = find(in_delay(node, :)), out_equations{l} = strrep(out_equations{l}, label, newlabel); end
+    for l = get_onode(in_delay, node), out_equations{l} = strrep(out_equations{l}, label, newlabel); end
 end
 end
