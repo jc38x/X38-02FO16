@@ -4,7 +4,7 @@ aig 7 2 1 2 4
 7
 i0 i_1_2
 i1 i_2_4
-l0 latch_1_i_6
+l0 latch_1
 o0 o_1_6
 o1 o_2_7
 c

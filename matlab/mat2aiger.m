@@ -29,25 +29,18 @@ for k = get_inorder(in_delay, in_range)
     equation = in_equations{k};
     label = in_labels{k};
     
-    
-    
-    
-    
-    
-    if     (strcmpi(equation(1:3), 'and'))
-        signals = regexp_signals(equation, true);
+    if (strcmpi(equation(1:3), 'and'))
+        signals = regexp_signals(equation, false, true);
         ina = signals{1};
         inb = signals{2};
-        
-        
-        if (numel(['and([' ina '],[' inb '])']) ~= numel(equation)), error('Unsupported network.'); end
+        if (~strcmpi(['and([' ina '],[' inb '])'], equation)), error('Unsupported network.'); end
         push_and(label, ina, inb);
     elseif (strcmpi(equation(1:3), 'not'))
-        signals = regexp_signals(equation, true);
+        signals = regexp_signals(equation, false, true);
         ina = signals{:};
-        if (numel(['not([' ina '])']) ~= numel(equation)), error('Unsupported network.'); end
+        if (~strcmpi(['not([' ina '])'], equation)), error('Unsupported network.'); end
         push_not(label, ina);
-    elseif (strcmpi(equation, {'0', '1'}))
+    elseif (any(strcmpi(equation, {'0', '1'})))
         push_constant(label, equation);
     else
         error('Unsupported network');
@@ -68,17 +61,6 @@ polatch = in_range.po( olatch);
 
 for k = [polatch, ponodes], write_line(num2str(signal2literal(in_labels{get_inode(in_delay, k)}))); end
 
-
-
-    
-
-
-
-
-
-
-%in_range.inode{k}}))); end
-
 keys = and2uid.keys();
 andlist = cell(1, a);
 andlist(cell2mat(and2uid.values(keys))) = keys;
@@ -95,7 +77,14 @@ liid = 0;
 poid = 0;
 
 for k = pinodes, write_line(['i' num2str(piid) ' ' in_labels{k}]); piid = piid + 1; end
-for k = pilatch, write_line(['l' num2str(liid) ' ' in_labels{k}]); liid = liid + 1; end
+
+for k = pilatch
+    label = in_labels{k};
+    split = find(label == '_');
+    write_line(['l' num2str(liid) ' ' label(1:(split(end - 1) - 1))]);
+    liid = liid + 1;
+end
+
 for k = ponodes, write_line(['o' num2str(poid) ' ' in_labels{k}]); poid = poid + 1; end
 
 write_line('c');

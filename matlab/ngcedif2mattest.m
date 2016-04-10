@@ -30,8 +30,10 @@ view(bf);
 
         
         
-        
-        
+       %in_range.inode{k}}))); end 
+    %if (numel() ~= numel(equation)), error('Unsupported network.');
+        %end
+        %if (numel(['not([' ina '])']) ~= numel(equation)), error('Unsupported network.'); end    
         %req = ;
         
 %push_not(label, equation(6:(end - 2)));

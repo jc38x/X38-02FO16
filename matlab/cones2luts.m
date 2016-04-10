@@ -10,10 +10,12 @@ out_inputs = cell(1, in_range.szin);
 
 for k = in_range.in
     equation = in_equations{k};
-    signals = unique(regexp(equation, '\[\w*,?\w+\]', 'match'));
+    %signals = unique(regexp(equation, '\[\w*,?\w+\]', 'match'));
+    signals = regexp_signals(equation, true, false);
     ns = numel(signals);
-    inputs = num2cell(repmat([1, 0], ns, 1), 2);
-    inputs = combvec(inputs{:});
+    %inputs = num2cell(repmat([1, 0], ns, 1), 2);
+    %inputs = combvec(inputs{:});
+    inputs = tt_inputs(ns, []);
     ni = size(inputs, 2);
     outputs = zeros(1, ni);
     

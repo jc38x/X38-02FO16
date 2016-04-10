@@ -13,7 +13,7 @@ if (fid == -1), error(['Failed to open file ' in_filename '.']); end
 dtor = onCleanup(@()fclose(fid));
 header = strsplitntrim(fgetl(fid), ' ');
 fmt = header{1};
-if (~strcmp(header{1}, fmt)), error(['Unexpected format identifier ''' fmt '''. Expected ''aig''']); end
+if (~strcmp(fmt, 'aig')), error(['Unexpected format identifier ''' fmt '''. Expected ''aig''']); end
 
 m = str2double(header{2});
 i = str2double(header{3});
@@ -78,22 +78,40 @@ uidremap = C_remap([pilist, inlist, polist], 1:out_range.sz);
 s2uk = signal2uid.keys();
 out_labels = cell(1, out_range.sz);
 out_labels(uidremap.remap(cell_collapse(signal2uid.values(s2uk)))) = s2uk;
-%{
+
 while (~feof(fid))
     symbol = fgetl(fid);
     type = symbol(1);
-    
-    switch (type)
-    case 'i',  base = out_range.pilo;
-    case 'o',  base = out_range.polo;
-    case 'l',  base = out_range.inlo - l;
-    otherwise, break;
-    end
+    if (~any(strcmpi(type, {'i', 'o', 'l'}))), break; end
     
     split = find(symbol == ' ', 1);
-    out_labels{base + str2double(symbol(2:(split - 1)))} = symbol((split + 1):end);
+    index = str2double(symbol(2:(split - 1)));
+    label = symbol((split + 1):end);
+    
+    switch (type)
+    case 'i',  out_labels{out_range.pilo     + index} = label;
+    case 'o',  out_labels{out_range.polo + l + index} = label;
+    case 'l'
+        out_labels{out_range.inlo - l + index} = [label '_i_' num2str('0')];
+        out_labels{out_range.polo     + index} = [label '_o_' num2str('0')];
+        
+        
+    end
+
+    
+
+
+%base = [out_range.inlo - l, out_range.polo];
+    %otherwise, break;
+    %base = ;
+    %base = ;
+    %out_labels{base + index} = 'a';
 end
-%}
+
+    
+    
+    
+    
 edges = edges(:, 1:edgesindex);
 
 for n = 1:size(edges, 2)
