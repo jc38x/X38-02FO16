@@ -9,3 +9,5 @@ i4 i5_IBUF_renamed_4,O
 i5 i6_IBUF_renamed_5,O
 o0 o1_OBUF_renamed_6,I
 o1 o2_OBUF_renamed_7,I
+c
+Written by mat2aiger

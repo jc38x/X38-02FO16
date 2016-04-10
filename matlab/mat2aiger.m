@@ -7,7 +7,7 @@
 % http://fmv.jku.at/aiger/
 %**************************************************************************
 
-function mat2aiger(in_filename, in_labels, in_range, in_equations)
+function mat2aiger(in_filename, in_delay, in_labels, in_range, in_equations)
 fid = fopen(in_filename, 'w');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
 dtor = onCleanup(@()fclose(fid));
@@ -25,7 +25,10 @@ pilatch = in_range.pi( ilatch);
 
 for k = [pinodes, pilatch], push_literal(in_labels{k}); end
 
-for k = in_range.inorder
+order = graphtopoorder(in_delay);
+inorder = order(is_in(order, in_range));
+
+for k = inorder%in_range.inorder
     equation = in_equations{k};
     start = find(equation == '(', 1);
     label = in_labels{k};
@@ -56,7 +59,7 @@ olatch  = strcmpi('#AIGERLATCH', in_equations(in_range.po));
 ponodes = in_range.po(~olatch);
 polatch = in_range.po( olatch);
 
-for k = [polatch, ponodes], write_line(num2str(signal2literal(in_labels{in_range.inode{k}}))); end
+for k = [polatch, ponodes], write_line(num2str(signal2literal(in_labels{get_inode(in_delay, k)}))); end%in_range.inode{k}}))); end
 
 keys = and2uid.keys();
 andlist = cell(1, a);

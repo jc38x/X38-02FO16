@@ -6,8 +6,8 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-%[delay, range] = sample_valavan();
-[delay, labels, range, equations] = random_dag(20, 30, 5, 1, 9, 2); %ok
+[delay, labels, range, equations] = sample_valavan();
+%[delay, labels, range, equations] = random_dag(20, 30, 5, 1, 9, 2); %ok
 
 order = graphtopoorder(delay);
 redro = fliplr(order);

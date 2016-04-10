@@ -11,7 +11,7 @@ optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped_SI
 path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
 
-mat2aig(filename, d, l, r, e);
+mat2aiger(filename, d, l, r, e);
 
 script = [
     {['read_aiger ' filename ';']};
@@ -23,7 +23,7 @@ script = [
 cmdfifo = C_cmdfifo(script);
 spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
 
-[d, l, r, e] = aig2mat(optname);
+[d, l, r, e] = aiger2mat(optname);
 
 bf = build_graph(d, l, r, e);
 view(bf);

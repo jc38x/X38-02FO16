@@ -4,9 +4,6 @@
 % 2016
 %**************************************************************************
 
-function [out_i, out_j, out_s] = get_edges(in_delay)
-[i, j, s] = find(in_delay);
-out_i = i.';
-out_j = j.';
-out_s = s.';
+function [out_signals] = regexp_signals(in_string)
+out_signals = unique(regexp(in_string, '\[(\w+,)?\w+(\(\d+\))?\]', 'match'));
 end
