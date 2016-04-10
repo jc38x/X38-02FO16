@@ -38,9 +38,10 @@ else
         miniterms{k} = nodename;
     end
     
-    if (nt == 1)
-        nodename = miniterms{1};
-    else
+    if (nt > 1)
+    %if (nt == 1)
+    %    nodename = miniterms{1};
+    %else
         nodename = push_and(push_not(miniterms{1}), push_not(miniterms{2}));
         for k = miniterms(3:end), nodename = push_and(nodename, push_not(k{1})); end
         nodename = push_not(nodename);
