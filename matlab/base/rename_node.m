@@ -11,8 +11,8 @@ out_equations = in_equations;
 
 for k = 1:numel(in_node)
     node = in_node(k);
-    newlabel = in_newlabels{k};
-    label = in_labels{node};
-    for l = get_onode(in_delay, node), out_equations{l} = strrep(out_equations{l}, label, newlabel); end
+    newsignal = ['[' in_newlabels{k} ']'];
+    signal = ['[' in_labels{node} ']'];
+    for l = get_onode(in_delay, node), out_equations{l} = strrep(out_equations{l}, signal, newsignal); end
 end
 end
