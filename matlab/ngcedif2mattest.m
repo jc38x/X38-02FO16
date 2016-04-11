@@ -26,6 +26,7 @@ script = [
     {['read_aiger ' filename ';']};
     {'refactor'};
     {['write_aiger -s ' optname]};
+    {'cec'}
     {'quit'};
     ];
 
@@ -64,7 +65,7 @@ heightf = fill_height(redrof, oedgef, df, rf);
 [lutsf, inputsf] = cones2luts(resultrf, resultef, []);
 
 
-view(build_graph(resultdf, resultlf, resultrf, resultef));
+%view(build_graph(resultdf, resultlf, resultrf, resultef));
 
 
 %if (numel(type) >= 6)

@@ -4,7 +4,7 @@
 % 2016
 %**************************************************************************
 
-function [out_delay, out_labels, out_range, out_equations] = random_dag(in_npi, in_nin, in_npo, in_mind, in_maxd, in_maxie)
+function [out_delay, out_labels, out_range, out_equations] = random_network(in_npi, in_nin, in_npo, in_mind, in_maxd, in_maxie)
 poofs = in_npi + in_nin;
 sz = poofs + in_npo;
 inofs = in_npi;
