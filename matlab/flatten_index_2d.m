@@ -5,5 +5,5 @@
 %**************************************************************************
 
 function [out_index] = flatten_index_2d(in_i, in_j, in_rows)
-out_index = sum([in_i; (in_j - 1) * in_rows], 1);
+out_index = sum([in_i(:).'; (in_j(:).' - 1) * in_rows], 1);
 end

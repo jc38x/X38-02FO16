@@ -124,7 +124,7 @@ for k = out_range.in
     label = out_labels{k};
     ie = get_inode(out_delay, k);
     switch (label(1:3))
-    case 'and', out_equations{k} = ['and([' out_labels{ie(1)} '],[' out_labels{ie(2)} '])'];
+    case 'and', out_equations{k} = ['and([' out_labels{ie(1)} '],[' out_labels{ie(end)} '])'];
     case 'not', out_equations{k} = ['not([' out_labels{ie} '])'];
     case 'vcc', out_equations{k} = '1';
     case 'gnd', out_equations{k} = '0';

@@ -4,16 +4,33 @@
 % 2016
 %**************************************************************************
 
-function [out_delay, out_labels, out_range, out_equations] = tt2mat(in_tthex)
-rows = numel(in_tthex) * 4;
-npi = log2(rows);
+function [out_delay, out_labels, out_range, out_equations] = tt2mat(in_tthex, in_inputs)
+%rows = numel(in_tthex) * 4;
+%npi = log2(rows);
+rows = 2 ^ in_inputs;
+npi = in_inputs;
 pi = cell(1, npi);
 
 node2uid      = containers.Map();
 nodeequations = containers.Map();
 nodeiedges    = containers.Map();
 
-ttinputs = tt_inputs(npi, logical(hexToBinaryVector(in_tthex, rows)));
+disp('npi')
+disp(npi)
+disp('hex')
+disp(in_tthex); 
+
+if (npi == 1)
+    switch (upper(in_tthex))
+    case '0', filter = [0, 0];
+    case '1', filter = [0, 1];
+    case '2', filter = [1, 0];
+    case '3', filter = [1, 1];
+    end
+else
+    filter = hexToBinaryVector(in_tthex, rows); %BUG when tthex 0-3 and rows < 4 for 1 input
+end
+ttinputs = tt_inputs(npi, logical(filter));
 nt = size(ttinputs, 2);
 uid = 0;
 
@@ -28,6 +45,9 @@ if (nt == 0)
 elseif (nt == rows)
     nodename = 'vcc';
     push_node(nodename, '1', []);
+elseif (npi == 1)
+    input = operand(ttinputs, 'i0');
+    nodename = push_and(input, input); 
 else
     miniterms = cell(1, nt);
     for k = 1:nt
@@ -45,6 +65,7 @@ else
 end
 
 push_node('o', '', node2uid(nodename));
+%if (in_d), push_node('lo', '', node2uid(nodename)); end
 
 out_range = prepare_range(npi, uid - npi - 1, 1);
 

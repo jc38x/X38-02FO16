@@ -32,7 +32,12 @@ for k = get_inorder(in_delay, in_range)
     if (strcmpi(equation(1:3), 'and'))
         signals = regexp_signals(equation, false, true);
         ina = signals{1};
+        if (numel(signals) > 1)
         inb = signals{2};
+        else
+            inb = ina;
+        end
+        
         if (~strcmpi(['and([' ina '],[' inb '])'], equation)), error('Unsupported network.'); end
         push_and(label, ina, inb);
     elseif (strcmpi(equation(1:3), 'not'))

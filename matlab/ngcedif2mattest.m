@@ -7,11 +7,13 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 t = tic();
-[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
+%[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
+[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/practica3.ndf');
+
 toc(t)
 
-bg = build_graph(d, l, r, e);
-view(bg);
+%bg = build_graph(d, l, r, e);
+%view(bg);
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.aig';
 optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped_SIM.aig';
@@ -43,8 +45,8 @@ spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj,
 [lf, ef] = rename_node(df, lf, ef, find(strcmpi('i5_IBUF_renamed_4,O', lf)), {'v41,I0'});
 [lf, ef] = rename_node(df, lf, ef, find(strcmpi('i6_IBUF_renamed_5,O', lf)), {'v41,I3'});
 %}
-bf = build_graph(df, lf, rf, ef);
-view(bf);
+%bf = build_graph(df, lf, rf, ef);
+%view(bf);
 
 
 
