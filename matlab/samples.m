@@ -1,7 +1,7 @@
 
 %[delay, labels, range] = sample_valavan();
-%[delay, labels, range] = sample_aaghalfadder();
-[delay, labels, range, equations] = sample_aiglatch();
+[delay, labels, range, equations] = sample_aighalfadder();
+%[delay, labels, range, equations] = sample_aiglatch();
 %[delay, labels, range, edges] = sample_edif(false);
 %[delay, labels, range, edges] = sample_edif_special(false);
 %[delay, labels, range, edges] = sample_ISE_mapped(false);

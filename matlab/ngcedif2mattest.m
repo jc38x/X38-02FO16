@@ -1,4 +1,11 @@
 
+K = 4;
+DF = false;
+mode = 1;
+alpha = 1.5; %1.5-2.5
+maxi = 20; %20
+epsrand = [0.001, 0.005]; %small
+
 t = tic();
 [d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
 toc(t)
@@ -23,12 +30,36 @@ script = [
 cmdfifo = C_cmdfifo(script);
 spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
 
-[d, l, r, e] = aiger2mat(optname);
-
-bf = build_graph(d, l, r, e);
+[df, lf, rf, ef] = aiger2mat(optname);
+%{
+[lf, ef] = rename_node(df, lf, ef, find(strcmpi('i1_IBUF_renamed_0,O', lf)), {'v61,I2'});
+[lf, ef] = rename_node(df, lf, ef, find(strcmpi('i2_IBUF_renamed_1,O', lf)), {'v61,I3'});
+[lf, ef] = rename_node(df, lf, ef, find(strcmpi('i3_IBUF_renamed_2,O', lf)), {'v61,I1'});
+[lf, ef] = rename_node(df, lf, ef, find(strcmpi('i4_IBUF_renamed_3,O', lf)), {'v61,I0'});
+%}
+%{
+[lf, ef] = rename_node(df, lf, ef, find(strcmpi('i3_IBUF_renamed_2,O', lf)), {'v41,I1'});
+[lf, ef] = rename_node(df, lf, ef, find(strcmpi('i4_IBUF_renamed_3,O', lf)), {'v41,I2'});
+[lf, ef] = rename_node(df, lf, ef, find(strcmpi('i5_IBUF_renamed_4,O', lf)), {'v41,I0'});
+[lf, ef] = rename_node(df, lf, ef, find(strcmpi('i6_IBUF_renamed_5,O', lf)), {'v41,I3'});
+%}
+bf = build_graph(df, lf, rf, ef);
 view(bf);
 
 
+
+
+[iedgef, oedgef] = prepare_edges(df, rf);
+orderf = graphtopoorder(df);
+redrof = fliplr(orderf);
+depthf = fill_depth(orderf, iedgef, df, rf);
+heightf = fill_height(redrof, oedgef, df, rf);
+[aff, noedgef] = fill_af(orderf, iedgef, oedgef, rf);
+
+[sf, cvf] = hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, 1, alpha, epsrand(1), epsrand(2));
+[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
+
+[lutsf, inputsf] = cones2luts(resultrf, resultef, []);
 
 
 
