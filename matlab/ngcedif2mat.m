@@ -22,6 +22,15 @@ mapedges  = containers.Map('KeyType', 'double', 'ValueType', 'any');
 uid = 0;
 edgecount = 0;
 
+
+
+
+
+
+
+
+
+lutcount = 0;
 while (initerator.hasNext())
     instance = initerator.next();
     type = char(instance.getType());
@@ -53,73 +62,13 @@ while (initerator.hasNext())
     push_net(d, l, r, e);
     lut2uid(instancename) = uid;
     
-    %if (numel(type) >= 6)
-    %    switch (type(6))
-    %        case 'L'
-    %        case 'D'
-    %    end
-    %end
-    
-    
-
-    %, ld = type(6); else ld = []; end
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        
-    
-    %isd = strcmpi(ld, 'D');
-    
-    %if (isd), rename = cell(1, inputs + 2); else rename = cell(1, inputs + 1); end
-    
-    
-    
-    
-    
-    
-    %rename = cell(1, inputs + 1);
-    
-    
-    
-    
-    %if (strcmpi(ld, 'L')), renameo = 'LO'; else renameo = 'O'; end
-    %inputs = 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    %{
-    if     (any(strcmpi(type, {'LUT1',   'LUT2',   'LUT3',   'LUT4',   'LUT5',   'LUT6'  })))
-    elseif (any(strcmpi(type, {'LUT1_L', 'LUT2_L', 'LUT3_L', 'LUT4_L', 'LUT5_L', 'LUT6_L'})))
-    elseif (any(strcmpi(type, {'LUT1_D', 'LUT2_D', 'LUT3_D', 'LUT4_D', 'LUT5_D', 'LUT6_D'})))
-    else
-    end
-%}
-
-%{
-    if (~any(strcmpi(type, {'LUT1', 'LUT2', 'LUT3', 'LUT4', 'LUT5', 'LUT6'}))), continue; end
-    instancename = char(instance.getName());
-    [d, l, r, e] = tt2mat(char(instance.getProperty('INIT').getValue().getStringValue()));
-    [l, e] = rename_node(d, l, e, [1, 2, 3, 4, numel(l)], {'I0', 'I1', 'I2', 'I3', 'O'});
-    [l, e] = make_instance(instancename, l, r, e);
-    push_net(d, l, r, e);
-    lut2uid(instancename) = uid;
-        %}
+    lutcount = lutcount + 1;
+    %%bg = build_graph(d, l, r, e);
+    %%view(bg);
+    %%pause
 end
+lutcount
+
 
 while (edgesiterator.hasNext())
     edge = edgesiterator.next();
@@ -141,32 +90,76 @@ newedges = zeros(1, edgecount);
 for k = 1:edgecount, newedges(k) = flatten_index_2d(signal2index(lutedges{1, k}), signal2index(lutedges{2, k}), out_range.sz); end
 out_delay(newedges) = 1;
 
+
+
+
 for k = out_range.pi
     label = out_labels{k};
+    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+        disp('IN PI');
+    end
     if (~test_lut(label)), continue; end
     mapremove(k) = k;
     inode = find(out_delay(:, k));
     if (isempty(inode)), error(['Unconnected LUT input ' label '.']); end
     newlabel = out_labels{inode};
 	onode = find(out_delay(k, :));
-    if (isempty(onode)), continue; end
-    for n = onode, out_equations{n} = strrep(out_equations{n}, label, newlabel); end
+    if (isempty(onode)), warning('Unused LUT input'); continue; end
+    for n = onode, out_equations{n} = strrep(out_equations{n}, ['[' label ']'], ['[' newlabel ']']); end
     mapproxy(k) = flatten_index_2d(repmat(inode, 1, numel(onode)), onode, out_range.sz);
 end
 
 for k = out_range.po
     label = out_labels{k};
+    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+        disp('IN PO');
+    end
     if (~test_lut(label)), continue; end
+    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+        disp('IS LUT OUTPUT');
+    end
+    
+    
     mapremove(k) = k;
-    onode = find(out_delay(k, :));
-    if (isempty(onode)), continue; end
+    
     inode = find(out_delay(:, k));
+    if (isempty(inode)), error(['Unconnected LUT output ' label '.']); end
+    
+    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+        disp('INODE');
+        disp(inode);
+        disp(out_labels{inode});
+    end
+    
+    
+    newlabel = out_labels{inode};
+    onode = find(out_delay(k, :));
+    if (isempty(onode)), warning('Unused LUT'); continue; end
+    
+    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+        disp('ONODE');
+        disp(onode);
+        for n = onode, disp(out_labels{n}); end
+    end
+    
+    
+    v = [];
+    for n = onode,
+        if (test_lut(out_labels{n})), v = [v, get_onode(out_delay, n)]; else v = [v, n]; end
+    end
+    
+    
     %size(onode)
     %size(inode)
-    mapproxy(k) = flatten_index_2d(repmat(inode, 1, numel(onode)), onode, out_range.sz);
+    for n = v, out_equations{n} = strrep(out_equations{n}, ['[' label ']'], ['[' newlabel ']']); end
+    mapproxy(k) = flatten_index_2d(repmat(inode, 1, numel(v)), v, out_range.sz);
 end
 
 out_delay(cell_collapse(mapproxy.values())) = 1;
+
+%any(strcmpi('VGA_B_mux0000_0_1136_renamed_275,O', out_labels(cell_collapse(mapremove.values()))))
+%out_labels(cell_collapse(mapremove.values()))
+
 [out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, cell_collapse(mapremove.values()));
 out_edif = edifenvironment;
 

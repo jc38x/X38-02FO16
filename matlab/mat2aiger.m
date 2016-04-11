@@ -41,6 +41,7 @@ for k = get_inorder(in_delay, in_range)
         if (~strcmpi(['and([' ina '],[' inb '])'], equation)), error('Unsupported network.'); end
         push_and(label, ina, inb);
     elseif (strcmpi(equation(1:3), 'not'))
+        %k
         signals = regexp_signals(equation, false, true);
         ina = signals{:};
         if (~strcmpi(['not([' ina '])'], equation)), error('Unsupported network.'); end
@@ -131,6 +132,7 @@ write_line('Written by mat2aiger');
     end
 
     function push_not(in_label, in_a)
+        %in_a
     lit = signal2literal(in_a);
     if (is_odd(lit)), lit = lit - 1; else lit = lit + 1; end
     signal2literal(in_label) = lit;

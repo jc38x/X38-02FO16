@@ -15,10 +15,10 @@ node2uid      = containers.Map();
 nodeequations = containers.Map();
 nodeiedges    = containers.Map();
 
-disp('npi')
-disp(npi)
-disp('hex')
-disp(in_tthex); 
+%disp('npi')
+%disp(npi)
+%disp('hex')
+%disp(in_tthex); 
 
 if (npi == 1)
     switch (upper(in_tthex))

@@ -64,7 +64,75 @@ heightf = fill_height(redrof, oedgef, df, rf);
 [lutsf, inputsf] = cones2luts(resultrf, resultef, []);
 
 
+view(build_graph(resultdf, resultlf, resultrf, resultef));
 
+
+%if (numel(type) >= 6)
+    %    switch (type(6))
+    %        case 'L'
+    %        case 'D'
+    %    end
+    %end
+    
+    
+
+    %, ld = type(6); else ld = []; end
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+    
+    %isd = strcmpi(ld, 'D');
+    
+    %if (isd), rename = cell(1, inputs + 2); else rename = cell(1, inputs + 1); end
+    
+    
+    
+    
+    
+    
+    %rename = cell(1, inputs + 1);
+    
+    
+    
+    
+    %if (strcmpi(ld, 'L')), renameo = 'LO'; else renameo = 'O'; end
+    %inputs = 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    %{
+    if     (any(strcmpi(type, {'LUT1',   'LUT2',   'LUT3',   'LUT4',   'LUT5',   'LUT6'  })))
+    elseif (any(strcmpi(type, {'LUT1_L', 'LUT2_L', 'LUT3_L', 'LUT4_L', 'LUT5_L', 'LUT6_L'})))
+    elseif (any(strcmpi(type, {'LUT1_D', 'LUT2_D', 'LUT3_D', 'LUT4_D', 'LUT5_D', 'LUT6_D'})))
+    else
+    end
+%}
+
+%{
+    if (~any(strcmpi(type, {'LUT1', 'LUT2', 'LUT3', 'LUT4', 'LUT5', 'LUT6'}))), continue; end
+    instancename = char(instance.getName());
+    [d, l, r, e] = tt2mat(char(instance.getProperty('INIT').getValue().getStringValue()));
+    [l, e] = rename_node(d, l, e, [1, 2, 3, 4, numel(l)], {'I0', 'I1', 'I2', 'I3', 'O'});
+    [l, e] = make_instance(instancename, l, r, e);
+    push_net(d, l, r, e);
+    lut2uid(instancename) = uid;
+        %}
 %find(out_delay(:, k));
      %{
         
