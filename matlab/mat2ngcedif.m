@@ -1,14 +1,25 @@
 
-function mat2ngcedif(in_filename, in_delay, in_labels, in_range, in_luts, in_inputs, in_names, in_edif)
+function [nets] = mat2ngcedif(in_filename, in_delay, in_labels, in_range, in_luts, in_inputs, in_names, in_edif)
 
 
 
-ts = strsplitntrim(datestr(now, 'yyyy mm dd HH MM SS'), ' ');
+
 
 fos = java.io.FileOutputStream(in_filename);
 epw = edu.byu.ece.edif.core.EdifPrintWriter(fos);
 dtor = onCleanup(@()epw.close());
+ts = strsplitntrim(datestr(now, 'yyyy mm dd HH MM SS'), ' ');
 tc = in_edif.getTopCell();
+edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(tc);
+edges = edifgraph.getEdges();
+edgesiterator = edges.iterator();
+instanceiterator = tc.cellInstanceIterator();
+nets = containers.Map();
+lutmap = containers.Map();
+index2lutsize = {'1', '2', '3', '4', '5', '6'};
+index2lutinput = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5'};
+
+
 
 epw.printlnIndent(['(edif ' char(in_edif.getName())]);
 epw.incrIndent();
@@ -45,7 +56,6 @@ tc.getInterface().toEdif(epw);
 epw.printlnIndent('(contents');
 epw.incrIndent();
 
-instanceiterator = tc.cellInstanceIterator();
 while (instanceiterator.hasNext())
     instance = instanceiterator.next();
     type = char(instance.getType());
@@ -57,22 +67,108 @@ end
 
 
 
-
-for k = 1:numel(in_luts)
-    lutinit = in_luts{k};
-    name = in_names{k};
-    inputs = in_inputs{k};
+for k = get_inorder(in_delay, in_range)
+    lutname = in_labels{k};
+    adjk = k - in_range.pihi;
+    inputs = in_inputs{adjk};
+    ni = numel(inputs);
     
-    epw.printlnIndent(['(instance ' 'mat2ngcedif_LUT_' name]);
+    epw.printlnIndent(['(instance ' lutname]);
     epw.incrIndent();
-    epw.printlnIndent(['(viewRef black_box (cellRef LUT' num2str(numel(inputs)) ' (libraryRef UNISIMS)))']);
+    epw.printlnIndent(['(viewRef black_box (cellRef LUT' index2lutsize{ni} ' (libraryRef UNISIMS)))']);
     epw.printlnIndent('(property XSTLIB (boolean (true)))');
-    epw.printlnIndent(['(property INIT (string "' lutinit '"))']);
+    epw.printlnIndent(['(property INIT (string "' in_luts{adjk} '"))']);
+    epw.decrIndent();
+    epw.printlnIndent(')');
+    
+    for i = 1:ni
+        input = inputs{i};
+        if (lutmap.isKey(input)), source = [input ',O']; else source = input; end
+        push_net(source, [lutname ',' index2lutinput{i}]);
+    end
+    
+    lutmap(lutname) = lutname;
+end
+
+for k = in_range.po
+    for e = get_inode(in_delay, k);
+        label = in_labels{e};
+        if (is_in(e,  in_range)), source = [label ',O']; else source = label; end
+        push_net(source, in_labels{k})
+    end
+end
+
+while (edgesiterator.hasNext())
+    edge = edgesiterator.next();
+    
+    sourceepr  = edge.getSourceEPR();
+    if (~sourceepr.isTopLevelPortRef())
+    sourcetype = char(sourceepr.getCellInstance().getType());
+    if (strcmpi(sourcetype(1:3), 'LUT')), continue; end
+    end
+    
+    sinkepr  = edge.getSinkEPR();
+    if (~sinkepr.isTopLevelPortRef())
+    sinktype = char(sinkepr.getCellInstance().getType());
+    if (strcmpi(  sinktype(1:3), 'LUT')), continue; end
+    end
+    
+    push_net(make_port_name(sourceepr, true), make_port_name(sinkepr, false));
+end
+
+netdrivers = nets.keys();
+netid = 0;
+for source = netdrivers
+    netid = netid + 1;
+    epw.printlnIndent(['(net mat2ngcedif_net_' num2str(netid)]);
+    epw.incrIndent();
+    epw.printlnIndent('(joined');
+    epw.incrIndent();
+
+    write_portref(source{:});
+    for sink = nets(source{:})%nets.values(source);
+        %class(sink{:})
+        write_portref(sink{:});
+    end
+    
+    epw.decrIndent();
+    epw.printlnIndent(')');
     epw.decrIndent();
     epw.printlnIndent(')');
 end
 
-%nets
+
+
+
+
+
+    function write_portref(in_portname)
+        pivot = find(in_portname == ',');
+        if (~isempty(pivot))
+            instancename = in_portname(1:(pivot - 1));
+            portbit = in_portname((pivot + 1):end);
+            insttext = ['(instanceRef ' instancename ')'];
+        else
+            instancename = '';
+            portbit = in_portname;
+            insttext = [];
+        end
+        bitpivot = find(portbit == '(');
+        if (~isempty(bitpivot))
+            portname = portbit(1:(bitpivot - 1));
+            bitpos = portbit((bitpivot + 1):(end - 1));
+            porttext = ['(member ' portname ' ' bitpos ')'];
+        else
+            portname = portbit;
+            bitpos = '';
+            porttext = portname;
+        end
+        
+        epw.printlnIndent(['(portRef ' porttext ' ' insttext ')']);
+        
+    end
+
+    
 
 
 
@@ -92,4 +188,32 @@ in_edif.getTopDesign().toEdif(epw);
 
 epw.decrIndent();
 epw.printlnIndent(')');
+
+
+    function push_net(in_sourceportname, in_sinkportname)    
+    crop = find(in_sourceportname == '@');
+    if (~isempty(crop)), sourcename = in_sourceportname(1:(crop - 1)); else sourcename = in_sourceportname; end
+    crop = find(in_sinkportname == '@');
+    if (~isempty(crop)), sinkname = in_sinkportname(1:(crop - 1)); else sinkname = in_sinkportname; end
+    if (~nets.isKey(sourcename)), nets(sourcename) = {sinkname}; else nets(sourcename) = [nets(sourcename), {sinkname}]; end
+    end
+
+
+    function [out_name] = make_port_name(in_portepr, in_source)
+    port = in_portepr.getPort();
+    name = char(port.getName());
+    if (port.isBus()), bit = ['(' num2str(in_portepr.getSingleBitPort().bitPosition()) ')']; else bit = ''; end
+    if (~in_portepr.isTopLevelPortRef())
+        prefix = [char(in_portepr.getCellInstance().getName()) ','];
+        suffix = '';
+	else
+        prefix = '';
+        if (in_source)
+            if (~port.isInputOnly()),  suffix = '@O'; else suffix = ''; end
+        else
+            if (~port.isOutputOnly()), suffix = '@I'; else suffix = ''; end
+        end
+    end
+    out_name = [prefix name bit suffix];
+    end
 end
