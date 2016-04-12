@@ -63,11 +63,11 @@ while (initerator.hasNext())
     lut2uid(instancename) = uid;
     
     lutcount = lutcount + 1;
-    %%bg = build_graph(d, l, r, e);
-    %%view(bg);
-    %%pause
+    
 end
 lutcount
+
+
 
 
 while (edgesiterator.hasNext())
@@ -90,97 +90,51 @@ newedges = zeros(1, edgecount);
 for k = 1:edgecount, newedges(k) = flatten_index_2d(signal2index(lutedges{1, k}), signal2index(lutedges{2, k}), out_range.sz); end
 out_delay(newedges) = 1;
 
-
-
-
 for k = out_range.pi
     label = out_labels{k};
-    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
-        disp('IN PI');
-    end
     if (~test_lut(label)), continue; end
     mapremove(k) = k;
-    inode = find(out_delay(:, k));
+    inode = get_inode(out_delay, k);
     if (isempty(inode)), error(['Unconnected LUT input ' label '.']); end
-    newlabel = out_labels{inode};
-	onode = find(out_delay(k, :));
-    if (isempty(onode)), warning('Unused LUT input'); continue; end
-    for n = onode, out_equations{n} = strrep(out_equations{n}, ['[' label ']'], ['[' newlabel ']']); end
+    if (test_lut(out_labels{inode})), inode = get_inode(out_delay, inode); end
+    signal = ['[' label ']'];
+    newsignal = ['[' out_labels{inode} ']'];
+    onode = get_onode(out_delay, k);
+    if (isempty(onode)), continue; end
+    for n = onode, out_equations{n} = strrep(out_equations{n}, signal, newsignal); end
     mapproxy(k) = flatten_index_2d(repmat(inode, 1, numel(onode)), onode, out_range.sz);
 end
 
 for k = out_range.po
     label = out_labels{k};
-    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
-        disp('IN PO');
-    end
     if (~test_lut(label)), continue; end
-    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
-        disp('IS LUT OUTPUT');
-    end
-    
-    
     mapremove(k) = k;
-    
-    inode = find(out_delay(:, k));
-    if (isempty(inode)), error(['Unconnected LUT output ' label '.']); end
-    
-    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
-        disp('INODE');
-        disp(inode);
-        disp(out_labels{inode});
-    end
-    
-    
-    newlabel = out_labels{inode};
-    onode = find(out_delay(k, :));
-    if (isempty(onode)), warning('Unused LUT'); continue; end
-    
-    if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
-        disp('ONODE');
-        disp(onode);
-        for n = onode, disp(out_labels{n}); end
-    end
-    
-    
-    v = [];
-    for n = onode,
-        if (test_lut(out_labels{n})), v = [v, get_onode(out_delay, n)]; else v = [v, n]; end
-    end
-    
-    
-    %size(onode)
-    %size(inode)
-    for n = v, out_equations{n} = strrep(out_equations{n}, ['[' label ']'], ['[' newlabel ']']); end
-    mapproxy(k) = flatten_index_2d(repmat(inode, 1, numel(v)), v, out_range.sz);
+    inode = get_inode(out_delay, k);
+    onode = get_onode(out_delay, k);
+    if (isempty(onode)), error(['Unconnected LUT output ' label '.']); end
+    onode = onode(is_po(onode, out_range));
+    mapproxy(k) = flatten_index_2d(repmat(inode, 1, numel(onode)), onode, out_range.sz);
 end
 
 out_delay(cell_collapse(mapproxy.values())) = 1;
-
-%any(strcmpi('VGA_B_mux0000_0_1136_renamed_275,O', out_labels(cell_collapse(mapremove.values()))))
-%out_labels(cell_collapse(mapremove.values()))
-
 [out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, cell_collapse(mapremove.values()));
 out_edif = edifenvironment;
-
-    function push_net(in_d, in_l, in_r, in_e)
-    uid = uid + 1;
-    mapd(uid) = in_d;
-    mapl(uid) = in_l;
-    mapr(uid) = in_r;
-    mape(uid) = in_e;
-    maplabel = [maplabel; containers.Map(in_l, in_l)];
-    end
-
+    
     function [out_isit] = test_lut(in_fullportname)
     pivot = find(in_fullportname == ',');
     out_isit = ~isempty(pivot) && lut2uid.isKey(in_fullportname(1:(pivot - 1)));
     end
 
-
-
-
-
+    function push_net(in_d, in_l, in_r, in_e)
+    uid = uid + 1;
+    
+    mapd(uid) = in_d;
+    mapl(uid) = in_l;
+    mapr(uid) = in_r;
+    mape(uid) = in_e;
+    
+    maplabel = [maplabel; containers.Map(in_l, in_l)];
+    end
 
     function [out_name] = make_port_name(in_portepr, in_source)
     port = in_portepr.getPort();
@@ -199,6 +153,15 @@ out_edif = edifenvironment;
     end
     out_name = [prefix name bit suffix];
     end
+
+    
+
+
+
+
+
+
+    
 
     
 end

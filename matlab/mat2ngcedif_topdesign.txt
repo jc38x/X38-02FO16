@@ -1,0 +1,4 @@
+(design top
+  (cellRef top (libraryRef top_lib))
+  (property PART (string "xc3s700a-4-fg484"))
+)

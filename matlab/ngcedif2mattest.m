@@ -7,10 +7,12 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 t = tic();
-%[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
-[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/practica3.ndf');
+[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
+%[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/practica3.ndf');
 
 toc(t)
+
+check_network(d, r, e);
 
 %bg = build_graph(d, l, r, e);
 %view(bg);
@@ -34,7 +36,406 @@ cmdfifo = C_cmdfifo(script);
 spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
 
 [df, lf, rf, ef] = aiger2mat(optname);
+
+
+
+check_network(df, rf, ef);
+
+[iedgef, oedgef] = prepare_edges(df, rf);
+orderf = graphtopoorder(df);
+redrof = fliplr(orderf);
+depthf = fill_depth(orderf, iedgef, df, rf);
+heightf = fill_height(redrof, oedgef, df, rf);
+[aff, noedgef] = fill_af(orderf, iedgef, oedgef, rf);
+
+[sf, cvf] = hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, 1, alpha, epsrand(1), epsrand(2));
+[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
+
+[lutsf, inputsf, namesf] = cones2luts(resultlf, resultrf, resultef, []);
+
+check_network(resultdf, resultrf, resultef);
+
+mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexport3.edif', resultdf, resultlf, resultrf, lutsf, inputsf, namesf, edif); 
+
+
+
+%view(build_graph(resultdf, resultlf, resultrf, resultef));
+
+
+
+%fprintf(fid, '%s\n', ['(instance ' char(instance.getName())]);
+%fprintf(fid, '%s\n', '
+
+%epw.close();
+
+
+
+%epw = edu.byu.ece.edif.core.EdifPrintWriter('mat2ngcedif_UNISIMS.txt');
+
+
+
+%epw = edu.byu.ece.edif.core.EdifPrintWriter('mat2ngcedif_topdesign.txt');
+%td = ;
+%;
+%epw.close();
+
+%fid = fopen('mat2ngccedif_topcell.txt', 'w');
+%if (fid == -1), error(['Failed to open file ' 'mat2ngccedif_topcell.txt' '.']); end
+%dtor = onCleanup(@()fclose(fid));
+
+%
+%
+
+
+%fprintf(fid, '%s\n', );
+%fprintf(fid, '%s\n', );
+%fprintf(fid, '%s\n', );
+%fprintf(fid, '%s\n', );
+%fprintf(fid, '%s\n', );
+%fprintf(fid, '%s\n', );
+%fprintf(fid, '%s\n', );
+
+
+
+%epw = edu.byu.ece.edif.core.EdifPrintWriter('mat2ngcedif_topcell_interface.txt');
+%tci = ;
+%tci;
+%epw.close();
+
+%fprintf(fid, '%s\n', );
+
+
+
+
+
+
+
+
+
+%lmi = lm.iterator();
+
+
+
+%while (lmi.hasNext())
+%    l = lmi.next();
+%    disp(char(l.getName()));
+%end
+
+
+%lm.toEdif(epw);
+
+
+
+%topcell = in_edif.getTopCell();
+%edu.byu.ece.edif.core.EdifPrintWriter.printEdifEnvironment(in_filename,  topcell);
+
+%fid = fopen(in_filename, 'w');
+%if (fid == -1), error(['Failed to open file ' in_filename '.']); end
+%dtor = onCleanup(@()fclose(fid));
+%fid = fopen(, 'w');
 %{
+headerbegin = [
+    {0, '(edif top'};
+    {1, '(edifVersion 2 0 0)'};
+    {1, '(edifLevel 0)'};
+    {1, '(keywordMap (keywordLevel 0))'};
+    {1, '(status'};
+    {2, '(written'};
+    {3, ['(timeStamp ' year ' ' month ' ' day ' ' hour ' ' minute ' ' second ')']};
+    {3, '(author "matlab")'};
+    {3, '(program "mat2ngcedif")'};
+    {2, ')'};
+    {1, ')'}
+    {1, '(external UNISIMS'};
+    {2, '(edifLevel 0)'};
+    {2, '(technology (numberDefinition))'};
+    ];
+    
+lut4cell = [
+    {2, '(cell LUT4'};
+    {3, '(cellType GENERIC)'};
+    {4, '(view view_1'};
+    {5, '(viewType NETLIST)'};
+    {5, '(interface '};
+    {6, '(port I0'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port I1'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port I2'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port I3'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port O'};
+    {7, '(direction OUTPUT)'};
+    {6, ')'};
+    {5, ')'};
+    {4, ')'};
+    {2, ')'};    
+    ];
+
+lut3cell = [
+    {2, '(cell LUT3'};
+    {3, '(cellType GENERIC)'};
+    {4, '(view view_1'};
+    {5, '(viewType NETLIST)'};
+    {5, '(interface '};
+    {6, '(port I0'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port I1'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port I2'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port O'};
+    {7, '(direction OUTPUT)'};
+    {6, ')'};
+    {5, ')'};
+    {4, ')'};
+    {2, ')'};    
+    ];
+
+lut2cell = [
+    {2, '(cell LUT2'};
+    {3, '(cellType GENERIC)'};
+    {4, '(view view_1'};
+    {5, '(viewType NETLIST)'};
+    {5, '(interface '};
+    {6, '(port I0'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port I1'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port O'};
+    {7, '(direction OUTPUT)'};
+    {6, ')'};
+    {5, ')'};
+    {4, ')'};
+    {2, ')'};    
+    ];
+
+ibufcell = [
+    {2, '(cell IBUF'};
+    {3, '(cellType GENERIC)'};
+    {4, '(view view_1'};
+    {5, '(viewType NETLIST)'};
+    {5, '(interface'};
+    {6, '(port I'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port O'};
+    {7, '(direction OUTPUT)'};
+    {6, ')'};
+    {5, ')'};
+    {4, ')'};
+    {2, ')'};
+    ];
+
+obufcell = [
+    {2, '(cell OBUF'};
+    {3, '(cellType GENERIC)'};
+    {4, '(view view_1'};
+    {5, '(viewType NETLIST)'};
+    {5, '(interface'};
+    {6, '(port I'};
+    {7, '(direction INPUT)'};
+    {6, ')'};
+    {6, '(port O'};
+    {7, '(direction OUTPUT)'};
+    {6, ')'};
+    {5, ')'};
+    {4, ')'};
+    {2, ')'};
+    ];
+
+headerstop = {1, ')'};
+
+librarybegin = [
+    {1, '(library top_lib'};
+    {2, '(edifLevel 0)'};
+    {2, '(technology (numberDefinition))'};
+    {2, '(cell top'};
+    {3, '(cellType GENERIC)'};
+    {4, '(view view_1'};
+    {5, '(viewType NETLIST)'};
+    {5, '(interface'};
+    ];
+
+designator = [
+    {6, '(designator "xc3s700a-4-fg484")'};
+    {6, '(property TYPE (string "top") (owner "Xilinx"))'};
+    {6, '(property NLW_UNIQUE_ID (integer 0) (owner "Xilinx"))'};
+    {6, '(property NLW_MACRO_TAG (integer 0) (owner "Xilinx"))'};
+    {6, '(property NLW_MACRO_ALIAS (string "top_top") (owner "Xilinx"))'};
+    {5, ')'};
+    {5, '(contents'};
+    ];
+
+librarystop = [
+    {5, ')'};
+    {4, ')'};
+    {2, ')'};
+    {1, ')'};
+    ];
+
+design = [
+    {1, '(design top'};
+    {2, '(cellRef top'};
+    {3, '(libraryRef top_lib)'};
+    {2, ')'};
+    {2, '(property PART (string "xc3s700a-4-fg484") (owner "Xilinx"))'};
+    {1, ')'};
+    {0, ')'};
+    ];
+
+rs = containers.Map('KeyType', 'char', 'ValueType', 'char');
+
+for k = in_range.pi, rs(in_labels{k}) = [in_labels{k} '_IBUF']; end
+for k = in_range.in, rs(in_labels{k}) = [in_labels{k} '_LUT']; end
+for k = in_range.po, rs(in_labels{k}) = [in_labels{k} '_OBUF']; end
+
+write_block(headerbegin);
+write_block(lut4cell);
+write_block(lut3cell);
+write_block(lut2cell);
+write_block(ibufcell);
+write_block(obufcell);
+write_block(headerstop);
+write_block(librarybegin);
+
+%top i/o
+for k = in_range.pi
+    fprintf(fid, [indent(6) '(port ' in_labels{k} '\n']);
+    fprintf(fid, [indent(7) '(direction INPUT)\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
+
+for k = in_range.po
+    fprintf(fid, [indent(6) '(port ' in_labels{k} '\n']);
+    fprintf(fid, [indent(7) '(direction OUTPUT)\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
+
+write_block(designator);
+
+%instances
+for k = in_range.in
+    fprintf(fid, [indent(6) '(instance ' in_labels{k} '_LUT\n']);
+    fprintf(fid, [indent(7) '(viewRef view_1 (cellRef LUT' num2str(numel(in_inputs{k - in_range.pihi})) ' (libraryRef UNISIMS)))\n']);
+    fprintf(fid, [indent(7) '(property XSTLIB (boolean (true)) (owner "Xilinx"))\n']);
+    fprintf(fid, [indent(7) '(property INIT (string "' in_luts{k - in_range.pihi} '") (owner "Xilinx"))\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
+
+for k = in_range.pi
+    fprintf(fid, [indent(6) '(instance ' in_labels{k} '_IBUF\n']);
+    fprintf(fid, [indent(7) '(viewRef view_1 (cellRef IBUF (libraryRef UNISIMS)))\n']);
+    fprintf(fid, [indent(7) '(property XSTLIB (boolean (true)) (owner "Xilinx"))\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
+
+for k = in_range.po
+    fprintf(fid, [indent(6) '(instance ' in_labels{k} '_OBUF\n']);
+    fprintf(fid, [indent(7) '(viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))\n']);
+    fprintf(fid, [indent(7) '(property XSTLIB (boolean (true)) (owner "Xilinx"))\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
+
+% and nets
+for k = in_range.pi
+    fprintf(fid, [indent(6) '(net N_' in_labels{k} '\n']);
+    fprintf(fid, [indent(7) '(joined\n']);
+    fprintf(fid, [indent(8) '(portRef ' in_labels{k} ')\n']);
+    fprintf(fid, [indent(8) '(portRef I (instanceRef ' in_labels{k} '_IBUF))\n']);
+    fprintf(fid, [indent(7) ')\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
+
+for k = in_range.po
+    fprintf(fid, [indent(6) '(net N_' in_labels{k} '\n']);
+    fprintf(fid, [indent(7) '(joined\n']);
+    fprintf(fid, [indent(8) '(portRef ' in_labels{k} ')\n']);
+    fprintf(fid, [indent(8) '(portRef O (instanceRef ' in_labels{k} '_OBUF))\n']);
+    fprintf(fid, [indent(7) ')\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
+
+for k = in_range.pi    
+    fprintf(fid, [indent(6) '(net N_' rs(in_labels{k}) '\n']);
+    fprintf(fid, [indent(7) '(joined\n']);
+    fprintf(fid, [indent(8) '(portRef O (instanceRef ' rs(in_labels{k}) '))\n']);
+    for drives = find(in_delay(k, :))
+        if (is_in(drives, in_range))
+            fprintf(fid, [indent(8) '(portRef I' num2str(find(strcmp(in_inputs{drives - in_range.pihi}, in_labels{k})) - 1) ' (instanceRef ' rs(in_labels{drives}) '))\n']);
+        elseif (is_po(drives, in_range))
+            fprintf(fid, [indent(8) '(portRef I (instanceRef ' rs(in_labels{drives}) '))\n']);
+        else
+            error('!!!!!!');
+        end
+    end
+    fprintf(fid, [indent(7) ')\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
+
+for k = in_range.in
+    fprintf(fid, [indent(6) '(net N_' rs(in_labels{k}) '\n']);
+    fprintf(fid, [indent(7) '(joined\n']);
+    fprintf(fid, [indent(8) '(portRef O (instanceRef ' rs(in_labels{k}) '))\n']);
+    for drives = find(in_delay(k, :))
+        if (is_in(drives, in_range))
+            fprintf(fid, [indent(8) '(portRef I' num2str(find(strcmp(in_inputs{drives - in_range.pihi}, in_labels{k})) - 1) ' (instanceRef ' rs(in_labels{drives}) '))\n']);
+        elseif (is_po(drives, in_range))
+            fprintf(fid, [indent(8) '(portRef I (instanceRef ' rs(in_labels{drives}) '))\n']);
+        else
+            error('!!!!!!');
+        end
+    end    
+    fprintf(fid, [indent(7) ')\n']);
+    fprintf(fid, [indent(6) ')\n']);
+end
+
+write_block(librarystop);
+write_block(design);
+
+fclose(fid);
+
+%{
+fprintf(fid, '(edif top\n');
+indent(1);
+fprintf(fid, '(edifVersion 2 0 0)\n');
+indent(1);
+fprintf(fid, '(edifLevel 0)\n');
+indent(1);
+fprintf(fid, '(keywordMap (keywordLevel 0))\n');
+indent(1);
+fprintf(fid, '(status\n');
+indent(2);
+fprintf(fid, '(written\n');
+indent(3);
+fprintf(fid, '(timeStamp '
+%}
+    %if (in_level <= 0), return; end
+    %fprintf(fid, repmat('    ', 1, in_level));
+    
+    function write_block(in_block)
+    for c = in_block.', fprintf(fid, [indent(c{1}) c{2} '\n']); end
+    end
+
+    function [out_ws] = indent(in_level)
+    out_ws = repmat('  ', 1, in_level);
+    end
+
+    function [out_str] = removelz(in_str)
+    if (in_str(1) == '0'), out_str = in_str(2); else out_str = in_str; end
+    end
+%}
+   %{
 [lf, ef] = rename_node(df, lf, ef, find(strcmpi('i1_IBUF_renamed_0,O', lf)), {'v61,I2'});
 [lf, ef] = rename_node(df, lf, ef, find(strcmpi('i2_IBUF_renamed_1,O', lf)), {'v61,I3'});
 [lf, ef] = rename_node(df, lf, ef, find(strcmpi('i3_IBUF_renamed_2,O', lf)), {'v61,I1'});
@@ -47,25 +448,91 @@ spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj,
 [lf, ef] = rename_node(df, lf, ef, find(strcmpi('i6_IBUF_renamed_5,O', lf)), {'v41,I3'});
 %}
 %bf = build_graph(df, lf, rf, ef);
-%view(bf);
+%view(bf); 
+    
+       %signal = ['[' label ']'];
+    %newsignal = ['[' out_labels{inode} ']'];
+    %for n = onode, out_equations{n} = strrep(out_equations{n}, signal, newsignal); end
+    
+    
+    
+    
+    
+    
+    
+    %v = [];
+    %for n = onode,
+    %    if (test_lut(out_labels{n})), v = [v, get_onode(out_delay, n)]; else v = [v, n]; end
+    %end
+    
+    
+    
+    %for n = v, out_equations{n} = strrep(out_equations{n}, ['[' label ']'], ['[' newlabel ']']); end
+    
 
 
 
+%size(onode)
+%size(inode)
+%any(strcmpi('VGA_B_mux0000_0_1136_renamed_275,O', out_labels(cell_collapse(mapremove.values()))))
+%out_labels(cell_collapse(mapremove.values())) 
+    %while (~isempty(inode) &&  && ~is_in(inode, out_range)),  end
+    
+    
+    
+    
+    
+    
+    %{
+    for n = onode
+        if (is_in(n, out_range))
+            out_equations{n} = strrep(out_equations{n}, signal, newsignal);
+        else
+            
+        end
+    end
+    %}
+    
+    
+    
+    
+    
+    
+    
+    
+    %
+    %
 
-[iedgef, oedgef] = prepare_edges(df, rf);
-orderf = graphtopoorder(df);
-redrof = fliplr(orderf);
-depthf = fill_depth(orderf, iedgef, df, rf);
-heightf = fill_height(redrof, oedgef, df, rf);
-[aff, noedgef] = fill_af(orderf, iedgef, oedgef, rf);
+%%bg = build_graph(d, l, r, e);
+    %%view(bg);
+    %%pause
+%inode = find(out_delay(:, k));
+    %onode = find(out_delay(k, :));
+    %onode = find(out_delay(k, :));
+    %if (isempty(inode)), error(['Unconnected LUT output ' label '.']); end
+    %inode = find(out_delay(:, k));
+    %if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+    %    disp('IN PI');
+    %end
+    %{
+    %}
+    %if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+    %    disp('IN PO');
+    %end
+    %if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+    %    disp('IS LUT OUTPUT');
+    %end
+    %if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+    %    disp('INODE');
+    %    disp(inode);
+    %    disp(out_labels{inode});
+    %end
+    %if (strcmpi(label, 'VGA_B_mux0000_0_1136_renamed_275,O'))
+    %    disp('ONODE');
+    %    disp(onode);
+    %    for n = onode, disp(out_labels{n}); end
+    %end
 
-[sf, cvf] = hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, 1, alpha, epsrand(1), epsrand(2));
-[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
-
-[lutsf, inputsf] = cones2luts(resultrf, resultef, []);
-
-
-%view(build_graph(resultdf, resultlf, resultrf, resultef));
 
 
 %if (numel(type) >= 6)

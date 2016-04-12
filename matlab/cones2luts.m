@@ -4,9 +4,11 @@
 % 2016
 %**************************************************************************
 
-function [out_luts, out_inputs] = cones2luts(in_range, in_equations, signals)
+function [out_luts, out_inputs, out_names] = cones2luts(in_labels, in_range, in_equations, signals)
 out_luts = cell(1, in_range.szin);
 out_inputs = cell(1, in_range.szin);
+out_names = cell(1, in_range.szin);
+
 
 for k = in_range.in
     equation = in_equations{k};
@@ -38,5 +40,6 @@ for k = in_range.in
     index = k - in_range.pihi;
     out_luts{index} = strremovespaces(num2str(sum(outputs, 1), '%X'));
     out_inputs{index} = regexprep(signals, '[\[\]]', '');
+    out_names{index} = in_labels{k};
 end
 end

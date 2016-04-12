@@ -1,0 +1,7 @@
+(library top_lib
+(edifLevel 0)
+(technology (numberDefinition))
+(cell top
+(cellType GENERIC)
+(view view_1
+(viewType NETLIST)
