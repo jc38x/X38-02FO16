@@ -7,8 +7,8 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 t = tic();
-[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
-%[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/practica3.ndf');
+%[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
+[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/practica3.ndf');
 
 toc(t)
 
@@ -55,11 +55,92 @@ heightf = fill_height(redrof, oedgef, df, rf);
 
 check_network(resultdf, resultrf, resultef);
 
-mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexport3.edif', resultdf, resultlf, resultrf, lutsf, inputsf, namesf, edif); 
+netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA.edif', resultdf, resultlf, resultrf, lutsf, inputsf, namesf, edif); 
 
 
 
 %view(build_graph(resultdf, resultlf, resultrf, resultef));
+
+
+
+
+
+
+
+
+
+%'mat2ngcedif_LUT_' 
+
+%nets
+
+
+%{
+
+
+keys = nets.keys();
+remaininginputs = in_inputs;
+for k = 1:numel(keys)
+    driver = keys{k};
+    sinks = nets(driver);
+    for i = 1:numel(in_inputs)
+        inputlist = in_inputs{i};
+        match = find(strcmpi(driver, inputlist));
+        if (isempty(match)), continue; end
+        for m = match
+            sinks = [sinks, {[in_names{i}, '}]
+        end
+        
+    end
+    
+    
+end
+%}
+%{
+for k = in_range.in
+    lutname = in_labels{k};
+    
+    for i = 1:ni
+        push_net(inputs{i}, [lutname ',' index2lutinput{i}]);
+    end
+end
+%}
+%
+%in_range.in
+%{
+for k = in_range.in
+    lutname = in_labels{k};
+    adjk = k - in_range.pihi;
+    inputs = in_inputs{adjk};
+    ni = numel(inputs);
+    
+    epw.printlnIndent(['(instance ' lutname]);
+    epw.incrIndent();
+    epw.printlnIndent(['(viewRef black_box (cellRef LUT' index2lutsize{ni} ' (libraryRef UNISIMS)))']);
+    epw.printlnIndent('(property XSTLIB (boolean (true)))');
+    epw.printlnIndent(['(property INIT (string "' in_luts{adjk} '"))']);
+    epw.decrIndent();
+    epw.printlnIndent(')');
+    
+    %lutmap(lutname) = lutname;
+    for i = 1:ni, push_net(inputs{i}, [lutname ',' index2lutinput{i}]); end
+end
+%}
+
+
+
+%{
+for k = 1:numel(in_luts)
+    lutname = in_names{k};
+    inputs = in_inputs{k};
+    ni = numel(inputs);
+    
+    
+    
+    
+    
+    
+end
+%}
 
 
 
