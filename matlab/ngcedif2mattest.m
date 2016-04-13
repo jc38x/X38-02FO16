@@ -67,7 +67,8 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexpo
 %view(build_graph(resultdf, resultlf, resultrf, resultef));
 
 
-
+%n = max(edgelist(:));
+% n, n);
 %, order);
 %, in_sorted, in_trim)
 %if (in_sorted), order = 'sorted'; else order ='stable'; end

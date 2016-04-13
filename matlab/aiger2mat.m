@@ -77,7 +77,7 @@ uidremap = C_remap([pilist, inlist, polist], 1:out_range.sz);
 
 s2uk = signal2uid.keys();
 out_labels = cell(1, out_range.sz);
-out_labels(uidremap.remap(cell_collapse(signal2uid.values(s2uk)))) = s2uk;
+out_labels(uidremap.remap(cell2mat(signal2uid.values(s2uk)))) = s2uk;
 
 out_equations = cell(1, out_range.sz);
 out_equations(out_range.top) = {''};
@@ -117,8 +117,7 @@ for n = 1:size(edges, 2)
 end
 
 edgelist = cell2mat(signal2uid.values(edges));
-n = max(edgelist(:));
-out_delay = sparse(uidremap.remap(edgelist(1, :)), uidremap.remap(edgelist(2, :)), 1, n, n);
+out_delay = sparse(uidremap.remap(edgelist(1, :)), uidremap.remap(edgelist(2, :)), 1, out_range.sz, out_range.sz);
 
 for k = out_range.in
     label = out_labels{k};
