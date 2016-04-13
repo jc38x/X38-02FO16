@@ -5,8 +5,6 @@
 %**************************************************************************
 
 function [out_delay, out_labels, out_range, out_equations] = tt2mat(in_tthex, in_inputs)
-%rows = numel(in_tthex) * 4;
-%npi = log2(rows);
 rows = 2 ^ in_inputs;
 npi = in_inputs;
 pi = cell(1, npi);
@@ -15,22 +13,9 @@ node2uid      = containers.Map();
 nodeequations = containers.Map();
 nodeiedges    = containers.Map();
 
-%disp('npi')
-%disp(npi)
-%disp('hex')
-%disp(in_tthex); 
+ttinputs = fliplr(tt_inputs(npi));
+ttinputs = ttinputs(:, logical(hexToBinaryVector(in_tthex, [], 'LSBFirst')));
 
-if (npi == 1)
-    switch (upper(in_tthex))
-    case '0', filter = [0, 0];
-    case '1', filter = [0, 1];
-    case '2', filter = [1, 0];
-    case '3', filter = [1, 1];
-    end
-else
-    filter = hexToBinaryVector(in_tthex, rows); %BUG when tthex 0-3 and rows < 4 for 1 input
-end
-ttinputs = tt_inputs(npi, logical(filter));
 nt = size(ttinputs, 2);
 uid = 0;
 
@@ -38,6 +23,10 @@ for k = 1:npi
     pi{k} = ['i' num2str(k - 1)];
     push_node(pi{k}, '', []);
 end
+
+
+
+
 
 if (nt == 0)
     nodename = 'gnd';

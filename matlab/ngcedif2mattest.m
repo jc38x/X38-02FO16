@@ -60,7 +60,7 @@ heightf = fill_height(redrof, oedgef, df, rf);
 
 check_network(resultdf, resultrf, resultef);
 
-netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA2.edif', resultdf, resultlf, resultrf, lutsf, inputsf, namesf, edif); 
+netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA3.edif', resultdf, resultlf, resultrf, lutsf, inputsf, namesf, edif); 
 
 
 
@@ -72,8 +72,29 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexpo
 
 
 
+%rows = numel(in_tthex) * 4;
+%npi = log2(rows);
+%disp('npi')
+%disp(npi)
+%disp('hex')
+%disp(in_tthex); 
+%{
+if (npi == 1)
+    switch (upper(in_tthex))
+    case '0', filter = [0, 0];
+    case '1', filter = [0, 1];
+    case '2', filter = [1, 0];
+    case '3', filter = [1, 1];
+    end
+else
+    filter = hexToBinaryVector(in_tthex, rows); %BUG when tthex 0-3 and rows < 4 for 1 input
+end
+%}
 
-
+%ttinputs = ttinputs(:, logical(filter));
+%ttinputs = tt_inputs(npi, logical(filter));
+%, in_filter)
+%if (~isempty(in_filter)), out_inputs = out_inputs(:, in_filter); end
 
 %translatemap = containers.Map(in_labels, out_labels);
 %

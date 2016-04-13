@@ -17,7 +17,8 @@ for k = in_range.in
     ns = numel(signals);
     %inputs = num2cell(repmat([1, 0], ns, 1), 2);
     %inputs = combvec(inputs{:});
-    inputs = tt_inputs(ns, []);
+    %inputs = tt_inputs(ns, []);
+    inputs = tt_inputs(ns);
     ni = size(inputs, 2);
     outputs = zeros(1, ni);
     
