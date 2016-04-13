@@ -55,7 +55,7 @@ heightf = fill_height(redrof, oedgef, df, rf);
 
 check_network(resultdf, resultrf, resultef);
 
-netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA.edif', resultdf, resultlf, resultrf, lutsf, inputsf, namesf, edif); 
+netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA2.edif', resultdf, resultlf, resultrf, lutsf, inputsf, namesf, edif); 
 
 
 
@@ -69,6 +69,21 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexpo
 
 
 
+
+%translatemap = containers.Map(in_labels, out_labels);
+%
+%translatemap = containers.Map();
+    %translatemap(label) = newlabel;
+    %out_equations = cell(1, in_range.sz);
+%out_equations(in_range.top) = {''};
+
+    
+    %signals = regexprep(unique(regexp(equation, '\[\w+\]', 'match')), '[\[\]]', '');
+    
+        
+        
+    
+    
 %'mat2ngcedif_LUT_' 
 
 %nets
