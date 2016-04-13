@@ -61,11 +61,12 @@ heightf = fill_height(redrof, oedgef, df, rf);
 [sf, cvf] = hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, 1, alpha, epsrand(1), epsrand(2));
 [resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
 
-[lutsf, inputsf, namesf] = cones2luts(resultlf, resultrf, resultef, []);
+%[lutsf, inputsf, namesf] = cones2luts(resultlf, resultrf, resultef, []);
+[lutsf] = cones2luts(resultdf, resultlf, resultrf, resultef);
 
 check_network(resultdf, resultrf, resultef);
 
-netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA3.edif', resultdf, resultlf, resultrf, lutsf, inputsf, namesf, edif); 
+netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA3.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
 
 
 
@@ -86,6 +87,16 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexpo
 
 
 
+    
+    %index = k - in_range.pihi;
+    %out_luts{index} = strremovespaces(num2str(sum(outputs, 1), '%X'));
+    
+    
+%cell(1, in_range.szin);
+%, signals)out_names,out_inputs
+%out_inputs = cell(1, in_range.szin);
+%out_inputs{index} = regexprep(signals, '[\[\]]', '');
+    %regexp_signals(equation);
 
 %translatemap = containers.Map();
 %out_labels = cell(1, in_range.sz);
