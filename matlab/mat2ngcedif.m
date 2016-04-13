@@ -69,15 +69,20 @@ end
 
 for k = get_inorder(in_delay, in_range)
     lutname = in_labels{k};
-    adjk = k - in_range.pihi;
-    inputs = in_inputs{adjk};
+    %adjk = k;% - in_range.pihi;
+    inputs = in_labels(get_inode(in_delay, k));%in_inputs{adjk};
     ni = numel(inputs);
+    initstring = in_luts{k};
+    if (any(strcmpi(initstring, {'0', '1'})))
+        error('Unimplemented: constants in LUT graph');
+    end
+    initstring = initstring(7:(end-1));
     
     epw.printlnIndent(['(instance ' lutname]);
     epw.incrIndent();
     epw.printlnIndent(['(viewRef black_box (cellRef LUT' index2lutsize{ni} ' (libraryRef UNISIMS)))']);
     epw.printlnIndent('(property XSTLIB (boolean (true)))');
-    epw.printlnIndent(['(property INIT (string "' in_luts{adjk} '"))']);
+    epw.printlnIndent(['(property INIT (string "' initstring '"))']);
     epw.decrIndent();
     epw.printlnIndent(')');
     

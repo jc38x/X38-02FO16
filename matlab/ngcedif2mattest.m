@@ -66,7 +66,7 @@ heightf = fill_height(redrof, oedgef, df, rf);
 
 check_network(resultdf, resultrf, resultef);
 
-netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA3.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
+netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA4.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
 
 
 
