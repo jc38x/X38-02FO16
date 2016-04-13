@@ -22,12 +22,15 @@ check_network(d, r, e);
 %bg = build_graph(d, l, r, e);
 %view(bg);
 
+
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.aig';
 optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped_SIM.aig';
-path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
-wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
+
+
 
 mat2aiger(filename, d, l, r, e);
+
+
 
 script = [
     {['read_aiger ' filename ';']};
@@ -37,8 +40,10 @@ script = [
     {'quit'};
     ];
 
-cmdfifo = C_cmdfifo(script);
-spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
+    invoke_abc(script);
+
+
+
 
 [df, lf, rf, ef] = aiger2mat(optname);
 
@@ -65,6 +70,38 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexpo
 
 
 %view(build_graph(resultdf, resultlf, resultrf, resultef));
+
+
+
+
+
+
+
+%mfilename('fullpath')
+%path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
+%wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
+%{
+cmdfifo = C_cmdfifo(script);
+spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
+%}
+
+%path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
+%wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
+%cmdfifo = ;
+
+
+
+
+%script = [
+ %   {['read_aiger ' filename ';']};
+%    {'refactor'};
+%    {['write_aiger -s ' optname]};
+%    {'cec'}
+%    {'quit'};
+%    ];
+
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
 
 
 %n = max(edgelist(:));

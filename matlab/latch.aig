@@ -1,9 +1,0 @@
-aig 5 2 0 2 3
-10
-8
-i0 x
-i1 y
-o0 s
-o1 c
-c
-Written by mat2aiger

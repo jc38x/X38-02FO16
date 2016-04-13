@@ -1,9 +1,0 @@
-aig 4 4 0 1 0
-0
-i0 LUT4_B,I0
-i1 LUT4_B,i1
-i2 LUT4_B,i2
-i3 LUT4_B,i3
-o0 LUT4_B,o
-c
-Written by mat2aiger

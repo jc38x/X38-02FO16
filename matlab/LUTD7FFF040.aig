@@ -1,15 +1,0 @@
-aig 74 8 0 2 66
-149
-83
- (%%&)*)#3!/ONMMRYWWXX^fccddjroopst)#3!/i0 LUT4_1,i0
-i1 LUT4_1,i1
-i2 LUT4_1,i2
-i3 LUT4_1,i3
-i4 LUT4_2,i0
-i5 LUT4_2,i1
-i6 LUT4_2,i2
-i7 LUT4_2,i3
-o0 LUT4_1,o
-o1 LUT4_2,o
-c
-Written by mat2aiger
