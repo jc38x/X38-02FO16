@@ -77,6 +77,42 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexpo
 
 
 
+
+    
+    
+    
+    
+
+
+
+
+
+%translatemap = containers.Map();
+%out_labels = cell(1, in_range.sz);
+%out_equations = in_equations;
+%label = ;
+    %newlabel = ;
+    %translatemap(['[' label ']']) = ['[' newlabel ']'];
+%{
+for k = in_range.in
+    equation = in_equations{k};
+    signals = regexp_signals(equation);
+    for s = 1:numel(signals)
+        signal = signals{s};
+        equation = strrep(equation, signal, translatemap(signal));
+    end
+    out_equations{k} = equation;
+end
+%}
+
+
+%out_names = cell(1, in_range.szin);
+    %signals = unique(regexp(equation, '\[\w*,?\w+\]', 'match'));
+    %signals = regexp_signals(equation, true, false);
+    %inputs = num2cell(repmat([1, 0], ns, 1), 2);
+    %inputs = combvec(inputs{:});
+    %inputs = tt_inputs(ns, []);
+    %out_names{index} = in_labels{k};
 %mfilename('fullpath')
 %path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 %wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';

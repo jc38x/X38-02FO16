@@ -58,7 +58,7 @@ while (initerator.hasNext())
     
     for k = 1:inputs, rename{k} = ['I' num2str(k - 1)]; end
     [l, e] = rename_node(d, l, e, [r.pi, r.po], rename);
-    [l, e] = make_instance(instancename, l, r, e);
+    [l, e] = make_instance(instancename, d, l, r, e);
     push_net(d, l, r, e);
     lut2uid(instancename) = uid;
     
