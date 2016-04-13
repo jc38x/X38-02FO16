@@ -18,7 +18,7 @@ end
 
 for k = in_range.in
     equation = in_equations{k};
-    signals = unique(regexp(equation, '\[\w+(\(\d+\))?(@[IO])?\]', 'match'));
+    signals = regexp_signals(equation);
     for s = 1:numel(signals)
         signal = signals{s};
         equation = strrep(equation, signal, translatemap(signal));

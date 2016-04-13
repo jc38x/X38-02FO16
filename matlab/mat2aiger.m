@@ -29,25 +29,29 @@ for k = get_inorder(in_delay, in_range)
     equation = in_equations{k};
     label = in_labels{k};
     
-    if (strcmpi(equation(1:3), 'and'))
-        signals = regexp_signals(equation, false, true);
-        ina = signals{1};
-        if (numel(signals) > 1)
-        inb = signals{2};
-        else
-            inb = ina;
-        end
+    if (any(strcmpi(equation, {'0', '1'})))
+        push_constant(label, equation);
+    elseif (strcmpi(equation(1:3), 'and'))
+        %signals = regexp_signals(equation, false, true);
+        %ina = signals{1};
+        %if (numel(signals) > 1)
+        %inb = signals{2};
+        %else
+        %    inb = ina;
+        %end
         
-        if (~strcmpi(['and([' ina '],[' inb '])'], equation)), error('Unsupported network.'); end
+        %if (~strcmpi(['and([' ina '],[' inb '])'], equation)), error('Unsupported network.'); end
+        inode = get_inode(in_delay, k);
+        ina = in_labels{inode(1)};
+        inb = in_labels{inode(end)};
         push_and(label, ina, inb);
     elseif (strcmpi(equation(1:3), 'not'))
         %k
-        signals = regexp_signals(equation, false, true);
-        ina = signals{:};
-        if (~strcmpi(['not([' ina '])'], equation)), error('Unsupported network.'); end
+        %signals = regexp_signals(equation, false, true);
+        %ina = signals{:};
+        %if (~strcmpi(['not([' ina '])'], equation)), error('Unsupported network.'); end
+        ina = in_labels{get_inode(in_delay, k)};
         push_not(label, ina);
-    elseif (any(strcmpi(equation, {'0', '1'})))
-        push_constant(label, equation);
     else
         error('Unsupported network');
     end
