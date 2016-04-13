@@ -28,32 +28,17 @@ for k = [pinodes, pilatch], push_literal(in_labels{k}); end
 for k = get_inorder(in_delay, in_range)
     equation = in_equations{k};
     label = in_labels{k};
-    
+
     if (any(strcmpi(equation, {'0', '1'})))
         push_constant(label, equation);
     elseif (strcmpi(equation(1:3), 'and'))
-        %signals = regexp_signals(equation, false, true);
-        %ina = signals{1};
-        %if (numel(signals) > 1)
-        %inb = signals{2};
-        %else
-        %    inb = ina;
-        %end
-        
-        %if (~strcmpi(['and([' ina '],[' inb '])'], equation)), error('Unsupported network.'); end
         inode = get_inode(in_delay, k);
         ina = in_labels{inode(1)};
         inb = in_labels{inode(end)};
         push_and(label, ina, inb);
     elseif (strcmpi(equation(1:3), 'not'))
-        %k
-        %signals = regexp_signals(equation, false, true);
-        %ina = signals{:};
-        %if (~strcmpi(['not([' ina '])'], equation)), error('Unsupported network.'); end
         ina = in_labels{get_inode(in_delay, k)};
         push_not(label, ina);
-    else
-        error('Unsupported network');
     end
 end
 
@@ -62,7 +47,7 @@ i = in_range.szpi - l;
 o = in_range.szpo - l;
 a = uid;
 m = i + l + a;
-    
+
 write_line(['aig ' num2str(m) ' ' num2str(i) ' ' num2str(l) ' ' num2str(o) ' ' num2str(a)]);
 
 olatch  = strcmpi('#AIGERLATCH', in_equations(in_range.po));
@@ -98,7 +83,7 @@ end
 for k = ponodes, write_line(['o' num2str(poid) ' ' in_labels{k}]); poid = poid + 1; end
 
 write_line('c');
-write_line('Written by mat2aiger');
+write_line(['Written by mat2aiger on ' datestr(now)]);
 
     function [out_bytes] = encode(in_u64)
     out_bytes = uint8(zeros(1, 8));
@@ -136,7 +121,6 @@ write_line('Written by mat2aiger');
     end
 
     function push_not(in_label, in_a)
-        %in_a
     lit = signal2literal(in_a);
     if (is_odd(lit)), lit = lit - 1; else lit = lit + 1; end
     signal2literal(in_label) = lit;

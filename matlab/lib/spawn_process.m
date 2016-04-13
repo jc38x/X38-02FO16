@@ -31,7 +31,7 @@ process.Start();
 process.BeginOutputReadLine();
 
 stdin = process.StandardInput;
-for line = in_stdinscript.', stdin.WriteLine([line{:}]); end
+for l = 1:numel(in_stdinscript), stdin.WriteLine(in_stdinscript{l}); end
 stdin.Close();
 
 process.WaitForExit();

@@ -6,14 +6,14 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040.aig';
-optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040_SIM.aig';
+filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF.aig';
+optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF_SIM.aig';
 
 path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
 
-[do, lo, ro, eo] = tt2mat('D7AD');
-count = 2048;
+[do, lo, ro, eo] = tt2mat('FFFF', 4);
+count = 8;
 dl = cell(1, count);
 ll = cell(1, count);
 rl = cell(1, count);
@@ -24,26 +24,16 @@ for k = 1:count
     ll{k} = loi;
     rl{k} = ro;
     el{k} = eoi;
-    %dl = [dl, {do}];
-    %ll = [ll, {loi}];
-    %rl = [rl, {ro}];
-    %el = [el, {eoi}];
 end
 
 t = tic();
-disp('GROUP');
 [do, lo, ro, eo] = group_nets(dl, ll, rl, el);
 toc(t)
 
+bo = build_graph(do, lo, ro, eo);
+view(bo);
 
-%bo = build_graph(do, lo, ro, eo);
-%view(bo);
-t = tic();
-disp('RANGE');
-ro = prepare_range_ex(do, ro);
-toc(t)
-%{
-mat2aiger(filename, lo, ro, eo);
+mat2aiger(filename, do, lo, ro, eo);
 
 script = [
     {['read_aiger ' filename ';']};
@@ -57,10 +47,19 @@ spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj,
 
 [df, lf, rf, ef] = aiger2mat(optname);
 
-%bf = build_graph(df, lf, rf, ef);
-%view(bf);
+bf = build_graph(df, lf, rf, ef);
+view(bf);
 
 
+
+
+%disp('GROUP');
+
+%t = tic();
+%disp('RANGE');
+%ro = prepare_range_ex(do, ro);
+%toc(t)
+%{
 
 [iedgef, oedgef] = prepare_edges(df, rf);
 orderf = graphtopoorder(df);

@@ -67,6 +67,27 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexpo
 %view(build_graph(resultdf, resultlf, resultrf, resultef));
 
 
+
+
+
+        %in_a
+%k
+        %signals = regexp_signals(equation, false, true);
+        %ina = signals{:};
+        %if (~strcmpi(['not([' ina '])'], equation)), error('Unsupported network.'); end
+%signals = regexp_signals(equation, false, true);
+        %ina = signals{1};
+        %if (numel(signals) > 1)
+        %inb = signals{2};
+        %else
+        %    inb = ina;
+        %end
+        
+        %if (~strcmpi(['and([' ina '],[' inb '])'], equation)), error('Unsupported network.'); end
+    %dl = [dl, {do}];
+    %ll = [ll, {loi}];
+    %rl = [rl, {ro}];
+    %el = [el, {eoi}];
 %signals = unique(regexp(equation, '\[\w+(\(\d+\))?(@[IO])?\]', 'match'));
 %{
 edges = zeros(2, out_range.szin * 2 + 1);

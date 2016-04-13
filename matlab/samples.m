@@ -1,12 +1,12 @@
 
 %[delay, labels, range] = sample_valavan();
-[delay, labels, range, equations] = sample_aighalfadder();
-%[delay, labels, range, equations] = sample_aiglatch();
+%[delay, labels, range, equations] = sample_aighalfadder();
+[delay, labels, range, equations] = sample_aiglatch();
 %[delay, labels, range, edges] = sample_edif(false);
 %[delay, labels, range, edges] = sample_edif_special(false);
 %[delay, labels, range, edges] = sample_ISE_mapped(false);
 
-fname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/latch.aig';
+fname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/latch2.aig';
 
 
 bg = build_graph(delay, labels, range, equations);
