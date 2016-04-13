@@ -67,7 +67,7 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexpo
 %view(build_graph(resultdf, resultlf, resultrf, resultef));
 
 
-
+%signals = unique(regexp(equation, '\[\w+(\(\d+\))?(@[IO])?\]', 'match'));
 %{
 edges = zeros(2, out_range.szin * 2 + 1);
 edgesindex = 0;
