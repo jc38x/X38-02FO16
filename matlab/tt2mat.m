@@ -5,28 +5,22 @@
 %**************************************************************************
 
 function [out_delay, out_labels, out_range, out_equations] = tt2mat(in_tthex, in_inputs)
+ttinputs = fliplr(tt_inputs(in_inputs));
+ttinputs = ttinputs(:, logical(hexToBinaryVector(in_tthex, [], 'LSBFirst')));
+nt = size(ttinputs, 2);
 rows = 2 ^ in_inputs;
-npi = in_inputs;
-pi = cell(1, npi);
+pi = cell(1, in_inputs);
 
 node2uid      = containers.Map();
 nodeequations = containers.Map();
 nodeiedges    = containers.Map();
 
-ttinputs = fliplr(tt_inputs(npi));
-ttinputs = ttinputs(:, logical(hexToBinaryVector(in_tthex, [], 'LSBFirst')));
-
-nt = size(ttinputs, 2);
 uid = 0;
 
-for k = 1:npi
+for k = 1:in_inputs
     pi{k} = ['i' num2str(k - 1)];
     push_node(pi{k}, '', []);
 end
-
-
-
-
 
 if (nt == 0)
     nodename = 'gnd';
@@ -34,29 +28,28 @@ if (nt == 0)
 elseif (nt == rows)
     nodename = 'vcc';
     push_node(nodename, '1', []);
-elseif (npi == 1)
-    input = operand(ttinputs, 'i0');
-    nodename = push_and(input, input); 
+elseif (in_inputs == 1)
+    input = operand(ttinputs, pi{1});
+    nodename = push_and(input, input);
 else
     miniterms = cell(1, nt);
     for k = 1:nt
         input = ttinputs(:, k);
-        nodename = push_and(operand(input(1), 'i0'), operand(input(2), 'i1'));
-        for i = 3:numel(input), nodename = push_and(nodename, operand(input(i), pi{i})); end
+        nodename = push_and(operand(input(1), pi{1}), operand(input(2), pi{2}));
+        for i = 3:in_inputs, nodename = push_and(nodename, operand(input(i), pi{i})); end
         miniterms{k} = nodename;
     end
-    
+
     if (nt > 1)
         nodename = push_and(push_not(miniterms{1}), push_not(miniterms{2}));
-        for k = miniterms(3:end), nodename = push_and(nodename, push_not(k{:})); end
+        for k = 3:nt, nodename = push_and(nodename, push_not(miniterms{k})); end
         nodename = push_not(nodename);
     end
 end
 
 push_node('o', '', node2uid(nodename));
-%if (in_d), push_node('lo', '', node2uid(nodename)); end
 
-out_range = prepare_range(npi, uid - npi - 1, 1);
+out_range = prepare_range(in_inputs, uid - in_inputs - 1, 1);
 
 keys = node2uid.keys();
 out_labels = cell(1, out_range.sz);
@@ -64,17 +57,7 @@ out_labels(cell2mat(node2uid.values(keys))) = keys;
 
 out_equations = nodeequations.values(out_labels);
 
-edges = zeros(2, out_range.szin * 2 + 1);
-edgesindex = 0;
-
-for k = out_range.notpi
-    for e = nodeiedges(out_labels{k})
-        edgesindex = edgesindex + 1;
-        edges(:, edgesindex) = [e; k];
-    end
-end
-
-edges = edges(:, 1:edgesindex);
+edges = cell_collapse(nodeiedges.values());
 out_delay = sparse(edges(1, :), edges(2, :), 1, out_range.sz, out_range.sz);
 
     function [out_name] = push_and(in_a, in_b)
@@ -94,7 +77,7 @@ out_delay = sparse(edges(1, :), edges(2, :), 1, out_range.sz, out_range.sz);
     uid = uid + 1;
     node2uid(in_name) = uid;
     nodeequations(in_name) = in_equation;
-    nodeiedges(in_name) = in_iedges;
+    nodeiedges(in_name) = [in_iedges; repmat(uid, 1, numel(in_iedges))];
     end
 
     function [out_name] = operand(in_input, in_i)

@@ -5,8 +5,8 @@
 %**************************************************************************
 
 function [out_i, out_j, out_s] = get_edges(in_delay)
-[i, j, s] = find(in_delay);
-out_i = i.';
-out_j = j.';
-out_s = s.';
+[out_i, out_j, out_s] = find(in_delay);
+out_i = out_i.';
+out_j = out_j.';
+out_s = out_s.';
 end

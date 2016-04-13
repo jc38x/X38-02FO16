@@ -7,14 +7,13 @@
 function [out_delay, out_labels, out_range, out_equations] = random_network(in_npi, in_nin, in_npo, in_mind, in_maxd, in_maxie)
 poofs = in_npi + in_nin;
 sz = poofs + in_npo;
-inofs = in_npi;
 iein = zeros(1, in_nin);
 oein = zeros(1, in_nin);
 out_delay = spalloc(sz, sz, (in_maxie * in_nin) + in_npo);
 
 for spo = randperm(in_npo)
     sin = datasample(find(oein == min(oein)), 1);
-    out_delay(sin + inofs, spo + poofs) = random_delay();
+    out_delay(sin + in_npi, spo + poofs) = random_delay();
     oein(sin) = oein(sin) + 1;
 end
 
@@ -24,7 +23,7 @@ for spi = randperm(in_npi);
     fin = find(iein < in_maxie);
     if (isempty(fin)), error('Imposible.'); end
     sin = datasample(fin, 1);
-    out_delay(spi, sin + inofs) = random_delay();
+    out_delay(spi, sin + in_npi) = random_delay();
     iein(sin) = iein(sin) + 1;
 end
 
@@ -42,7 +41,7 @@ while (~all(iein >= in_maxie))
     end
     head = datasample(available, 1);
     takeninin(tail, head) = false;
-    adjtail = tail + inofs;
+    adjtail = tail + in_npi;
     out_delay(head, adjtail) = random_delay();
     if ((head > in_npi) && ~graphisdag(out_delay)), out_delay(head, adjtail) = 0; else iein(tail) = iein(tail) + 1; end
 end
@@ -70,8 +69,8 @@ out_equations = random_equations(out_delay, out_labels, out_range);
     for oe = foe(randperm(numel(foe)))
         for ie = fie(randperm(numel(fie)))
             if (oe == ie), continue; end
-            adjoe = oe + inofs;
-            adjie = ie + inofs;
+            adjoe = oe + in_npi;
+            adjie = ie + in_npi;
             if (out_delay(adjoe, adjie) > 0), continue; end
             out_delay(adjoe, adjie) = random_delay();
             if (graphisdag(out_delay))

@@ -9,7 +9,7 @@ DF = false;
 mode = 2;
 alpha = 1.5; %1.5-2.5
 maxi = 20; %20
-epsrand = [0.001, 0.005]; %small
+epsrand = [0.000, 0.000]; %small
 
 t = tic();
 %[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
@@ -68,10 +68,27 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexpo
 
 
 
+%{
+edges = zeros(2, out_range.szin * 2 + 1);
+edgesindex = 0;
+
+for k = out_range.notpi
+    for e = nodeiedges(out_labels{k})
+        edgesindex = edgesindex + 1;
+        edges(:, edgesindex) = [e; k];
+    end
+end
+
+edges = edges(:, 1:edgesindex);
+%}
+
+%in_inputs = 0;%in_inputs;
 
 
 
-
+%in_npi = 0;%in_npi;
+%if (in_d), push_node('lo', '', node2uid(nodename)); end
+%for k = miniterms(3:end), nodename = push_and(nodename, push_not(k{:})); end
 %rows = numel(in_tthex) * 4;
 %npi = log2(rows);
 %disp('npi')

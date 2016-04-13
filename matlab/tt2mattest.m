@@ -7,7 +7,7 @@ maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
 t = tic();
-[delay, labels, range, equations] = tt2mat('1', 1);
+[delay, labels, range, equations] = tt2mat('0003', 4);
 %[labels, equations] = rename_node(delay, labels, equations, [1,2,3,4], {'I0', 'I1', 'I2', 'I3'});
 [labels, equations] = rename_node(delay, labels, equations, 1, {'I0'});
 [labels, equations] = make_instance('LUT4_B', labels, range, equations);
@@ -40,10 +40,11 @@ t = tic();
 [resultdelay, resultlabels, resultrange, resultequations] = rebuild_graph_from_cones(s, cv, delay, range, labels, equations); %in_S, in_Cv, in_delay, in_range, in_labels, in_equations
 toc(t)
 
-[luts, inputs] = cones2luts(resultrange, resultequations, {'[LUT4_B,I0]', '[LUT4_B,I1]', '[LUT4_B,I2]', '[LUT4_B,I3]'});
+[luts, inputs] = cones2luts(resultlabels, resultrange, resultequations, {'[LUT4_B,I0]', '[LUT4_B,I1]', '[LUT4_B,I2]', '[LUT4_B,I3]'});
 
 br = build_graph(resultdelay, resultlabels, resultrange, resultequations);
 view(br);
+
 
 %for k = 0:(npi - 1), push_node(['i' num2str(k)], '', []); end
 %['i' num2str(i - 1)]
