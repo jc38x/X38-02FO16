@@ -8,14 +8,18 @@ function [out_labels, out_equations] = make_instance(in_name, in_labels, in_rang
 out_labels = cell(1, in_range.sz);
 out_equations = cell(1, in_range.sz);
 out_equations(in_range.top) = {''};
-translatemap = containers.Map();
+%translatemap = containers.Map();
 
 for k = in_range.all
     label = in_labels{k};
     newlabel = [in_name ',' label];
     out_labels{k} = newlabel;
-    translatemap(label) = newlabel;
+    %translatemap(label) = newlabel;
 end
+
+translatemap = containers.Map(in_labels, out_labels);
+
+
 
 for k = in_range.in
     equation = in_equations{k};
