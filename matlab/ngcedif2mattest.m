@@ -2,7 +2,8 @@
 %http://www1.pldworld.com/@xilinx/html/technote/tool/manual/15i_doc/alliance/lib/lib7_21.htm
 %http://www1.pldworld.com/@xilinx/html/technote/tool/manual/15i_doc/alliance/lib/lib7_19.htm
 %http://www1.pldworld.com/@xilinx/html/technote/tool/manual/15i_doc/alliance/lib/lib7_20.htm
-
+%https://docs.oracle.com/javase/7/docs/api/java/io/FileOutputStream.html
+%http://reliability.ee.byu.edu/edif/doc/
 
 K = 4;
 DF = false;
@@ -22,15 +23,10 @@ check_network(d, r, e);
 %bg = build_graph(d, l, r, e);
 %view(bg);
 
-
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.aig';
 optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped_SIM.aig';
 
-
-
 mat2aiger(filename, d, l, r, e);
-
-
 
 script = [
     {['read_aiger ' filename ';']};
@@ -40,14 +36,9 @@ script = [
     {'quit'};
     ];
 
-    invoke_abc(script);
-
-
-
+invoke_abc(script);
 
 [df, lf, rf, ef] = aiger2mat(optname);
-
-
 
 check_network(df, rf, ef);
 
@@ -67,8 +58,6 @@ heightf = fill_height(redrof, oedgef, df, rf);
 check_network(resultdf, resultrf, resultef);
 
 netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA4.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
-
-
 
 %view(build_graph(resultdf, resultlf, resultrf, resultef));
 
@@ -1957,3 +1946,656 @@ else
     %edges(1, edgesindex) = in_head;
     %edges(2, edgesindex) = in_tail;
     %end
+%{
+K = 4;
+DF = false;
+mode = 1;
+alpha = 1.5; %1.5-2.5
+maxi = 20; %20
+epsrand = [0.001, 0.005]; %small
+
+[delay, labels, range] = aig2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/benchmark/LGSynth93/blif-aig/sis_alu4.aig');
+%}
+%bg = build_graph(delay, labels, range);
+%view(bg);
+
+%{
+s = sum(delay > 0, 2);
+f = find(s < 1);
+
+aigolab = labels(f).';
+
+s = sum(delay > 0, 1);
+f = find(s < 1);
+
+aigilab = labels(f).';
+%}
+%{
+t = tic();
+[iedge, oedge] = prepare_edges(delay);
+order = graphtopoorder(delay);
+redro = fliplr(order);
+
+depth = fill_depth(order, iedge, delay, range);
+height = fill_height(redro, oedge, delay, range);
+[af, noedge] = fill_af(order, iedge, oedge, range);
+toc(t)
+%}
+%{
+t = tic();
+[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
+toc(t)
+
+t = tic();
+[resultdelay, resulttag, resultrange] = rebuild_graph_from_cones(s, cv, delay, range);
+toc(t)
+
+[resultiedge, resultoedge] = prepare_edges(resultdelay);
+resultorder = graphtopoorder(resultdelay);
+resultredro = fliplr(resultorder);
+
+resultdepth = fill_depth(resultorder, resultiedge, resultdelay, resultrange);
+resultheight = fill_height(resultredro, resultoedge, resultdelay, resultrange);
+[resultaf, resultnoedge] = fill_af(resultorder, resultiedge, resultoedge, resultrange);
+%}
+
+%[aagdelay, aaglabels, aagrange] = aag2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/i10.aag');
+%{
+s = sum(aigdelay > 0, 2);
+f = find(s < 1);
+
+aigolab = aiglabels(f).';
+
+s = sum(aigdelay > 0, 1);
+f = find(s < 1);
+
+aigilab = aiglabels(f).';
+
+
+s = sum(aagdelay > 0, 2);
+f = find(s < 1);
+
+aagolab = aaglabels(f).';
+
+s = sum(aagdelay > 0, 1);
+f = find(s < 1);
+
+aagilab = aaglabels(f).';
+%}
+
+
+%literal = num2str(next_sequence());
+    %disp(['O ' literal]);
+    %rh1 = 1;
+%if (lhs <= rh0), disp('???'); end
+    %if (rh0 < rh1), disp('???'); end
+    
+    %if (any(rh0 == [658, 702, 3162, 4278, 4724, 5192, 7124])), disp('???'); end
+    %if (any(rh1 == [658, 702, 3162, 4278, 4724, 5192, 7124])), disp('???'); end
+    
+    %if (rh0 < 2), disp('rh0'); end
+    %if (rh1 < 2), disp('rh1'); end
+%num2str(fread(fid, 1))
+%num2str(fread(fid, 1))
+%num2str(fread(fid, 1))
+%buffer = [];
+%bufferpos = 0;
+
+%out_seq = num2str(out_seq);
+
+%out_delay = [];
+%out_labels = [];
+%out_range = [];
+
+%fclose(fid);
+
+%{
+for k = 1:i
+    signal = ['i' num2str(k) '_' num2str(input(k))];
+    push_signal(signal);
+end
+
+for k = 1:l
+    sk = num2str(k);
+    signal = ['latch' sk 'i_' num2str(latch(k))];
+    push_signal(signal);
+    
+end
+
+for k = 1:o
+    seq = next_sequence();
+    
+end
+
+for k = 1:a
+    seq = next_sequence();
+    
+end
+
+    function push_signal(in_signal)
+    end
+%}
+
+%;
+    %if (seq < 2), disp(['O constante ' num2str(seq)]); end
+    %if (seq < 2), disp(['AND I constante ' num2str(seq)]); end
+%{
+    function [out_ok] = read_next_block()
+    if (feof(fid))
+        out_ok = false;
+        return;
+    end
+    data = fread(fid, blocksize, 'uint8');
+    if (isempty(data))
+        out_ok = false;
+        return;
+    end
+    buffer = [buffer, data];
+    out_ok = true;
+    end
+%}
+       %{
+        %if (isempty(buffer) && ~read_next_block()), error('EOF'); end
+        
+        
+        if (~isempty(buffer))
+            for b = buffer(bufferpos:end)
+            end
+            
+        end
+        
+        
+        while (~feof(fid))
+            
+        end
+        %}
+    
+%[delay, labels, range] = aiger2mat('C:/Users/jcds/desktop/aiglatch.txt');
+
+%bg = build_graph(delay, labels, range);
+%view(bg);
+
+
+
+
+
+
+%push_signal(in_inst);
+%if (invertermap.isKey(in_inst)), return; end
+        %invertermap(in_inst) = 1;
+%%edges = [edges; {[literal '->' signal]}];
+%edges = [edges; {[input1 '->' literal]}];
+    %edges = [edges; {[input2 '->' literal]}];
+%edges = [edges; {[num2str(newval) '->' in_inst]}];
+ 
+    %out_remap = num2cell(out_final);
+
+%edgelist = edgemap.values();
+%edgelist = [edgelist{:}];
+%n = max(edgelist(:));
+%out_delay = sparse(out_final(1, :), out_final(2, :), 1, n, n);
+%out_labels = [];
+    
+    %push_signal(signal);
+    
+%out_delay = edges;
+
+%push_instance(literal, signal);
+    %push_instance(['s' literal], signal);
+%invtest = str2double(literal);
+    %
+    %li
+    
+    %uid = uid + 1;
+    %signal2uid(str2double(nline{1})) = uid;
+    %types{uid} = 2;
+    
+    %uid = uid + 1;
+    
+    %{
+    latchinput = str2double();
+    if (~signal2uid.isKey(latchinput))
+        push_signal(latchinput);
+        if (isodd(latchinput))
+            inv = latchinput - 1;
+            if (~signal2uid.iskey(inv))
+                push_signal(inv);
+            end
+            edges = [edges, [inv; latchinput]];
+        end
+    end
+    %}
+    %map() = uid;
+    %types{uid} = 3;
+%types{uid} = 1;
+
+
+%types = cell(1000);
+%invertermap = containers.Map();
+%push_instance('0', 'c_low');
+%push_signal('c_low');
+%push_instance('1', 'c_high');
+%push_signal('c_high');
+
+
+
+%out_raw = edges;
+    
+
+
+%out_intermediate = edges;
+
+
+
+
+%input1 = nline{2};
+%{
+    signal = ['inv1_' in_inst];    
+    push_head_node(in_inst, signal);
+    add_in_list(signal2uid(signal));
+    %}
+        %newval = ;
+%push_instance(in_inst, signal);
+    %push_signal(signal);
+%{
+    literal = nline;
+    signal = ['i_' num2str(k)];
+    push_instance(literal, signal);
+    push_signal(signal);    
+    add_pi_list(signal2uid(signal));
+    %}
+    %{
+    literal = nline{1};
+    signal = ['latch_i_' num2str(k)];
+    push_instance(literal, signal);
+    push_signal(signal);    
+    add_pi_list(signal2uid(signal));
+    %}
+    %{
+    literal = nline{2};
+    signal = ['latch_o_' num2str(k)];
+    push_signal(signal);
+    try_push_inverter(literal);    
+    push_edge(literal, signal);    
+    add_po_list(signal2uid(signal));
+    %}
+    %{
+    literal = nline;
+    signal = ['o_' num2str(k)];
+    push_signal(signal);
+    try_push_inverter(literal);    
+    push_edge(literal, signal);    
+    add_po_list(signal2uid(signal));
+    %}
+%{
+    literal = nline{1};
+    signal = ['and_2_' num2str(k)];
+    push_instance(literal, signal);
+    push_signal(signal);    
+    add_in_list(signal2uid(signal));
+    %}
+
+  %{
+    input1 = nline{2};
+    try_push_inverter(input1);    
+    push_edge(input1, literal);
+    %}
+    %{
+    input2 = nline{3};
+    try_push_inverter(input2);    
+    push_edge(input2, literal);
+    %}
+
+
+%inlist = [inlist, signal2uid(ss)];
+        %edges = [edges, {in_head; in_tail}];
+%pilist = [pilist, signal2uid(signal)];
+    %pilist = [pilist, signal2uid(signal)];
+    %polist = [polist, signal2uid(signal)];
+    %inlist = [inlist, signal2uid(signal)];
+    %polist = [polist, signal2uid(signal)];
+    %edges = [];
+
+
+
+
+
+   %literal = nline;
+        %literal = nline{2}; 
+
+    
+    
+
+    %function add_pi_list(in_uid)
+    
+    %end
+
+    %function add_po_list(in_uid)
+    
+    %end
+
+    %function add_in_list(in_uid)
+    
+    %end
+
+%add_pi_list(signal2uid(signal));
+%add_po_list(signal2uid(signal));
+%add_in_list(signal2uid(signal));
+    
+%{
+    %%%EST
+(3 * a) + i + o + (2 * l)
+edgesindex
+i + l
+piindex
+o + l
+poindex
+(2 * a) + i
+inindex
+%}
+
+
+    
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+%{
+K = 3;
+DF = false;
+mode = 1;
+alpha = 1.5; %1.5-2.5
+maxi = 20; %20
+epsrand = [0.001, 0.005]; %small
+
+t = tic();
+
+%[delay, labels, range] = sample_valavan();
+%[delay, labels, range] = sample_aaghalfadder();
+[delay, labels, range] = sample_aaglatch();
+
+[iedge, oedge] = prepare_edges(delay);
+order = graphtopoorder(delay);
+redro = fliplr(order);
+depth = fill_depth(order, iedge, delay, range);
+height = fill_height(redro, oedge, delay, range);
+[af, noedge] = fill_af(order, iedge, oedge, range);
+equations = get_aig_equations(iedge, labels, range);
+
+[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
+
+[result_delay, newlabels, result_range, resultequations] = rebuild_graph_from_cones(s, cv, delay, range, labels, equations);
+
+toc(t)
+
+bg = build_graph(delay, labels, range, equations);
+view(bg);
+
+br = build_graph(result_delay, newlabels, result_range, resultequations);
+view(br);
+
+[LUTS, lutinputs] = cones2luts(result_range, resultequations);
+
+
+
+
+%}
+    %{
+indices = find(resulttag);
+[~, I] = sort(resulttag(indices));
+newlabels = [labels(range.pi), labels(indices(I)+double(range.szpi)), labels(range.po)];
+%}
+
+    %{
+    equation = in_equations{cvidx + ofs};
+    if (subn < 2)
+        out_equations{i2} = equation;
+        continue;
+    end
+    %}
+%out_equation{i2} = strrep(out_equation{i2}, in_labels{l}, ['(' in_equations{l} ')']);
+%for j = in_range.po
+    %    d = in_delay(i, j);
+    %    if (d > 0), push_edge(i, j - poofs, in_delay(i, j)); end
+    %end
+
+%node2uid = containers.Map(in_labels, num2cell(1:in_range.sz));
+%out_delay = spalloc(nsz, nsz, maxedges);
+%delay = in_delay(e1, e(2));
+        %out_delay(i1, i2) = delay;
+        %delay = in_delay(e(1), e2);
+        %out_delay(i2, i1) = delay;
+%out_x = [];
+%res
+    
+    %outi = 0;
+    %signalmap = containers.Map(signals, num2cell(0:(ns - 1)));
+    %outi = outi + 1;
+    %x = inputs
+    %zeros(4, numel(inputs) / 4); 
+    
+    
+    
+    
+    %signals
+    %inputs
+%    %{
+%{
+global CONFIG
+
+CONFIG.EQN_NFGETS = 4096;
+CONFIG.EQN_BUFFERSIZE = 16384;
+CONFIG.EQN_NEDGES = 8192;
+
+K = 4;
+DF = false;
+mode = 1;
+alpha = 1.5; %1.5-2.5
+maxi = 20; %20
+epsrand = [0.001, 0.005]; %small
+
+t = tic();
+feqn = fopen('alu4_i.eqn', 'rt');
+[delay, range, labels, equations] = eqn2mat(feqn);
+fclose(feqn);
+toc(t)
+%}
+%$}
+%{
+t = tic();
+[iedge, oedge] = prepare_edges(delay);
+order = graphtopoorder(delay);
+redro = fliplr(order);
+
+depth = fill_depth(order, iedge, delay, range);
+height = fill_height(redro, oedge, delay, range);
+[af, noedge] = fill_af(order, iedge, oedge, range);
+toc(t)
+
+t = tic();
+[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
+toc(t)
+
+t = tic();
+[resultdelay, resulttag, resultrange] = rebuild_graph_from_cones(s, cv, delay, range);
+toc(t)
+
+[resultiedge, resultoedge] = prepare_edges(resultdelay);
+resultorder = graphtopoorder(resultdelay);
+resultredro = fliplr(resultorder);
+
+resultdepth = fill_depth(resultorder, resultiedge, resultdelay, resultrange);
+resultheight = fill_height(resultredro, resultoedge, resultdelay, resultrange);
+[resultaf, resultnoedge] = fill_af(resultorder, resultiedge, resultoedge, resultrange);
+
+%}
+
+
+
+
+
+
+
+
+
+
+
+%feqn = fopen('dsip_PROC.eqn', 'rt');
+%feqn = fopen('C6288_proc.eqn', 'rt');
+
+
+%{
+while (true)
+    next = fgets(in_feqn, 4096);
+    if (next == -1), break; end
+    if (next(end) == nl), line = line + 1; end
+    fl = [fl, next];    
+    flindex = find(fl == ';');
+    if (numel(flindex) < 1), continue; end
+    flindex = flindex(1);
+    parse_statement(fl(1:flindex));
+	fl(1:flindex) = [];
+end
+%}
+%rp = 1;
+%nrp = rp + step;
+    %flindex = find(fl(rp:(nrp - 1)) == ';');
+    
+    %fib = rp;
+    %rp = nrp;
+   
+        
+    
+    
+    %rp = 1;
+    
+    %flindex = flindex(1);
+    %fl = [fl, next];    
+    
+    
+	%fl(1:flindex) = [];
+
+    %uid2signal(uid) = in_str;
+
+    %function push_signal_list(in_list)
+    %for signal = in_list, try_add_signal(signal{1}, true, false, false); end
+    %end
+
+%haspilist = false;
+%haspolist = false;
+%uid2signal = containers.Map('KeyType', 'double', 'ValueType', 'char');
+%out_edges = [];
+%t1 = 0;
+%tt = 0;
+%tn = 0;
+
+%out_statements = [];
+%flindex = 1;
+    
+
+
+%out_edges = edges;
+%pi
+%po
+%numel(in)
+%numel(allnodes)
+
+%
+
+
+
+
+
+%{
+    for c = fl(flindex:end)
+        if (c ~= ';'),
+            if (c == nl), line = line + 1; end
+            flindex = flindex + 1;
+            continue;
+        end
+        parse_statement(fl(1:flindex));
+        fl(1:flindex) = [];
+        flindex = 1;
+        break;
+    end
+    %}
+
+%out_edges = [celledges{1:end}];
+%out_signals = signal2uid;
+
+%%if (signal2uid.isKey(in_str)), return; end, parse_error(['Duplicate signal ''' in_str '''']); end
+
+    	%if (in_allownot && (in_str(1) == '!')), tss = in_str(2:end); else tss = in_str; end
+    %if (in_allownot && (in_str(1) == '!')), tss = in_str(2:end); else tss = in_str; end
+
+    
+        %{
+pivot = 0;
+        for ch = in_s
+            pivot = pivot + 1;
+            if (ch ~= '='), continue; end
+            lstr = strtrim(in_s(1:(pivot - 1)));
+            rstr = strtrim(in_s((pivot + 1):(end-1)));
+            break;
+        end
+        %}
+%{
+t1 = tic();
+                
+                
+                
+                t1 = toc(t1);
+                tt = tt + t1;
+                tn = tn + 1;
+%}
+%out_mat = [out_mat; {in_s}];
+%if (haspilist), parse_error('INORDER redefinition'); end
+                %push_signal_list(strtrim(strsplit(rstr)));
+                %haspilist = true;
+                %if (haspolist), parse_error('OUTORDER redefinition'); end
+                %push_signal_list(strtrim(strsplit(rstr)));
+                %haspolist = true;
+%if (ss(1) == '!')
+                        %    tss = ss(2:end);
+                        %else
+                        %    tss = ss;
+                        %end
+                        %try_add_signal(tss)
+                        
+                        
+                        %if (~test_name(tss) && ~test_id(tss)), parse_error('Unexpected expression'); end
+%str = ;
+        %if (~test_name(str))
+        %if (signal2uid.isKey(str)), parse_error(['Duplicate signal ''' str '''']); end
+
+%if (~testname(lstr) && test_id(str)), parse_error(['Unexpected token ''' str '''']); end
+                %if (signal2uid.isKey(str)), parse_error(['Duplicate signal ''' str '''']); end
+        %push_node_list()
+                
+                %{
+                for pi = listpi
+                    str = pi{1};
+                    alphanum = isstrprop(str, 'alphanum');
+                    us = str == '_';
+                    an1 = isstrprop(str, 'alpha');                    
+                    if (~all(alphanum | us) || ~(an1 || us(1))), parse_error(['Unexpected token ''' str '''']); end
+                    if (signal2uid.isKey(str)), parse_error(['Duplicate signal ''' str '''']); end
+                end
+                %}
+                
+        %expr = strsplit(in_s);
+        
+        
+        
+        
+        %and * or + not ! xor ^
+
