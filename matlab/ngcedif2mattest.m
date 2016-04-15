@@ -9,7 +9,7 @@ K = 4;
 DF = false;
 mode = 2;
 alpha = 1.5; %1.5-2.5
-maxi = 20; %20
+maxi = 1; %20
 epsrand = [0.000, 0.000]; %small
 
 t = tic();
@@ -49,7 +49,7 @@ depthf = fill_depth(orderf, iedgef, df, rf);
 heightf = fill_height(redrof, oedgef, df, rf);
 [aff, noedgef] = fill_af(orderf, iedgef, oedgef, rf);
 
-[sf, cvf] = hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, 1, alpha, epsrand(1), epsrand(2));
+[sf, cvf] = hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
 [resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
 
 %[lutsf, inputsf, namesf] = cones2luts(resultlf, resultrf, resultef, []);
@@ -57,7 +57,7 @@ heightf = fill_height(redrof, oedgef, df, rf);
 
 check_network(resultdf, resultrf, resultef);
 
-netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA4.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
+netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/edifexportVGA5.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
 
 %view(build_graph(resultdf, resultlf, resultrf, resultef));
 
