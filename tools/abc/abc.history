@@ -100,7 +100,15 @@ read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040.aig;
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040_SIM.aig
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF.aig;
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF_SIM.aig
-source abc.rc
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.aig;
-refactor
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped_SIM.aig
+write_aiger -sC:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
+abc 02> 
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
+strash
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/lekog25.aig
+cleanup
+refactor
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/lekog25.aig

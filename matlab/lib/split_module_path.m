@@ -5,14 +5,12 @@
 %**************************************************************************
 
 function [out_directories, out_slash, out_filename, out_extension] = split_module_path(in_path)
-level = find((in_path == '/') | (in_path == '\'));
-lim = level(end);
-dir = in_path(1:(lim - 1));
+lim = find((in_path == '/') | (in_path == '\'), 1, 'last');
 out_slash = in_path(lim);
 fname = in_path((lim + 1):end);
 dot = find(fname == '.');
 
-out_directories = strsplit(dir, {'\', '/'});
+out_directories = strsplit(in_path(1:(lim - 1)), {'\', '/'});
 for k = 1:numel(out_directories), out_directories{k} = [out_directories{k} out_slash]; end
 
 if (isempty(dot)),

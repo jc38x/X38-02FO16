@@ -7,51 +7,32 @@ maxi = 1; %20
 epsrand = [0.000, 0.000]; %small
 
 
+[delay, labels, range, equations] = load_leko_leku('leko-g5\g25.blif');
 
-
-
-
-
-
-t = tic();
-%[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
-[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/practica3.ndf');
-
-toc(t)
-
-check_network(d, r, e);
-
-%bg = build_graph(d, l, r, e);
-%view(bg);
-
-filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.aig';
-optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped_SIM.aig';
-
-mat2aiger(filename, d, l, r, e);
+filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/lekog25.aig';
+mat2aiger(filename, delay, labels, range, equations);
 
 script = [
-    {['read_aiger ' filename ';']};
+    {['read_aiger ' filename]};
+    {'cleanup'};
     {'refactor'};
-    {['write_aiger -s ' optname]};
+    {['write_aiger -s ' filename]};
     {'cec'}
     {'quit'};
     ];
 
-invoke_abc(script);
+invoke_abc(script, false);
 
-[df, lf, rf, ef] = aiger2mat(optname);
+[delay, labels, range, equations] = aiger2mat(filename);
 
-check_network(df, rf, ef);
+[iedge, oedge] = prepare_edges(delay, range);
+order = graphtopoorder(delay);
+redro = fliplr(order);
+depth = fill_depth(order, iedge, delay, range);
+height = fill_height(redro, oedge, delay, range);
+[af, noedge] = fill_af(order, iedge, oedge, range);
 
-[iedgef, oedgef] = prepare_edges(df, rf);
-orderf = graphtopoorder(df);
-redrof = fliplr(orderf);
-depthf = fill_depth(orderf, iedgef, df, rf);
-heightf = fill_height(redrof, oedgef, df, rf);
-[aff, noedgef] = fill_af(orderf, iedgef, oedgef, rf);
+[s, cv] = hara(order, iedge, oedge, noedge, delay, depth, height, af, range, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
 
-[sf, cvf] = hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
-[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
-
-%[lutsf, inputsf, namesf] = cones2luts(resultlf, resultrf, resultef, []);
+[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(s, cv, delay, range, labels, equations);
 [lutsf] = cones2luts(resultdf, resultlf, resultrf, resultef);
