@@ -1,0 +1,10 @@
+ex2		no transitions out of state 0
+ex3		no transitions out of state 0
+ex5		no transitions out of state 0
+ex7		no transitions out of state 0
+lion9		uninitializable
+tma		uninitializable
+train11		uninitializable
+train4		uninitializable
+
+	uninitializable means that there is no initializing sequence.

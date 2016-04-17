@@ -1,0 +1,722 @@
+
+LGSynth93/:
+total 22
+    22905 Jun 25 19:36 LIST
+    15298 Jun 22 04:34 README
+      512 Jun  5 21:21 bin
+      512 Jun 15 00:23 doc
+      512 Jun  5 21:22 lib
+      512 Jun 15 00:56 src
+      512 Jun 25 19:29 testcases
+
+
+
+LGSynth93/bin/:
+		<initially empty, see LGSynth93/README>
+
+
+
+LGSynth93/doc/:
+total 42
+	40030 Jun  3 21:30 iwls93.ps
+
+
+
+LGSynth93/lib/:
+total 205
+     1208 Jun  7 19:10 README
+   115524 May 21 16:56 iwls93.e
+    17055 May 18 19:22 iwls93.mis2lib
+    56587 May 21 14:29 iwls93.models
+
+
+
+LGSynth93/src/:
+total 14
+     1407 May 16 21:24 CopyRight
+      414 May 16 21:28 Makefile
+      512 Jun  5 21:18 RCS
+      512 Jun  5 21:18 e2fmt
+      512 Jun  5 21:18 edifparse
+      512 Jun  5 21:18 erprt
+      512 Jun  5 21:18 esim
+      192 May 16 21:49 getcflags
+        6 Jun  5 21:18 lib -> ../lib
+      512 Jun  5 21:18 netlist
+      512 Jun  5 21:18 util
+
+
+	LGSynth93/src/RCS/:
+	total 4
+	      937 May 16 21:28 Makefile,v
+	      731 May 16 21:27 getcflags,v
+
+
+	LGSynth93/src/e2fmt/:
+	total 28
+	      1044 May 16 21:29 Makefile
+	       512 Jun  5 21:18 RCS
+	      2210 May 17 18:57 main.c
+	      2867 Jan 21 14:39 tags
+	      4151 Feb 22 15:28 wr_blif.c
+	      5616 Feb 22 15:28 wr_edif.c
+	      5795 May 16 21:30 wr_slif.c
+
+		LGSynth93/src/e2fmt/RCS/:
+		total 27
+		     2637 May 16 21:29 Makefile,v
+		     3727 May 17 18:57 main.c,v
+		     4700 Feb 22 15:28 wr_blif.c,v
+		     5945 Feb 22 15:28 wr_edif.c,v
+		     6868 May 16 21:30 wr_slif.c,v
+
+
+	LGSynth93/src/edifparse/:
+	total 35
+	         0 Feb 18 16:39 .pure
+	       480 Feb 22 16:38 Makefile
+	       512 Jun  5 21:18 RCS
+	      9292 Feb 22 15:00 builtin.c
+	       437 Feb 22 15:00 eprop.h
+	      9091 Feb 22 15:00 parse.c
+	      1223 Feb 22 15:00 parse.h
+	      2478 Jan 28 16:39 tags
+	      3837 Feb 22 15:01 token.c
+	      1513 Feb 22 15:00 token.h
+
+		LGSynth93/src/edifparse/RCS/:
+		total 37
+		      1428 Feb 22 16:38 Makefile,v
+		     10631 Feb 22 15:00 builtin.c,v
+		       940 Feb 22 15:00 eprop.h,v
+		      9738 Feb 22 15:00 parse.c,v
+		      1843 Feb 22 15:00 parse.h,v
+		      5624 Feb 22 15:01 token.c,v
+		      2505 Feb 22 15:00 token.h,v
+
+
+	LGSynth93/src/erprt/:
+	total 10
+	       819 May 16 21:29 Makefile
+	       512 Jun  5 21:18 RCS
+	      5816 May 17 18:58 main.c
+
+		LGSynth93/src/erprt/RCS/:
+		total 12
+		      1883 May 16 21:29 Makefile,v
+		      7673 May 17 18:58 main.c,v
+
+
+	LGSynth93/src/esim/:
+	total 56
+	         0 Feb 18 16:39 .pure
+	       944 May 16 21:50 Makefile
+	       512 Jun  5 21:18 RCS
+	       178 Feb 18 16:52 cmds
+	     13169 May 18 18:36 dosim.c
+	      2654 May 17 18:59 main.c
+	      3448 Feb 18 17:45 tags
+	     20957 Jan 28 15:55 z.e
+	     10193 Jan 28 15:55 z.tv
+	
+		LGSynth93/src/esim/RCS/:
+		total 27
+		      3111 May 16 21:50 Makefile,v
+		     14645 May 18 18:36 dosim.c,v
+		      6131 May 17 18:59 main.c,v
+
+
+	LGSynth93/src/netlist/:
+	total 28
+	         0 Feb 18 16:39 .pure
+	       659 May 16 21:28 Makefile
+	       512 Jun  5 21:18 RCS
+	      6369 Feb 22 15:03 edif_actions.c
+	      1598 Feb 22 15:03 flatten.c
+	       767 Feb 22 15:03 init.c
+	      4732 Feb 23 13:26 misc.c
+	      2936 Feb 22 15:03 nets.h
+	      5417 Jan 28 16:31 tags
+
+		LGSynth93/src/netlist/RCS/:
+		total 26
+		      2169 May 16 21:28 Makefile,v
+		      7022 Feb 22 15:03 edif_actions.c,v
+		      1923 Feb 22 15:03 flatten.c,v
+		      1095 Feb 22 15:03 init.c,v
+		      5169 Feb 23 13:26 misc.c,v
+		      3352 Feb 22 15:03 nets.h,v
+
+
+	LGSynth93/src/util/:
+	total 17
+	         0 Feb 18 16:39 .pure
+	       397 May 16 21:28 Makefile
+	       512 Jun  5 21:18 RCS
+	      1063 Feb 22 14:52 alloc.c
+	       452 Feb 22 14:53 crash.c
+	      1543 Feb 22 14:53 hash.c
+	       738 Feb 22 14:53 hash.h
+	      2136 Jun  3 21:48 home.c
+	      1130 Mar  2 04:07 openr.c
+	       416 Feb 22 14:53 time.c
+	       726 Mar  2 04:07 util.h
+
+		LGSynth93/src/util/RCS/:
+		total 20
+		      1531 May 16 21:28 Makefile,v
+		      1430 Feb 22 14:52 alloc.c,v
+		       819 Feb 22 14:52 crash.c,v
+		      1871 Feb 22 14:53 hash.c,v
+		      1066 Feb 22 14:53 hash.h,v
+		      3109 Jun  3 21:48 home.c,v
+		      1979 Mar  2 04:07 openr.c,v
+		       911 Feb 22 14:53 time.c,v
+		      1272 Mar  2 04:07 util.h,v
+
+
+
+LGSynth93/testcases/:
+total 17
+drwxr-xr-x  2      4608 Jun 15 00:15 edif
+drwxr-xr-x  2       512 Jun  7 19:23 edif.bad
+drwxr-xr-x  2      1536 Jun 15 00:16 fsm
+drwxr-xr-x  2       512 Jun  5 21:21 fsm.bad
+drwxr-xr-x  2      1024 Jun  8 03:12 pla
+drwxr-xr-x  2      4608 Jun  8 03:20 tv
+
+	
+LGSynth93/testcases/edif/:
+total 6327
+      7794 May 16 22:16 5xp1.edif.Z
+     10457 May 16 21:55 9sym.edif.Z
+      7724 Feb  9 02:57 9symml.edif.Z
+     26045 Mar  9 17:51 C1355.edif.Z
+      1695 Mar  9 17:51 C17.edif.Z
+     22842 Feb  9 02:44 C1908.edif.Z
+     37134 Mar 16 21:08 C2670.edif.Z
+     42356 Feb  9 02:45 C3540.edif.Z
+     12353 Feb  9 02:45 C432.edif.Z
+     17986 Feb  9 02:46 C499.edif.Z
+     70775 Mar 10 01:41 C5315.edif.Z
+     96339 Feb  9 02:49 C6288.edif.Z
+     91525 Mar 16 22:07 C7552.edif.Z
+     19948 Feb  9 02:51 C880.edif.Z
+       146 May 17 03:12 COMMENTS
+     12619 Mar  9 17:56 alu2.edif.Z
+     63889 May 16 21:56 alu4.edif.Z
+     32677 May 16 21:56 apex1.edif.Z
+     80283 May 16 21:58 apex2.edif.Z
+     34016 May 16 21:58 apex3.edif.Z
+     41732 May 16 21:58 apex4.edif.Z
+     65837 May 16 21:59 apex5.edif.Z
+     23827 Feb  9 02:51 apex6.edif.Z
+     11296 Mar 10 01:49 apex7.edif.Z
+      1974 Mar  9 17:56 b1.edif.Z
+     24275 May 16 22:00 b12.edif.Z
+      9732 Feb  9 02:51 b9.edif.Z
+      5437 May 17 02:44 bbara.edif.Z
+     28515 May 17 02:43 bbara_bbtas.edif.Z
+      7582 May 17 02:44 bbsse.edif.Z
+      3839 May 17 02:44 bbtas.edif.Z
+      4573 May 17 02:44 beecount.edif.Z
+     91523 Mar 12 02:05 bigkey.edif.Z
+      9749 May 16 22:00 bw.edif.Z
+      9997 Mar  9 17:56 c8.edif.Z
+      5377 Mar  9 17:56 cc.edif.Z
+      9063 Mar  9 17:56 cht.edif.Z
+     14783 May 16 22:00 clip.edif.Z
+    488317 Mar 12 02:16 clma.edif.Z
+      1978 Mar  9 17:56 cm138a.edif.Z
+      5428 Mar  9 17:56 cm150a.edif.Z
+      3511 Mar  9 17:56 cm151a.edif.Z
+      2045 Mar  9 17:56 cm152a.edif.Z
+      4628 Mar  9 17:56 cm162a.edif.Z
+      4397 Mar  9 17:56 cm163a.edif.Z
+      2342 Mar  9 17:56 cm42a.edif.Z
+      2552 Mar  9 17:56 cm82a.edif.Z
+      4460 Mar  9 17:56 cm85a.edif.Z
+      3986 Mar  9 17:56 cmb.edif.Z
+      8720 Mar  9 17:56 comp.edif.Z
+      2291 May 16 22:00 con1.edif.Z
+     53015 May 16 22:01 cordic.edif.Z
+      8088 Mar  9 17:56 count.edif.Z
+     37357 May 16 22:01 cps.edif.Z
+      9386 May 17 02:44 cse.edif.Z
+      4550 Mar  9 17:56 cu.edif.Z
+      2191 May 17 03:14 daio.edif.Z
+     52359 May 17 03:15 daio_receiver.edif.Z
+     60529 Mar  9 17:57 dalu.edif.Z
+      2561 Mar  9 17:57 decod.edif.Z
+     76669 Mar  9 17:58 des.edif.Z
+     98773 May 17 03:15 diffeq.edif.Z
+      6117 May 17 02:44 dk14.edif.Z
+      4942 May 17 02:44 dk15.edif.Z
+      9188 May 17 02:44 dk16.edif.Z
+      4298 May 17 02:44 dk17.edif.Z
+      3203 May 17 02:44 dk27.edif.Z
+      4225 May 17 02:44 dk512.edif.Z
+      1217 May 17 02:44 donfile.edif.Z
+     79519 Mar 12 02:20 dsip.edif.Z
+     14409 May 16 22:01 duke2.edif.Z
+     19766 May 16 22:02 e64.edif.Z
+     33913 May 17 03:15 ecc.edif.Z
+    218495 May 17 03:15 elliptic.edif.Z
+     12711 May 17 02:44 ex1.edif.Z
+    132694 May 16 22:04 ex1010.edif.Z
+      6300 May 17 02:44 ex4.edif.Z
+     43322 May 16 22:04 ex4p.edif.Z
+     42605 May 16 22:05 ex5p.edif.Z
+      8091 May 17 02:44 ex6.edif.Z
+     12022 Mar  9 17:58 example2.edif.Z
+      7191 Feb  9 02:53 f51m.edif.Z
+     11208 Mar  9 17:59 frg1.edif.Z
+     48157 Mar  9 17:59 frg2.edif.Z
+    234447 May 17 03:15 frisc.edif.Z
+     24181 May 17 03:15 gcd.edif.Z
+      4358 Mar 16 22:47 i1.edif.Z
+     65933 Mar  9 18:00 i10.edif.Z
+      8296 Mar  9 18:00 i2.edif.Z
+      7132 Mar  9 18:01 i3.edif.Z
+      9617 Mar  9 18:01 i4.edif.Z
+     12209 Mar  9 18:01 i5.edif.Z
+     16994 Mar  9 18:01 i6.edif.Z
+     20180 Mar  9 18:02 i7.edif.Z
+     41358 Mar  9 18:02 i8.edif.Z
+     17659 Mar  9 18:03 i9.edif.Z
+      7249 May 16 22:05 inc.edif.Z
+     26127 Mar  9 18:03 k2.edif.Z
+     10663 May 17 02:44 keyb.edif.Z
+      8756 Mar  9 18:03 lal.edif.Z
+      6240 May 17 03:13 ldd.edif.Z
+      2654 May 17 02:44 lion.edif.Z
+      1865 Mar  9 18:03 majority.edif.Z
+      6708 May 17 02:44 mark1.edif.Z
+      3244 May 17 02:44 mc.edif.Z
+      3964 May 16 22:05 misex1.edif.Z
+      5998 May 16 22:05 misex2.edif.Z
+     91577 May 16 22:06 misex3.edif.Z
+     27690 May 16 22:06 misex3c.edif.Z
+     49620 Mar 12 02:20 mm30a.edif.Z
+      8309 Mar 12 02:20 mm4a.edif.Z
+     19052 Mar 12 02:21 mm9a.edif.Z
+     22532 Mar 12 02:21 mm9b.edif.Z
+      1129 May 17 02:44 modulo12.edif.Z
+     10577 Mar 12 02:21 mult16a.edif.Z
+     11013 Mar 12 02:21 mult16b.edif.Z
+     17267 Mar 12 02:21 mult32a.edif.Z
+      5237 Mar  9 18:03 mux.edif.Z
+      9550 Mar  9 18:03 my_adder.edif.Z
+      7647 May 16 22:07 o64.edif.Z
+      6565 May 17 02:44 opus.edif.Z
+     57017 Mar  9 18:04 pair.edif.Z
+      4492 Mar  9 18:04 parity.edif.Z
+     46631 May 17 03:15 parker1986.edif.Z
+      4208 Mar  9 18:04 pcle.edif.Z
+      4727 Mar  9 18:04 pcler8.edif.Z
+    181241 May 16 22:10 pdc.edif.Z
+     40854 May 17 03:15 phase_decoder.edif.Z
+     17678 May 17 02:44 planet.edif.Z
+     17681 May 17 02:44 planet1.edif.Z
+      4907 Mar  9 18:04 pm1.edif.Z
+      9952 May 17 02:44 pma.edif.Z
+      4813 May 16 22:10 rd53.edif.Z
+     11310 May 16 22:10 rd73.edif.Z
+     17722 May 16 22:10 rd84.edif.Z
+     25670 Feb  9 02:55 rot.edif.Z
+     14479 May 17 02:44 s1.edif.Z
+     21425 Mar 12 03:20 s1196.edif.Z
+     21607 May 17 03:14 s1238.edif.Z
+     25019 Mar 12 03:14 s1423.edif.Z
+     19202 May 17 02:44 s1488.edif.Z
+     19778 May 17 02:44 s1494.edif.Z
+      2217 May 17 02:44 s1a.edif.Z
+      6720 Mar 12 03:05 s208.1.edif.Z
+      4720 May 17 02:44 s208.edif.Z
+      4034 May 17 02:44 s27.edif.Z
+     49940 May 17 02:44 s298.edif.Z
+      9716 Mar 12 03:05 s344.edif.Z
+      9853 Mar 12 03:05 s349.edif.Z
+     10646 Mar 12 03:05 s382.edif.Z
+    438653 Mar 12 03:04 s38417.edif.Z
+    403929 Mar 12 02:56 s38584.1.edif.Z
+      7714 May 17 02:44 s386.edif.Z
+     11023 Mar 12 02:49 s400.edif.Z
+     10756 Mar 12 02:49 s420.1.edif.Z
+      5657 May 17 02:44 s420.edif.Z
+     11011 Mar 12 02:49 s444.edif.Z
+     10862 May 17 02:44 s510.edif.Z
+     11265 Mar 12 02:49 s526.edif.Z
+     10696 May 17 03:14 s526n.edif.Z
+     65941 Mar 12 02:49 s5378.edif.Z
+     13142 Mar 12 02:48 s641.edif.Z
+     14159 Mar 12 02:48 s713.edif.Z
+      1264 May 17 02:44 s8.edif.Z
+     13632 May 17 02:44 s820.edif.Z
+     13886 May 17 02:44 s832.edif.Z
+     18171 Mar 12 02:48 s838.1.edif.Z
+     18649 May 17 03:14 s838.edif.Z
+     64711 Mar 12 02:48 s9234.1.edif.Z
+     20504 May 17 03:14 s953.edif.Z
+     17293 May 17 02:44 sand.edif.Z
+      8770 May 16 22:10 sao2.edif.Z
+     29919 Mar 12 02:46 sbc.edif.Z
+     29675 May 17 02:44 scf.edif.Z
+      7295 Mar  9 18:04 sct.edif.Z
+     75029 May 16 22:12 seq.edif.Z
+      1725 May 17 02:44 shiftreg.edif.Z
+    178911 May 16 22:15 spla.edif.Z
+      5092 May 16 22:16 sqrt8.edif.Z
+      7857 May 16 21:15 sqrt8ml.edif.Z
+      5480 May 16 22:15 squar5.edif.Z
+      7571 May 17 02:44 sse.edif.Z
+     16040 May 17 02:44 styr.edif.Z
+     32053 May 16 22:15 t481.edif.Z
+     24151 May 16 22:15 table3.edif.Z
+     23642 May 16 22:16 table5.edif.Z
+      3413 May 17 02:44 tav.edif.Z
+     10714 May 17 02:44 tbk.edif.Z
+      3170 Mar  9 18:04 tcon.edif.Z
+     20975 Mar  9 18:04 term1.edif.Z
+     84655 Mar  9 18:05 too_large.edif.Z
+      7228 May 17 03:15 traffic.edif.Z
+    101791 May 17 03:15 tseng.edif.Z
+     14937 Mar  9 18:05 ttt2.edif.Z
+      7319 Mar  9 18:05 unreg.edif.Z
+     14701 Mar  9 18:05 vda.edif.Z
+     15214 May 16 22:16 vg2.edif.Z
+     22832 Mar  9 18:05 x1.edif.Z
+      3397 Mar  9 18:05 x2.edif.Z
+     38529 Mar  9 18:05 x3.edif.Z
+     20572 Mar  9 18:06 x4.edif.Z
+      3299 May 16 22:16 xor5.edif.Z
+      5946 Feb  9 02:57 z4ml.edif.Z
+
+
+LGSynth93/testcases/edif.bad/:
+total 219
+       297 Jun  7 19:23 COMMENTS
+     43933 May 17 02:44 ex2.edif
+     25427 May 17 02:44 ex3.edif
+     24230 May 17 02:44 ex5.edif
+     26860 May 17 02:44 ex7.edif
+     15758 May 17 02:44 lion9.edif
+     51437 May 17 02:44 tma.edif
+     18606 May 17 02:44 train11.edif
+     10422 May 17 02:44 train4.edif
+
+
+LGSynth93/testcases/fsm
+total 82
+       318 May 17 03:33 COMMENTS
+       353 May 17 02:44 bbara.kiss2.Z
+      4183 May 17 02:43 bbara_bbtas.kiss.Z
+       469 May 17 02:44 bbsse.kiss2.Z
+       160 May 17 02:44 bbtas.kiss2.Z
+       207 May 17 02:44 beecount.kiss2.Z
+       668 May 17 02:44 cse.kiss2.Z
+       429 May 17 02:44 dk14.kiss2.Z
+       260 May 17 02:44 dk15.kiss2.Z
+       680 May 17 02:44 dk16.kiss2.Z
+       257 May 17 02:44 dk17.kiss2.Z
+       143 May 17 02:44 dk27.kiss2.Z
+       243 May 17 02:44 dk512.kiss2.Z
+       460 May 17 02:44 donfile.kiss2.Z
+      1223 May 17 02:44 ex1.kiss2.Z
+       206 May 17 02:44 ex4.kiss2.Z
+       281 May 17 02:44 ex6.kiss2.Z
+       899 May 17 02:44 keyb.kiss2.Z
+      2432 May 17 02:44 kirkman.kiss2.Z
+       101 May 17 02:44 lion.kiss2.Z
+       304 May 17 02:44 mark1.kiss2.Z
+       115 May 17 02:44 mc.kiss2.Z
+       152 May 17 02:44 modulo12.kiss2.Z
+       273 May 17 02:44 opus.kiss2.Z
+      1250 May 17 02:44 planet.kiss2.Z
+      1250 May 17 02:44 planet1.kiss2.Z
+       614 May 17 02:44 pma.kiss2.Z
+       860 May 17 02:44 s1.kiss2.Z
+      2231 May 17 02:44 s1488.kiss2.Z
+      2225 May 17 02:44 s1494.kiss2.Z
+       756 May 17 02:44 s1a.kiss2.Z
+      1019 May 17 02:44 s208.kiss2.Z
+       215 May 17 02:44 s27.kiss2.Z
+      7269 May 17 02:44 s298.kiss2.Z
+       510 May 17 02:44 s386.kiss2.Z
+      1073 May 17 02:44 s420.kiss2.Z
+       693 May 17 02:44 s510.kiss2.Z
+       136 May 17 02:44 s8.kiss2.Z
+      1913 May 17 02:44 s820.kiss2.Z
+      2038 May 17 02:44 s832.kiss2.Z
+      1509 May 17 02:44 sand.kiss2.Z
+      2398 May 17 02:44 scf.kiss2.Z
+       113 May 17 02:44 shiftreg.kiss2.Z
+       465 May 17 02:44 sse.kiss2.Z
+      1333 May 17 02:44 styr.kiss2.Z
+       323 May 17 02:44 tav.kiss2.Z
+      6048 May 17 02:44 tbk.kiss2.Z
+
+
+LGSynth93/testcases/fsm.bad/:
+total 12
+       297 May 17 03:33 COMMENTS
+       802 May 17 02:44 ex2.kiss2
+       386 May 17 02:44 ex3.kiss2
+       345 May 17 02:44 ex5.kiss2
+       386 May 17 02:44 ex7.kiss2
+       350 May 17 02:44 lion9.kiss2
+      1031 May 17 02:44 tma.kiss2
+       355 May 17 02:44 train11.kiss2
+       207 May 17 02:44 train4.kiss2
+
+
+LGSynth93/testcases/pla/:
+total 153
+       500 May 16 20:34 5xp1.pla.Z
+       415 May 16 20:34 9sym.pla.Z
+      5194 May 16 20:34 alu4.pla.Z
+      2785 May 16 20:35 apex1.pla.Z
+      7894 May 16 20:35 apex2.pla.Z
+      2896 May 16 20:35 apex3.pla.Z
+      2695 May 16 20:35 apex4.pla.Z
+     11695 May 16 20:36 apex5.pla.Z
+      2067 May 16 20:36 b12.pla.Z
+       750 May 16 20:36 bw.pla.Z
+       838 May 16 20:36 clip.pla.Z
+       102 May 16 20:36 con1.pla.Z
+      4895 May 16 19:43 cordic.pla.Z
+      6295 May 16 20:36 cps.pla.Z
+      1091 May 16 20:37 duke2.pla.Z
+      1480 May 16 20:37 e64.pla.Z
+      5375 May 16 20:37 ex1010.pla.Z
+      7591 May 16 20:37 ex4p.pla.Z
+      2238 May 16 20:37 ex5p.pla.Z
+       304 May 16 20:37 inc.pla.Z
+       293 May 16 19:43 misex1.pla.Z
+       406 May 16 19:43 misex2.pla.Z
+      9219 May 16 19:43 misex3.pla.Z
+      2020 May 16 19:43 misex3c.pla.Z
+       789 May 16 20:37 o64.pla.Z
+     17372 May 16 20:38 pdc.pla.Z
+       198 May 16 20:38 rd53.pla.Z
+       575 May 16 20:38 rd73.pla.Z
+       906 May 16 20:38 rd84.pla.Z
+       398 May 16 20:38 sao2.pla.Z
+     12078 May 16 20:38 seq.pla.Z
+     16059 May 16 20:38 spla.pla.Z
+       278 May 16 21:33 sqrt8.pla.Z
+       241 May 16 20:39 squar5.pla.Z
+      1987 May 16 20:39 t481.pla.Z
+      1556 May 16 20:39 table3.pla.Z
+      1545 May 16 20:39 table5.pla.Z
+       995 May 16 20:39 vg2.pla.Z
+        99 May 16 19:43 xor5.pla.Z
+
+
+LGSynth93/testcases/tv/:
+total 3956
+       716 May 17 02:06 5xp1.tv.Z
+      2843 May 17 02:06 9sym.tv.Z
+      2198 Mar 10 20:07 9symml.tv.Z
+      6060 Mar 10 00:37 C1355.tv.Z
+       286 Mar 16 18:56 C17.tv.Z
+     13268 Mar 10 20:11 C1908.tv.Z
+     42761 Mar 16 21:27 C2670.tv.Z
+     22361 Mar 10 20:23 C3540.tv.Z
+      6144 Mar 10 20:32 C432.tv.Z
+      8452 Mar 10 20:33 C499.tv.Z
+     44717 Mar 10 01:43 C5315.tv.Z
+     10836 Mar 10 20:34 C6288.tv.Z
+     51114 Mar 16 22:22 C7552.tv.Z
+     10668 Mar 10 20:51 C880.tv.Z
+      3332 Mar 10 00:48 alu2.tv.Z
+     14587 May 17 02:06 alu4.tv.Z
+     39641 May 17 02:06 apex1.tv.Z
+     19032 May 17 02:06 apex2.tv.Z
+     50193 May 17 02:06 apex3.tv.Z
+     14082 May 17 02:06 apex4.tv.Z
+     49522 May 17 02:06 apex5.tv.Z
+     22723 Mar 10 20:52 apex6.tv.Z
+      6809 Mar 10 00:48 apex7.tv.Z
+       183 Mar 10 00:48 b1.tv.Z
+      3002 May 17 02:06 b12.tv.Z
+      2444 Mar 10 20:53 b9.tv.Z
+      2378 May 17 02:44 bbara.tv.Z
+     15893 May 17 02:43 bbara_bbtas.tv.Z
+     46038 May 17 02:44 bbsse.tv.Z
+      3598 May 17 02:44 bbtas.tv.Z
+      1664 May 17 02:44 beecount.tv.Z
+    114133 Mar 12 18:25 bigkey.tv.Z
+      1398 May 17 02:06 bw.tv.Z
+      3764 Mar 10 00:48 c8.tv.Z
+      1261 Mar 10 00:48 cc.tv.Z
+      2092 Mar 10 00:48 cht.tv.Z
+      3776 May 17 02:06 clip.tv.Z
+      6260 Mar 12 19:06 clma.tv.Z
+       566 Mar 10 00:48 cm138a.tv.Z
+      1399 Mar 10 00:48 cm150a.tv.Z
+       601 Mar 10 00:48 cm151a.tv.Z
+       424 Mar 10 00:48 cm152a.tv.Z
+       618 Mar 10 00:48 cm162a.tv.Z
+       561 Mar 10 00:48 cm163a.tv.Z
+       486 Mar 10 00:48 cm42a.tv.Z
+       278 Mar 10 00:48 cm82a.tv.Z
+       523 Mar 10 00:48 cm85a.tv.Z
+       905 Mar 10 00:48 cmb.tv.Z
+      2056 Mar 10 00:48 comp.tv.Z
+       293 May 17 02:06 con1.tv.Z
+     20296 May 17 02:06 cordic.tv.Z
+      1864 Mar 10 00:48 count.tv.Z
+     53312 May 17 02:06 cps.tv.Z
+     11427 May 17 02:44 cse.tv.Z
+      1552 Mar 10 00:48 cu.tv.Z
+      1638 May 17 03:14 daio.tv.Z
+     26471 May 17 03:15 daio_receiver.tv.Z
+     13156 Mar 10 00:48 dalu.tv.Z
+       853 Mar 10 00:48 decod.tv.Z
+     85059 Mar 10 00:48 des.tv.Z
+     37046 May 18 18:53 diffeq.tv.Z
+      1542 May 17 02:44 dk14.tv.Z
+      1547 May 17 02:44 dk15.tv.Z
+      5018 May 17 02:44 dk16.tv.Z
+      2088 May 17 02:44 dk17.tv.Z
+      1048 May 17 02:44 dk27.tv.Z
+      1741 May 17 02:44 dk512.tv.Z
+       325 May 17 02:44 donfile.tv.Z
+    140024 Mar 12 19:20 dsip.tv.Z
+     13987 May 17 02:06 duke2.tv.Z
+     18096 May 17 02:06 e64.tv.Z
+     19543 May 17 03:15 ecc.tv.Z
+      5556 May 18 18:53 elliptic.tv.Z
+     24849 May 17 02:44 ex1.tv.Z
+     16780 May 17 02:06 ex1010.tv.Z
+      2698 May 17 02:44 ex4.tv.Z
+     45527 May 17 02:06 ex4p.tv.Z
+     30422 May 17 02:06 ex5p.tv.Z
+      2091 May 17 02:44 ex6.tv.Z
+     12519 Mar 10 00:48 example2.tv.Z
+      2088 Mar 10 20:55 f51m.tv.Z
+      9443 Mar 10 00:48 frg1.tv.Z
+     37693 Mar 10 00:48 frg2.tv.Z
+     13852 May 18 18:53 frisc.tv.Z
+     24638 May 17 03:15 gcd.tv.Z
+      1421 Mar 16 22:47 i1.tv.Z
+    129841 Mar 10 00:49 i10.tv.Z
+     46710 Mar 10 00:49 i2.tv.Z
+      7027 Mar 10 00:49 i3.tv.Z
+     11179 Mar 10 00:49 i4.tv.Z
+      6578 Mar 10 00:49 i5.tv.Z
+      4730 Mar 10 00:49 i6.tv.Z
+      7958 Mar 10 00:49 i7.tv.Z
+     23710 Mar 10 00:49 i8.tv.Z
+      8059 Mar 10 00:49 i9.tv.Z
+      1583 May 17 02:06 inc.tv.Z
+     53452 Mar 10 00:49 k2.tv.Z
+     11487 May 17 02:44 keyb.tv.Z
+      3352 Mar 10 00:49 lal.tv.Z
+      1864 May 17 03:13 ldd.tv.Z
+       563 May 17 02:44 lion.tv.Z
+       230 Mar 10 00:49 majority.tv.Z
+      5176 May 17 02:44 mark1.tv.Z
+      1352 May 17 02:44 mc.tv.Z
+      1019 May 17 02:06 misex1.tv.Z
+      3869 May 17 02:06 misex2.tv.Z
+     18464 May 17 02:06 misex3.tv.Z
+      8557 May 17 02:06 misex3c.tv.Z
+     18198 Mar 11 18:43 mm30a.tv.Z
+      2848 Mar 11 18:43 mm4a.tv.Z
+      6458 Mar 11 21:14 mm9a.tv.Z
+      5605 Mar 11 18:43 mm9b.tv.Z
+       281 May 17 02:44 modulo12.tv.Z
+      8523 Mar 11 18:43 mult16a.tv.Z
+      1578 Mar 11 18:43 mult16b.tv.Z
+      4457 Mar 11 18:43 mult32a.tv.Z
+      1525 Mar 10 00:49 mux.tv.Z
+      1586 Mar 10 00:49 my_adder.tv.Z
+     18577 May 17 02:06 o64.tv.Z
+      2723 May 17 02:44 opus.tv.Z
+     26010 Mar 10 00:49 pair.tv.Z
+       550 Mar 10 00:49 parity.tv.Z
+      4732 May 17 03:15 parker1986.tv.Z
+       975 Mar 10 00:49 pcle.tv.Z
+      1684 Mar 10 00:49 pcler8.tv.Z
+     78997 May 17 02:06 pdc.tv.Z
+      7248 May 17 03:15 phase_decoder.tv.Z
+     15203 May 17 02:44 planet.tv.Z
+     15438 May 17 02:44 planet1.tv.Z
+      1156 Mar 10 00:49 pm1.tv.Z
+     11042 May 17 02:44 pma.tv.Z
+       644 May 17 02:06 rd53.tv.Z
+       518 May 17 02:06 rd73.tv.Z
+       776 May 17 02:06 rd84.tv.Z
+     34882 Mar 10 20:56 rot.tv.Z
+     19290 May 17 02:44 s1.tv.Z
+     11679 Mar 11 18:43 s1196.tv.Z
+     12038 May 17 03:14 s1238.tv.Z
+      7426 Mar 11 18:43 s1423.tv.Z
+     96473 May 17 02:44 s1488.tv.Z
+     89021 May 17 02:44 s1494.tv.Z
+       605 May 17 02:44 s1a.tv.Z
+     65493 Mar 12 19:30 s208.1.tv.Z
+     30765 May 17 02:44 s208.tv.Z
+       855 May 17 02:44 s27.tv.Z
+     76059 May 17 02:44 s298.tv.Z
+      7799 Mar 11 18:43 s344.tv.Z
+     17760 Mar 11 18:43 s349.tv.Z
+     12081 Mar 11 18:43 s382.tv.Z
+      7477 Mar 11 18:43 s38417.tv.Z
+     15637 Mar 11 18:43 s38584.1.tv.Z
+    208273 May 17 02:44 s386.tv.Z
+     26951 Mar 11 18:44 s400.tv.Z
+     55877 Mar 12 19:43 s420.1.tv.Z
+     22620 May 17 02:44 s420.tv.Z
+      6802 Mar 11 18:44 s444.tv.Z
+     11931 May 17 02:44 s510.tv.Z
+      1147 Mar 11 18:44 s526.tv.Z
+      3983 May 17 03:14 s526n.tv.Z
+     36442 Mar 11 18:44 s5378.tv.Z
+      5576 Mar 11 18:44 s641.tv.Z
+      6643 Mar 11 18:44 s713.tv.Z
+       311 May 17 02:44 s8.tv.Z
+     94987 May 17 02:44 s820.tv.Z
+     94289 May 17 02:44 s832.tv.Z
+     50220 Mar 12 19:45 s838.1.tv.Z
+     14890 May 17 03:14 s838.tv.Z
+      4727 Mar 11 18:44 s9234.1.tv.Z
+      2989 May 17 03:14 s953.tv.Z
+     20670 May 17 02:44 sand.tv.Z
+      1461 May 17 02:06 sao2.tv.Z
+     49209 Mar 11 18:44 sbc.tv.Z
+    296751 May 17 02:44 scf.tv.Z
+      2746 Mar 10 00:49 sct.tv.Z
+     53353 May 17 02:06 seq.tv.Z
+       529 May 17 02:44 shiftreg.tv.Z
+    100293 May 17 02:06 spla.tv.Z
+       819 May 16 20:56 sqrt8.tv.Z
+       819 May 17 20:14 sqrt8ml.tv.Z
+       995 May 17 02:06 squar5.tv.Z
+     44248 May 17 02:44 sse.tv.Z
+     10460 May 17 02:44 styr.tv.Z
+      9656 May 17 02:06 t481.tv.Z
+     14972 May 17 02:06 table3.tv.Z
+     17086 May 17 02:06 table5.tv.Z
+       596 May 17 02:44 tav.tv.Z
+      2942 May 17 02:44 tbk.tv.Z
+       583 Mar 10 00:49 tcon.tv.Z
+      7699 Mar 10 00:49 term1.tv.Z
+      8070 Mar 10 00:49 too_large.tv.Z
+     35788 May 17 03:15 traffic.tv.Z
+      5335 May 18 18:50 tseng.tv.Z
+      5751 Mar 10 00:49 ttt2.tv.Z
+      1035 Mar 10 00:49 unreg.tv.Z
+     12909 Mar 10 00:49 vda.tv.Z
+      1908 May 17 02:06 vg2.tv.Z
+     25815 Mar 10 00:49 x1.tv.Z
+       786 Mar 10 00:49 x2.tv.Z
+     25320 Mar 10 00:49 x3.tv.Z
+     13861 Mar 10 00:49 x4.tv.Z
+       393 May 17 02:06 xor5.tv.Z
+       345 Mar 10 20:57 z4ml.tv.Z
+
+__________________________________________________________END_OF_LIST________
+
