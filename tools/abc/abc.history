@@ -105,10 +105,15 @@ write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mappe
 write_aiger -sC:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
 abc 02> 
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-strash
 write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-source abc.rc
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/lekog25.aig
 cleanup
 refactor
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/lekog25.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
+strash
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
+source abc.rc
+resyn2
+resyn2rs
+abc 01> 
