@@ -9,6 +9,9 @@
 fname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/latch2.aig';
 
 
+[labels, equations] = rename_node(delay, labels, equations, [range.pi(1), range.po(2)], {'top,port(1)@O', 'top,port(1)@I'});
+
+
 bg = build_graph(delay, labels, range, equations);
 view(bg);
 

@@ -1,0 +1,832 @@
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Generator" content="Microsoft Word 12 (filtered)"><title>LEKO and LEKU Benchmarks</title>
+
+<style> 
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:Miriam;}
+@font-face
+	{font-family:"\@SimSun";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"SimSun","serif";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:9.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Times New Roman","serif";}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"SimSun","serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"SimSun","serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"SimSun","serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"SimSun","serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"SimSun","serif";}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+p.References, li.References, div.References
+	{mso-style-name:References;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style></head><body lang="EN-US" link="blue" vlink="purple">
+
+<div class="Section1">
+
+<p style="text-align: center;" align="center"><b><span style="font-size: 18pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKO and LEKU Suites</span></b></p>
+
+<p style="text-align: center;" align="center"><b><span style="font-size: 18pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">(</span></b><b><span style="font-size: 18pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Logic synthesis Examples with
+Known Optimal/Upper-bounds)</span></b></p>
+
+<p style="text-align: center;" align="center"><span style="font-size: 13.5pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Director : </span><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><a href="http://cadlab.cs.ucla.edu/%7Econg"><span style="font-size: 13.5pt;">Prof.
+Jason Cong</span></a></span></p>
+
+<p style="text-align: center;" align="center"><span style="font-size: 13.5pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Author : <a href="http://cadlab.cs.ucla.edu/%7Ekirill">Kirill Minkovich</a></span></p>
+
+<p style="text-align: center;" align="center"><span style="font-size: 13.5pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; color: maroon;">Copyright© 2005-2008<i> the
+Regents of University of California</i></span></p>
+
+<div class="MsoNormal" style="text-align: center;" align="center"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">
+
+<hr align="center" size="3" width="100%">
+
+</span></div>
+
+<p style="margin: 0in 0in 0.0001pt;"><b><i><span style="font-size: 18pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Abstract</span></i></b></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Field-programmable
+gate-array (FPGA) logic synthesis and technology mapping have been studied
+extensively over the past 15 years. However, progress within the last few years
+has slowed considerably (with some notable exceptions). It seems natural to
+then question whether the current logic-synthesis and technology-mapping
+algorithms for FPGA designs are producing near-optimal solutions. Although
+there are many empirical studies that compare different FPGA synthesis/mapping
+algorithms, little is known about how far these algorithms are from the optimal
+(recall that both logic-optimization and technology mapping problems are
+NP-hard, if we consider area optimization in addition to delay/depth
+optimization). In this work, we present a novel method for constructing
+arbitrarily large circuits that have known optimal solutions after technology
+mapping. Using these circuits and their derivatives (called Logic synthesis
+Examples with Known Optimal (LEKO) and Logic synthesis Examples with Known
+Upper bounds (LEKU), respectively), we show that although leading FPGA
+technology-mapping algorithms can produce close to optimal solutions, the
+results from the entire logic-synthesis flow (logic optimization + mapping) are
+far from optimal. The LEKU circuits were constructed to show where the logic
+synthesis flow can be improved, while the LEKO circuits specifically deal with
+the performance of the technology mapping. The best industrial and academic
+FPGA synthesis flows are around 70 times larger in terms of area on average
+and, in some cases, as much as 500 times larger on LEKU examples. These results
+clearly indicate that there is much room for further research and improvement
+in FPGA synthesis.</span></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><b><i><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">&nbsp;</span></i></b></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><b><i><span style="font-size: 18pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Circuit Description</span></i></b></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">The
+LEKO and LEKU suites are developed at <a href="http://cadlab.cs.ucla.edu/">UCLA
+VLSI CAD LAB</a>. </span></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">The
+examples are given in both BLIF and VHLD format and can be downloaded </span><strong><span style="font-size: 17pt;"><a href="http://cadlab.cs.ucla.edu/cgi-bin/softwareRegistration.cgi?conf=/common/toolsv/pubbench/htdocs/mapping/conf.hidden">HERE</a></span></strong><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">. </span></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><b><i><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">&nbsp;</span></i></b></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><b><i><span style="font-size: 18pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Experimental Result</span></i></b></p>
+
+<p class="MsoCaption" style="text-align: left; line-height: 12pt; page-break-after: avoid;" align="left"><span style="font-size: 12pt;">Table 1. Mapping results
+on LEKO examples</span></p>
+
+<table class="MsoNormalTable" style="width: 250.5pt; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="334">
+ <tbody><tr style="height: 12.75pt;">
+  <td colspan="2" style="border: 1pt solid windowtext; padding: 0.5pt 0.5pt 0in; width: 95.75pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="128">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Circuits</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">DAOmap</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">ABC</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Quartus</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">ISE</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Optimal</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.5pt 0.5pt 0in; width: 55.55pt; height: 12.75pt;" valign="bottom" width="74">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKO(G<sub>25</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">83</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">80</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">72</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">80</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">70</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.19</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.14</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.03</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.14</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.5pt 0.5pt 0in; width: 55.55pt; height: 12.75pt;" valign="bottom" width="74">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKO(G<sub>125</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">650</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">609</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">561</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">588</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">525</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.24</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.16</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.07</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.12</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.5pt 0.5pt 0in; width: 55.55pt; height: 12.75pt;" valign="bottom" width="74">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKO(G<sub>625</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">4435</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">4072</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">3737</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">3974</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">3500</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.27</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.16</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.07</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.14</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+ </tr>
+ <tr style="height: 13.5pt;">
+  <td colspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.5pt 0.5pt 0in; width: 95.75pt; height: 13.5pt;" valign="bottom" width="128">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Average Ratio (using C</span><sub><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">5</span></sub><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">)</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.23</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.16</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.05</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.13</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.5pt 0.5pt 0in; width: 55.55pt; height: 12.75pt;" valign="bottom" width="74">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKO(G<sub>36</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">139</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">149</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">121</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">158</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">120</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.16</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.24</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.01</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.32</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.5pt 0.5pt 0in; width: 55.55pt; height: 12.75pt;" valign="bottom" width="74">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKO(G<sub>216</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1301</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1336</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1082</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1078</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1080</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.20</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.24</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.5pt 0.5pt 0in; width: 55.55pt; height: 12.75pt;" valign="bottom" width="74">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKO(G<sub>1296</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">10695</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">10650</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">8645</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">8626</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">8640</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 40.2pt; height: 12.75pt;" valign="bottom" width="54">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.24</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.23</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 12.75pt;" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 12.75pt;" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+ </tr>
+ <tr style="height: 13.5pt;">
+  <td colspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.5pt 0.5pt 0in; width: 95.75pt; height: 13.5pt;" valign="bottom" width="128">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Average Ratio (using C<sub>6</sub>)</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 39.5pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.20</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 27pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.24</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 29.5pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 24.75pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.10</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; width: 34pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td colspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.5pt 0.5pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 95.75pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 12.75pt;" valign="bottom" width="128">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Average Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 39.5pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.22</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 27pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.20</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 29.5pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.03</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 24.75pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="33">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.12</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.5pt 0.5pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 34pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="45">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.00</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p style="margin: 0in 0in 0.0001pt;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom: 4pt; line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Table 2. Logic
+synthesis results on LEKU examples</span></b></p>
+
+<table class="MsoNormalTable" style="width: 239.7pt; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="320">
+ <tbody><tr style="height: 26.2pt;">
+  <td colspan="2" style="border: 1pt solid windowtext; padding: 0.65pt 0.65pt 0in; width: 81.65pt; height: 26.2pt;" nowrap="nowrap" valign="bottom" width="109">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Circuits</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 26.2pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">DAOmap</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 26.2pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">ABC</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 26.2pt;" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Quartus</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 26.2pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">ISE</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 26.2pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Upper</span></p>
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Bounds</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.65pt 0.65pt 0in; width: 49pt; height: 12.75pt;" valign="bottom" width="65">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKU-CD(G<sub>25</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.65pt; height: 12.75pt;" valign="bottom" width="44">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">22,717</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">30,511</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">10,381</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">*</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 12.75pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">70</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.65pt; height: 12.75pt;" valign="bottom" width="44">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">325</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">436</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 12.75pt;" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">148</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">*</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 12.75pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.65pt 0.65pt 0in; width: 49pt; height: 12.75pt;" valign="bottom" width="65">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKU-CD(G<sub>25</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.65pt; height: 12.75pt;" valign="bottom" width="44">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">25,247</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">35,271</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 12.75pt;" nowrap="nowrap" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">5,005</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">9,717</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 12.75pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">70</span></p>
+  </td>
+ </tr>
+ <tr style="height: 13.5pt;">
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 32.65pt; height: 13.5pt;" valign="bottom" width="44">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 13.5pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">361</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 13.5pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">504</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 13.5pt;" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">72</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 13.5pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">139</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 13.5pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1</span></p>
+  </td>
+ </tr>
+ <tr style="height: 13.5pt;">
+  <td colspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.65pt 0.65pt 0in; width: 81.65pt; height: 13.5pt;" valign="bottom" width="109">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Average LEKU-CD Ratio</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 13.5pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">343</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 13.5pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">470</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 13.5pt;" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">110</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 13.5pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">139</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 13.5pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.65pt 0.65pt 0in; width: 49pt; height: 12.75pt;" valign="bottom" width="65">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKU-CB(G<sub>25</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.65pt; height: 12.75pt;" valign="bottom" width="44">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">322</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">191</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 12.75pt;" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">239</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">280</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 12.75pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">70</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.65pt; height: 12.75pt;" valign="bottom" width="44">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">4.6</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">2.7</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 12.75pt;" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">3.4</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">4.0</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 12.75pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1</span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.65pt 0.65pt 0in; width: 49pt; height: 12.75pt;" valign="bottom" width="65">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><b><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">LEKU-CB(G<sub>36</sub>)</span></b></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.65pt; height: 12.75pt;" valign="bottom" width="44">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Area</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 12.75pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">356</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 12.75pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">339</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 12.75pt;" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">206</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 12.75pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">290</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 12.75pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">120</span></p>
+  </td>
+ </tr>
+ <tr style="height: 13.5pt;">
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 32.65pt; height: 13.5pt;" valign="bottom" width="44">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Ratio</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 13.5pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">3.0</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 13.5pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">2.8</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 13.5pt;" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.7</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 13.5pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">2.4</span></p>
+  </td>
+  <td style="border-style: none solid none none; border-color: -moz-use-text-color windowtext -moz-use-text-color -moz-use-text-color; border-width: medium 1pt medium medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 13.5pt;" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1</span></p>
+  </td>
+ </tr>
+ <tr style="height: 13.5pt;">
+  <td colspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.65pt 0.65pt 0in; width: 81.65pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="109">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Average LEKU-CB Ratio</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 39.5pt; height: 13.5pt;" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">3.8</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 29.25pt; height: 13.5pt;" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">2.8</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 30.25pt; height: 13.5pt;" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">2.6</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 27pt; height: 13.5pt;" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">3.2</span></p>
+  </td>
+  <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; width: 32.05pt; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1</span></p>
+  </td>
+ </tr>
+ <tr style="height: 13.5pt;">
+  <td colspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.65pt 0.65pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 81.65pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 13.5pt;" valign="bottom" width="109">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Average Ratio</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 39.5pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="53">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">173</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 29.25pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="39">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">236</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 30.25pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="40">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">56</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 27pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="36">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">71</span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.65pt 0.65pt 0in; background: rgb(255, 255, 153) none repeat scroll 0%; width: 32.05pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 13.5pt;" nowrap="nowrap" valign="bottom" width="43">
+  <p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 12pt; page-break-after: avoid;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">(Note: *The Xilinx mapper was not
+able to accept a circuit of this size)</span></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">&nbsp;</span></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><b><i><span style="font-size: 18pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Slides from FPGA presentation</span></i></b></p>
+
+<p style="margin: 0in 0in 0.0001pt;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">You
+can download it <a href="http://cadlab.cs.ucla.edu/%7Ekirill/fpga06.ppt">here</a>
+(please do not duplicated).</span></p>
+
+<p style="margin-bottom: 6pt;"><b><i><span style="font-size: 18pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">References</span></i></b></p>
+
+<p style="margin: 0in 0in 5pt 0.5in; text-indent: -0.25in;"><a name="_Ref22982122"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">1.<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">J. Cong and K. Minkovich, "</span></a><a href="http://cadlab.cs.ucla.edu/%7Ekirill/fpga06.pdf"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Optimality Study of Logic Synthesis for LUT-Based
+FPGAs</span></a><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">," <i>International
+Symposium on Field-Programmable Gate Arrays,</i> Feb. 2006.</span></p>
+
+<p class="MsoListParagraph" style="margin-left: 1in; text-indent: -0.25in;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">a.<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><a href="http://eetimes.com/showArticle.jhtml?articleID=180204087"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">EE Times article (cover story)
+about the paper</span></a> (2/20/2006).</p>
+
+<p style="margin: 6pt 0in 5pt 1in; text-indent: -0.25in;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">a.<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><a href="http://www.fpgajournal.com/articles_2006/20060425_button.htm"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">FPGA Journal article about this
+paper</span></a> (4/25/2006).</p>
+
+<p style="margin: 6pt 0in 5pt 0.5in; text-indent: -0.25in;"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">2.<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">J. Cong and K. Minkovich, "</span><a href="http://cadlab.cs.ucla.edu/%7Ekirill/tcad06.pdf"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Optimality Study of Logic Synthesis for LUT-Based
+FPGAs,</span></a><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">"
+&nbsp; <em>TCAD: Special Edition for FPGA,</em> 2006.</span></p>
+
+<div class="MsoNormal" style="text-align: center;" align="center"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">
+
+<hr align="center" size="3" width="100%">
+
+</span></div>
+
+<p><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Please direct your
+questions to <a href="mailto:cory_m@cs.ucla.edu">cory_m@cs.ucla.edu</a>.
+Thanks.</span></p>
+
+</div>
+
+<script src="LEKO%20and%20LEKU%20Benchmarks_files/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+_uacct = "UA-131297-3";
+urchinTracker();
+</script></body></html>
