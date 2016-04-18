@@ -2,7 +2,7 @@
 K = 4;
 DF = false;
 mode = 2;
-alpha = 1.5; %1.5-2.5
+alpha = 2.0; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.000, 0.000]; %small
 
@@ -23,12 +23,23 @@ script = [
     ];
 %}
 script = {
+    'cleanup';
+    'refactor';
+    'b';
+    'b';
+    'rw -l';
+    'rw -lz';
+    'b';
+    'rw -lz';
+    'b';
+    'refactor';
     'resyn2';
     'resyn2rs';
     'resyn2rs';
     'resyn2rs';
     'resyn2rs';
     'resyn2rs';
+    'quit';
     };
 
 invoke_abc(script, false);
