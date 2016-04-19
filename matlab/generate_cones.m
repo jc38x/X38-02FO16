@@ -9,8 +9,14 @@ out_cones = cell(1, in_range.szin);
 ncones = zeros(1, in_range.szin);
 
 
-for in = in_inorder
+%numi = numel(in_inorder);
+%counter = 0;
     
+    %counter = counter + 1;
+    %disp([num2str(counter) ' / ' num2str(numi)]);
+
+for in = in_inorder
+    conemap = containers.Map();
     
     
     iedge = in_iedge{in};
@@ -30,15 +36,172 @@ for in = in_inorder
         for m = 1:size(parall, 1), add_cone(parall(m, :)); end
     end
     
-    cones = cones(1:index);
-    out_cones{adjin} = cell_collapse(cones);
+    out_cones{adjin} = cell_collapse(cones(1:index));
 end
     
     
     
 
 
-    function add_cone(nr)
+    function add_cone(in_nr)
+	%in_nr = in_nr - in_range.szpi;
+    nnr = numel(in_nr);
+    
+    switch (nnr)
+        case 0
+            allcones = {in};
+            subindex = 1;
+        case 1
+            nr = in_nr - in_range.szpi;
+            nnc = ncones(nr);
+            nrcones = out_cones{nr};
+            allcones = cell(1, nnc);
+            for k = 1:nnc, allcones{k} = [in, nrcones{k}]; end
+            subindex = nnc;
+        case 2
+            nr1 = in_nr(1);
+            nr2 = in_nr(2);
+            adjnr1 = nr1 - in_range.szpi;
+            adjnr2 = nr2 - in_range.szpi;
+            
+            ie1 = in_iedge{nr1};            
+            ie2 = in_iedge{nr2};
+            nnc1 = ncones(adjnr1);
+            nnc2 = ncones(adjnr2);
+            nrc1 = out_cones{adjnr1};
+            nrc2 = out_cones{adjnr2};
+            
+            if (any(ie1(1, :) == nr2) || any(ie2(1, :) == nr1))
+                allcones = [];
+                subindex = 0;
+                %allcones = cell(1, nnc1);
+                %for k = 1:nnc1, allcones{k} = [in, nrc1{k}]; end
+                %subindex = nnc1;
+
+                %allcones = cell(1, nnc2);
+                %for k = 1:nnc2, allcones{k} = [in, nrc2{k}]; end
+                %subindex = nnc2;
+            else
+                nnc = nnc1 * nnc2;
+                allcones = cell(1, nnc);
+                for k = 1:nnc1
+                    for l = 1:nnc2
+                        allcones{((k - 1) * nnc2) + l} = [in, unique([nrc1{k}, nrc2{l}])];
+                    end
+                end
+                subindex = nnc;
+            end
+            
+            
+            
+            
+            
+            
+            
+            %{
+            total = 0;
+            
+                    disp(['< 3: ' num2str((k - 1) * nnc2 + l) ' / ' num2str(nnc)]);
+                    cnr = unique([nrc1{k}, nrc2{l}]);
+                    key = num2str(cnr);
+                    if (conemap.isKey(key)), continue; end
+                    conemap(key) = key;
+                    total = total + 1;
+                    allcones{total} = [in, cnr];
+                end
+            end
+            %}
+        
+            %allcones = [];
+            %subindex = 0;
+        otherwise
+            warning('Unimplemented operation');
+            allcones = [];
+            subindex = 0;
+    end
+    
+    index = index + 1;
+    cones{index} = allcones(1:subindex);
+    ncones(adjin) = ncones(adjin) + subindex;
+    
+    
+    
+    
+                %cnr = sort(nrcones{k});
+                %key = num2str(cnr);
+                
+                %conemap(key) = key;
+            
+            
+    %{
+    subindex = 0;
+    
+    
+    
+    
+    if (isempty(nr))
+        allcones = cell(1, 1);
+        nnr = 0;
+        try_add_cone(in);
+    else
+        nr = nr - in_range.szpi;
+        allcones = cell(1, prod(ncones(nr)));
+        
+        
+        if (nnr == 1)
+            nnc = ncones(nr);
+            nrcones = out_cones{nr};
+            for k = 1:nnc
+                cnr = sort(nrcones{k});
+                key = num2str(cnr);
+                try_add_cone([in, cnr]);
+                conemap(key) = key;
+            end          
+        elseif (nnr == 2)
+        else
+        end
+        
+        
+        
+        
+        
+%}
+        %{
+        vec = cell(1, nnr);
+        for k = 1:numel(nr), vec{k} = 1:ncones(nr(k)); end
+        offset = zeros(nnr, 1);
+        for k = 1:(nnr - 1), offset(k + 1) = offset(k) + ncones(nr(k)); end
+        
+        nrcones = cell_collapse(out_cones(nr));
+        for c = combvec(vec{:})
+            cnr = unique([nrcones{c + offset}]);
+            key = num2str(cnr);
+            if (conemap.isKey(key)), continue; end
+            conemap(key) = key;
+            try_add_cone([in, cnr]);
+        end
+        %}
+    %end
+   
+    
+    
+        function try_add_cone(in_c)
+            %{
+        if (nnr > 1)
+            ie = in_iedge{in_c};
+            ie = unique(ie(1, :));
+            %if (sum(is_pi(unique(ie), in_range)) > in_K), disp('not K'); return; end
+            iee = ismember(ie, in_c);
+            iec = ~iee;
+            if (numel(ie(iec)) > in_K), return; end
+        end
+            %}
+        subindex = subindex + 1;
+        allcones{subindex} = in_c;
+        end
+        
+        
+        %{
     if (isempty(nr))
         index = index + 1;
         allcones = cell(1, 1);
@@ -51,36 +214,79 @@ end
         allcones = cell(1, total);
         subindex = 0;
         
-        vec = cell(1, numel(nr));
-        for k = 1:numel(nr), vec{k} = 1:ncones(nr(k)); end
-        offset = zeros(numel(nr), 1);
-        for k = 1:(numel(nr) - 1), offset(k + 1) = offset(k) + ncones(nr(k)); end
-        
-        nrcones = cell_collapse(out_cones(nr));
-        for c = combvec(vec{:})
-            s = c + offset;
-            %s
-            %numel(nrcones)
-            subindex = subindex + 1;
-            allcones{subindex} = [in, [nrcones{s}]];
+        nnr = numel(nr);
+        if (nnr < 2)
+            nnc = ncones(nr);
+            allcones = cell(1, nnc);
+            nrcones = out_cones{nr};
+            for k = 1:nnc
+                cnr = sort(nrcones{k});
+                key = num2str(cnr);
+                allcones{k} = [in, nrcones{k}];
+                conemap(key) = key;
+                disp(['< 2: ' num2str(k) ' / ' num2str(nnc)]);
+            end
+            index = index + 1;
+            cones{index} = allcones;
+            ncones(adjin) = ncones(adjin) + nnc;
+        elseif (nnr < 3)
+            nnc1 = ncones(nr(1));
+            nnc2 = ncones(nr(2));
+            nrc1 = out_cones{nr(1)};
+            nrc2 = out_cones{nr(2)};
+            nnc = nnc1 * nnc2;
+            allcones = cell(1, nnc);
+            total = 0;
+            for k = 1:nnc1
+                for l = 1:nnc2
+                    disp(['< 3: ' num2str((k - 1) * nnc2 + l) ' / ' num2str(nnc)]);
+                    cnr = unique([nrc1{k}, nrc2{l}]);
+                    key = num2str(cnr);
+                    if (conemap.isKey(key)), continue; end
+                    conemap(key) = key;
+                    total = total + 1;
+                    allcones{total} = [in, cnr];
+                end
+            end
+            index = index + 1;
+            cones{index} = allcones(1:total);
+            ncones(adjin) = ncones(adjin) + total;
+            
+            
+        else
+            disp('MISS');
+            vec = cell(1, numel(nr));
+            for k = 1:numel(nr), vec{k} = 1:ncones(nr(k)); end
+            offset = zeros(numel(nr), 1);
+            for k = 1:(numel(nr) - 1), offset(k + 1) = offset(k) + ncones(nr(k)); end
+            
+            nrcones = cell_collapse(out_cones(nr));
+            for c = combvec(vec{:})
+                cnr = unique([nrcones{c + offset}]);
+                key = num2str(cnr);
+                if (conemap.isKey(key)), continue; end
+                conemap(key) = key;
+                cone = [in, cnr];
+                subindex = subindex + 1;
+                allcones{subindex} = cone;
+            end
+
+            allcones = allcones(1:subindex);
+            index = index + 1;
+            cones{index} = allcones;
+            
+            ncones(adjin) = ncones(adjin) + subindex;
         end
-        
-        
-        
-        
-        allcones = allcones(1:subindex);
-        index = index + 1;
-        cones{index} = allcones;
-        
-        ncones(adjin) = ncones(adjin) + subindex;
     end
+    %}
     
     
-    
-    
+
         
     
     end
+
+
 
 
 
