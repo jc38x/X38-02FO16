@@ -11,13 +11,12 @@ ncones = zeros(1, in_range.szin);
 
 %numi = numel(in_inorder);
 %counter = 0;
-    
     %counter = counter + 1;
     %disp([num2str(counter) ' / ' num2str(numi)]);
+    %conemap = containers.Map();
 
 for in = in_inorder
     conemap = containers.Map();
-    
     
     iedge = in_iedge{in};
     inode = iedge(1, :);
@@ -37,6 +36,7 @@ for in = in_inorder
     end
     
     out_cones{adjin} = cell_collapse(cones(1:index));
+    disp([num2str(in) ': ' num2str(ncones(adjin))]);
 end
     
     
@@ -44,21 +44,28 @@ end
 
 
     function add_cone(in_nr)
-	%in_nr = in_nr - in_range.szpi;
+	
     nnr = numel(in_nr);
     
     switch (nnr)
         case 0
-            allcones = {in};
-            subindex = 1;
+            subindex = 0;
+            try_add_cone(in);
         case 1
             nr = in_nr - in_range.szpi;
             nnc = ncones(nr);
             nrcones = out_cones{nr};
             allcones = cell(1, nnc);
-            for k = 1:nnc, allcones{k} = [in, nrcones{k}]; end
-            subindex = nnc;
+            subindex = 0;
+            for k = 1:nnc,
+                cone = [in, unique(nrcones{k})];
+                try_add_cone(cone);
+                conemap(hash_cone(cone)) = cone;
+            end
         case 2
+            
+            
+        
             nr1 = in_nr(1);
             nr2 = in_nr(2);
             adjnr1 = nr1 - in_range.szpi;
@@ -71,49 +78,50 @@ end
             nrc1 = out_cones{adjnr1};
             nrc2 = out_cones{adjnr2};
             
-            if (any(ie1(1, :) == nr2) || any(ie2(1, :) == nr1))
+            nnc = nnc1 * nnc2;
+            allcones = cell(1, nnc);
+            subindex = 0;
+            for k = 1:nnc1
+                for l = 1:nnc2
+                    cone = [in, unique([nrc1{k}, nrc2{l}])];
+                    ck = hash_cone(cone);
+                    if (conemap.isKey(ck)), continue; end
+                    conemap(ck) = cone;
+                    
+                    
+                    try_add_cone(cone);
+                    
+                end
+            end
+            
+            %allcones{((k - 1) * nnc2) + l} = [in, unique([nrc1{k}, nrc2{l}])];
+            %{
+            if (any((ie1(1, :) >= (nr2 - 0.5)) & (ie1(1, :) <= (nr2 + 0.5))) || any((ie2(1, :) >= (nr1 - 0.5)) & (ie2(1, :) <= (nr1 + 0.5))))
+                disp('HIT');
+                ie1(1, :)
+                nr2
+                ie2(1, :)
+                nr1
                 allcones = [];
                 subindex = 0;
-                %allcones = cell(1, nnc1);
-                %for k = 1:nnc1, allcones{k} = [in, nrc1{k}]; end
-                %subindex = nnc1;
-
-                %allcones = cell(1, nnc2);
-                %for k = 1:nnc2, allcones{k} = [in, nrc2{k}]; end
-                %subindex = nnc2;
+            elseif (any(nr1 == nrc2{end}) || any(nr2 == nrc1{end}))
+                disp('HIT2');
+                allcones = [];
+                subindex = 0;
+        
             else
+            
                 nnc = nnc1 * nnc2;
                 allcones = cell(1, nnc);
+                subindex = 0;
                 for k = 1:nnc1
                     for l = 1:nnc2
-                        allcones{((k - 1) * nnc2) + l} = [in, unique([nrc1{k}, nrc2{l}])];
+                        %allcones{((k - 1) * nnc2) + l} = [in, unique([nrc1{k}, nrc2{l}])];
+                        try_add_cone([in, unique([nrc1{k}, nrc2{l}])]);
                     end
                 end
-                subindex = nnc;
-            end
-            
-            
-            
-            
-            
-            
-            
-            %{
-            total = 0;
-            
-                    disp(['< 3: ' num2str((k - 1) * nnc2 + l) ' / ' num2str(nnc)]);
-                    cnr = unique([nrc1{k}, nrc2{l}]);
-                    key = num2str(cnr);
-                    if (conemap.isKey(key)), continue; end
-                    conemap(key) = key;
-                    total = total + 1;
-                    allcones{total} = [in, cnr];
-                end
-            end
-            %}
-        
-            %allcones = [];
-            %subindex = 0;
+            %end
+                %}
         otherwise
             warning('Unimplemented operation');
             allcones = [];
@@ -124,9 +132,101 @@ end
     cones{index} = allcones(1:subindex);
     ncones(adjin) = ncones(adjin) + subindex;
     
+        function [out_key] = hash_cone(in_c)
+        %out_key = num2str(in_c); %628.324600 621.391284
+        out_key = sprintf('%d.',in_c); %434.963708
+        end
     
+        function try_add_cone(in_c)
+            %{
+            key = num2str(unique(in_c));
+            if (conemap.isKey(key))
+                disp('DUP');% num2str(conemap(key)) ' :: ' num2str(nnr)]);
+                debug_info = conemap(key);
+                
+                if (nnr < 1)
+                    next_step = {
+                        nnr;
+                        in_c;
+                        };
+                elseif (nnr < 2)
+                    next_step = {
+                        nnr;
+                        in_c;
+                        nrcones;
+                        k;
+                        };
+                else
+                    next_step = {
+                        nnr;
+                        in_c;
+                        nrc1;
+                        nrc2;
+                        k;
+                        l;
+                        };
+                end
+                if (debug_info{1} == 1)
+                    return;
+                end
+                
+                return;
+            end
+            if (nnr < 1)
+                conemap(key) = {
+                    nnr;
+                    in_c;
+                    };
+            elseif (nnr < 2)
+                conemap(key) = {
+                    nnr;
+                    in_c;
+                    nrcones;
+                    k;
+                    };
+            else
+                conemap(key) = {
+                    nnr;
+                    in_c;
+                    nrc1;
+                    nrc2;
+                    k;
+                    l;
+                    };
+            end
+            %}
+            
+        %ie = in_iedge{in_c};
+        %ie = unique(ie(1, :));
+        %iec = ismember(ie, in_c);
+        %iee = ~iec;
+        %if (numel(ie(iee)) > in_K), return; end
+        %in_c = unique(in_c);
+        ie = [in_iedge{in_c}];
+        iec = ismember(ie(1, :), in_c);
+        %iec = ismembc(ie(1, :), in_c);
+        iee = ~iec;
+        ind = unique(ie(1, iee));
+        if (numel(ind) > in_K), return; end
+        %if (sum(is_pi(ind, in_range)) > in_K), disp('> K PI'); return; end
+        %if (sum(is_pi(unique(ie(1, iee)), in_range)) > in_K), return; end
+        
+        subindex = subindex + 1;
+        allcones{subindex} = in_c;
+        end
     
-    
+        %{
+        if (nnr > 1)
+            
+            
+            %if (sum(is_pi(unique(ie), in_range)) > in_K), disp('not K'); return; end
+            
+            
+            
+        end
+            %}
+        
+    %in_nr = in_nr - in_range.szpi;
                 %cnr = sort(nrcones{k});
                 %key = num2str(cnr);
                 
@@ -185,20 +285,7 @@ end
    
     
     
-        function try_add_cone(in_c)
-            %{
-        if (nnr > 1)
-            ie = in_iedge{in_c};
-            ie = unique(ie(1, :));
-            %if (sum(is_pi(unique(ie), in_range)) > in_K), disp('not K'); return; end
-            iee = ismember(ie, in_c);
-            iec = ~iee;
-            if (numel(ie(iec)) > in_K), return; end
-        end
-            %}
-        subindex = subindex + 1;
-        allcones{subindex} = in_c;
-        end
+        
         
         
         %{
