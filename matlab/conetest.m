@@ -5,6 +5,8 @@ DF = false;
 [delay, labels, range, equations] = load_leko_leku('leko-g5\g25');
 %[delay, labels, range, equations] = sample_valavan();
 
+%[delay, labels, equations] = sort_graph(delay, labels, range, equations);
+
 %view(build_graph(delay, labels, range, equations));
 
 [iedge, oedge] = prepare_edges(delay, range);
