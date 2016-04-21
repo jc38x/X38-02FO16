@@ -119,6 +119,29 @@ rw -lz
 refactor
 resyn2
 resyn2rs
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
+refactor -h
+fraig -h
+ifraig -h
+dfraig -h
+fraig
+ifraig
+dfraig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
+balance
+rewrite
+refactor
+espresso
+resyn2
+resyn
+resyn2rs -h
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
 source abc.rc
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
 strash

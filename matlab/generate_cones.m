@@ -14,6 +14,10 @@ ncones = zeros(1, in_range.szin);
     %counter = counter + 1;
     %disp([num2str(counter) ' / ' num2str(numi)]);
     %conemap = containers.Map();
+    
+    prune = 0;
+    dup = 0;
+    kcut = 0;
 
 for in = in_inorder
     conemap = containers.Map();
@@ -36,185 +40,120 @@ for in = in_inorder
     end
     
     out_cones{adjin} = cell_collapse(cones(1:index));
-    disp([num2str(in) ': ' num2str(ncones(adjin))]);
+    %disp([num2str(in) ': ' num2str(ncones(adjin))]);
 end
     
-    
+    prune
+    dup
+    kcut
     
 
 
     function add_cone(in_nr)
 	
     nnr = numel(in_nr);
+    subindex = 0;
     
     switch (nnr)
-        case 0
-            subindex = 0;
-            try_add_cone(in);
-        case 1
-            nr = in_nr - in_range.szpi;
-            nnc = ncones(nr);
-            nrcones = out_cones{nr};
-            allcones = cell(1, nnc);
-            subindex = 0;
-            for k = 1:nnc,
-                cone = [in, unique(nrcones{k})];
+    case 0
+        allcones = cell(1, 1);
+        try_add_cone(in);
+    case 1
+        nr = in_nr - in_range.szpi;
+        nnc = ncones(nr);
+        nrcones = out_cones{nr};
+        allcones = cell(1, nnc);
+        for k = 1:nnc, try_add_cone(unique([in, nrcones{k}])); end
+    case 2
+        nr1 = in_nr(1);
+        nr2 = in_nr(2);
+        adjnr1 = nr1 - in_range.szpi;
+        adjnr2 = nr2 - in_range.szpi;
+        nnc1 = ncones(adjnr1);
+        nnc2 = ncones(adjnr2);
+        nrc1 = out_cones{adjnr1};
+        nrc2 = out_cones{adjnr2};
+        allcones = cell(1, nnc1 * nnc2);
+        
+        %ie1 = in_iedge{nr1};
+        %ie2 = in_iedge{nr2};
+        %if (any(ie1(1,:) == nr2) || any(ie2(1,:) == nr1))
+        %    disp('HIT');
+        %    return;
+        %end
+        
+        keep1 = true(1, nnc1);
+        v1 = 1:nnc1;
+        for k = v1
+            iex = [in_iedge{nrc1{k}}];
+            keep1(k) = ~any(iex(1,:) == nr2);
+        end
+        
+        keep2 = true(1, nnc2);
+        v2 = 1:nnc2;
+        for k = v2
+            iex = [in_iedge{nrc2{k}}];
+            keep2(k) = ~any(iex(1,:) == nr1);
+        end
+        
+        prune = prune + (nnc1 - sum(keep1)) * (nnc2 - sum(keep2));
+        
+        
+        for k = v1(keep1)%1:nnc1
+            c1 = nrc1{k};
+            %if (any(c1 == nr2)), disp('HIT 1'); continue; end
+            for l = v2(keep2)%1:nnc2
+                c2 = nrc2{l};
+                %if (any(c2 == nr1)), disp('HIT 2'); continue; end
+            
+                
+                cone = unique([in, c1, c2]);
+                %ck = hash_cone(cone);
+                ck = sprintf('%d.', cone);
+                if (conemap.isKey(ck))
+                    %disp(num2str(conemap(ck)));
+                    %if (conemap(ck) ~= 2)
+                    %    disp('BRKP');
+                    %end
+                    dup = dup + 1;
+                    continue;
+                end
+                conemap(ck) = 2;
+                
+                
                 try_add_cone(cone);
-                conemap(hash_cone(cone)) = cone;
-            end
-        case 2
-            
-            
-        
-            nr1 = in_nr(1);
-            nr2 = in_nr(2);
-            adjnr1 = nr1 - in_range.szpi;
-            adjnr2 = nr2 - in_range.szpi;
-            
-            ie1 = in_iedge{nr1};            
-            ie2 = in_iedge{nr2};
-            nnc1 = ncones(adjnr1);
-            nnc2 = ncones(adjnr2);
-            nrc1 = out_cones{adjnr1};
-            nrc2 = out_cones{adjnr2};
-            
-            nnc = nnc1 * nnc2;
-            allcones = cell(1, nnc);
-            subindex = 0;
-            for k = 1:nnc1
-                for l = 1:nnc2
-                    cone = [in, unique([nrc1{k}, nrc2{l}])];
-                    ck = hash_cone(cone);
-                    if (conemap.isKey(ck)), continue; end
-                    conemap(ck) = cone;
-                    
-                    
-                    try_add_cone(cone);
-                    
-                end
+                
             end
             
-            %allcones{((k - 1) * nnc2) + l} = [in, unique([nrc1{k}, nrc2{l}])];
-            %{
-            if (any((ie1(1, :) >= (nr2 - 0.5)) & (ie1(1, :) <= (nr2 + 0.5))) || any((ie2(1, :) >= (nr1 - 0.5)) & (ie2(1, :) <= (nr1 + 0.5))))
-                disp('HIT');
-                ie1(1, :)
-                nr2
-                ie2(1, :)
-                nr1
-                allcones = [];
-                subindex = 0;
-            elseif (any(nr1 == nrc2{end}) || any(nr2 == nrc1{end}))
-                disp('HIT2');
-                allcones = [];
-                subindex = 0;
-        
-            else
+        end
             
-                nnc = nnc1 * nnc2;
-                allcones = cell(1, nnc);
-                subindex = 0;
-                for k = 1:nnc1
-                    for l = 1:nnc2
-                        %allcones{((k - 1) * nnc2) + l} = [in, unique([nrc1{k}, nrc2{l}])];
-                        try_add_cone([in, unique([nrc1{k}, nrc2{l}])]);
-                    end
-                end
-            %end
-                %}
-        otherwise
-            warning('Unimplemented operation');
-            allcones = [];
-            subindex = 0;
+            
+    otherwise
+        warning('Unimplemented operation');
+        allcones = [];
     end
     
     index = index + 1;
     cones{index} = allcones(1:subindex);
     ncones(adjin) = ncones(adjin) + subindex;
     
-        function [out_key] = hash_cone(in_c)
+        %function [out_key] = hash_cone(in_c)
         %out_key = num2str(in_c); %628.324600 621.391284
-        out_key = sprintf('%d.',in_c); %434.963708
-        end
+        %out_key = sprintf('%d.',in_c); %434.963708
+        %end
     
         function try_add_cone(in_c)
-            %{
-            key = num2str(unique(in_c));
-            if (conemap.isKey(key))
-                disp('DUP');% num2str(conemap(key)) ' :: ' num2str(nnr)]);
-                debug_info = conemap(key);
-                
-                if (nnr < 1)
-                    next_step = {
-                        nnr;
-                        in_c;
-                        };
-                elseif (nnr < 2)
-                    next_step = {
-                        nnr;
-                        in_c;
-                        nrcones;
-                        k;
-                        };
-                else
-                    next_step = {
-                        nnr;
-                        in_c;
-                        nrc1;
-                        nrc2;
-                        k;
-                        l;
-                        };
-                end
-                if (debug_info{1} == 1)
-                    return;
-                end
-                
-                return;
-            end
-            if (nnr < 1)
-                conemap(key) = {
-                    nnr;
-                    in_c;
-                    };
-            elseif (nnr < 2)
-                conemap(key) = {
-                    nnr;
-                    in_c;
-                    nrcones;
-                    k;
-                    };
-            else
-                conemap(key) = {
-                    nnr;
-                    in_c;
-                    nrc1;
-                    nrc2;
-                    k;
-                    l;
-                    };
-            end
-            %}
-            
-        %ie = in_iedge{in_c};
-        %ie = unique(ie(1, :));
-        %iec = ismember(ie, in_c);
-        %iee = ~iec;
-        %if (numel(ie(iee)) > in_K), return; end
-        %in_c = unique(in_c);
         ie = [in_iedge{in_c}];
-        iec = ismember(ie(1, :), in_c);
-        %iec = ismembc(ie(1, :), in_c);
-        iee = ~iec;
-        ind = unique(ie(1, iee));
-        if (numel(ind) > in_K), return; end
-        %if (sum(is_pi(ind, in_range)) > in_K), disp('> K PI'); return; end
-        %if (sum(is_pi(unique(ie(1, iee)), in_range)) > in_K), return; end
-        
+        iee = ~ismembc(unique(ie(1, :)), in_c);
+        if (sum(iee) > in_K), kcut = kcut + 1; return; end
+
         subindex = subindex + 1;
         allcones{subindex} = in_c;
         end
     
+        
+        %if (sum(is_pi(ind, in_range)) > in_K), disp('> K PI'); return; end
+        %if (sum(is_pi(unique(ie(1, iee)), in_range)) > in_K), return; end
         %{
         if (nnr > 1)
             
