@@ -33,6 +33,6 @@ for k = in_range.in
         outputs(1, :) = outputs(1, :) * 2;
     end
     
-    out_luts{k} = ['INIT="' strremovespaces(num2str(sum(outputs, 1), '%X')) '"'];
+    out_luts{k} = ['LUT(''' strremovespaces(num2str(sum(outputs, 1), '%X')) ''')'];
 end
 end

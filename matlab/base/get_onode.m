@@ -5,5 +5,5 @@
 %**************************************************************************
 
 function [out_onode] = get_onode(in_delay, in_node)
-out_onode = find(in_delay(in_node, :));
+out_onode = find(sum(in_delay(in_node, :), 1));
 end

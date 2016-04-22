@@ -46,7 +46,7 @@ height = fill_height(redro, oedge, delay, range);
 
 
 t = tic();
-[cones] = generate_cones(inorder, iedge, oedge, range, K);
+[cones] = generate_cones(inorder, iedge, oedge, range, K, delay);
 toc(t);
 
 

@@ -4,7 +4,7 @@
 % 2016
 %**************************************************************************
 
-function [out_cones] = generate_cones(in_inorder, in_iedge, in_oedge, in_range, in_K)
+function [out_cones] = generate_cones(in_inorder, in_iedge, in_oedge, in_range, in_K, in_delay)
 out_cones = cell(1, in_range.szin);
 ncones = zeros(1, in_range.szin);
 
@@ -37,7 +37,14 @@ for in = in_inorder
         for m = 1:size(parall, 1), add_cone(parall(m, :)); end
     end
     
-    out_cones{adjin} = cell_collapse(cones(1:index));
+    
+    scones = cell_collapse(cones(1:index));
+    sortc = zeros(1, ncones(adjin));
+    for n = 1:ncones(adjin), sortc(n) = numel(scones{n}); end
+    [~, sortc] = sort(sortc);
+    
+    
+    out_cones{adjin} = scones(sortc);
 end
     
 
@@ -50,10 +57,10 @@ end
 
     function add_cone(in_nr)
 	
-    nnr = numel(in_nr);
+
     subindex = 0;
     
-    switch (nnr)
+    switch (numel(in_nr))
     case 0
         allcones = cell(1, 1);
         try_add_cone(in);
@@ -83,35 +90,62 @@ end
 
         keep1 = true(1, nnc1);
         v1 = 1:nnc1;
-        for k = v1
-            iex = [in_iedge{nrc1{k}}];
-            keep1(k) = ~any(iex(1, :) == nr2);
-        end
+        for k = v1, keep1(k) = ~any(get_inode(in_delay, nrc1{k}) == nr2); end
         
         keep2 = true(1, nnc2);
         v2 = 1:nnc2;
-        for k = v2
-            iex = [in_iedge{nrc2{k}}];
-            keep2(k) = ~any(iex(1, :) == nr1);
-        end
+        for k = v2, keep2(k) = ~any(get_inode(in_delay, nrc2{k}) == nr1); end
+        
+        
+        
+        
+        
+        
+        
+        
+        %for k = v1, iex = [in_iedge{nrc1{k}}]; keep1(k) = ~any(iex(1, :) == nr2); end
+        
+        
+        
+        %for k = v2, iex = [in_iedge{nrc2{k}}]; keep2(k) = ~any(iex(1, :) == nr1); end
 
         
         
         prune = prune + ((nnc1 * nnc2) - (sum(keep1) * sum(keep2)));
         
         allcones = cell(1, sum(keep1) * sum(keep2));
+        
+        list1 = [];
+        list2 = [];
 
         for k = v1(keep1)
             c1 = nrc1{k};
+            
+            %list1 = unique([list1 c1(1:(end-1))]);
+            %if (any(ismembc(list1, list2))), prune = prune + sum(keep2); continue; end
+            
+            %tag1 = c1(1:(end - 1));
+            %iex1 = [in_iedge{tag1}];
             for l = v2(keep2)
                 c2 = nrc2{l};
+                
+                %list2 = unique([list2 c2(1)]);
+                %if (any(ismembc(list1, list2))), prune = prune + 1; continue; end
+                
+                %%if (any(tag == c2)), prune = prune + 1; continue; end
+                %tag2 = c2(1:(end-1));
+                %iex2 = [in_iedge{tag2}];
+                %if ((~isempty(iex1) && ~isempty(iex2)) && any(ismembc(iex2(1,:), iex1(1,:)))), prune = prune + 1; continue; end
+                
                 cone = unique([in, c1, c2]);
                 ck = sprintf('%d.', cone);
                 if (conemap.isKey(ck))
+                    debug = conemap(ck);                    
                     dup = dup + 1;
                     continue;
                 end
-                conemap(ck) = 2;
+                conemap(ck) = {nrc1; nrc2; k; l};
+                
                 try_add_cone(cone);
             end
         end
