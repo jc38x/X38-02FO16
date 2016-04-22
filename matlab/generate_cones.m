@@ -9,8 +9,9 @@ out_cones = cell(1, in_range.szin);
 ncones = zeros(1, in_range.szin);
 
 
-
-    
+    marker = false(1, in_range.sz);
+    nodestr = strtrim(cellstr(num2str(in_range.all.')).');
+    for n = 1:numel(nodestr), nodestr{n} = [nodestr{n} '.']; end
     prune = 0;
     dup = 0;
     kcut = 0;
@@ -45,6 +46,7 @@ for in = in_inorder
     
     
     out_cones{adjin} = scones(sortc);
+    %ncones(adjin) = numel(scones);
 end
     
 
@@ -67,31 +69,23 @@ end
     case 1
         nr = in_nr - in_range.szpi;
         nnc = ncones(nr);
-        nrcones = out_cones{nr};
+        nrc = out_cones{nr};
         allcones = cell(1, nnc);
-        for k = 1:nnc, try_add_cone(unique([in, nrcones{k}])); end
-    case 2
-        
-        
-        
+        for k = 1:nnc, try_add_cone(unique([in, nrc{k}])); end
+    case 2        
         nr1 = in_nr(1);
         nr2 = in_nr(2);
-        adjnr1 = nr1 - in_range.szpi;
-        adjnr2 = nr2 - in_range.szpi;
-        nnc1 = ncones(adjnr1);
-        nnc2 = ncones(adjnr2);
-        nrc1 = out_cones{adjnr1};
-        nrc2 = out_cones{adjnr2};
-        
-        
-        
-        
-        
 
+        adjnr1 = nr1 - in_range.szpi;
+        nnc1 = ncones(adjnr1);
+        nrc1 = out_cones{adjnr1};
         keep1 = true(1, nnc1);
         v1 = 1:nnc1;
         for k = v1, keep1(k) = ~any(get_inode(in_delay, nrc1{k}) == nr2); end
         
+        adjnr2 = nr2 - in_range.szpi;
+        nnc2 = ncones(adjnr2);
+        nrc2 = out_cones{adjnr2};
         keep2 = true(1, nnc2);
         v2 = 1:nnc2;
         for k = v2, keep2(k) = ~any(get_inode(in_delay, nrc2{k}) == nr1); end
@@ -137,8 +131,15 @@ end
                 %iex2 = [in_iedge{tag2}];
                 %if ((~isempty(iex1) && ~isempty(iex2)) && any(ismembc(iex2(1,:), iex1(1,:)))), prune = prune + 1; continue; end
                 
-                cone = unique([in, c1, c2]);
-                ck = sprintf('%d.', cone);
+                mk = marker;
+                mk([in, c1, c2]) = true;
+                cone = in_range.all(mk);
+                
+                %cone = unique([in, c1, c2]);
+                
+                
+                ck = [nodestr{cone}];
+                %ck = sprintf('%d.', cone);
                 if (conemap.isKey(ck))
                     debug = conemap(ck);                    
                     dup = dup + 1;
@@ -169,8 +170,8 @@ end
         
     
         function try_add_cone(in_c)
-        ie = [in_iedge{in_c}];
-        iee = ~ismembc(unique(ie(1, :)), in_c);
+        iee = sum(in_delay(:, in_c), 2) > 0;
+        iee(in_c) = 0;
         if (sum(iee) > in_K), kcut = kcut + 1; return; end
         subindex = subindex + 1;
         allcones{subindex} = in_c;
@@ -178,7 +179,8 @@ end
     
         
        
-    
+            %ie = [in_iedge{in_c}];
+        %iee = ~ismembc(unique(ie(1, :)), in_c);
         %{
         vec = cell(1, nnr);
         for k = 1:numel(nr), vec{k} = 1:ncones(nr(k)); end
