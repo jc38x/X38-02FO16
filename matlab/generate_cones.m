@@ -17,7 +17,7 @@ ncones = zeros(1, in_range.szin);
     kcut = 0;
 
 for in = in_inorder
-    conemap = containers.Map();
+    %conemap = containers.Map();
     %conelist = [];
     
     
@@ -40,12 +40,12 @@ for in = in_inorder
     
     
     scones = cell_collapse(cones(1:index));
-    sortc = zeros(1, ncones(adjin));
-    for n = 1:ncones(adjin), sortc(n) = numel(scones{n}); end
-    [~, sortc] = sort(sortc);
+    %sortc = zeros(1, ncones(adjin));
+    %for n = 1:ncones(adjin), sortc(n) = numel(scones{n}); end
+    %[~, sortc] = sort(sortc);
     
     
-    out_cones{adjin} = scones(sortc);
+    out_cones{adjin} = scones;%scones(sortc);
     %ncones(adjin) = numel(scones);
 end
     
@@ -67,13 +67,10 @@ end
 
 
     function add_cone(in_nr)
-	
-
+    nnr = numel(in_nr);
     subindex = 0;
     
-    
-    
-    switch (numel(in_nr))
+    switch (nnr)
     case 0
         allcones = cell(1, 1);
         try_add_cone(in);
@@ -83,7 +80,7 @@ end
         nrc = out_cones{nr};
         allcones = cell(1, nnc);
         for k = 1:nnc, try_add_cone(unique_nodes([in, nrc{k}])); end
-    case 2        
+    case 2
         nr1 = in_nr(1);
         nr2 = in_nr(2);
 
@@ -107,75 +104,18 @@ end
         prune = prune + (nnc1 * nnc2) - nnc;
         allcones = cell(1, nnc);
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        %oloop;
-        %iloop;
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
         for k = v1(keep1)
-            c1 = nrc1{k};
-            
-            %tag1 = c1(1:(end - 1));
-            %if (~isempty(tag1)), tag1 = tag1(end); end
-            
-            
-            for l = v2(keep2)
-                c2 = nrc2{l};
-                
-                %tag2 = c2(1:(end - 1));
-                %if (~isempty(tag2) && ~isempty(tag1) && any(tag1 == tag2)), prune = prune + 1; continue; end
-                
-                %x1 = c1(1:(end - 1));
-                %x2 = c2(1:(end - 1));
-                
-                
-                
-                cone = unique_nodes([in, c1, c2]);
-                
-                
-                ck = [nodestring{cone}];
-                if (conemap.isKey(ck))
-                    dup = dup + 1;
-                    continue;
-                end
-                conemap(ck) = 0;
-                
-                try_add_cone(cone);
-            end
+            for l = v2(keep2), try_add_cone(unique_nodes([in, nrc1{k}, nrc2{l}])); end
         end
-        otherwise
-            warning('Unimplemented operation');
-            allcones = [];
+        
+        trim_cones();
+    otherwise
+        error('Unsupported operation.');
     end
     
     index = index + 1;
     cones{index} = allcones(1:subindex);
     ncones(adjin) = ncones(adjin) + subindex;
-    
-    
-    
-    
-    
-    
-    
     
         function [out_cone] = unique_nodes(in_c)
         pick = nodemarker;
@@ -183,66 +123,37 @@ end
         out_cone = in_range.all(pick);
         end
 
+        function trim_cones()
+        testcones = allcones(1:subindex);
+        nc = zeros(1, subindex);
+        prevsubindex = subindex;
+        allcones = cell(1, subindex);
+        subindex = 0;
+        
+        for j = 1:prevsubindex, nc(j) = numel(testcones{j}); end
+        
+        for j = unique(nc)
+            tc = uniqueRowsCA(testcones(nc == j).');
+            ntc = numel(tc);
+            allcones((1:ntc) + subindex) = tc.';
+            subindex = subindex + ntc;
+        end
+        
+        dup = dup + prevsubindex - subindex;
+        end
+        
         function try_add_cone(in_c)
-        %iee = sum(in_delay(:, in_c), 2) > 0;
-        %iee(in_c) = 0;
-        %if (sum(iee) > in_K), kcut = kcut + 1; return; end
+        iee = sum(in_delay(:, in_c), 2) > 0;
+        iee(in_c) = 0;
+        
+        if (sum(iee) > in_K)
+            kcut = kcut + 1;
+            return;
+        end
+        
         subindex = subindex + 1;
         allcones{subindex} = in_c;
         end
-    
-        
-       
-            %ie = [in_iedge{in_c}];
-        %iee = ~ismembc(unique(ie(1, :)), in_c);
-        %{
-        vec = cell(1, nnr);
-        for k = 1:numel(nr), vec{k} = 1:ncones(nr(k)); end
-        offset = zeros(nnr, 1);
-        for k = 1:(nnr - 1), offset(k + 1) = offset(k) + ncones(nr(k)); end
-        
-        nrcones = cell_collapse(out_cones(nr));
-        for c = combvec(vec{:})
-            cnr = unique([nrcones{c + offset}]);
-            key = num2str(cnr);
-            if (conemap.isKey(key)), continue; end
-            conemap(key) = key;
-            try_add_cone([in, cnr]);
-        end
-        %}
-    
-        %{
-
-            disp('MISS');
-            vec = cell(1, numel(nr));
-            for k = 1:numel(nr), vec{k} = 1:ncones(nr(k)); end
-            offset = zeros(numel(nr), 1);
-            for k = 1:(numel(nr) - 1), offset(k + 1) = offset(k) + ncones(nr(k)); end
-            
-            nrcones = cell_collapse(out_cones(nr));
-            for c = combvec(vec{:})
-                cnr = unique([nrcones{c + offset}]);
-                key = num2str(cnr);
-                if (conemap.isKey(key)), continue; end
-                conemap(key) = key;
-                cone = [in, cnr];
-                subindex = subindex + 1;
-                allcones{subindex} = cone;
-            end
-
-            allcones = allcones(1:subindex);
-            index = index + 1;
-            cones{index} = allcones;
-            
-            ncones(adjin) = ncones(adjin) + subindex;
-        end
-    end
-    %}
-    
-    
-
-        
-    
     end
 
 

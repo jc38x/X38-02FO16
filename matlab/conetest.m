@@ -50,6 +50,137 @@ t = tic();
 toc(t);
 
 
+%{
+        vec = cell(1, nnr);
+        offset = zeros(nnr, 1);
+        adjnr = in_nr - in_range.szpi;
+        nrc = cell_collapse(out_cones(adjnr));
+        allcones = cell(1, prod(ncones(adjnr)));
+        
+        for k = 1:nnr, vec{k} = 1:ncones(adjnr(k)); end
+        for k = 1:(nnr - 1), offset(k + 1) = offset(k) + ncones(adjnr(k)); end
+
+        for combo = combvec(vec{:}), try_add_cone(unique_nodes([in, [nrc{combo + offset}]])); end
+        trim_cones();
+            %}
+           
+        %{
+        
+        %}
+    
+        %{
+
+            disp('MISS');
+            vec = cell(1, numel(nr));
+            for k = 1:numel(nr), vec{k} = 1:ncones(nr(k)); end
+            offset = zeros(numel(nr), 1);
+            for k = 1:(numel(nr) - 1), offset(k + 1) = offset(k) + ncones(nr(k)); end
+            
+            nrcones = cell_collapse(out_cones(nr));
+            for c = combvec(vec{:})
+                cnr = unique([nrcones{c + offset}]);
+                key = num2str(cnr);
+                if (conemap.isKey(key)), continue; end
+                conemap(key) = key;
+                cone = [in, cnr];
+                subindex = subindex + 1;
+                allcones{subindex} = cone;
+            end
+
+            allcones = allcones(1:subindex);
+            index = index + 1;
+            cones{index} = allcones;
+            
+            ncones(adjin) = ncones(adjin) + subindex;
+        end
+    end
+    %}%{
+        vec = cell(1, nnr);
+        offset = zeros(nnr, 1);
+        adjnr = in_nr - in_range.szpi;
+        nrc = cell_collapse(out_cones(adjnr));
+        allcones = cell(1, prod(ncones(adjnr)));
+        
+        for k = 1:nnr, vec{k} = 1:ncones(adjnr(k)); end
+        for k = 1:(nnr - 1), offset(k + 1) = offset(k) + ncones(adjnr(k)); end
+
+        for combo = combvec(vec{:}), try_add_cone(unique_nodes([in, [nrc{combo + offset}]])); end
+        trim_cones();
+            %}
+           
+        %{
+        
+        %}
+    
+        %{
+
+            disp('MISS');
+            vec = cell(1, numel(nr));
+            for k = 1:numel(nr), vec{k} = 1:ncones(nr(k)); end
+            offset = zeros(numel(nr), 1);
+            for k = 1:(numel(nr) - 1), offset(k + 1) = offset(k) + ncones(nr(k)); end
+            
+            nrcones = cell_collapse(out_cones(nr));
+            for c = combvec(vec{:})
+                cnr = unique([nrcones{c + offset}]);
+                key = num2str(cnr);
+                if (conemap.isKey(key)), continue; end
+                conemap(key) = key;
+                cone = [in, cnr];
+                subindex = subindex + 1;
+                allcones{subindex} = cone;
+            end
+
+            allcones = allcones(1:subindex);
+            index = index + 1;
+            cones{index} = allcones;
+            
+            ncones(adjin) = ncones(adjin) + subindex;
+        end
+    end
+    %}
+%cnr = unique([nrcones{combo + offset}]);
+            %key = num2str(cnr);
+            %if (conemap.isKey(key)), continue; end
+            %conemap(key) = key;
+            %try_add_cone([in, cnr]);
+        
+        
+        
+        
+        
+        
+    
+        %warning('Unimplemented operation');
+        %allcones = [];
+ %ie = [in_iedge{in_c}];
+        %iee = ~ismembc(unique(ie(1, :)), in_c);
+%tag1 = c1(1:(end - 1));
+            %if (~isempty(tag1)), tag1 = tag1(end); end
+            
+            
+            
+                
+                %tag2 = c2(1:(end - 1));
+                %if (~isempty(tag2) && ~isempty(tag1) && any(tag1 == tag2)), prune = prune + 1; continue; end
+                
+                %x1 = c1(1:(end - 1));
+                %x2 = c2(1:(end - 1));
+                
+                
+                
+                
+                
+                
+                
+                %{
+                ck = [nodestring{cone}];
+                if (conemap.isKey(ck))
+                    dup = dup + 1;
+                    continue;
+                end
+                conemap(ck) = 0;
+                %}
 %list2 = unique([list2 c2(1)]);
                 %if (any(ismembc(list1, list2))), prune = prune + 1; continue; end
                 
