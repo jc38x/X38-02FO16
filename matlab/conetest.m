@@ -50,8 +50,37 @@ t = tic();
 toc(t);
 
 
+%list2 = unique([list2 c2(1)]);
+                %if (any(ismembc(list1, list2))), prune = prune + 1; continue; end
+                
+                %%if (any(tag == c2)), prune = prune + 1; continue; end
+                %tag2 = c2(1:(end-1));
+                %iex2 = [in_iedge{tag2}];
+                %if ((~isempty(iex1) && ~isempty(iex2)) && any(ismembc(iex2(1,:), iex1(1,:)))), prune = prune + 1; continue; end
+                
+                %mk = marker;
+                %mk([in, c1, c2]) = true;
+                %cone = in_range.all(mk);
+%cone = unique([in, c1, c2]);
+                %ck = sprintf('%d.', cone);
+                %%debug = conemap(ck);
+                %if (any(strcmpi(ck, conelist))), dup = dup + 1; continue; end
+                %conelist = [conelist, {ck}];
+                %{nrc1; nrc2; k; l};
+%list1 = unique([list1 c1(1:(end-1))]);
+            %if (any(ismembc(list1, list2))), prune = prune + sum(keep2); continue; end
+            
+            %tag1 = c1(1:(end - 1));
+            %iex1 = [in_iedge{tag1}];
+%for k = v1, iex = [in_iedge{nrc1{k}}]; keep1(k) = ~any(iex(1, :) == nr2); end
+        %for k = v2, iex = [in_iedge{nrc2{k}}]; keep2(k) = ~any(iex(1, :) == nr1); end
 
-
+        %prune = prune + ((nnc1 * nnc2) - (sum(keep1) * sum(keep2)));
+        
+        
+        
+        %list1 = [];
+        %list2 = [];
 %{
         nncm = min([nnc1, nnc2]);
         keep1 = true(1, nnc1);

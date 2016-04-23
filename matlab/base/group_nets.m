@@ -11,6 +11,7 @@ nets = 1:n;
 
 mapi  = containers.Map('KeyType', 'double', 'ValueType', 'any');
 mapj  = containers.Map('KeyType', 'double', 'ValueType', 'any');
+maps  = containers.Map('KeyType', 'double', 'ValueType', 'any');
 mappi = containers.Map('KeyType', 'double', 'ValueType', 'any');
 mapin = containers.Map('KeyType', 'double', 'ValueType', 'any');
 mappo = containers.Map('KeyType', 'double', 'ValueType', 'any');
@@ -23,11 +24,12 @@ szpo = 0;
 for k = 1:(n - 1), offset(k + 1) = offset(k) + in_rl{k}.sz; end
 
 for k = nets
-    [di, dj] = get_edges(in_dl{k});
+    [di, dj, ds] = get_edges(in_dl{k});
     bp = offset(k);
     
     mapi(k) = di + bp;
     mapj(k) = dj + bp;
+    maps(k) = ds;
 
     r = in_rl{k};
     
@@ -46,7 +48,7 @@ keys = num2cell(nets);
 uidremap = C_remap([cell_collapse(mappi.values(keys)), cell_collapse(mapin.values(keys)), cell_collapse(mappo.values(keys))], uidall);
 allremap = uidremap.remap(uidall);
 
-out_delay = sparse(uidremap.remap(cell_collapse(mapi.values(keys))), uidremap.remap(cell_collapse(mapj.values(keys))), 1, sz, sz);
+out_delay = sparse(uidremap.remap(cell_collapse(mapi.values(keys))), uidremap.remap(cell_collapse(mapj.values(keys))), cell_collapse(maps.values(keys)), sz, sz);
 out_labels = cell(1, sz);
 out_labels(allremap) = cell_collapse(in_ll);
 out_equations = cell(1, sz);
