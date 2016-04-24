@@ -8,13 +8,17 @@ function [out_cones] = generate_cones(in_inorder, in_iedge, in_oedge, in_range, 
 out_cones = cell(1, in_range.szin);
 ncones = zeros(1, in_range.szin);
 
+allcones = [];
+subindex = 0;
 
     nodemarker = false(1, in_range.sz);
-    nodestring = strtrim(cellstr(num2str(in_range.all.')).');
-    for n = 1:numel(nodestring), nodestring{n} = [nodestring{n} '.']; end
+    %nodestring = strtrim(cellstr(num2str(in_range.all.')).');
+    %for n = 1:numel(nodestring), nodestring{n} = [nodestring{n} '.']; end
     prune = 0;
     dup = 0;
     kcut = 0;
+    
+    %add_cone = @add_cone_2input;
 
 for in = in_inorder
     %conemap = containers.Map();
@@ -39,30 +43,52 @@ for in = in_inorder
     end
     
     
-    scones = cell_collapse(cones(1:index));
-    %sortc = zeros(1, ncones(adjin));
-    %for n = 1:ncones(adjin), sortc(n) = numel(scones{n}); end
-    %[~, sortc] = sort(sortc);
     
     
-    out_cones{adjin} = scones;%scones(sortc);
-    %ncones(adjin) = numel(scones);
+    out_cones{adjin} = cell_collapse(cones(1:index));
+    ncones(adjin) = numel(out_cones{adjin});
 end
     
 
-checkmap = containers.Map();
-for n = 1:in_range.szin
-    c = out_cones{n};
-    for m = 1:numel(c)
-        key = [nodestring{c{m}}];
-        if (checkmap.isKey(key)), disp(['DUP: ' num2str(checkmap(key)) ' : ' num2str([n, m])]); end
-        checkmap(key) = [n, m];
-    end
-end
+
 
     prune
     dup
     kcut
+    
+
+    function [out_cone] = unique_nodes(in_c)
+    pick = nodemarker;
+    pick(in_c) = true;
+    out_cone = in_range.all(pick);
+    end
+
+
+%cones = cell_collapse(cones(1:index));
+    %nc = numel(cones);
+    %keep = true(1, nc);
+    %for n = 1:nc, keep(n) = test_k(cones{n}); end
+    %cones(keep);
+    %function [out_ok] = test_k(in_c)
+    %iee = sum(in_delay(:, in_c), 2) > 0;
+    %iee(in_c) = 0;
+    %out_ok = sum(iee) <= in_K;
+    %end
+
+    function push_cone(in_c)
+    iee = sum(in_delay(:, in_c), 2) > 0;
+    iee(in_c) = 0;
+
+    if (sum(iee) > in_K)
+        kcut = kcut + 1;
+        return;
+    end
+
+    subindex = subindex + 1;
+    allcones{subindex} = in_c;
+    end
+
+
     
 
 
@@ -73,13 +99,13 @@ end
     switch (nnr)
     case 0
         allcones = cell(1, 1);
-        try_add_cone(in);
+        push_cone(in);
     case 1
         nr = in_nr - in_range.szpi;
         nnc = ncones(nr);
         nrc = out_cones{nr};
         allcones = cell(1, nnc);
-        for k = 1:nnc, try_add_cone(unique_nodes([in, nrc{k}])); end
+        for k = 1:nnc, push_cone(unique_nodes([in, nrc{k}])); end
     case 2
         nr1 = in_nr(1);
         nr2 = in_nr(2);
@@ -105,61 +131,59 @@ end
         allcones = cell(1, nnc);
         
         for k = v1(keep1)
-            for l = v2(keep2), try_add_cone(unique_nodes([in, nrc1{k}, nrc2{l}])); end
+            for l = v2(keep2), push_cone(unique_nodes([in, nrc1{k}, nrc2{l}])); end
         end
         
-        trim_cones();
+        allcones = uniqueRowsCAvs(allcones(1:subindex).').';
+        newsubindex = numel(allcones);
+        dup = dup + subindex - newsubindex;
+        subindex = newsubindex;
     otherwise
-        error('Unsupported operation.');
+        error('Only 2-bounded networks are supported.');
     end
     
     index = index + 1;
     cones{index} = allcones(1:subindex);
-    ncones(adjin) = ncones(adjin) + subindex;
-    
-        function [out_cone] = unique_nodes(in_c)
-        pick = nodemarker;
-        pick(in_c) = true;
-        out_cone = in_range.all(pick);
-        end
-
-        function trim_cones()
-        testcones = allcones(1:subindex);
-        nc = zeros(1, subindex);
-        prevsubindex = subindex;
-        allcones = cell(1, subindex);
-        subindex = 0;
-        
-        for j = 1:prevsubindex, nc(j) = numel(testcones{j}); end
-        
-        for j = unique(nc)
-            tc = uniqueRowsCA(testcones(nc == j).');
-            ntc = numel(tc);
-            allcones((1:ntc) + subindex) = tc.';
-            subindex = subindex + ntc;
-        end
-        
-        dup = dup + prevsubindex - subindex;
-        end
-        
-        function try_add_cone(in_c)
-        iee = sum(in_delay(:, in_c), 2) > 0;
-        iee(in_c) = 0;
-        
-        if (sum(iee) > in_K)
-            kcut = kcut + 1;
-            return;
-        end
-        
-        subindex = subindex + 1;
-        allcones{subindex} = in_c;
-        end
     end
 
 
 
 
 
+
+
+%{
+    function add_cone_generic(in_nr)
+    nnr = numel(in_nr);
+    subindex = 0;
+    
+    if (nnr == 0)
+        allcones = cell(1, 1);
+        try_add_cone(in);
+    else
+        vec = cell(1, nnr);
+        offset = zeros(nnr, 1);
+        adjnr = in_nr - in_range.szpi;
+        nrc = cell_collapse(out_cones(adjnr));
+        allcones = cell(1, prod(ncones(adjnr)));
+        
+        for k = 1:nnr, vec{k} = 1:ncones(adjnr(k)); end
+        for k = 1:(nnr - 1), offset(k + 1) = offset(k) + ncones(adjnr(k)); end
+        
+        for combo = combvec(vec{:}), try_add_cone(unique_nodes([in, [nrc{combo + offset}]])); end
+    end
+
+    index = index + 1;
+    cones{index} = allcones(1:subindex);
+    ncones(adjin) = ncones(adjin) + subindex;
+    end
+%}
+%function push_cone_list()
+    
+    %end
+%{
+        
+            %}
 
 %{
     function add_cone(in_c)

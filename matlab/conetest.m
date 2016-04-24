@@ -2,24 +2,37 @@
 K = 4;
 DF = false;
 
-[delay, labels, range, equations] = load_leko_leku('leko-g5\g25');
+[delay, labels, range, equations] = load_leko_leku('leko-g5\g625');
 %[delay, labels, range, equations] = load_lgsynth93('blif\alu4');
 %[delay, labels, range, equations] = sample_valavan();
 
 
-%{
+
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
 mat2aiger(filename, delay, labels, range, equations);
+
+size(delay)
 
 script = [
     {['read_aiger ' filename ';']};
     {'strash'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
+    {'cleanup'}
+    {'resyn2rs'};    
+    {'balance'};
+    {'refactor'};
+    {'rewrite'}
+    {'rr'};
+    {'resyn2rs'};    
+    {'balance'};
+    {'refactor'};
+    {'rewrite'}
+    {'rr'};
+    {'resyn2rs'};    
+    {'balance'};
+    {'refactor'};
+    {'rewrite'}
+    {'rr'};
+    
     %repmat([{'balance'}; {'rewrite'}; {'refactor'};], 200, 1);    
     {['write_aiger -s ' filename]};
     {'quit'};
@@ -28,9 +41,11 @@ script = [
 invoke_abc(script, false);
 
 [delay, labels, range, equations] = aiger2mat(filename);
-%}
 
-[delay, labels, equations] = sort_graph(delay, labels, range, equations);
+size(delay)
+
+
+%[delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
 
 %view(build_graph(delay, labels, range, equations));
@@ -50,20 +65,39 @@ t = tic();
 toc(t);
 
 
-%{
-        vec = cell(1, nnr);
-        offset = zeros(nnr, 1);
-        adjnr = in_nr - in_range.szpi;
-        nrc = cell_collapse(out_cones(adjnr));
-        allcones = cell(1, prod(ncones(adjnr)));
-        
-        for k = 1:nnr, vec{k} = 1:ncones(adjnr(k)); end
-        for k = 1:(nnr - 1), offset(k + 1) = offset(k) + ncones(adjnr(k)); end
 
-        for combo = combvec(vec{:}), try_add_cone(unique_nodes([in, [nrc{combo + offset}]])); end
-        trim_cones();
-            %}
-           
+%checkmap = containers.Map();
+%for n = 1:in_range.szin
+%    c = out_cones{n};
+%    for m = 1:numel(c)
+%        key = [nodestring{c{m}}];
+%        if (checkmap.isKey(key)), disp(['DUP: ' num2str(checkmap(key)) ' : ' num2str([n, m])]); end
+%        checkmap(key) = [n, m];
+%    end
+%end
+%sortc = zeros(1, ncones(adjin));
+    %for n = 1:ncones(adjin), sortc(n) = numel(scones{n}); end
+    %[~, sortc] = sort(sortc);
+    %scones(sortc);
+%ncones(adjin) = ncones(adjin) + subindex;
+%function trim_cones()
+    %end
+%{
+        testcones = allcones(1:subindex);
+        nc = zeros(1, subindex);
+        prevsubindex = subindex;
+        allcones = cell(1, subindex);
+        subindex = 0;
+
+        for j = 1:prevsubindex, nc(j) = numel(testcones{j}); end
+
+        for j = unique(nc)
+            tc = uniqueRowsCA(testcones(nc == j).');
+            ntc = numel(tc);
+            allcones((1:ntc) + subindex) = tc.';
+            subindex = subindex + ntc;
+        end
+        %}
         %{
         
         %}
