@@ -27,6 +27,12 @@ if (l < 0), error('L < 0.'); end
 if (o < 0), error('O < 0.'); end
 if (a < 0), error('A < 0.'); end
 
+m
+i
+l
+o
+a
+
 ii = 2 * (1:i);
 li = 2 * ((i + 1):(i + l));
 ai = 2 * ((i + l + 1):(i + l + a));
@@ -59,6 +65,8 @@ end
 
 for k = 1:o, push_output_port(strtrim(fgetl(fid)), ['o_' num2str(k) '_']); end
 
+%ftell(fid)
+
 for k = 1:a
     literal = and{k};
     push_node(literal, 'and_');
@@ -89,6 +97,8 @@ end
 
 while (~feof(fid))
     symbol = fgetl(fid);
+    %symbol
+    %if (isempty(symbol)), break; end
     type = symbol(1);
     if (~any(strcmpi(type, {'i', 'o', 'l'}))), break; end
 
@@ -115,6 +125,12 @@ for n = 1:size(edges, 2)
     literal = edges{2, n};
     if (instancemap.isKey(literal)), edges{2, n} = instancemap(literal); end
 end
+
+%--
+%for e = edges
+%    signal2uid.values(e);
+%end
+%--
 
 edgelist = cell2mat(signal2uid.values(edges));
 out_delay = sparse(uidremap.remap(edgelist(1, :)), uidremap.remap(edgelist(2, :)), 1, out_range.sz, out_range.sz);
@@ -212,6 +228,7 @@ end
         data = next_byte();
         out_seq = out_seq + (bitand(data, 127) * (2 ^ (7 * p)));
         p = p + 1;
+        %out_seq
     end
     end
 end

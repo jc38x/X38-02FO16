@@ -5,31 +5,27 @@
 %**************************************************************************
 
 function [out_cones] = generate_cones(in_inorder, in_iedge, in_oedge, in_range, in_K, in_delay)
-out_cones = cell(1, in_range.szin);
-ncones = zeros(1, in_range.szin);
+out_cones = cell(1, in_range.sz);%in_range.szin);
+ncones = zeros(1, in_range.sz);%in_range.szin);
 
 allcones = [];
 subindex = 0;
 
     nodemarker = false(1, in_range.sz);
-    %nodestring = strtrim(cellstr(num2str(in_range.all.')).');
-    %for n = 1:numel(nodestring), nodestring{n} = [nodestring{n} '.']; end
+    
     prune = 0;
     dup = 0;
     kcut = 0;
     
-    %add_cone = @add_cone_2input;
-
-for in = in_inorder
-    %conemap = containers.Map();
-    %conelist = [];
     
     
-    iedge = in_iedge{in};
-    inode = iedge(1, :);
+    
+    
+    
+for in = get_inorder(in_delay, in_range)
+    inode = get_inode(in_delay, in);
     inpre = inode(is_in(inode, in_range));
     szin = numel(inpre);
-    adjin = in - in_range.szpi;
     
     szall = 1;
     for n = 1:szin, szall = szall + nchoosek(szin, n); end
@@ -45,12 +41,19 @@ for in = in_inorder
     
     
     
-    out_cones{adjin} = cell_collapse(cones(1:index));
-    ncones(adjin) = numel(out_cones{adjin});
+    
+    
+    
+    
+    
+    
+    out_cones{in} = cell_collapse(cones(1:index));
+    ncones(in) = numel(out_cones{in});
 end
     
 
-
+    mean(ncones)
+    max(ncones)
 
     prune
     dup
@@ -60,26 +63,18 @@ end
     function [out_cone] = unique_nodes(in_c)
     pick = nodemarker;
     pick(in_c) = true;
-    out_cone = in_range.all(pick);
+    out_cone = in_range.all(pick);%find(pick);%in_range.all(pick);
     end
 
 
-%cones = cell_collapse(cones(1:index));
-    %nc = numel(cones);
-    %keep = true(1, nc);
-    %for n = 1:nc, keep(n) = test_k(cones{n}); end
-    %cones(keep);
-    %function [out_ok] = test_k(in_c)
-    %iee = sum(in_delay(:, in_c), 2) > 0;
-    %iee(in_c) = 0;
-    %out_ok = sum(iee) <= in_K;
-    %end
+
 
     function push_cone(in_c)
     iee = sum(in_delay(:, in_c), 2) > 0;
     iee(in_c) = 0;
 
-    if (sum(iee) > in_K)
+    %if (sum(iee) > in_K)
+    if (nnz(iee) > in_K)
         kcut = kcut + 1;
         return;
     end
@@ -101,16 +96,16 @@ end
         allcones = cell(1, 1);
         push_cone(in);
     case 1
-        nr = in_nr - in_range.szpi;
-        nnc = ncones(nr);
-        nrc = out_cones{nr};
+        %nr = in_nr - in_range.szpi;
+        nnc = ncones(in_nr);
+        nrc = out_cones{in_nr};
         allcones = cell(1, nnc);
         for k = 1:nnc, push_cone(unique_nodes([in, nrc{k}])); end
     case 2
         nr1 = in_nr(1);
         nr2 = in_nr(2);
 
-        adjnr1 = nr1 - in_range.szpi;
+        adjnr1 = nr1;%nr1 - in_range.szpi;
         nnc1 = ncones(adjnr1);
         nrc1 = out_cones{adjnr1};
         v1 = 1:nnc1;
@@ -118,7 +113,7 @@ end
         keep1 = true(1, nnc1);
         for k = v1, keep1(k) = ~any(get_inode(in_delay, nrc1{k}) == nr2); end
         
-        adjnr2 = nr2 - in_range.szpi;
+        adjnr2 = nr2;%nr2 - in_range.szpi;
         nnc2 = ncones(adjnr2);
         nrc2 = out_cones{adjnr2};
         v2 = 1:nnc2;

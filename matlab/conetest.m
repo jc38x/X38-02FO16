@@ -2,12 +2,12 @@
 K = 4;
 DF = false;
 
-[delay, labels, range, equations] = load_leko_leku('leko-g5\g625');
-%[delay, labels, range, equations] = load_lgsynth93('blif\alu4');
+%[delay, labels, range, equations] = load_leko_leku('leko-g5\g625');
+[delay, labels, range, equations] = load_lgsynth93('blif\clma');
 %[delay, labels, range, equations] = sample_valavan();
 
 
-
+%{
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
 mat2aiger(filename, delay, labels, range, equations);
 
@@ -43,9 +43,9 @@ invoke_abc(script, false);
 [delay, labels, range, equations] = aiger2mat(filename);
 
 size(delay)
+%}
 
-
-%[delay, labels, equations] = sort_graph(delay, labels, range, equations);
+[delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
 
 %view(build_graph(delay, labels, range, equations));
@@ -65,7 +65,32 @@ t = tic();
 toc(t);
 
 
+%in_inorder
+%nodestring = strtrim(cellstr(num2str(in_range.all.')).');
+    %for n = 1:numel(nodestring), nodestring{n} = [nodestring{n} '.']; end
+    %add_cone = @add_cone_2input;
 
+%in = in;
+    %in - in_range.szpi;
+    
+    
+    
+    %conemap = containers.Map();
+    %conelist = [];
+    
+    
+    %iedge = in_iedge{in};
+    %inode = iedge(1, :);
+%cones = cell_collapse(cones(1:index));
+    %nc = numel(cones);
+    %keep = true(1, nc);
+    %for n = 1:nc, keep(n) = test_k(cones{n}); end
+    %cones(keep);
+    %function [out_ok] = test_k(in_c)
+    %iee = sum(in_delay(:, in_c), 2) > 0;
+    %iee(in_c) = 0;
+    %out_ok = sum(iee) <= in_K;
+    %end
 %checkmap = containers.Map();
 %for n = 1:in_range.szin
 %    c = out_cones{n};
