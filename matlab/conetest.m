@@ -7,7 +7,7 @@ DF = false;
 %[delay, labels, range, equations] = sample_valavan();
 
 
-%{
+
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
 mat2aiger(filename, delay, labels, range, equations);
 
@@ -43,7 +43,7 @@ invoke_abc(script, false);
 [delay, labels, range, equations] = aiger2mat(filename);
 
 size(delay)
-%}
+
 
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
 

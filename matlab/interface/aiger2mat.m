@@ -27,11 +27,11 @@ if (l < 0), error('L < 0.'); end
 if (o < 0), error('O < 0.'); end
 if (a < 0), error('A < 0.'); end
 
-m
-i
-l
-o
-a
+%m
+%i
+%l
+%o
+%a
 
 ii = 2 * (1:i);
 li = 2 * ((i + 1):(i + l));
