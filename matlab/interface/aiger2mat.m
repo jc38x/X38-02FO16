@@ -10,10 +10,13 @@
 function [out_delay, out_labels, out_range, out_equations] = aiger2mat(in_filename)
 fid = fopen(in_filename, 'r');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
+
 dtor = onCleanup(@()fclose(fid));
 header = strsplitntrim(fgetl(fid), ' ');
 fmt = header{1};
-if (~strcmp(fmt, 'aig')), error(['Unexpected format identifier ''' fmt '''. Expected ''aig''']); end
+
+if (~strcmp(fmt, 'aig')), error(['Unexpected format identifier ''' fmt '''. Expected ''aig''.']); end
+if (numel(header) > 6), error('Header BCJF not supported.'); end
 
 m = str2double(header{2});
 i = str2double(header{3});
@@ -26,12 +29,6 @@ if (i < 0), error('I < 0.'); end
 if (l < 0), error('L < 0.'); end
 if (o < 0), error('O < 0.'); end
 if (a < 0), error('A < 0.'); end
-
-%m
-%i
-%l
-%o
-%a
 
 ii = 2 * (1:i);
 li = 2 * ((i + 1):(i + l));
@@ -65,8 +62,6 @@ end
 
 for k = 1:o, push_output_port(strtrim(fgetl(fid)), ['o_' num2str(k) '_']); end
 
-%ftell(fid)
-
 for k = 1:a
     literal = and{k};
     push_node(literal, 'and_');
@@ -88,12 +83,15 @@ out_labels = cell(1, out_range.sz);
 out_labels(uidremap.remap(cell2mat(signal2uid.values(s2uk)))) = s2uk;
 
 out_equations = cell(1, out_range.sz);
-out_equations(out_range.top) = {''};
 
 for k = out_range.top
-    label = out_labels{k};
-    if (label(1) == 'l'), out_equations{k} = '#AIGERLATCH'; end
+    if (strncmp(out_labels{k}, 'l', 1)), out_equations{k} = '#AIGERLATCH'; else out_equations{k} = ''; end
 end
+
+
+
+
+%out_equations(out_range.top) = {''};
 
 while (~feof(fid))
     symbol = fgetl(fid);

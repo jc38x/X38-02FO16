@@ -2,8 +2,8 @@
 K = 4;
 DF = false;
 
-%[delay, labels, range, equations] = load_leko_leku('leko-g5\g625');
-[delay, labels, range, equations] = load_lgsynth93('blif\clma');
+[delay, labels, range, equations] = load_leko_leku('leko-g5\g25');
+%[delay, labels, range, equations] = load_lgsynth93('blif\clma');
 %[delay, labels, range, equations] = sample_valavan();
 
 
@@ -64,7 +64,17 @@ t = tic();
 [cones] = generate_cones(inorder, iedge, oedge, range, K, delay);
 toc(t);
 
+%m = 0;
+%n2s = cell(1, m);
+%i = 0;
 
+%for n = 1:m, n2s{n} = num2str(n); end
+
+%for n = 1:in_range.szpi, i = i + 1; out_labels{i} = ['i' n2s{n}]; end
+%for n = 1:in_range.szin, i = i + 1; out_labels{i} = ['v' n2s{n}]; end
+%for n = 1:in_range.szpo, i = i + 1; out_labels{i} = ['o' n2s{n}]; end
+%newlabels = cell(1, in_range.sz);
+%for k = in_range.all, newlabels{k} = [in_name ',' in_labels{k}]; end
 %in_inorder
 %nodestring = strtrim(cellstr(num2str(in_range.all.')).');
     %for n = 1:numel(nodestring), nodestring{n} = [nodestring{n} '.']; end

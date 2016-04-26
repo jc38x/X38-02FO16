@@ -5,10 +5,11 @@
 %**************************************************************************
 
 function [out_luts] = cones2luts(in_delay, in_labels, in_range, in_equations)
-out_luts = in_equations;
+out_luts = cell(1, in_range.sz);
+out_luts(in_range.top) = in_equations(in_range.top);
 
 for k = in_range.in
-    signals = in_labels(get_inode(in_delay, k));
+    signals = strcat('[', in_labels(get_inode(in_delay, k)), ']');
     ns = numel(signals);
     if (ns < 1), continue; end
 
@@ -19,7 +20,7 @@ for k = in_range.in
 
     for outi = 1:ni
         tteqn = equation;
-        for ini = 1:ns, tteqn = strrep(tteqn, ['[' signals{ini} ']'], num2str(inputs(ini, outi))); end
+        for ini = 1:ns, tteqn = strrep(tteqn, signals{ini}, num2str(inputs(ini, outi))); end
         outputs(outi) = eval(tteqn);
     end
 
@@ -33,6 +34,7 @@ for k = in_range.in
         outputs(1, :) = outputs(1, :) * 2;
     end
     
-    out_luts{k} = ['LUT(''' strremovespaces(num2str(sum(outputs, 1), '%X')) ''')'];
+    signals = strcat(signals, ',');
+    out_luts{k} = ['lut(' strcat(signals{:}) '''' strremovespaces(num2str(sum(outputs, 1), '%X')) ''')'];
 end
 end

@@ -257,7 +257,16 @@ cut -h
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif;
 comb
 write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
-source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
+cleanup
+resyn2rs
+balance
+refactor
+rewrite
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec -h
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
 strash
 cleanup
@@ -266,3 +275,13 @@ balance
 refactor
 rewrite
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+source abc.rc
+gen -m
+gen -m C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\abc_gen_aig.aig
+read C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\abc_gen_aig.aig
+gen -a
+gen -r
+gen -h
+gen -d
+gen -f
+gen -s
