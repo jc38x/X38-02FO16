@@ -64,6 +64,15 @@ t = tic();
 [cones] = generate_cones(inorder, iedge, oedge, range, K, delay);
 toc(t);
 
+%nodos = npi + nin + npo;
+%id = 0;
+
+%i = zeros(1, npi);
+%v = zeros(1, nin);
+%o = zeros(1, npo);
+%for n = 1:npi, id = id + 1; i(n) = id; end
+%for n = 1:nin, id = id + 1; v(n) = id; end
+%for n = 1:npo, id = id + 1; o(n) = id; end
 %m = 0;
 %n2s = cell(1, m);
 %i = 0;

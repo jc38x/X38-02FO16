@@ -42,15 +42,16 @@ gates = [
 
 gaterange = 1:size(gates, 1);
 constantrange = 1:size(constants, 1);
+signals = strcat('[', in_labels, ']');
 
 for in = in_range.in
     input = get_inode(in_delay, in);
     switch (numel(input))
     case 0, equation = constants{datasample(constantrange, 1)};
-    case 1, equation = ['not([' in_labels{input} '])'];
+    case 1, equation = ['not(' signals{input} ')'];
     otherwise
-        equation = make_gate(['[' in_labels{input(1)} ']'], ['[' in_labels{input(2)} ']']);
-        for i = input(3:end), equation = make_gate(equation, ['[', in_labels{i}, ']']); end
+        equation = make_gate(signals{input(1)}, signals{input(2)});
+        for i = input(3:end), equation = make_gate(equation, signals{i}); end
     end
     out_equations{in} = equation;
 end
