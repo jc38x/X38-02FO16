@@ -7,9 +7,10 @@
 function [out_luts] = cones2luts(in_delay, in_labels, in_range, in_equations)
 out_luts = cell(1, in_range.sz);
 out_luts(in_range.top) = in_equations(in_range.top);
+list = strcat('[', in_labels, ']');
 
 for k = in_range.in
-    signals = strcat('[', in_labels(get_inode(in_delay, k)), ']');
+    signals = list(get_inode(in_delay, k));
     ns = numel(signals);
     if (ns < 1), continue; end
 
@@ -33,7 +34,7 @@ for k = in_range.in
         outputs = reshape(outputs, [2, 1]);
         outputs(1, :) = outputs(1, :) * 2;
     end
-    
+
     signals = strcat(signals, ',');
     out_luts{k} = ['lut(' strcat(signals{:}) '''' strremovespaces(num2str(sum(outputs, 1), '%X')) ''')'];
 end

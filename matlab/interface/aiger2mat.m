@@ -76,7 +76,7 @@ polist = polist(1:poindex);
 
 out_range = prepare_range(piindex, inindex, poindex);
 
-uidremap = C_remap([pilist, inlist, polist], 1:out_range.sz);
+uidremap = C_remap([pilist, inlist, polist], out_range.all);
 
 s2uk = signal2uid.keys();
 out_labels = cell(1, out_range.sz);
@@ -88,25 +88,17 @@ for k = out_range.top
     if (strncmp(out_labels{k}, 'l', 1)), out_equations{k} = '#AIGERLATCH'; else out_equations{k} = ''; end
 end
 
-
-
-
-%out_equations(out_range.top) = {''};
-
 while (~feof(fid))
-    symbol = fgetl(fid);
-    %symbol
-    %if (isempty(symbol)), break; end
-    type = symbol(1);
-    if (~any(strcmpi(type, {'i', 'o', 'l'}))), break; end
+    symbol = fgetl(fid);    
+    if (~any(strncmpi(symbol, {'i', 'o', 'l'}, 1))), break; end
 
     split = find(symbol == ' ', 1);
     index = str2double(symbol(2:(split - 1)));
     label = symbol((split + 1):end);
 
-    switch (type)
-    case 'i',  out_labels{out_range.pilo     + index} = label;
-    case 'o',  out_labels{out_range.polo + l + index} = label;
+    switch (symbol(1))
+    case 'i', out_labels{out_range.pilo     + index} = label;
+    case 'o', out_labels{out_range.polo + l + index} = label;
     case 'l'
         ii = out_range.inlo - l + index;
         io = out_range.polo     + index;
@@ -123,12 +115,6 @@ for n = 1:size(edges, 2)
     literal = edges{2, n};
     if (instancemap.isKey(literal)), edges{2, n} = instancemap(literal); end
 end
-
-%--
-%for e = edges
-%    signal2uid.values(e);
-%end
-%--
 
 edgelist = cell2mat(signal2uid.values(edges));
 out_delay = sparse(uidremap.remap(edgelist(1, :)), uidremap.remap(edgelist(2, :)), 1, out_range.sz, out_range.sz);
@@ -173,12 +159,12 @@ end
         push_edge(num2str(val - 1), in_inst);
     end
     end
-
+    
     function make_and_input(in_input, in_literal)  
     try_push_inverter(in_input);
     push_edge(in_input, in_literal);
     end
-
+    
     function push_instance(in_inst, in_signal)
     if (instancemap.isKey(in_inst)), error(['Duplicate instance ' in_inst '.']); end
     instancemap(in_inst) = in_signal;
@@ -188,14 +174,14 @@ end
     push_instance(in_literal, in_signal);
     push_signal(in_signal);
     end
-
+    
     function push_input_port(in_literal, in_prefix)
     signal = [in_prefix in_literal];
     push_head_node(in_literal, signal);
     piindex = piindex + 1;
     pilist(piindex) = signal2uid(signal);
     end
-
+    
     function push_output_port(in_literal, in_prefix)
     signal = [in_prefix in_literal];
     push_signal(signal);
@@ -204,20 +190,20 @@ end
     poindex = poindex + 1;
     polist(poindex) = signal2uid(signal);
     end
-
+    
     function push_node(in_literal, in_prefix)
     signal = [in_prefix in_literal];
     push_head_node(in_literal, signal);
     inindex = inindex + 1;
     inlist(inindex) = signal2uid(signal);
     end
-
+    
     function [out_byte] = next_byte()
     if (feof(fid)), error('Unexpected EOF.'); end
     out_byte = fread(fid, 1, 'uint8');
     if (isempty(out_byte)), error('File read failed.'); end
     end
-
+    
     function [out_seq] = next_sequence()
     data = next_byte();
     out_seq = bitand(data, 127);
@@ -226,7 +212,6 @@ end
         data = next_byte();
         out_seq = out_seq + (bitand(data, 127) * (2 ^ (7 * p)));
         p = p + 1;
-        %out_seq
     end
     end
 end

@@ -64,6 +64,16 @@ t = tic();
 [cones] = generate_cones(inorder, iedge, oedge, range, K, delay);
 toc(t);
 
+
+%--
+%for e = edges
+%    signal2uid.values(e);
+%end
+%--
+%out_equations(out_range.top) = {''};
+%symbol
+    %if (isempty(symbol)), break; end
+%strcat('[', in_labels(get_inode(in_delay, k)), ']');
 %nodos = npi + nin + npo;
 %id = 0;
 
