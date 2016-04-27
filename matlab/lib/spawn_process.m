@@ -39,17 +39,17 @@ stdin.Close();
 process.WaitForExit();
 process.Close();
 
+% Begin filthy hack -------------------------------------------------------
+quit = 0;
+while (quit < 3)
+    x1 = numel(out_stdout);
+    pause(1);
+    x2 = numel(out_stdout);
+    if (x1 == x2), quit = quit + 1; else quit = 0; end
+end
+% End filthy hack ---------------------------------------------------------
 
-
-
-
-
-pause(1);
-
-
-
-    function stdout_capture(obj, event)
-        
+    function stdout_capture(~, event)        
     out_stdout = [out_stdout, {char(event.Data)}];
     end
 end
