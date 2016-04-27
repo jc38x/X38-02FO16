@@ -6,8 +6,8 @@ alpha = 1.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.001, 0.005]; %small
 
-%[delay, labels, range, equations] = sample_valavan();
-[delay, labels, range, equations] = random_network(20, 30, 2, 1, 9, 2); %ok
+[delay, labels, range, equations] = sample_valavan();
+%[delay, labels, range, equations] = random_network(20, 30, 2, 1, 9, 2); %ok
 
 order = graphtopoorder(delay);
 redro = fliplr(order);
@@ -26,9 +26,13 @@ t = tic();
 [resultdelay, resultlabels, resultrange, resultequations] = rebuild_graph_from_cones(s, cv, delay, range, labels, equations); %in_S, in_Cv, in_delay, in_range, in_labels, in_equations
 toc(t)
 
+luts = cones2luts(resultdelay, resultlabels, resultrange, resultequations);
+
 bg = build_graph(delay, labels, range, equations);
 view(bg);
 
 br = build_graph(resultdelay, resultlabels, resultrange, resultequations);
 view(br);
 
+bl = build_graph(resultdelay, resultlabels, resultrange, luts);
+view(bl);

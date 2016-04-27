@@ -6,8 +6,6 @@ DF = false;
 %[delay, labels, range, equations] = load_lgsynth93('blif\clma');
 %[delay, labels, range, equations] = sample_valavan();
 
-
-
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
 mat2aiger(filename, delay, labels, range, equations);
 
@@ -38,12 +36,20 @@ script = [
     {'quit'};
     ];
 
-invoke_abc(script, false);
+[response] = invoke_abc(script);
+%paus
+%response.m_cmd
+%response2 = response.m_cmd;
+%abc_response(response2);
+
+%response = cell(1, ns);
+%index = 0;
+
 
 [delay, labels, range, equations] = aiger2mat(filename);
 
 size(delay)
-
+%{
 
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
@@ -63,6 +69,59 @@ height = fill_height(redro, oedge, delay, range);
 t = tic();
 [cones] = generate_cones(inorder, iedge, oedge, range, K, delay);
 toc(t);
+%}
+
+
+
+
+%stdout = stdout.);
+
+    %text = cell(1, (2 * ne) + 1);
+    %subindex = 0;
+    %subindex = subindex + 1;
+        %text{subindex} = statement;
+    
+    
+    
+    
+        %subindex = subindex + 1;
+        %text{subindex} = [line(startindex(i):matchstop) in_script{j}];
+        %subindex = subindex + 1;
+            %text{subindex} = statement;
+        
+    
+    
+        
+        
+    
+    %index = index + 1;
+    %response{index} = text(1:subindex);
+
+     %fprintf('%s\n', statement); end
+    
+    
+    
+    
+        %fprintf('%s\n', );
+    %fprintf('%s\n', statement); end
+%class(in_response)
+
+
+%while (in_cmdfifo.has_next())
+    
+    
+%in_cmdfifo.next();%char(event.Data);
+
+
+
+
+
+
+%out_response = [];
+
+
+%if (in_output), h = @(obj, event)stdout_callback_abc(obj, event, C_cmdfifo(in_script)); else h = @stdout_callback_null; end
+
 
 
 %--

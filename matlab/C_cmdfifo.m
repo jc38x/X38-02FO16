@@ -5,7 +5,7 @@
 %**************************************************************************
 
 classdef (Sealed = true) C_cmdfifo < handle
-properties (Access = private)
+properties (Access = public)
     m_cmd;
 end
 
@@ -21,6 +21,18 @@ methods
         out_next = in_obj.m_cmd{1};
         in_obj.m_cmd(1) = [];
     end
+    end
+    
+    function push(in_obj, in_string)
+    in_obj.m_cmd = [in_obj.m_cmd; {in_string}];
+    end
+    
+    function [out_str] = merge(in_obj)
+    out_str = [in_obj.m_cmd{:}];
+    end
+    
+    function [out_yes] = has_next(in_obj)
+    out_yes = numel(in_obj.m_cmd) > 0;
     end
 end    
 end

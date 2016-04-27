@@ -46,12 +46,13 @@ signals = strcat('[', in_labels, ']');
 
 for in = in_range.in
     input = get_inode(in_delay, in);
-    switch (numel(input))
+    nni = numel(input);
+    switch (nni)
     case 0, equation = constants{datasample(constantrange, 1)};
     case 1, equation = ['not(' signals{input} ')'];
     otherwise
         equation = make_gate(signals{input(1)}, signals{input(2)});
-        for i = input(3:end), equation = make_gate(equation, signals{i}); end
+        for i = 3:nni, equation = make_gate(equation, signals{input(i)}); end
     end
     out_equations{in} = equation;
 end
