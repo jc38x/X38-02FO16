@@ -39,7 +39,7 @@ for k = 1:ns
     response{index} = text(1:subindex);
 end
 
-out_stdout = cell_collapse(response.extract());
+out_stdout = cell_collapse(response(1:index));
 
     function push_line(in_line)
     subindex = subindex + 1;
