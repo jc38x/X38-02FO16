@@ -10,8 +10,8 @@
 function [out_delay, out_labels, out_range, out_equations] = aiger2mat(in_filename)
 fid = fopen(in_filename, 'r');
 if (fid == -1), error(['Failed to open file ' in_filename '.']); end
-
 dtor = onCleanup(@()fclose(fid));
+
 header = strsplitntrim(fgetl(fid), ' ');
 fmt = header{1};
 
