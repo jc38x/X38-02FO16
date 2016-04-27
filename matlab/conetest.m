@@ -14,41 +14,26 @@ size(delay)
 script = [
     {['read_aiger ' filename ';']};
     {'strash'};
-    {'cleanup'}
-    {'resyn2rs'};    
-    {'balance'};
-    {'refactor'};
-    {'rewrite'}
-    {'rr'};
-    {'resyn2rs'};    
-    {'balance'};
-    {'refactor'};
-    {'rewrite'}
-    {'rr'};
-    {'resyn2rs'};    
-    {'balance'};
-    {'refactor'};
-    {'rewrite'}
-    {'rr'};
-    {'ps'};
-    %repmat([{'balance'}; {'rewrite'}; {'refactor'};], 200, 1);    
+    
+    {'resyn2rs'};
+    
+    
+    {'cec'};
     {['write_aiger -s ' filename]};
     {'quit'};
     ];
 
 response = invoke_abc(script);
-%paus
-%response.m_cmd
-%response2 = response.m_cmd;
-%abc_response(response2);
+for k = 1:numel(response), fprintf('%s\n', response{k}); end
 
-%response = cell(1, ns);
-%index = 0;
 
 
 [delay, labels, range, equations] = aiger2mat(filename);
 
 size(delay)
+
+check_network(delay, labels, range, equations);
+
 %{
 
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
@@ -73,11 +58,30 @@ toc(t);
 
 
 
+%{
+{'balance'};
+    {'refactor'};
+    {'rewrite'}
+    {'rr'};
+    {'resyn2rs'};
+    {'balance'};
+    {'refactor'};
+    {'rewrite'}
+    {'rr'};
+    {'resyn2rs'};
+    {'balance'};
+    {'refactor'};
+    {'rewrite'}
+    {'rr'};
+%}
 
+%paus
+%response.m_cmd
+%response2 = response.m_cmd;
+%abc_response(response2);
 
-
-
-
+%response = cell(1, ns);
+%index = 0;
 %disp('CALLBACK');
     %class(obj)
     %class(event)
