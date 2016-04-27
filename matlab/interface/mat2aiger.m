@@ -31,14 +31,16 @@ for k = get_inorder(in_delay, in_range)
 
     if (any(strcmpi(equation, {'0', '1'})))
         push_constant(label, equation);
-    elseif (strcmpi(equation(1:3), 'and'))
+    elseif (strncmpi(equation, 'and', 3))
         inode = get_inode(in_delay, k);
         ina = in_labels{inode(1)};
         inb = in_labels{inode(end)};
         push_and(label, ina, inb);
-    elseif (strcmpi(equation(1:3), 'not'))
+    elseif (strncmpi(equation, 'not', 3))
         ina = in_labels{get_inode(in_delay, k)};
         push_not(label, ina);
+    else
+        error('Network is not AIG');
     end
 end
 
@@ -71,7 +73,10 @@ piid = 0;
 liid = 0;
 poid = 0;
 
-for k = pinodes, write_line(['i' num2str(piid) ' ' in_labels{k}]); piid = piid + 1; end
+for k = pinodes
+    write_line(['i' num2str(piid) ' ' in_labels{k}]);
+    piid = piid + 1;
+end
 
 for k = pilatch
     label = in_labels{k};
@@ -80,7 +85,10 @@ for k = pilatch
     liid = liid + 1;
 end
 
-for k = ponodes, write_line(['o' num2str(poid) ' ' in_labels{k}]); poid = poid + 1; end
+for k = ponodes
+    write_line(['o' num2str(poid) ' ' in_labels{k}]);
+    poid = poid + 1;
+end
 
 write_line('c');
 write_line(['Written by mat2aiger on ' datestr(now)]);

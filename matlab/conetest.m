@@ -30,13 +30,13 @@ script = [
     {'refactor'};
     {'rewrite'}
     {'rr'};
-    
+    {'ps'};
     %repmat([{'balance'}; {'rewrite'}; {'refactor'};], 200, 1);    
     {['write_aiger -s ' filename]};
     {'quit'};
     ];
 
-[response] = invoke_abc(script);
+response = invoke_abc(script);
 %paus
 %response.m_cmd
 %response2 = response.m_cmd;
