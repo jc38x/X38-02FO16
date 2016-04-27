@@ -74,6 +74,36 @@ toc(t);
 
 
 
+
+
+
+
+%disp('CALLBACK');
+    %class(obj)
+    %class(event)
+    %stdoutresponse = [stdoutresponse; {char(event.Data)}];
+    %celldisp(out_stdoutresponse);
+    %disp(char(event.Data));
+    %out_stdout.push(char(event.Data));
+%disp('EXIT');
+
+%process.StandardOutput.Close();
+
+%celldisp(stdoutresponse);
+%process.HasExited()
+%s_lh.Source
+%dbstack(0)
+
+
+%refresh
+%dbstack(0)
+%fieldnames(s_lh)%class(s_lh)
+%persistent stdoutresponse
+
+%out_stdoutresponse = C_cmdfifo([]);
+%out_stdout = C_vector(64);
+%out_stdoutresponse = [];
+%stdoutresponse = [];
 %stdout = stdout.);
 
     %text = cell(1, (2 * ne) + 1);

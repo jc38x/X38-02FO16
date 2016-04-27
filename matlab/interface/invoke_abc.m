@@ -7,7 +7,7 @@
 function [out_stdout] = invoke_abc(in_script)
 [dirs, sl] = split_module_path(mfilename('fullpath'));
 workdir = [[dirs{1:(end-2)}] 'tools' sl 'abc' sl];
-stdout = extract(spawn_process([workdir 'abc.exe'], '', workdir, in_script));
+stdout = spawn_process([workdir 'abc.exe'], '', workdir, in_script);
 
 ns = numel(stdout);
 response = cell(1, ns);
