@@ -958,13 +958,62 @@ resyn2rs
 balance
 refactor
 rewrite
-resyn2
 resyn
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
 write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-strash
+resyn2
 resyn2rs
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec -h
+read_blif -h
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
+resyn2
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+abc 01> 
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif
+cec C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/clma.blifC:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/clma.blif
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
+resyn2
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/clma.blif C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
+cec C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g125.blif
+cec C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g125.blif C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g625.blif
+cec C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g625.blif C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
+resyn2
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
+strash
+resyn2
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+source abc.rc
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif
+comb
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig

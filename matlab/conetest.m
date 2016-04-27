@@ -2,9 +2,12 @@
 K = 4;
 DF = false;
 
-[delay, labels, range, equations] = load_leko_leku('leko-g5\g25');
-%[delay, labels, range, equations] = load_lgsynth93('blif\clma');
-%[delay, labels, range, equations] = sample_valavan();
+%[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
+%[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g125');
+%[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g625');
+[delay, labels, range, equations, original] = load_lgsynth93('blif\clma');
+
+
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
 mat2aiger(filename, delay, labels, range, equations);
@@ -14,25 +17,39 @@ size(delay)
 script = [
     {['read_aiger ' filename ';']};
     {'strash'};
-    
+    {'ps'};
+    {'resyn2'};
     {'resyn2rs'};
-    
-    
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'ps'};
     {'cec'};
     {['write_aiger -s ' filename]};
     {'quit'};
     ];
 
 response = invoke_abc(script);
-for k = 1:numel(response), fprintf('%s\n', response{k}); end
-
-
+%for k = 1:numel(response), fprintf('%s\n', response{k}); end
 
 [delay, labels, range, equations] = aiger2mat(filename);
 
 size(delay)
 
-check_network(delay, labels, range, equations);
+%check_network(delay, labels, range, equations);
+
+mat2aiger(filename, delay, labels, range, equations);
+
+response2 = invoke_abc({['read_blif ' original]; 'comb'; ['cec ' filename]; 'quit'});
+for k = 1:numel(response2), fprintf('%s\n', response2{k}); end
+
+
+
+
+
+
+
 
 %{
 
@@ -58,6 +75,11 @@ toc(t);
 
 
 
+
+
+
+%check_network(delay, labels, range, equations);
+%[delay, labels, range, equations] = sample_valavan();
 %{
 {'balance'};
     {'refactor'};
