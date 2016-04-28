@@ -3,39 +3,27 @@
 % 10.1109/TCAD.2006.882119
 %**************************************************************************
 
-function [out_s, out_cv] = hara(in_order, in_iedge, in_oedge, in_noedge, in_delay, in_depth, in_height, in_af, in_range, in_K, in_DF, in_mode, in_maxi, in_alpha, in_minrand, in_maxrand) % DF/NDF
+function [out_s, out_cv] = hara(in_delay, in_range, in_K, in_mode, in_maxi, in_alpha, in_minrand, in_maxrand)
 
 allcones = generate_cones(in_delay, in_range, in_K);
+allcones = allcones(in_range.in);
 tsort = get_inorder(in_delay, in_range);
 rtsort = fliplr(tsort);
 
+ndepth = fill_depth(in_delay, in_range);
+nheight = fill_height(in_delay, in_range);
+[naf, nnoedge] = fill_af(in_delay, in_range);
+[in_iedge, in_oedge] = fill_edges(in_delay, in_range);
 
 
 
 
 
+sasz = nnz(in_delay);
 
-
-%[tsort, allcones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF, in_delay);
-%rtsort = fliplr(tsort);
-
-ndepth = in_depth;
-naf = in_af;
-nheight = in_height;
-nnoedge = in_noedge;
-
-%if (~in_DF)
-    alpha = in_alpha;
-%else
-%    alpha = 0;
-%end
-
-gsz = in_range.sz;
-sasz = sum(in_delay(:) > 0);
-
-edepth = spalloc(gsz, gsz, sasz);
-eaf = spalloc(gsz, gsz, sasz);
-eheight = spalloc(gsz, gsz, sasz);
+edepth = spalloc(in_range.sz, in_range.sz, sasz);
+eaf = spalloc(in_range.sz, in_range.sz, sasz);
+eheight = spalloc(in_range.sz, in_range.sz, sasz);
 
 cv = cell(1, in_range.szin);
 ofs = in_range.pihi;
@@ -111,7 +99,7 @@ out_cv = bestcones;
         no = nnoedge(v);
         caf = naf(v) / no;
         oedge = in_oedge{v};
-        nnoedge(v) = floor((no + (alpha * numel(oedge))) / (1 + alpha));%floor((no + (alpha * numel(oedge))) / (1 + alpha));
+        nnoedge(v) = floor((no + (in_alpha * numel(oedge))) / (1 + in_alpha));%floor((no + (alpha * numel(oedge))) / (1 + alpha));
         if (nnoedge(v) < 1), nnoedge(v) = 1; end
         for e = oedge
             e1 = e(1);

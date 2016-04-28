@@ -1,27 +1,52 @@
 
-%[delay, labels, range] = sample_valavan();
+[delay, labels, range, equations] = sample_valavan();
 %[delay, labels, range, equations] = sample_aighalfadder();
-[delay, labels, range, equations] = sample_aiglatch();
+%[delay, labels, range, equations] = sample_aiglatch();
 %[delay, labels, range, edges] = sample_edif(false);
 %[delay, labels, range, edges] = sample_edif_special(false);
 %[delay, labels, range, edges] = sample_ISE_mapped(false);
 
-fname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/latch2.aig';
 
 
-[labels, equations] = rename_node(delay, labels, equations, [range.pi(1), range.po(2)], {'top,port(1)@O', 'top,port(1)@I'});
 
 
-bg = build_graph(delay, labels, range, equations);
-view(bg);
-
-mat2aiger(fname, delay, labels, range, equations);
+[delay, labels, equations] = sort_graph(delay, labels, range, equations);
+view(build_graph(delay, labels, range, equations));
 
 
-[df, lf, rf, ef] = aiger2mat(fname);
 
-bf = build_graph(df, lf, rf, ef);
-view(bf);
+ndepth = fill_depth(delay, range);
+nheight = fill_height(delay, range);
+[naf, nnoedge] = fill_af(delay, range);
+[in_iedge, in_oedge] = fill_edges(delay, range);
+
+%[s, cv] = hara(delay, range, 4, 1, 1, 1.5, 0, 0);
+
+
+
+
+
+
+%[rd, rl, rr, re] = rebuild_graph_from_cones(s, cv, delay, range, labels, equations);
+%view(build_graph(rd, rl, rr, re));
+
+
+
+%fname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/latch2.aig';
+
+
+%[labels, equations] = rename_node(delay, labels, equations, [range.pi(1), range.po(2)], {'top,port(1)@O', 'top,port(1)@I'});
+
+
+
+
+%mat2aiger(fname, delay, labels, range, equations);
+
+
+%[df, lf, rf, ef] = aiger2mat(fname);
+
+%bf = build_graph(df, lf, rf, ef);
+%view(bf);
 
 
 

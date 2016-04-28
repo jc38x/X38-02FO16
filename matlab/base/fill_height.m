@@ -6,7 +6,7 @@
 
 function [out_height] = fill_height(in_delay, in_range)
 out_height = zeros(1, in_range.sz);
-for v = fliplr(get_inorder(in_delay, in_range))
+for v = fliplr(get_order(in_delay))
     for e = get_onode(in_delay, v)
         h = out_height(e) + in_delay(v, e);
         if (h > out_height(v)), out_height(v) = h; end

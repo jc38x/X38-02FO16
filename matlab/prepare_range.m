@@ -31,7 +31,8 @@ out_range.notpo = [out_range.pi, out_range.in];
 
 out_range.CONE_NODE    = 1;
 out_range.CONE_EDGE    = 2;
-out_range.CONE_IEDGE   = 6;
+out_range.CONE_IEDGE   = 3;
 out_range.CONE_OEDGE   = 4;
-out_range.CONE_ENTRIES = 6;
+out_range.CONE_NROEDGE = 5;
+out_range.CONE_ENTRIES = 5;
 end

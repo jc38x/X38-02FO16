@@ -48,7 +48,10 @@ disp(size(delay));
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
 t = tic();
-[cones] = generate_cones(delay, range, K);
+[s, cv] = hara(delay, range, 4, 1, 20, 2.5, 0, 0);
+
+[rd, rl, rr, re] = rebuild_graph_from_cones(s, cv, delay, range, labels, equations);
+%[cones] = generate_cones(delay, range, K);
 toc(t);
 
 
@@ -77,6 +80,56 @@ toc(t);
 %}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%in_order
+%in_iedge, in_oedge, in_noedge,
+%in_depth, in_height, in_af,
+%in_DF, 
+ % DF/NDF
+
+
+
+
+
+
+
+
+%if (~in_DF)
+    %in_alpha = in_alpha;
+%else
+%    alpha = 0;
+%end
+
+%in_range.sz = in_range.sz;
+%sum(in_delay(:) > 0);
+%out_inode = cell(1, in_range.sz);
+%out_onode = cell(1, in_range.sz);
+%out_inode{n} = nv;
+%out_onode{n} = nv;
+%[tsort, allcones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF, in_delay);
+%rtsort = fliplr(tsort);
+
+
+%= in_depth;
+ %= in_af;
+
+%= in_height;
+
+%= in_noedge;
 
 %{
 in_order, in_iedge, in_oedge
