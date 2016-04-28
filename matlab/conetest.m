@@ -2,10 +2,10 @@
 K = 4;
 DF = false;
 
-%[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
+[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g125');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g625');
-[delay, labels, range, equations, original] = load_lgsynth93('blif\clma');
+%[delay, labels, range, equations, original] = load_lgsynth93('blif/clma');
 
 
 
@@ -39,21 +39,23 @@ size(delay)
 
 %check_network(delay, labels, range, equations);
 
-mat2aiger(filename, delay, labels, range, equations);
+%mat2aiger(filename, delay, labels, range, equations);
 
-response2 = invoke_abc({['read_blif ' original]; 'comb'; ['cec ' filename]; 'quit'});
-for k = 1:numel(response2), fprintf('%s\n', response2{k}); end
+%response2 = invoke_abc({['read_blif ' original]; 'comb'; ['cec ' filename]; 'quit'});
+%for k = 1:numel(response2), fprintf('%s\n', response2{k}); end
 
+[delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
-
-
+t = tic();
+[cones] = generate_cones([], [], [], range, K, delay);
+toc(t);
 
 
 
 
 %{
 
-[delay, labels, equations] = sort_graph(delay, labels, range, equations);
+
 
 
 %view(build_graph(delay, labels, range, equations));
@@ -74,10 +76,20 @@ toc(t);
 %}
 
 
+%if (sum(iee) > in_K)
+    %kcut = kcut + 1;
 
-
-
-
+%nnc = ;
+        
+        
+        
+        
+        %newsubindex = ;
+        %dup = dup + subindex - newsubindex;
+        %prune = prune + (nnc1 * nnc2) - nnc;
+%nr = in_nr - in_range.szpi;
+        %nr1 = nr1;%nr1 - in_range.szpi;
+        %nr2 = nr2;%nr2 - in_range.szpi;
 %check_network(delay, labels, range, equations);
 %[delay, labels, range, equations] = sample_valavan();
 %{
