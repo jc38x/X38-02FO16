@@ -4,8 +4,20 @@
 %**************************************************************************
 
 function [out_s, out_cv] = hara(in_order, in_iedge, in_oedge, in_noedge, in_delay, in_depth, in_height, in_af, in_range, in_K, in_DF, in_mode, in_maxi, in_alpha, in_minrand, in_maxrand) % DF/NDF
-[tsort, allcones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF, in_delay);
+
+allcones = generate_cones(in_delay, in_range, in_K);
+tsort = get_inorder(in_delay, in_range);
 rtsort = fliplr(tsort);
+
+
+
+
+
+
+
+
+%[tsort, allcones] = generate_cones_all(in_order, in_iedge, in_oedge, in_range, in_K, in_DF, in_delay);
+%rtsort = fliplr(tsort);
 
 ndepth = in_depth;
 naf = in_af;

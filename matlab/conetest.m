@@ -78,6 +78,44 @@ toc(t);
 
 
 
+%{
+in_order, in_iedge, in_oedge
+out_af = zeros(1, in_range.sz);
+out_noedge = zeros(1, in_range.sz);
+for v = in_order 
+    Av = double(is_in(v, in_range));
+    for i = in_iedge{v}
+        idx = i(1);
+        out_noedge(idx) = size(in_oedge{idx}, 2);
+        Av = Av + (out_af(idx) / out_noedge(idx));
+    end
+    out_af(v) = Av;
+end
+%}
+%{
+in_redro, in_oedge, 
+out_height = zeros(1, in_range.sz);
+for v = in_redro
+    for e = in_oedge{v}
+        idx = e(2);
+        h = out_height(idx) + in_delay(v, idx);
+        if (h > out_height(v)), out_height(v) = h; end
+    end
+end
+%}
+
+%in_order, in_iedge, 
+%in_iedge{v}
+%{
+out_depth = zeros(1, in_range.sz);
+for v = in_order
+    for e = in_iedge{v}
+        idx = e(1);
+        d = out_depth(idx) + in_delay(idx, v);
+        if (d > out_depth(v)), out_depth(v) = d; end
+    end
+end
+%}
 %nodemarker = false(1, in_range.sz);
     %, nodemarker, in_range.all)); end
     

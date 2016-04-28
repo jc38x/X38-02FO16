@@ -4,12 +4,11 @@
 % 2016
 %**************************************************************************
 
-function [out_height] = fill_height(in_redro, in_oedge, in_delay, in_range)
+function [out_height] = fill_height(in_delay, in_range)
 out_height = zeros(1, in_range.sz);
-for v = in_redro
-    for e = in_oedge{v}
-        idx = e(2);
-        h = out_height(idx) + in_delay(v, idx);
+for v = fliplr(get_inorder(in_delay, in_range))
+    for e = get_onode(in_delay, v)
+        h = out_height(e) + in_delay(v, e);
         if (h > out_height(v)), out_height(v) = h; end
     end
 end

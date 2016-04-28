@@ -7,15 +7,14 @@
 % 10.1109/TCAD.2006.882119
 %**************************************************************************
 
-function [out_af, out_noedge] = fill_af(in_order, in_iedge, in_oedge, in_range)
-out_af = zeros(1, in_range.sz);
+function [out_af, out_noedge] = fill_af(in_delay, in_range)
+out_af     = zeros(1, in_range.sz);
 out_noedge = zeros(1, in_range.sz);
-for v = in_order 
+for v = get_order(in_delay)
     Av = double(is_in(v, in_range));
-    for i = in_iedge{v}
-        idx = i(1);
-        out_noedge(idx) = size(in_oedge{idx}, 2);
-        Av = Av + (out_af(idx) / out_noedge(idx));
+    for e = get_inode(in_delay, v)
+        out_noedge(e) = numel(get_onode(in_delay, e));
+        Av = Av + (out_af(e) / out_noedge(e));
     end
     out_af(v) = Av;
 end
