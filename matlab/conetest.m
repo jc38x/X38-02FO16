@@ -6,7 +6,7 @@ DF = false;
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g125');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g625');
 %[delay, labels, range, equations, original] = load_lgsynth93('blif/clma');
-
+%[delay, labels, range, equations] = sample_valavan();
 
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
@@ -47,7 +47,7 @@ size(delay)
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
 t = tic();
-[cones] = generate_cones([], [], [], range, K, delay);
+[cones] = generate_cones(range, K, delay);
 toc(t);
 
 
@@ -76,6 +76,97 @@ toc(t);
 %}
 
 
+
+
+%filter = ~strcmpi('', stdout);
+%filter = find(filter, 1, 'last');
+%stdout = stdout(1:filter);
+
+%celldisp(stdout);
+%{
+    function add_cone_generic(in_nr)
+    nnr = numel(in_nr);
+    subindex = 0;
+    
+    if (nnr == 0)
+        allcones = cell(1, 1);
+        try_add_cone(in);
+    else
+        vec = cell(1, nnr);
+        offset = zeros(nnr, 1);
+        adjnr = in_nr - in_range.szpi;
+        nrc = cell_collapse(out_cones(adjnr));
+        allcones = cell(1, prod(ncones(adjnr)));
+        
+        for k = 1:nnr, vec{k} = 1:ncones(adjnr(k)); end
+        for k = 1:(nnr - 1), offset(k + 1) = offset(k) + ncones(adjnr(k)); end
+        
+        for combo = combvec(vec{:}), try_add_cone(unique_nodes([in, [nrc{combo + offset}]])); end
+    end
+
+    index = index + 1;
+    cones{index} = allcones(1:subindex);
+    ncones(adjin) = ncones(adjin) + subindex;
+    end
+%}
+%{
+function try_add_cone(in_c)
+    ie = [in_iedge{in_c}];
+    iec = ismembc(ie(1, :), in_c);
+    iee = ~iec;
+    if (numel(unique(ie(1, iee))) > in_K), return; end
+
+    nroot = in_c ~= in;
+    oenr = cell2mat(in_oedge(in_c(nroot)));
+    if (~isempty(oenr)), oenr(:, ismembc(oenr(2, :), in_c)) = []; end
+
+    index = index + 1;
+
+    cones{1, index} = [in, in_c(nroot)];
+    cones{2, index} = ie(:, iec);
+    cones{3, index} = ie(:, iee);
+    cones{4, index} = in_oedge{in};
+    cones{5, index} = oenr;
+end
+%}
+%{
+    function add_cone(in_c)
+    ie = [in_iedge{in_c}];
+    iec = ismember(ie(1, :), in_c);
+    iee = ~iec;
+    
+    oenr = [in_oedge{in_c(in_c ~= in)}];
+    if (~isempty(oenr)), oenr(:, ismember(oenr(2, :), in_c)) = []; end
+    
+    index = index + 1;
+
+    cones{1, index} = in_c;
+    cones{2, index} = ie(:, iec);
+    cones{3, index} = ie(:, iee);
+    cones{4, index} = in_oedge{in};
+    cones{5, index} = oenr;
+    end
+%}
+%function push_cone_list()
+    
+    %end
+%{
+        
+            %}
+
+%mean(ncones)
+    %max(ncones)
+
+    %prune
+    %dup
+    %kcut
+    
+
+    %function [out_cone] = unique_nodes(in_c)
+    %pick = nodemarker;
+    %pick(in_c) = true;
+    %out_cone = in_range.all(pick);
+    %end
 %if (sum(iee) > in_K)
     %kcut = kcut + 1;
 

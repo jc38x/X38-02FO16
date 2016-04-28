@@ -8,7 +8,7 @@ function [out_stdout] = invoke_abc(in_script)
 [dirs, sl] = split_module_path(mfilename('fullpath'));
 workdir = [[dirs{1:(end-2)}] 'tools' sl 'abc' sl];
 stdout = spawn_process([workdir 'abc.exe'], '', workdir, in_script);
-
+nj = numel(in_script);
 ns = numel(stdout);
 response = cell(1, ns);
 index = 0;
@@ -31,7 +31,7 @@ for k = 1:ns
         matchstop = endindex(i) + 2;
         statement = line((matchstop + 1):(startindex(i + 1) - 1));
         j = j + 1;
-        push_line([line(startindex(i):matchstop) in_script{j}]);
+        if (j <= nj), push_line([line(startindex(i):matchstop) in_script{j}]); end
         if (~isempty(statement)), push_line(statement); end
     end
     
