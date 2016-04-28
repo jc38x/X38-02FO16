@@ -11,7 +11,7 @@ out_cones = cell(1, in_range.sz);
 allcones = [];
 subindex = 0;
 
-    nodemarker = false(1, in_range.sz);
+    %nodemarker = false(1, in_range.sz);
     
     
     
@@ -39,10 +39,6 @@ for in = get_inorder(in_delay, in_range)
     ncones(in) = numel(scones{in});
 end
 
-
-
-
-
 [di, dj] = get_edges(in_delay);
 edges = [di; dj];
 edgemarker = false(size(di));
@@ -51,7 +47,7 @@ for in = in_range.in
     totalcones = ncones(in);
     rawcones = scones{in};
     fcone = cell(5, totalcones);
-    
+
     for n = 1:totalcones
         cone = rawcones{n};
 
@@ -116,7 +112,7 @@ end
         allcones = cell(1, sum(keep1) * sum(keep2));
         
         for k = v1(keep1)
-            for l = v2(keep2), push_cone(unique_integers([in, nrc1{k}, nrc2{l}], nodemarker, in_range.all)); end
+            for l = v2(keep2), push_cone(unique_integers([in, nrc1{k}, nrc2{l}])); end%, nodemarker, in_range.all)); end
         end
         
         allcones = uniqueRowsCAvs(allcones(1:subindex).').';

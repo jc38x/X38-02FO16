@@ -4,8 +4,7 @@
 % 2016
 %**************************************************************************
 
-function [out_nodes] = unique_integers(in_vector, in_marker, in_map)
-marker = in_marker;
-marker(in_vector) = true;
-out_nodes = in_map(marker);
+function [out_nodes] = unique_integers(in_vector)
+out_nodes = sort(in_vector);
+out_nodes = out_nodes([true, diff(out_nodes) ~= 0]);
 end

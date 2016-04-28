@@ -12,7 +12,7 @@ DF = false;
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
 mat2aiger(filename, delay, labels, range, equations);
 
-size(delay)
+disp(size(delay));
 
 script = [
     {['read_aiger ' filename ';']};
@@ -31,11 +31,11 @@ script = [
     ];
 
 response = invoke_abc(script);
-%for k = 1:numel(response), fprintf('%s\n', response{k}); end
+for k = 1:numel(response), fprintf('%s\n', response{k}); end
 
 [delay, labels, range, equations] = aiger2mat(filename);
 
-size(delay)
+disp(size(delay));
 
 %check_network(delay, labels, range, equations);
 
@@ -78,6 +78,10 @@ toc(t);
 
 
 
+%, in_marker, in_map)
+%marker = in_marker;
+%marker(in_vector) = true;
+%out_nodes = in_map(marker);
 %filter = ~strcmpi('', stdout);
 %filter = find(filter, 1, 'last');
 %stdout = stdout(1:filter);
