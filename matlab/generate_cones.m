@@ -4,21 +4,12 @@
 % 2016
 %**************************************************************************
 
-function [out_cones] = generate_cones(in_range, in_K, in_delay)
-scones = cell(1, in_range.sz);
+function [out_cones] = generate_cones(in_delay, in_range, in_K)
+scones =  cell(1, in_range.sz);
 ncones = zeros(1, in_range.sz);
-out_cones = cell(1, in_range.sz);
 allcones = [];
 subindex = 0;
 
-    %nodemarker = false(1, in_range.sz);
-    
-    
-    
-    
-    
-    
-    
 for in = get_inorder(in_delay, in_range)
     inode = get_inode(in_delay, in);
     inpre = inode(is_in(inode, in_range));
@@ -39,6 +30,7 @@ for in = get_inorder(in_delay, in_range)
     ncones(in) = numel(scones{in});
 end
 
+out_cones = cell(1, in_range.sz);
 [di, dj] = get_edges(in_delay);
 edges = [di; dj];
 edgemarker = false(size(di));
@@ -112,7 +104,7 @@ end
         allcones = cell(1, sum(keep1) * sum(keep2));
         
         for k = v1(keep1)
-            for l = v2(keep2), push_cone(unique_integers([in, nrc1{k}, nrc2{l}])); end%, nodemarker, in_range.all)); end
+            for l = v2(keep2), push_cone(unique_integers([in, nrc1{k}, nrc2{l}])); end
         end
         
         allcones = uniqueRowsCAvs(allcones(1:subindex).').';
