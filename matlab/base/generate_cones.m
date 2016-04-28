@@ -5,6 +5,10 @@
 %**************************************************************************
 
 function [out_cones] = generate_cones(in_delay, in_range, in_K)
+out_cones = cell(1, in_range.sz);
+[di, dj] = get_edges(in_delay);
+edges = [di; dj];
+
 scones =  cell(1, in_range.sz);
 ncones = zeros(1, in_range.sz);
 allcones = [];
@@ -28,34 +32,22 @@ for in = get_inorder(in_delay, in_range)
     
     scones{in} = cell_collapse(cones(1:index));
     ncones(in) = numel(scones{in});
-end
-
-out_cones = cell(1, in_range.sz);
-[di, dj] = get_edges(in_delay);
-edges = [di; dj];
-edgemarker = false(size(di));
-
-for in = in_range.in
-    totalcones = ncones(in);
+    
     rawcones = scones{in};
+    totalcones = ncones(in);
     fcone = cell(5, totalcones);
 
     for n = 1:totalcones
         cone = rawcones{n};
 
-        head = edgemarker;
-        tail = edgemarker;
-        
-        for node = cone,
-            head = head | (di == node);
-            tail = tail | (dj == node);
-        end
+        head = integer_ismember(di, cone);
+        tail = integer_ismember(dj, cone);
 
         rout = di == cone(end);
         
         fcone{1, n} = cone;
-        fcone{2, n} = edges(:,  head &  tail);
-        fcone{3, n} = edges(:, ~head &  tail);
+        fcone{2, n} = edges(:,  head &          tail);
+        fcone{3, n} = edges(:, ~head &          tail);
         fcone{4, n} = edges(:,          rout);
         fcone{5, n} = edges(:,  head & ~rout & ~tail);
     end
