@@ -2,11 +2,10 @@
 K = 4;
 DF = false;
 
-[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
+%[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g125');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g625');
-%[delay, labels, range, equations, original] = load_lgsynth93('blif/clma');
-%[delay, labels, range, equations] = sample_valavan();
+[delay, labels, range, equations, original] = load_lgsynth93('blif/alu4');
 
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
@@ -15,7 +14,7 @@ mat2aiger(filename, delay, labels, range, equations);
 disp(size(delay));
 
 script = [
-    {['read_aiger ' filename ';']};
+    {['read_aiger ' filename]};
     {'strash'};
     {'ps'};
     {'resyn2'};
@@ -25,8 +24,10 @@ script = [
     {'resyn2rs'};
     {'resyn2rs'};
     {'ps'};
-    {'cec'};
     {['write_aiger -s ' filename]};
+    {['read_blif ' original]};
+    {'comb'};
+    {['cec ' filename]};
     {'quit'};
     ];
 
@@ -47,7 +48,7 @@ disp(size(delay));
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
 t = tic();
-[cones] = generate_cones(range, K, delay);
+[cones] = generate_cones(delay, range, K);
 toc(t);
 
 
