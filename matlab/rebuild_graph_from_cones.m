@@ -11,7 +11,7 @@ poofs = in_range.szin - nin;
 adjS = in_S;% - in_range.pihi;
 tag = sparse(1, adjS, (1:nin) + in_range.pihi);
 
-maxedges = sum(in_delay(:) > 0);
+maxedges = nnz(in_delay);%sum(in_delay(:) > 0);
 edgesindex = 0;
 edgesi = zeros(1, maxedges);
 edgesj = zeros(1, maxedges);
@@ -65,14 +65,6 @@ end
 k = 1:edgesindex;
 out_delay = sparse(edgesi(k), edgesj(k), edgesd(k), nsz, nsz);
 
-pilo = in_range.pilo;
-pihi = in_range.pihi;
-inlo = in_range.pihi + 1;
-inhi = in_range.pihi + nin;
-polo = inhi + 1;
-pohi = inhi + in_range.szpo;
-
-%out_range = prepare_range(pilo, pihi, inlo, inhi, polo, pohi);
 out_range = prepare_range(in_range.szpi, nin, in_range.szpo);
 
     function push_edge(in_o, in_i, in_d)

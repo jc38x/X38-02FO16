@@ -59,6 +59,16 @@ toc(t);
 
 
 
+
+
+%pilo = in_range.pilo;
+%pihi = in_range.pihi;
+%inlo = in_range.pihi + 1;
+%inhi = in_range.pihi + nin;
+%polo = inhi + 1;
+%pohi = inhi + in_range.szpo;
+
+%out_range = prepare_range(pilo, pihi, inlo, inhi, polo, pohi);
 %{
 
 
