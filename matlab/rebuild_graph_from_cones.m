@@ -8,7 +8,7 @@ function [out_delay, out_labels, out_range, out_equations] = rebuild_graph_from_
 nin = numel(in_S);
 nsz = in_range.szpi + nin + in_range.szpo;
 poofs = in_range.szin - nin;
-adjS = in_S - in_range.pihi;
+adjS = in_S;% - in_range.pihi;
 tag = sparse(1, adjS, (1:nin) + in_range.pihi);
 
 maxedges = sum(in_delay(:) > 0);
@@ -23,7 +23,7 @@ out_equations(in_range.po - poofs) = in_equations(in_range.po);
 
 indices = find(tag);
 [~, I] = sort(tag(indices));
-out_labels = [in_labels(in_range.pi), in_labels(indices(I) + in_range.szpi), in_labels(in_range.po)];
+out_labels = [in_labels(in_range.pi), in_labels(indices(I)), in_labels(in_range.po)];
 
 for i = in_range.pi
     fj = find(in_delay(i, :));
@@ -36,7 +36,7 @@ for cvidx = adjS
     
     for e = vcone{in_range.CONE_IEDGE}
         e1 = e(1);
-        if (is_in(e1, in_range)), i1 = tag(e1 - in_range.pihi); else i1 = e1; end
+        if (is_in(e1, in_range)), i1 = tag(e1); else i1 = e1; end
         push_edge(i1, i2, in_delay(e1, e(2)));
     end
     
@@ -56,7 +56,7 @@ for cvidx = adjS
     remapnode = zeros(1, numel(keys));
     remapnode(cell2mat(noderemap.values(keys))) = cell2mat(keys);
     
-    equation = in_equations{cvidx + in_range.pihi};
+    equation = in_equations{cvidx};% + in_range.pihi};
     %for l = remapnode(redroenoc), equation = strrep(equation, ['[' in_labels{l} ']'], ['(' in_equations{l} ')']); end
     for l = remapnode(redroenoc), equation = strrep(equation, ['[' in_labels{l} ']'], [in_equations{l}]); end
     out_equations{i2} = equation;

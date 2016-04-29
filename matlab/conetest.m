@@ -48,9 +48,11 @@ disp(size(delay));
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
 t = tic();
-[s, cv] = hara(delay, range, 4, 1, 20, 2.5, 0, 0);
+[s, cv] = hara(delay, range, 2, 4, 20, 2.5, 0, 0);
 
 [rd, rl, rr, re] = rebuild_graph_from_cones(s, cv, delay, range, labels, equations);
+[luts] = cones2luts(rd, rl, rr, re);
+
 %[cones] = generate_cones(delay, range, K);
 toc(t);
 
@@ -84,7 +86,14 @@ toc(t);
 
 
 
-
+%{
+    function [out_bc, out_bcdepth, out_bcaf] = best_cone(in_v)
+    switch (in_mode)
+        case 1, [out_bc, out_bcdepth, out_bcaf] = best_cone_depth(in_v);
+        case 2, [out_bc, out_bcdepth, out_bcaf] = best_cone_area(in_v);
+    end
+    end
+%}
 
 
 

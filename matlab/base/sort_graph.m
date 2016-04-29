@@ -5,8 +5,8 @@
 %**************************************************************************
 
 function [out_delay, out_labels, out_equations] = sort_graph(in_delay, in_labels, in_range, in_equations)
-inremap = C_remap([in_range.pi, get_inorder(in_delay, in_range), in_range.po], in_range.all);
-index = inremap.remap(in_range.all);
+index = [in_range.pi, get_inorder(in_delay, in_range), in_range.po];
+inremap = C_remap(index, in_range.all);
 
 [i, j, s] = get_edges(in_delay);
 

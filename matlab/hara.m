@@ -3,10 +3,12 @@
 % 10.1109/TCAD.2006.882119
 %**************************************************************************
 
-function [out_s, out_cv] = hara(in_delay, in_range, in_K, in_mode, in_maxi, in_alpha, in_minrand, in_maxrand)
+function [out_s, out_cv] = hara(in_delay, in_range, in_mode, in_K, in_maxi, in_alpha, in_minrand, in_maxrand)
+
+
+
 
 allcones = generate_cones(in_delay, in_range, in_K);
-allcones = allcones(in_range.in);
 tsort = get_inorder(in_delay, in_range);
 rtsort = fliplr(tsort);
 
@@ -17,16 +19,28 @@ nheight = fill_height(in_delay, in_range);
 
 
 
-
-
 sasz = nnz(in_delay);
 
-edepth = spalloc(in_range.sz, in_range.sz, sasz);
-eaf = spalloc(in_range.sz, in_range.sz, sasz);
+edepth  = spalloc(in_range.sz, in_range.sz, sasz);
+eaf     = spalloc(in_range.sz, in_range.sz, sasz);
 eheight = spalloc(in_range.sz, in_range.sz, sasz);
 
-cv = cell(1, in_range.szin);
-ofs = in_range.pihi;
+
+
+switch (in_mode)
+    case 1,    best_cone = @best_cone_depth;
+    case 2,    best_cone = @best_cone_area;
+    otherwise, error('Unknown mode.');
+end
+
+
+
+%allcones = allcones(in_range.in);
+%cv = cell(1, in_range.szin);
+
+%ofs = in_range.pihi;
+
+cv = cell(1, in_range.sz);
 Odepth = [];
 Odepthfound = false;
 
@@ -92,15 +106,16 @@ out_cv = bestcones;
     end
     for v = tsort
         [bc, bcdepth, bcaf] = best_cone(v);
-        cv{v - ofs} = bc;
+        %cv{v - ofs} = bc;
+        cv{v} = bc;
         %disp(bcdepth)
         ndepth(v) = bcdepth;
         naf(v) = bcaf;
         no = nnoedge(v);
         caf = naf(v) / no;
         oedge = in_oedge{v};
-        nnoedge(v) = floor((no + (in_alpha * numel(oedge))) / (1 + in_alpha));%floor((no + (alpha * numel(oedge))) / (1 + alpha));
-        if (nnoedge(v) < 1), nnoedge(v) = 1; end
+        %nnoedge(v) = ((no + (in_alpha * numel(oedge))) / (1 + in_alpha));%floor((no + (alpha * numel(oedge))) / (1 + alpha));
+        %if (nnoedge(v) < 1), nnoedge(v) = 1; end
         for e = oedge
             e1 = e(1);
             e2 = e(2);
@@ -128,7 +143,8 @@ out_cv = bestcones;
                 nh = eheight(e(1), e(2));
                 if (nh > h), h = nh; end
             end
-            bc = cv{v - ofs};
+            %bc = cv{v - ofs};
+            bc = cv{v};
             for u = bc{in_range.CONE_NODE}, nheight(u) = max([nheight(u), h]); end
             iedge = bc{in_range.CONE_IEDGE};
             for e = iedge
@@ -148,7 +164,8 @@ out_cv = bestcones;
     end
     
     function [out_bc, out_bcdepth, out_bcaf] = best_cone_area(in_v)
-    cones = allcones{in_v - ofs};
+    %cones = allcones{in_v - ofs};
+    cones = allcones{in_v};
     out_bc = [];
     for c = cones
         d = cone_depth(c);
@@ -162,7 +179,8 @@ out_cv = bestcones;
     end
     
     function [out_bc, out_bcdepth, out_bcaf] = best_cone_depth(in_v)
-    adjv = in_v - ofs;
+    %adjv = in_v - ofs;
+    adjv = in_v;
     cones = allcones{adjv};
     out_bc = [];
     for c = cones
@@ -181,10 +199,5 @@ out_cv = bestcones;
     end
     end
     
-    function [out_bc, out_bcdepth, out_bcaf] = best_cone(in_v)
-    switch (in_mode)
-        case 1, [out_bc, out_bcdepth, out_bcaf] = best_cone_depth(in_v);
-        case 2, [out_bc, out_bcdepth, out_bcaf] = best_cone_area(in_v);
-    end
-    end
+
 end
