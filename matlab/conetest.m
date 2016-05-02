@@ -58,8 +58,33 @@ toc(t);
 
 
 
+ 
 
 
+
+    
+    
+    %redroenoc = 0;
+    %containers.Map(num2cell(node), 1:subn);
+    %coneorderc = graphtopoorder(sparse(cell2mat(noderemap.values(num2cell(edge(1, :)))), cell2mat(noderemap.values(num2cell(edge(2, :)))), 1, subn, subn));
+    
+    %keys = noderemap.keys();
+    %keys = node;
+    %remapnode = zeros(1, subn);%numel(keys));
+    %remapnode(cell2mat(noderemap.values(keys))) = cell2mat(keys);
+    %remapnode(noderemap.remap(node)) = node;
+    
+    % + in_range.pihi};
+    %for l = remapnode(redroenoc), equation = strrep(equation, ['[' in_labels{l} ']'], ['(' in_equations{l} ')']); end
+    %for l = remapnode(redroenoc), equation = strrep(equation, ['[' in_labels{l} ']'], [in_equations{l}]); end
+    
+%indices = find(tag);
+%[~, I] = sort(tag(indices));
+%out_labels = [in_labels(in_range.pi), in_labels(indices(I)), in_labels(in_range.po)];
+%nsz = in_range.szpi + nin + in_range.szpo;
+%nsz = out_range.sz;
+%in_S = in_S;% - in_range.pihi;
+%sum(in_delay(:) > 0);
 
 %pilo = in_range.pilo;
 %pihi = in_range.pihi;
