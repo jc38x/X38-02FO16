@@ -12,14 +12,14 @@ optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF_SIM.aig';
 path = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/abc.exe';
 wd = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/tools/abc/';
 
-[do, lo, ro, eo] = tt2mat('FFFF', 4);
+[do, lo, ro, eo] = tt2mat('ABCD', 4);
 count = 8;
 dl = cell(1, count);
 ll = cell(1, count);
 rl = cell(1, count);
 el = cell(1, count);
 for k = 1:count
-    [loi,  eoi] = make_instance(['LUT4_' num2str(k)], lo, ro, eo);
+    [loi,  eoi] = make_instance(['LUT4_' num2str(k)], do, lo, ro, eo);
     dl{k} = do;
     ll{k} = loi;
     rl{k} = ro;
@@ -42,8 +42,9 @@ script = [
     {'quit'};
     ];
 
-cmdfifo = C_cmdfifo(script);
-spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
+invoke_abc(script);
+%cmdfifo = C_cmdfifo(script);
+%spawn_process(path, '', wd, false, script, @(obj, event)stdout_callback_abc(obj, event, cmdfifo));
 
 [df, lf, rf, ef] = aiger2mat(optname);
 

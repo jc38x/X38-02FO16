@@ -38,12 +38,7 @@ for k = 1:numel(response), fprintf('%s\n', response{k}); end
 
 disp(size(delay));
 
-%check_network(delay, labels, range, equations);
 
-%mat2aiger(filename, delay, labels, range, equations);
-
-%response2 = invoke_abc({['read_blif ' original]; 'comb'; ['cec ' filename]; 'quit'});
-%for k = 1:numel(response2), fprintf('%s\n', response2{k}); end
 
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
@@ -52,8 +47,6 @@ t = tic();
 
 [rd, rl, rr, re] = rebuild_graph_from_cones(s, cv, delay, range, labels, equations);
 [luts] = cones2luts(rd, rl, rr, re);
-
-%[cones] = generate_cones(delay, range, K);
 toc(t);
 
 
@@ -61,8 +54,13 @@ toc(t);
  
 
 
+%check_network(delay, labels, range, equations);
 
-    
+%mat2aiger(filename, delay, labels, range, equations);
+
+%response2 = invoke_abc({['read_blif ' original]; 'comb'; ['cec ' filename]; 'quit'});
+%for k = 1:numel(response2), fprintf('%s\n', response2{k}); end
+    %[cones] = generate_cones(delay, range, K);
     
     %redroenoc = 0;
     %containers.Map(num2cell(node), 1:subn);
