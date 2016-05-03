@@ -60,6 +60,7 @@ while (instanceiterator.hasNext())
     instance = instanceiterator.next();
     type = char(instance.getType());
     if (strncmpi(type, 'LUT', 3)), continue; end
+    if (strncmpi(type, 'XORCY', 5)), continue; end
     instance.toEdif(epw);
 end
 
@@ -113,12 +114,14 @@ while (edgesiterator.hasNext())
     if (~sourceepr.isTopLevelPortRef())
     sourcetype = char(sourceepr.getCellInstance().getType());
     if (strcmpi(sourcetype(1:3), 'LUT')), continue; end
+    if (strncmpi(sourcetype, 'XORCY', 5)), continue; end
     end
     
     sinkepr  = edge.getSinkEPR();
     if (~sinkepr.isTopLevelPortRef())
     sinktype = char(sinkepr.getCellInstance().getType());
     if (strcmpi(  sinktype(1:3), 'LUT')), continue; end
+    if (strncmpi(  sinktype, 'XORCY', 5)), continue; end
     end
     
     push_net(make_port_name(sourceepr, true), make_port_name(sinkepr, false));

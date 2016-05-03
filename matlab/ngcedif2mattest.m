@@ -30,7 +30,13 @@ mat2aiger(filename, d, l, r, e);
 
 script = [
     {['read_aiger ' filename ';']};
-    {'refactor'};
+    %{'refactor'};
+    {'resyn2'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
     {['write_aiger -s ' optname]};
     {'cec'}
     {'quit'};

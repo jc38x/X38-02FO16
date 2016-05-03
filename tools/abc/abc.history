@@ -997,13 +997,18 @@ write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF_SIM.aig
 write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
 strash
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+refactor
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
 resyn2
 resyn2rs
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
 comb
 cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig;
-refactor
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM.aig

@@ -3,7 +3,6 @@ function [out_delay, out_labels, out_range, out_equations, out_edif] = ngcedif2m
 edifenvironment = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
 topcell = edifenvironment.getTopCell();
 edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
-
 inlist = topcell.getCellInstanceList();
 initerator = inlist.iterator();
 edges = edifgraph.getEdges();
@@ -28,16 +27,52 @@ edgecount = 0;
 while (initerator.hasNext())
     instance = initerator.next();
     type = char(instance.getType());
+    
+
+    switch (upper(type))
+    case 'LUT1',    inputs = 1; rename = {'I0'                                      'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT1_L',  inputs = 1; rename = {'I0'                                'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT1_D',  inputs = 1; rename = {'I0'                                'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT2',    inputs = 2; rename = {'I0', 'I1',                               'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT2_L',  inputs = 2; rename = {'I0', 'I1',                         'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT2_D',  inputs = 2; rename = {'I0', 'I1',                         'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT3',    inputs = 3; rename = {'I0', 'I1', 'I2',                         'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT3_L',  inputs = 3; rename = {'I0', 'I1', 'I2',                   'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT3_D',  inputs = 3; rename = {'I0', 'I1', 'I2',                   'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT4',    inputs = 4; rename = {'I0', 'I1', 'I2', 'I3',                   'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT4_L',  inputs = 4; rename = {'I0', 'I1', 'I2', 'I3',             'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT4_D',  inputs = 4; rename = {'I0', 'I1', 'I2', 'I3',             'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT5',    inputs = 5; rename = {'I0', 'I1', 'I2', 'I3', 'I4',             'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT5_L',  inputs = 5; rename = {'I0', 'I1', 'I2', 'I3', 'I4',       'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT5_D',  inputs = 5; rename = {'I0', 'I1', 'I2', 'I3', 'I4',       'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT6',    inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5',       'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT6_L',  inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5', 'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT6_D',  inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5', 'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'XORCY',   inputs = 2; rename = {'LI', 'CI',                               'O'}; isd = false; tt = '6';
+    case 'XORCY_L', inputs = 2; rename = {'LI', 'CI',                         'LO'};      isd = false; tt = '6'; 
+    case 'XORCY_D', inputs = 2; rename = {'LI', 'CI',                         'LO', 'O'}; isd = true;  tt = '6'; 
+    otherwise,      continue;
+    end
+    
+    instancename = char(instance.getName());
+    [d, l, r, e] = tt2mat(tt, inputs);
+    if (isd)
+        [d, l, r, e] = group_nets({d, sparse([], [], [], 1, 1, 1)}, {l, {'lo'}}, {r, prepare_range(0, 0, 1)}, {e, {''}});
+        d(get_inode(d, find(strcmpi('o', l))), strcmpi('lo', l)) = 1;
+    end
+    [l, e] = rename_node(d, l, e, [r.pi, r.po], rename);
+    [l, e] = make_instance(instancename, d, l, r, e);
+    push_net(d, l, r, e);
+    lut2uid(instancename) = uid;
+    
+    
+    
+    %}
+    
+    %{
     if (~strncmpi(type, 'LUT', 3)), continue; end
 
-
-
-
-
-
-
 %lutcount = 0;
-
 
     instancename = char(instance.getName());
     inputs = str2double(type(4));
@@ -64,6 +99,7 @@ while (initerator.hasNext())
     [l, e] = make_instance(instancename, d, l, r, e);
     push_net(d, l, r, e);
     lut2uid(instancename) = uid;
+    %}
     
     %lutcount = lutcount + 1;
     
