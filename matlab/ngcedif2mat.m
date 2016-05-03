@@ -10,11 +10,11 @@ edges = edifgraph.getEdges();
 edgesiterator = edges.iterator();
 
 lut2uid   = containers.Map();
+maplabel  = containers.Map();
 mapd      = containers.Map('KeyType', 'double', 'ValueType', 'any');
 mapl      = containers.Map('KeyType', 'double', 'ValueType', 'any');
 mapr      = containers.Map('KeyType', 'double', 'ValueType', 'any');
 mape      = containers.Map('KeyType', 'double', 'ValueType', 'any');
-maplabel  = containers.Map();
 mapremove = containers.Map('KeyType', 'double', 'ValueType', 'any');
 mapproxy  = containers.Map('KeyType', 'double', 'ValueType', 'any');
 mapedges  = containers.Map('KeyType', 'double', 'ValueType', 'any');
@@ -25,16 +25,19 @@ edgecount = 0;
 
 
 
-
-
-
-
-
-lutcount = 0;
 while (initerator.hasNext())
     instance = initerator.next();
     type = char(instance.getType());
-    if (~strcmpi(type(1:3), 'LUT')), continue; end
+    if (~strncmpi(type, 'LUT', 3)), continue; end
+
+
+
+
+
+
+
+%lutcount = 0;
+
 
     instancename = char(instance.getName());
     inputs = str2double(type(4));
@@ -62,10 +65,10 @@ while (initerator.hasNext())
     push_net(d, l, r, e);
     lut2uid(instancename) = uid;
     
-    lutcount = lutcount + 1;
+    %lutcount = lutcount + 1;
     
 end
-lutcount
+%lutcount
 
 
 
@@ -87,7 +90,7 @@ signal2index = containers.Map(out_labels, 1:numel(out_labels));
 lutedges = cell_collapse(mapedges.values());
 
 newedges = zeros(1, edgecount);
-for k = 1:edgecount, newedges(k) = flatten_index_2d(signal2index(lutedges{1, k}), signal2index(lutedges{2, k}), out_range.sz); end
+for k = 1:edgecount, newedges(k) = sub2ind([out_range.sz, out_range.sz], signal2index(lutedges{1, k}), signal2index(lutedges{2, k})); end
 out_delay(newedges) = 1;
 
 for k = out_range.pi
@@ -102,7 +105,7 @@ for k = out_range.pi
     onode = get_onode(out_delay, k);
     if (isempty(onode)), continue; end
     for n = onode, out_equations{n} = strrep(out_equations{n}, signal, newsignal); end
-    mapproxy(k) = flatten_index_2d(repmat(inode, 1, numel(onode)), onode, out_range.sz);
+    mapproxy(k) = sub2ind([out_range.sz, out_range.sz], repmat(inode, 1, numel(onode)), onode);
 end
 
 for k = out_range.po
@@ -113,7 +116,9 @@ for k = out_range.po
     onode = get_onode(out_delay, k);
     if (isempty(onode)), error(['Unconnected LUT output ' label '.']); end
     onode = onode(is_po(onode, out_range));
-    mapproxy(k) = flatten_index_2d(repmat(inode, 1, numel(onode)), onode, out_range.sz);
+    if (isempty(onode)), mapproxy(k) = [];
+    else                 mapproxy(k) = sub2ind([out_range.sz, out_range.sz], repmat(inode, 1, numel(onode)), onode);
+    end
 end
 
 out_delay(cell_collapse(mapproxy.values())) = 1;

@@ -1,11 +1,12 @@
 
 K = 4;
 DF = false;
+mode = 1;
 
-[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
+%[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g125');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g625');
-%[delay, labels, range, equations, original] = load_lgsynth93('blif/alu4');
+[delay, labels, range, equations, original] = load_lgsynth93('blif/alu4');
 
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
@@ -43,7 +44,7 @@ disp(size(delay));
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
 
 t = tic();
-[s, cv] = hara(delay, range, 2, 4, 20, 2.5, 0, 0);
+[s, cv] = hara(delay, range, mode, 4, 20, 2.5, 0, 0);
 
 [rd, rl, rr, re] = rebuild_graph_from_cones(s, cv, delay, range, labels, equations);
 [luts] = cones2luts(rd, rl, rr, re);

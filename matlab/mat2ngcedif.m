@@ -59,7 +59,7 @@ epw.incrIndent();
 while (instanceiterator.hasNext())
     instance = instanceiterator.next();
     type = char(instance.getType());
-    if (strcmpi(type(1:3), 'LUT')), continue; end
+    if (strncmpi(type, 'LUT', 3)), continue; end
     instance.toEdif(epw);
 end
 
@@ -76,7 +76,10 @@ for k = get_inorder(in_delay, in_range)
     if (any(strcmpi(initstring, {'0', '1'})))
         error('Unimplemented: constants in LUT graph');
     end
-    initstring = initstring(7:(end-1));
+    %initstring = initstring(7:(end-1));
+    initstring = regexp(initstring, '''[0-9a-fA-F]+''', 'match');
+    initstring = initstring{1};
+    initstring = initstring(2:(end - 1));
     
     epw.printlnIndent(['(instance ' lutname]);
     epw.incrIndent();
