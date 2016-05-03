@@ -30,13 +30,13 @@ mat2aiger(filename, d, l, r, e);
 
 script = [
     {['read_aiger ' filename ';']};
-    %{'refactor'};
-    {'resyn2'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
+     {'refactor'};
+    %{'resyn2'};
+    %{'resyn2rs'};
+    %{'resyn2rs'};
+    %{'resyn2rs'};
+    %{'resyn2rs'};
+    %{'resyn2rs'};
     {['write_aiger -s ' optname]};
     {'cec'}
     {'quit'};
@@ -67,7 +67,7 @@ check_network(df, lf, rf, ef);
 
 check_network(resultdf, resultlf, resultrf, resultef);
 
-netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/edifexportVGA_NEW2.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
+netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/edifexportVGA_NEW3.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
 
 %view(build_graph(resultdf, resultlf, resultrf, resultef));
 
@@ -86,6 +86,42 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/edife
 
 
 
+     %case 'XORCY',   inputs = 2; rename = {'LI', 'CI',                               'O'}; isd = false; tt = '6';
+    %case 'XORCY_L', inputs = 2; rename = {'LI', 'CI',                         'LO'};      isd = false; tt = '6'; 
+    %case 'XORCY_D', inputs = 2; rename = {'LI', 'CI',                         'LO', 'O'}; isd = true;  tt = '6'; 
+    %{
+    if (~strncmpi(type, 'LUT', 3)), continue; end
+
+%lutcount = 0;
+
+    instancename = char(instance.getName());
+    inputs = str2double(type(4));
+    [d, l, r, e] = tt2mat(char(instance.getProperty('INIT').getValue().getStringValue()), inputs);
+    
+    if (numel(type) < 6)
+        rename = cell(1, inputs + 1);
+        rename(end) = {'O'};
+    elseif (strcmpi(type(6), 'L'))
+        rename = cell(1, inputs + 1);
+        rename(end) = {'LO'};
+    elseif (strcmpi(type(6), 'D'))
+        rename = cell(1, inputs + 2);
+        rename(end) = {'O'};
+        rename(end - 1) = {'LO'};
+        [d, l, r, e] = group_nets({d, sparse([], [], [], 1, 1, 1)}, {l, {'lo'}}, {r, prepare_range(0, 0, 1)}, {e, {''}});
+        d(get_inode(d, find(strcmpi('o', l))), strcmpi('lo', l)) = 1;
+    else
+        error('Unknown LUT type.');
+    end
+    
+    for k = 1:inputs, rename{k} = ['I' num2str(k - 1)]; end
+    [l, e] = rename_node(d, l, e, [r.pi, r.po], rename);
+    [l, e] = make_instance(instancename, d, l, r, e);
+    push_net(d, l, r, e);
+    lut2uid(instancename) = uid;
+    %}
+    
+    %lutcount = lutcount + 1;
     
 %{
 c = cell(1, 3);

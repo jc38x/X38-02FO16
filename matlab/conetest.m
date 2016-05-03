@@ -54,7 +54,11 @@ toc(t);
 
  
 
-
+%}
+%lutcount
+%newedges = zeros(1, edgecount);
+%for k = 1:edgecount, newedges(k) = sub2ind([out_range.sz, out_range.sz], signal2index(lutedges{1, k}), signal2index(lutedges{2, k})); end
+%out_delay(newedges) = 1;
 %check_network(delay, labels, range, equations);
 
 %mat2aiger(filename, delay, labels, range, equations);
