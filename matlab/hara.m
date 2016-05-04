@@ -65,6 +65,26 @@ for i = 1:in_maxi
     disp([num2str(i) ' -> LUTs: ' num2str(luts) ' - Best: ' num2str(bestluts)]);
 
 
+    observedoedges = ones(1, in_range.sz);
+    for node = solution
+        cone = cv{node};
+        coneoedge = cone{in_range.CONE_OEDGE};
+        coneonode = coneoedge(2, :);
+        coneonode = unique(coneonode(is_in(coneonode, in_range)));
+        coneonode = coneonode(:).';
+        numberoedges = sum(is_po(coneonode, in_range));
+        solsubset = solution(solution > node);
+        solsubset = solsubset(:).';
+        
+        for onode = coneonode
+            for container = solsubset
+                cont = cv{container};
+                members = cont{in_range.CONE_NODE};
+                numberoedges = numberoedges + sum(members == onode);
+            end
+        end
+        observedoedges(node) = numberoedges;
+    end
 end
 
 
@@ -112,8 +132,19 @@ out_cv = bestcones;
         naf(v)    = bcaf;
         
         
+        
+        
+        if (i == 1)
         noest = nnoedge(v);
         caf = naf(v) / noest;
+        else
+        noest = (nnoedge(v) + (in_alpha * observedoedges(v))) / (1 + in_alpha);
+        if (noest <= 0), warning(['<= 0 -> ' num2str(noest)]); noest = 1; end
+        caf = naf(v) / noest;
+        end
+        nnoedge(v) = noest;
+        
+        
         oedge = in_oedge{v};
         
         
