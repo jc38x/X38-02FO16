@@ -1,110 +1,3 @@
-strash
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_aiger.aig
-write_aiger s = sum(aigdelay > 0, 2);
-aigolab = aiglabels(f).';
-s = sum(aigdelay > 0, 1);
-f = find(s < 1);
-aigilab = aiglabels(f).';
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resyn.aig
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resyn2.aig
-resyn
-resyn2
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resynresyn2.aig
-help resyn
-help -h resyn
-help -h
-help -h read_blif
-help read_blif -h
-help h
-strash
-comb
-rw -l
-rw -lz
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_brw.aig
-b ps
--rw z
-rw -z
-refactor
-strash
-resyn2
-resyn
-resyn2rs
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_resyn2rs.aig
-rw help
-rw -asdsa
-rewrite -h
-resyn2rs -h
-resyn2 -h
-resyn -h
-collapse
-resyn2rs
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_hc.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_rs.blif
-strash
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_rs.aig
-refactor
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_rsrf.aig
-help
-speedup -h
-resyn2rs-h
-resyn2rs -h
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_ssuresyn.aig
-collapse
-speedup
-resyn
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\alu4_scsurs.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\blif\alu4.blif
-sweep
-fraig
-rr -h
-balace
-balance
-refactor
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_alu4.blif
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_alu4.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_diffeq_vtr.blif
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_diffeq_vtr.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_i10.blif
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_i10.aig
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_dsip.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_dsip.blif
-comb -h
-comb
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_dsip_comb.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_C6288.blif
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_C6288.aig
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr.aig
-write_aiger -h
-write_aiger -u C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_canon.aig
-write_aiger -c C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_compact.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr.blif
-comb
-strash
-write_aiger C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmark\LGSynth93\blif-aig\sis_frisc_vtr_comb.aig
-write_dot -h
-read_truth -h
-read_truth FF
-read_truth -x FF
-help
-read_aiger -h
-write_aiger -h
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090.aigpsbbrw -lrw -lzbrw -lzbrefactorpswrite_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT2.aigquit
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT2.aig
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT3.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090.aig
-rw -l
-rw -lz
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090.aig;
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/LUT0090_OPT4.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040.aig;
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTD7FFF040_SIM.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF.aig;
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF_SIM.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.aig;
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped_SIM.aig
-write_aiger -sC:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-abc 02> 
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
 write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/lekog25.aig
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/lekog25.aig
@@ -1009,9 +902,130 @@ write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
 comb
 cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-resyn2
-resyn2rs
-source abc.rc
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig;
 refactor
+rewrite
+balance
+resyn2
+resyn2rs
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+refactor
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+rw -l
+rw -lz
+refactor
+rw -l
+rw -lz
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+resyn2
+rw -l
+rw -lz
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+resyn2
+rw -l
+rw -lz
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+resyn
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+resyn2
+rw -l
+rw -lz
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+resyn2
+rw -l
+rw -lz
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+comb
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+source abc.rc
+help
+speedup -h
+irws -h
+irw -h
+rewrite -h
+refactor -h
+send_aig -h
+ifraig -h
+iresyn -h
+resyn2 -h
+iresyn -l
+irw -l
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+comb
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig

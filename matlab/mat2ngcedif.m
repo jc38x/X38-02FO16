@@ -1,25 +1,10 @@
 
 function [nets] = mat2ngcedif(in_filename, in_delay, in_labels, in_range, in_luts, in_inputs, in_names, in_edif)
-
-
-
-
-
 fos = java.io.FileOutputStream(in_filename);
 epw = edu.byu.ece.edif.core.EdifPrintWriter(fos);
 dtor = onCleanup(@()epw.close());
+
 ts = strsplitntrim(datestr(now, 'yyyy mm dd HH MM SS'), ' ');
-tc = in_edif.getTopCell();
-edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(tc);
-edges = edifgraph.getEdges();
-edgesiterator = edges.iterator();
-instanceiterator = tc.cellInstanceIterator();
-nets = containers.Map();
-lutmap = containers.Map();
-index2lutsize = {'1', '2', '3', '4', '5', '6'};
-index2lutinput = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5'};
-
-
 
 epw.printlnIndent(['(edif ' char(in_edif.getName())]);
 epw.incrIndent();
@@ -37,6 +22,24 @@ epw.decrIndent();
 epw.printlnIndent(')');
 epw.decrIndent();
 epw.printlnIndent(')');
+
+
+
+
+
+tc = in_edif.getTopCell();
+edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(tc);
+edges = edifgraph.getEdges();
+edgesiterator = edges.iterator();
+instanceiterator = tc.cellInstanceIterator();
+nets = containers.Map();
+lutmap = containers.Map();
+index2lutsize = {'1', '2', '3', '4', '5', '6'};
+index2lutinput = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5'};
+
+
+
+
 
 in_edif.getLibrary('UNISIMS').toEdif(epw);
 
@@ -209,23 +212,5 @@ epw.printlnIndent(')');
     if (~nets.isKey(sourcename)), nets(sourcename) = {sinkname}; else nets(sourcename) = [nets(sourcename), {sinkname}]; end
     end
 
-%{
-    function [out_name] = make_port_name(in_portepr, in_source)
-    port = in_portepr.getPort();
-    name = char(port.getName());
-    if (port.isBus()), bit = ['(' num2str(in_portepr.getSingleBitPort().bitPosition()) ')']; else bit = ''; end
-    if (~in_portepr.isTopLevelPortRef())
-        prefix = [char(in_portepr.getCellInstance().getName()) ','];
-        suffix = '';
-	else
-        prefix = '';
-        if (in_source)
-            if (~port.isInputOnly()),  suffix = '@O'; else suffix = ''; end
-        else
-            if (~port.isOutputOnly()), suffix = '@I'; else suffix = ''; end
-        end
-    end
-    out_name = [prefix name bit suffix];
-    end
-%}
+
 end

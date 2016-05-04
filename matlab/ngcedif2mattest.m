@@ -30,13 +30,23 @@ mat2aiger(filename, d, l, r, e);
 
 script = [
     {['read_aiger ' filename ';']};
+     repmat([{'refactor'}; {'balance'}; {'rewrite'}; {'balance'};], 20, 1);
+     
      {'refactor'};
-    %{'resyn2'};
-    %{'resyn2rs'};
-    %{'resyn2rs'};
-    %{'resyn2rs'};
-    %{'resyn2rs'};
-    %{'resyn2rs'};
+     {'rewrite'};
+     {'balance'};
+     {'refactor'};
+     {'rewrite'};
+     {'balance'};
+     {'refactor'};
+     {'rewrite'};
+     {'balance'};
+    {'resyn2'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
     {['write_aiger -s ' optname]};
     {'cec'}
     {'quit'};
@@ -83,7 +93,25 @@ netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/edife
     
     
 
-
+%{
+    function [out_name] = make_port_name(in_portepr, in_source)
+    port = in_portepr.getPort();
+    name = char(port.getName());
+    if (port.isBus()), bit = ['(' num2str(in_portepr.getSingleBitPort().bitPosition()) ')']; else bit = ''; end
+    if (~in_portepr.isTopLevelPortRef())
+        prefix = [char(in_portepr.getCellInstance().getName()) ','];
+        suffix = '';
+	else
+        prefix = '';
+        if (in_source)
+            if (~port.isInputOnly()),  suffix = '@O'; else suffix = ''; end
+        else
+            if (~port.isOutputOnly()), suffix = '@I'; else suffix = ''; end
+        end
+    end
+    out_name = [prefix name bit suffix];
+    end
+%}
 
 
      %case 'XORCY',   inputs = 2; rename = {'LI', 'CI',                               'O'}; isd = false; tt = '6';

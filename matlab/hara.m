@@ -69,7 +69,8 @@ end
 
 
 
-
+%cv{v - ofs} = bc;
+        %disp(bcdepth)
 
 out_s = bestsolution;
 out_cv = bestcones;
@@ -105,15 +106,19 @@ out_cv = bestcones;
         end
     end
     for v = tsort
-        [bc, bcdepth, bcaf] = best_cone(v);
-        %cv{v - ofs} = bc;
-        cv{v} = bc;
-        %disp(bcdepth)
+        [bc, bcdepth, bcaf] = best_cone(v);        
+        cv{v}     = bc;
         ndepth(v) = bcdepth;
-        naf(v) = bcaf;
-        no = nnoedge(v);
-        caf = naf(v) / no;
+        naf(v)    = bcaf;
+        
+        
+        noest = nnoedge(v);
+        caf = naf(v) / noest;
         oedge = in_oedge{v};
+        
+        
+        
+        
         %nnoedge(v) = ((no + (in_alpha * numel(oedge))) / (1 + in_alpha));%floor((no + (alpha * numel(oedge))) / (1 + alpha));
         %if (nnoedge(v) < 1), nnoedge(v) = 1; end
         for e = oedge

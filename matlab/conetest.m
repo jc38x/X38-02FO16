@@ -18,12 +18,33 @@ script = [
     {['read_aiger ' filename]};
     {'strash'};
     {'ps'};
+    {'b'};
+    {'b'};
+    
+    {'rr'};
     {'resyn2'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
+    repmat([{'rw -l'};{'b'};{'rw -lz'};{'b'};{'rf -l'};{'b'};{'resyn2rs'};{'b'}], 1000, 1);
+    
+    %repmat([{'iresyn -l'}; {'irw -l'};], 300, 1);
+    
+    
+    
+    %repmat([{'resyn'};{'resyn2'};{'resyn2rs'};], 200, 1);
+    
+    %repmat([{'rw -l'};{'rw -lz'};{'b'};{'rw -lz'};{'b'};{'rf'};{'b'};], 30, 1);
+    %repmat([{'rw -l'};{'b'};{'rw -lz'};{'b'};{'rf'};{'b'};], 1000, 1);
+    %repmat([{'rw'};{'b'};{'rwz'};{'b'};{'rf'};{'b'};{'rfz'};{'b'};], 1000, 1);
+    
+    
+    %{'resyn2'};
+    %{'resyn2rs'};
+    %{'resyn2rs'};
+    %{'resyn2rs'};
+    %{'resyn2rs'};
+    %{'resyn2rs'};
+    
+    {'b'};
+    {'b'};
     {'ps'};
     {['write_aiger -s ' filename]};
     {['read_blif ' original]};
@@ -33,7 +54,7 @@ script = [
     ];
 
 response = invoke_abc(script);
-for k = 1:numel(response), fprintf('%s\n', response{k}); end
+%for k = 1:numel(response), fprintf('%s\n', response{k}); end
 
 [delay, labels, range, equations] = aiger2mat(filename);
 
