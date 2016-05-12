@@ -1,473 +1,3 @@
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/lekog25.aig
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/lekog25.aig
-resyn2
-resyn2rs
-abc 01> 
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
-cleanup
-rw -l
-rw -lz
-refactor
-resyn2
-resyn2rs
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
-refactor -h
-fraig -h
-ifraig -h
-dfraig -h
-fraig
-ifraig
-dfraig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-balance
-rewrite
-refactor
-espresso
-resyn2
-resyn
-resyn2rs -h
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g625.blif;
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g125.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-resyn2rs
-cleanup
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-resyn2
-cleanup
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-resyn2rs
-cleanup
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g125.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g625.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g125.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g125.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g625.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\alu4.blif;
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\apex2.blif;
-cut -h
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif;
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec -h
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-strash
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-gen -m
-gen -m C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\abc_gen_aig.aig
-read C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\abc_gen_aig.aig
-gen -a
-gen -r
-gen -h
-gen -d
-gen -f
-gen -s
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig;
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
 balance
 refactor
 rewrite
@@ -1145,5 +675,343 @@ rf -l
 resyn2rs
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
+comb
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig;
+refactor
+rewrite
+balance
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g125.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g125.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g625.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g625.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex2.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex2.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex4.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex4.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex2.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex2.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/C6288.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/C6288.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/bigkey.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/bigkey.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/clma.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/clma.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/des.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/des.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/diffeq.blif
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/dsip.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/dsip.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/elliptic.blif
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex1010.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex1010.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex5p.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex5p.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/frisc.blif
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/i10.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/i10.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/misex3.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/misex3.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/pdc.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/pdc.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/s38417.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/s38417.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/s38584.1.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/s38584.1.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/seq.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/seq.blif
+cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/spla.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/spla.blif
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/pdc.blif
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex1010.blif
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leku/LEKU-CD.blif
+comb
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+strash
+resyn2
+rw -l
+rw -lz
+rf -l
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leku/LEKU-CD.blif
 comb
 cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig

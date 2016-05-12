@@ -3,10 +3,11 @@ K = 4;
 DF = false;
 mode = 2;
 
-[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
+%[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g125');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g625');
-%[delay, labels, range, equations, original] = load_lgsynth93('blif/alu4');
+[delay, labels, range, equations, original] = load_leko_leku('leku/LEKU-CD');
+%[delay, labels, range, equations, original] = load_lgsynth93('blif/ex1010');
 
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';

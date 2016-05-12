@@ -7,9 +7,9 @@
 
 K = 4;
 DF = false;
-mode = 2;
+mode = 1;
 alpha = 1.5; %1.5-2.5
-maxi = 1; %20
+maxi = 5; %20
 epsrand = [0.000, 0.000]; %small
 
 t = tic();
@@ -66,7 +66,7 @@ check_network(df, lf, rf, ef);
 %[aff, noedgef] = fill_af(orderf, iedgef, oedgef, rf);
 
 [df, lf, ef] = sort_graph(df, lf, rf, ef);
-[sf, cvf] = hara(df, rf, 2, 4, 1, 1.5, 0, 0); %hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
+[sf, cvf] = hara(df, rf, mode, K, maxi, alpha, 0, 0); %hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
 [resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
 
 %[lutsf, inputsf, namesf] = cones2luts(resultlf, resultrf, resultef, []);

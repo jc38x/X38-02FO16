@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timeStamp 2016 05 03 17 54 16)
+      (timeStamp 2016 05 04 13 31 42)
       (author "matlab")
       (program "mat2ngcedif" (version "0.01a"))
     )
@@ -5351,6 +5351,21 @@
             (property XSTLIB (boolean (true)))
             (property INIT (string "2"))
           )
+          (instance and_1598
+            (viewRef black_box (cellRef LUT2 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "8"))
+          )
+          (instance and_1618
+            (viewRef black_box (cellRef LUT2 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "2"))
+          )
+          (instance not_1565
+            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "EC"))
+          )
           (instance not_1571
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
@@ -5371,40 +5386,40 @@
             (property XSTLIB (boolean (true)))
             (property INIT (string "F373"))
           )
-          (instance not_1621
-            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
-            (property XSTLIB (boolean (true)))
-            (property INIT (string "FBF3"))
-          )
           (instance not_1653
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
             (property INIT (string "FF80"))
           )
-          (instance and_1648
-            (viewRef black_box (cellRef LUT2 (libraryRef UNISIMS)))
-            (property XSTLIB (boolean (true)))
-            (property INIT (string "8"))
-          )
-          (instance not_1689
+          (instance not_1687
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "7F33"))
+            (property INIT (string "DF5F"))
+          )
+          (instance not_1609
+            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "F7"))
           )
           (instance and_1622
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "F700"))
+            (property INIT (string "B300"))
           )
           (instance and_1658
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
             (property INIT (string "FD00"))
           )
+          (instance not_1693
+            (viewRef black_box (cellRef LUT2 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "E"))
+          )
           (instance and_1694
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "C8FA"))
+            (property INIT (string "EC00"))
           )
           (instance not_1585
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
@@ -5421,15 +5436,10 @@
             (property XSTLIB (boolean (true)))
             (property INIT (string "8"))
           )
-          (instance not_1603
-            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
-            (property XSTLIB (boolean (true)))
-            (property INIT (string "F77F"))
-          )
           (instance and_1604
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "EC00"))
+            (property INIT (string "C44C"))
           )
           (instance and_710
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
@@ -5486,10 +5496,10 @@
             (property XSTLIB (boolean (true)))
             (property INIT (string "0E"))
           )
-          (instance and_974
-            (viewRef black_box (cellRef LUT2 (libraryRef UNISIMS)))
+          (instance and_1556
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "1"))
+            (property INIT (string "0001"))
           )
           (instance and_842
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
@@ -6106,6 +6116,11 @@
             (property XSTLIB (boolean (true)))
             (property INIT (string "4"))
           )
+          (instance and_1336
+            (viewRef black_box (cellRef LUT2 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "2"))
+          )
           (instance and_1502
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
@@ -6120,21 +6135,6 @@
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
             (property INIT (string "0080"))
-          )
-          (instance not_1631
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
-            (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
-          )
-          (instance not_1663
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
-            (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
-          )
-          (instance not_1699
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
-            (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
           )
           (instance not_1679
             (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
@@ -6151,75 +6151,125 @@
             (property XSTLIB (boolean (true)))
             (property INIT (string "8"))
           )
-          (instance and_1552
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
-            (property XSTLIB (boolean (true)))
-            (property INIT (string "08"))
-          )
-          (instance and_1558
+          (instance and_1560
             (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "1000"))
+            (property INIT (string "8000"))
           )
           (instance not_1633
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "F7F0"))
+          )
+          (instance and_1634
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "8000"))
           )
           (instance not_1637
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "F7F0"))
+          )
+          (instance and_1638
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "8000"))
           )
           (instance not_1641
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "F7F0"))
+          )
+          (instance and_1642
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "8000"))
           )
           (instance not_1645
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "F7F0"))
+          )
+          (instance not_1647
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "7FFF"))
           )
           (instance not_1665
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "7F0F"))
+          )
+          (instance not_1667
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "7FFF"))
           )
           (instance not_1669
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "7F0F"))
+          )
+          (instance not_1671
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "7FFF"))
           )
           (instance not_1673
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "7F0F"))
+          )
+          (instance not_1675
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "7FFF"))
           )
           (instance not_1677
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "7F0F"))
+          )
+          (instance not_1683
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "7FFF"))
           )
           (instance not_1701
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "7F0F"))
+          )
+          (instance not_1703
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "7FFF"))
           )
           (instance not_1705
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "7F0F"))
+          )
+          (instance not_1707
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "7FFF"))
           )
           (instance not_1709
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "7F0F"))
+          )
+          (instance not_1711
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
+            (property XSTLIB (boolean (true)))
+            (property INIT (string "7FFF"))
           )
           (instance not_1713
-            (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
+            (viewRef black_box (cellRef LUT4 (libraryRef UNISIMS)))
             (property XSTLIB (boolean (true)))
-            (property INIT (string "8F"))
+            (property INIT (string "7F0F"))
           )
           (instance not_1717
             (viewRef black_box (cellRef LUT3 (libraryRef UNISIMS)))
@@ -6970,13 +7020,13 @@
               (portRef I0 (instanceRef and_1346))
               (portRef I0 (instanceRef and_1348))
               (portRef I0 (instanceRef and_1350))
+              (portRef I0 (instanceRef and_1336))
               (portRef I1 (instanceRef and_1502))
               (portRef I1 (instanceRef and_1500))
               (portRef I1 (instanceRef and_1628))
               (portRef I1 (instanceRef not_1679))
               (portRef I1 (instanceRef not_1681))
               (portRef I1 (instanceRef and_982))
-              (portRef I1 (instanceRef and_1552))
             )
           )
           (net mat2ngcedif_net_75
@@ -7392,7 +7442,7 @@
             (joined
               (portRef Q (instanceRef HMODO_FSM_FFd1_renamed_135))
               (portRef I0 (instanceRef and_976))
-              (portRef I0 (instanceRef and_974))
+              (portRef I0 (instanceRef and_1556))
               (portRef I2 (instanceRef and_842))
               (portRef I2 (instanceRef and_728))
               (portRef I2 (instanceRef and_850))
@@ -7458,7 +7508,7 @@
             (joined
               (portRef Q (instanceRef HMODO_FSM_FFd2_renamed_136))
               (portRef I1 (instanceRef and_976))
-              (portRef I1 (instanceRef and_974))
+              (portRef I1 (instanceRef and_1556))
               (portRef I1 (instanceRef not_1333))
               (portRef I1 (instanceRef and_1340))
             )
@@ -7467,8 +7517,8 @@
             (joined
               (portRef Q (instanceRef HMODO_FSM_FFd3_renamed_137))
               (portRef I0 (instanceRef and_980))
+              (portRef I2 (instanceRef and_1556))
               (portRef I2 (instanceRef not_1333))
-              (portRef I0 (instanceRef and_1558))
             )
           )
           (net mat2ngcedif_net_110
@@ -7477,8 +7527,8 @@
               (portRef I0 (instanceRef and_978))
               (portRef I2 (instanceRef and_1340))
               (portRef I1 (instanceRef and_1344))
+              (portRef I1 (instanceRef and_1336))
               (portRef I2 (instanceRef not_1679))
-              (portRef I2 (instanceRef and_1552))
             )
           )
           (net mat2ngcedif_net_111
@@ -9007,15 +9057,15 @@
           (net mat2ngcedif_net_344
             (joined
               (portRef O (instanceRef Mcompar_PAT_B_cmp_ge0000_cy_9__))
-              (portRef I0 (instanceRef and_1622))
+              (portRef I0 (instanceRef not_1609))
               (portRef I0 (instanceRef and_1658))
-              (portRef I0 (instanceRef and_1694))
+              (portRef I0 (instanceRef not_1693))
             )
           )
           (net mat2ngcedif_net_345
             (joined
               (portRef O (instanceRef Mcompar_PAT_B_cmp_ge0000_cy_9__0))
-              (portRef I1 (instanceRef and_1622))
+              (portRef I1 (instanceRef not_1609))
               (portRef I1 (instanceRef and_1658))
             )
           )
@@ -9520,9 +9570,9 @@
           (net mat2ngcedif_net_429
             (joined
               (portRef O (instanceRef Mcompar_PAT_B_cmp_lt0003_cy_7__2))
-              (portRef I0 (instanceRef not_1621))
               (portRef I0 (instanceRef not_1653))
-              (portRef I0 (instanceRef and_1648))
+              (portRef I0 (instanceRef not_1687))
+              (portRef I0 (instanceRef and_1622))
               (portRef I (instanceRef Mcompar_PAT_B_cmp_lt0003_cy_7_3_inv_INV_0))
             )
           )
@@ -9537,7 +9587,7 @@
               (portRef O (instanceRef Mcompar_PAT_B_cmp_lt0003_cy_7__4))
               (portRef I0 (instanceRef not_1571))
               (portRef I0 (instanceRef not_1615))
-              (portRef I0 (instanceRef not_1689))
+              (portRef I1 (instanceRef not_1687))
             )
           )
           (net mat2ngcedif_net_432
@@ -9591,8 +9641,8 @@
           (net mat2ngcedif_net_440
             (joined
               (portRef O (instanceRef Mcompar_PAT_B_cmp_lt0003_cy_9__))
+              (portRef I0 (instanceRef not_1565))
               (portRef I0 (instanceRef and_1578))
-              (portRef I0 (instanceRef and_1604))
             )
           )
           (net mat2ngcedif_net_441
@@ -9601,16 +9651,16 @@
               (portRef I0 (instanceRef not_1577))
               (portRef I1 (instanceRef not_1615))
               (portRef I1 (instanceRef not_1653))
-              (portRef I1 (instanceRef and_1648))
+              (portRef I2 (instanceRef not_1687))
             )
           )
           (net mat2ngcedif_net_442
             (joined
               (portRef O (instanceRef Mcompar_PAT_B_cmp_lt0003_cy_9__1))
+              (portRef I0 (instanceRef and_1618))
               (portRef I1 (instanceRef not_1577))
-              (portRef I1 (instanceRef not_1621))
               (portRef I2 (instanceRef not_1653))
-              (portRef I1 (instanceRef not_1689))
+              (portRef I0 (instanceRef and_1694))
             )
           )
           (net mat2ngcedif_net_443
@@ -9618,7 +9668,7 @@
               (portRef O (instanceRef Mcompar_PAT_B_cmp_lt0003_cy_9__2))
               (portRef I1 (instanceRef not_1571))
               (portRef I2 (instanceRef not_1615))
-              (portRef I2 (instanceRef not_1689))
+              (portRef I3 (instanceRef not_1687))
             )
           )
           (net mat2ngcedif_net_444
@@ -13396,21 +13446,21 @@
           (net mat2ngcedif_net_1012
             (joined
               (portRef O (instanceRef PATSEL_0_IBUF_renamed_147))
-              (portRef I2 (instanceRef not_1621))
+              (portRef I0 (instanceRef and_1598))
+              (portRef I1 (instanceRef and_1618))
+              (portRef I1 (instanceRef not_1565))
               (portRef I3 (instanceRef not_1653))
               (portRef I1 (instanceRef and_1694))
-              (portRef I0 (instanceRef not_1603))
-              (portRef I1 (instanceRef and_1604))
             )
           )
           (net mat2ngcedif_net_1013
             (joined
               (portRef O (instanceRef PATSEL_1_IBUF_renamed_146))
-              (portRef I2 (instanceRef and_1622))
+              (portRef I1 (instanceRef and_1598))
+              (portRef I2 (instanceRef not_1565))
+              (portRef I2 (instanceRef not_1609))
               (portRef I2 (instanceRef and_1658))
-              (portRef I2 (instanceRef and_1694))
-              (portRef I1 (instanceRef not_1603))
-              (portRef I2 (instanceRef and_1604))
+              (portRef I1 (instanceRef not_1693))
             )
           )
           (net mat2ngcedif_net_1014
@@ -13422,8 +13472,8 @@
           (net mat2ngcedif_net_1015
             (joined
               (portRef O (instanceRef RESET_IBUF_renamed_145))
+              (portRef I3 (instanceRef and_1556))
               (portRef I2 (instanceRef not_1681))
-              (portRef I1 (instanceRef and_1558))
               (portRef I1 (instanceRef not_1719))
               (portRef I1 (instanceRef and_668))
               (portRef I3 (instanceRef and_1550))
@@ -14261,7 +14311,18 @@
               (portRef I0 (instanceRef not_1679))
               (portRef I0 (instanceRef not_1681))
               (portRef I0 (instanceRef and_982))
-              (portRef I0 (instanceRef and_1552))
+              (portRef I0 (instanceRef and_1560))
+              (portRef I0 (instanceRef and_1634))
+              (portRef I0 (instanceRef and_1638))
+              (portRef I0 (instanceRef and_1642))
+              (portRef I0 (instanceRef not_1647))
+              (portRef I0 (instanceRef not_1667))
+              (portRef I0 (instanceRef not_1671))
+              (portRef I0 (instanceRef not_1675))
+              (portRef I0 (instanceRef not_1683))
+              (portRef I0 (instanceRef not_1703))
+              (portRef I0 (instanceRef not_1707))
+              (portRef I0 (instanceRef not_1711))
               (portRef I0 (instanceRef not_1717))
               (portRef I0 (instanceRef not_1719))
               (portRef I0 (instanceRef and_1714))
@@ -14347,7 +14408,7 @@
           (net mat2ngcedif_net_1099
             (joined
               (portRef Q (instanceRef VGA_B_0_renamed_2))
-              (portRef I0 (instanceRef not_1645))
+              (portRef I1 (instanceRef and_1642))
               (portRef I (instanceRef VGA_B_0_OBUF))
             )
           )
@@ -14360,7 +14421,7 @@
           (net mat2ngcedif_net_1101
             (joined
               (portRef Q (instanceRef VGA_B_1_renamed_3))
-              (portRef I0 (instanceRef not_1641))
+              (portRef I1 (instanceRef and_1638))
               (portRef I (instanceRef VGA_B_1_OBUF))
             )
           )
@@ -14373,7 +14434,7 @@
           (net mat2ngcedif_net_1103
             (joined
               (portRef Q (instanceRef VGA_B_2_renamed_4))
-              (portRef I0 (instanceRef not_1637))
+              (portRef I1 (instanceRef and_1634))
               (portRef I (instanceRef VGA_B_2_OBUF))
             )
           )
@@ -14386,7 +14447,7 @@
           (net mat2ngcedif_net_1105
             (joined
               (portRef Q (instanceRef VGA_B_3_renamed_5))
-              (portRef I0 (instanceRef not_1633))
+              (portRef I1 (instanceRef and_1560))
               (portRef I (instanceRef VGA_B_3_OBUF))
             )
           )
@@ -14399,7 +14460,7 @@
           (net mat2ngcedif_net_1107
             (joined
               (portRef Q (instanceRef VGA_G_0_renamed_6))
-              (portRef I0 (instanceRef not_1677))
+              (portRef I1 (instanceRef not_1675))
               (portRef I (instanceRef VGA_G_0_OBUF))
             )
           )
@@ -14412,7 +14473,7 @@
           (net mat2ngcedif_net_1109
             (joined
               (portRef Q (instanceRef VGA_G_1_renamed_7))
-              (portRef I0 (instanceRef not_1673))
+              (portRef I1 (instanceRef not_1671))
               (portRef I (instanceRef VGA_G_1_OBUF))
             )
           )
@@ -14425,7 +14486,7 @@
           (net mat2ngcedif_net_1111
             (joined
               (portRef Q (instanceRef VGA_G_2_renamed_8))
-              (portRef I0 (instanceRef not_1669))
+              (portRef I1 (instanceRef not_1667))
               (portRef I (instanceRef VGA_G_2_OBUF))
             )
           )
@@ -14438,7 +14499,7 @@
           (net mat2ngcedif_net_1113
             (joined
               (portRef Q (instanceRef VGA_G_3_renamed_9))
-              (portRef I0 (instanceRef not_1665))
+              (portRef I1 (instanceRef not_1647))
               (portRef I (instanceRef VGA_G_3_OBUF))
             )
           )
@@ -14463,7 +14524,7 @@
           (net mat2ngcedif_net_1117
             (joined
               (portRef Q (instanceRef VGA_R_0_renamed_10))
-              (portRef I0 (instanceRef not_1713))
+              (portRef I1 (instanceRef not_1711))
               (portRef I (instanceRef VGA_R_0_OBUF))
             )
           )
@@ -14476,7 +14537,7 @@
           (net mat2ngcedif_net_1119
             (joined
               (portRef Q (instanceRef VGA_R_1_renamed_11))
-              (portRef I0 (instanceRef not_1709))
+              (portRef I1 (instanceRef not_1707))
               (portRef I (instanceRef VGA_R_1_OBUF))
             )
           )
@@ -14489,7 +14550,7 @@
           (net mat2ngcedif_net_1121
             (joined
               (portRef Q (instanceRef VGA_R_2_renamed_12))
-              (portRef I0 (instanceRef not_1705))
+              (portRef I1 (instanceRef not_1703))
               (portRef I (instanceRef VGA_R_2_OBUF))
             )
           )
@@ -14502,7 +14563,7 @@
           (net mat2ngcedif_net_1123
             (joined
               (portRef Q (instanceRef VGA_R_3_renamed_13))
-              (portRef I0 (instanceRef not_1701))
+              (portRef I1 (instanceRef not_1683))
               (portRef I (instanceRef VGA_R_3_OBUF))
             )
           )
@@ -15734,251 +15795,268 @@
           )
           (net mat2ngcedif_net_1231
             (joined
+              (portRef O (instanceRef and_1336))
+              (portRef I3 (instanceRef and_1560))
+              (portRef I3 (instanceRef and_1634))
+              (portRef I3 (instanceRef and_1638))
+              (portRef I3 (instanceRef and_1642))
+              (portRef I3 (instanceRef not_1647))
+              (portRef I3 (instanceRef not_1667))
+              (portRef I3 (instanceRef not_1671))
+              (portRef I3 (instanceRef not_1675))
+              (portRef I3 (instanceRef not_1683))
+              (portRef I3 (instanceRef not_1703))
+              (portRef I3 (instanceRef not_1707))
+              (portRef I3 (instanceRef not_1711))
+            )
+          )
+          (net mat2ngcedif_net_1232
+            (joined
               (portRef O (instanceRef and_1340))
               (portRef D (instanceRef HCLK_5))
             )
           )
-          (net mat2ngcedif_net_1232
+          (net mat2ngcedif_net_1233
             (joined
               (portRef O (instanceRef and_1344))
               (portRef D (instanceRef HCLK_6))
             )
           )
-          (net mat2ngcedif_net_1233
+          (net mat2ngcedif_net_1234
             (joined
               (portRef O (instanceRef and_1346))
               (portRef D (instanceRef HCLK_7))
             )
           )
-          (net mat2ngcedif_net_1234
+          (net mat2ngcedif_net_1235
             (joined
               (portRef O (instanceRef and_1348))
               (portRef D (instanceRef HCLK_8))
             )
           )
-          (net mat2ngcedif_net_1235
+          (net mat2ngcedif_net_1236
             (joined
               (portRef O (instanceRef and_1350))
               (portRef D (instanceRef HCLK_9))
             )
           )
-          (net mat2ngcedif_net_1236
+          (net mat2ngcedif_net_1237
             (joined
               (portRef O (instanceRef and_1352))
               (portRef D (instanceRef VCLK_0))
             )
           )
-          (net mat2ngcedif_net_1237
+          (net mat2ngcedif_net_1238
             (joined
               (portRef O (instanceRef and_1354))
               (portRef D (instanceRef VCLK_1))
             )
           )
-          (net mat2ngcedif_net_1238
+          (net mat2ngcedif_net_1239
             (joined
               (portRef O (instanceRef and_1372))
               (portRef D (instanceRef VCLK_13))
             )
           )
-          (net mat2ngcedif_net_1239
+          (net mat2ngcedif_net_1240
             (joined
               (portRef O (instanceRef and_1380))
               (portRef D (instanceRef VCLK_14))
             )
           )
-          (net mat2ngcedif_net_1240
+          (net mat2ngcedif_net_1241
             (joined
               (portRef O (instanceRef and_1384))
               (portRef D (instanceRef VCLK_15))
             )
           )
-          (net mat2ngcedif_net_1241
+          (net mat2ngcedif_net_1242
             (joined
               (portRef O (instanceRef and_1388))
               (portRef D (instanceRef VCLK_16))
             )
           )
-          (net mat2ngcedif_net_1242
+          (net mat2ngcedif_net_1243
             (joined
               (portRef O (instanceRef and_1390))
               (portRef D (instanceRef VCLK_17))
             )
           )
-          (net mat2ngcedif_net_1243
+          (net mat2ngcedif_net_1244
             (joined
               (portRef O (instanceRef and_1394))
               (portRef D (instanceRef VCLK_18))
             )
           )
-          (net mat2ngcedif_net_1244
+          (net mat2ngcedif_net_1245
             (joined
               (portRef O (instanceRef and_1396))
               (portRef D (instanceRef VCLK_19))
             )
           )
-          (net mat2ngcedif_net_1245
+          (net mat2ngcedif_net_1246
             (joined
               (portRef O (instanceRef and_1398))
               (portRef D (instanceRef VCLK_2))
             )
           )
-          (net mat2ngcedif_net_1246
+          (net mat2ngcedif_net_1247
             (joined
               (portRef O (instanceRef and_1400))
               (portRef D (instanceRef VCLK_20))
             )
           )
-          (net mat2ngcedif_net_1247
+          (net mat2ngcedif_net_1248
             (joined
               (portRef O (instanceRef and_1402))
               (portRef D (instanceRef VCLK_21))
             )
           )
-          (net mat2ngcedif_net_1248
+          (net mat2ngcedif_net_1249
             (joined
               (portRef O (instanceRef and_1404))
               (portRef D (instanceRef VCLK_22))
             )
           )
-          (net mat2ngcedif_net_1249
+          (net mat2ngcedif_net_1250
             (joined
               (portRef O (instanceRef and_1406))
               (portRef D (instanceRef VCLK_23))
             )
           )
-          (net mat2ngcedif_net_1250
+          (net mat2ngcedif_net_1251
             (joined
               (portRef O (instanceRef and_1408))
               (portRef D (instanceRef VCLK_24))
             )
           )
-          (net mat2ngcedif_net_1251
+          (net mat2ngcedif_net_1252
             (joined
               (portRef O (instanceRef and_1410))
               (portRef D (instanceRef VCLK_25))
             )
           )
-          (net mat2ngcedif_net_1252
+          (net mat2ngcedif_net_1253
             (joined
               (portRef O (instanceRef and_1412))
               (portRef D (instanceRef VCLK_26))
             )
           )
-          (net mat2ngcedif_net_1253
+          (net mat2ngcedif_net_1254
             (joined
               (portRef O (instanceRef and_1414))
               (portRef D (instanceRef VCLK_27))
             )
           )
-          (net mat2ngcedif_net_1254
+          (net mat2ngcedif_net_1255
             (joined
               (portRef O (instanceRef and_1416))
               (portRef D (instanceRef VCLK_28))
             )
           )
-          (net mat2ngcedif_net_1255
+          (net mat2ngcedif_net_1256
             (joined
               (portRef O (instanceRef and_1418))
               (portRef D (instanceRef VCLK_29))
             )
           )
-          (net mat2ngcedif_net_1256
+          (net mat2ngcedif_net_1257
             (joined
               (portRef O (instanceRef and_1420))
               (portRef D (instanceRef VCLK_3))
             )
           )
-          (net mat2ngcedif_net_1257
+          (net mat2ngcedif_net_1258
             (joined
               (portRef O (instanceRef and_1422))
               (portRef D (instanceRef VCLK_30))
             )
           )
-          (net mat2ngcedif_net_1258
+          (net mat2ngcedif_net_1259
             (joined
               (portRef O (instanceRef and_1424))
               (portRef D (instanceRef VCLK_31))
             )
           )
-          (net mat2ngcedif_net_1259
+          (net mat2ngcedif_net_1260
             (joined
               (portRef O (instanceRef and_1426))
               (portRef D (instanceRef VCLK_4))
             )
           )
-          (net mat2ngcedif_net_1260
+          (net mat2ngcedif_net_1261
             (joined
               (portRef O (instanceRef and_1430))
               (portRef D (instanceRef VCLK_5))
             )
           )
-          (net mat2ngcedif_net_1261
+          (net mat2ngcedif_net_1262
             (joined
               (portRef O (instanceRef and_1436))
               (portRef D (instanceRef VCLK_6))
             )
           )
-          (net mat2ngcedif_net_1262
+          (net mat2ngcedif_net_1263
             (joined
               (portRef O (instanceRef and_1440))
               (portRef D (instanceRef VCLK_7))
             )
           )
-          (net mat2ngcedif_net_1263
+          (net mat2ngcedif_net_1264
             (joined
               (portRef O (instanceRef and_1446))
               (portRef D (instanceRef VCLK_8))
             )
           )
-          (net mat2ngcedif_net_1264
+          (net mat2ngcedif_net_1265
             (joined
               (portRef O (instanceRef and_1456))
               (portRef S (instanceRef VCLK_cmp_eq0000_wg_cy_0__))
             )
           )
-          (net mat2ngcedif_net_1265
+          (net mat2ngcedif_net_1266
             (joined
               (portRef O (instanceRef and_1462))
               (portRef S (instanceRef VCLK_cmp_eq0000_wg_cy_1__))
             )
           )
-          (net mat2ngcedif_net_1266
+          (net mat2ngcedif_net_1267
             (joined
               (portRef O (instanceRef and_1468))
               (portRef S (instanceRef VCLK_cmp_eq0000_wg_cy_2__))
             )
           )
-          (net mat2ngcedif_net_1267
+          (net mat2ngcedif_net_1268
             (joined
               (portRef O (instanceRef and_1474))
               (portRef S (instanceRef VCLK_cmp_eq0000_wg_cy_3__))
             )
           )
-          (net mat2ngcedif_net_1268
+          (net mat2ngcedif_net_1269
             (joined
               (portRef O (instanceRef and_1480))
               (portRef S (instanceRef VCLK_cmp_eq0000_wg_cy_4__))
             )
           )
-          (net mat2ngcedif_net_1269
+          (net mat2ngcedif_net_1270
             (joined
               (portRef O (instanceRef and_1486))
               (portRef S (instanceRef VCLK_cmp_eq0000_wg_cy_5__))
             )
           )
-          (net mat2ngcedif_net_1270
+          (net mat2ngcedif_net_1271
             (joined
               (portRef O (instanceRef and_1492))
               (portRef S (instanceRef VCLK_cmp_eq0000_wg_cy_6__))
             )
           )
-          (net mat2ngcedif_net_1271
+          (net mat2ngcedif_net_1272
             (joined
               (portRef O (instanceRef and_1498))
               (portRef S (instanceRef VCLK_cmp_eq0000_wg_cy_7__))
             )
           )
-          (net mat2ngcedif_net_1272
+          (net mat2ngcedif_net_1273
             (joined
               (portRef O (instanceRef and_1500))
               (portRef CE (instanceRef VCOUNT_0))
@@ -16015,7 +16093,7 @@
               (portRef CE (instanceRef VCOUNT_31))
             )
           )
-          (net mat2ngcedif_net_1273
+          (net mat2ngcedif_net_1274
             (joined
               (portRef O (instanceRef and_1502))
               (portRef R (instanceRef VCOUNT_0))
@@ -16052,63 +16130,98 @@
               (portRef R (instanceRef VCOUNT_31))
             )
           )
-          (net mat2ngcedif_net_1274
+          (net mat2ngcedif_net_1275
             (joined
               (portRef O (instanceRef and_1508))
               (portRef S (instanceRef VCOUNT_cmp_eq0000_wg_cy_1__))
             )
           )
-          (net mat2ngcedif_net_1275
+          (net mat2ngcedif_net_1276
             (joined
               (portRef O (instanceRef and_1514))
               (portRef S (instanceRef VCOUNT_cmp_eq0000_wg_cy_2__))
             )
           )
-          (net mat2ngcedif_net_1276
+          (net mat2ngcedif_net_1277
             (joined
               (portRef O (instanceRef and_1520))
               (portRef S (instanceRef VCOUNT_cmp_eq0000_wg_cy_3__))
             )
           )
-          (net mat2ngcedif_net_1277
+          (net mat2ngcedif_net_1278
             (joined
               (portRef O (instanceRef and_1526))
               (portRef S (instanceRef VCOUNT_cmp_eq0000_wg_cy_4__))
             )
           )
-          (net mat2ngcedif_net_1278
+          (net mat2ngcedif_net_1279
             (joined
               (portRef O (instanceRef and_1532))
               (portRef S (instanceRef VCOUNT_cmp_eq0000_wg_cy_5__))
             )
           )
-          (net mat2ngcedif_net_1279
+          (net mat2ngcedif_net_1280
             (joined
               (portRef O (instanceRef and_1538))
               (portRef S (instanceRef VCOUNT_cmp_eq0000_wg_cy_6__))
             )
           )
-          (net mat2ngcedif_net_1280
+          (net mat2ngcedif_net_1281
             (joined
               (portRef O (instanceRef and_1544))
               (portRef S (instanceRef VCOUNT_cmp_eq0000_wg_cy_7__))
             )
           )
-          (net mat2ngcedif_net_1281
+          (net mat2ngcedif_net_1282
             (joined
               (portRef O (instanceRef and_1550))
               (portRef S (instanceRef VCOUNT_cmp_eq0000_wg_cy_8__))
             )
           )
-          (net mat2ngcedif_net_1282
-            (joined
-              (portRef O (instanceRef and_1552))
-              (portRef I3 (instanceRef and_1558))
-            )
-          )
           (net mat2ngcedif_net_1283
             (joined
-              (portRef O (instanceRef and_1558))
+              (portRef O (instanceRef and_1556))
+              (portRef I2 (instanceRef and_1560))
+              (portRef I2 (instanceRef and_1634))
+              (portRef I2 (instanceRef and_1638))
+              (portRef I2 (instanceRef and_1642))
+              (portRef I2 (instanceRef not_1647))
+              (portRef I2 (instanceRef not_1667))
+              (portRef I2 (instanceRef not_1671))
+              (portRef I2 (instanceRef not_1675))
+              (portRef I2 (instanceRef not_1683))
+              (portRef I2 (instanceRef not_1703))
+              (portRef I2 (instanceRef not_1707))
+              (portRef I2 (instanceRef not_1711))
+            )
+          )
+          (net mat2ngcedif_net_1284
+            (joined
+              (portRef O (instanceRef and_1560))
+              (portRef I2 (instanceRef not_1633))
+            )
+          )
+          (net mat2ngcedif_net_1285
+            (joined
+              (portRef O (instanceRef and_1578))
+              (portRef I2 (instanceRef and_1604))
+            )
+          )
+          (net mat2ngcedif_net_1286
+            (joined
+              (portRef O (instanceRef and_1592))
+              (portRef I3 (instanceRef and_1604))
+            )
+          )
+          (net mat2ngcedif_net_1287
+            (joined
+              (portRef O (instanceRef and_1598))
+              (portRef I0 (instanceRef and_1604))
+            )
+          )
+          (net mat2ngcedif_net_1288
+            (joined
+              (portRef O (instanceRef and_1604))
               (portRef I1 (instanceRef not_1633))
               (portRef I1 (instanceRef not_1637))
               (portRef I1 (instanceRef not_1641))
@@ -16123,59 +16236,75 @@
               (portRef I1 (instanceRef not_1713))
             )
           )
-          (net mat2ngcedif_net_1284
-            (joined
-              (portRef O (instanceRef and_1578))
-              (portRef I2 (instanceRef not_1603))
-            )
-          )
-          (net mat2ngcedif_net_1285
-            (joined
-              (portRef O (instanceRef and_1592))
-              (portRef I3 (instanceRef not_1603))
-            )
-          )
-          (net mat2ngcedif_net_1286
-            (joined
-              (portRef O (instanceRef and_1604))
-              (portRef I1 (instanceRef not_1631))
-              (portRef I1 (instanceRef not_1663))
-              (portRef I1 (instanceRef not_1699))
-            )
-          )
-          (net mat2ngcedif_net_1287
-            (joined
-              (portRef O (instanceRef and_1622))
-              (portRef I0 (instanceRef not_1631))
-            )
-          )
-          (net mat2ngcedif_net_1288
-            (joined
-              (portRef O (instanceRef and_1628))
-              (portRef I2 (instanceRef not_1631))
-              (portRef I2 (instanceRef not_1663))
-              (portRef I2 (instanceRef not_1699))
-            )
-          )
           (net mat2ngcedif_net_1289
             (joined
-              (portRef O (instanceRef and_1648))
-              (portRef I3 (instanceRef not_1689))
+              (portRef O (instanceRef and_1618))
+              (portRef I1 (instanceRef and_1622))
             )
           )
           (net mat2ngcedif_net_1290
             (joined
-              (portRef O (instanceRef and_1658))
-              (portRef I0 (instanceRef not_1663))
+              (portRef O (instanceRef and_1622))
+              (portRef I0 (instanceRef not_1633))
+              (portRef I0 (instanceRef not_1637))
+              (portRef I0 (instanceRef not_1641))
+              (portRef I0 (instanceRef not_1645))
             )
           )
           (net mat2ngcedif_net_1291
             (joined
-              (portRef O (instanceRef and_1694))
-              (portRef I0 (instanceRef not_1699))
+              (portRef O (instanceRef and_1628))
+              (portRef I3 (instanceRef not_1633))
+              (portRef I3 (instanceRef not_1637))
+              (portRef I3 (instanceRef not_1641))
+              (portRef I3 (instanceRef not_1645))
+              (portRef I3 (instanceRef not_1665))
+              (portRef I3 (instanceRef not_1669))
+              (portRef I3 (instanceRef not_1673))
+              (portRef I3 (instanceRef not_1677))
+              (portRef I3 (instanceRef not_1701))
+              (portRef I3 (instanceRef not_1705))
+              (portRef I3 (instanceRef not_1709))
+              (portRef I3 (instanceRef not_1713))
             )
           )
           (net mat2ngcedif_net_1292
+            (joined
+              (portRef O (instanceRef and_1634))
+              (portRef I2 (instanceRef not_1637))
+            )
+          )
+          (net mat2ngcedif_net_1293
+            (joined
+              (portRef O (instanceRef and_1638))
+              (portRef I2 (instanceRef not_1641))
+            )
+          )
+          (net mat2ngcedif_net_1294
+            (joined
+              (portRef O (instanceRef and_1642))
+              (portRef I2 (instanceRef not_1645))
+            )
+          )
+          (net mat2ngcedif_net_1295
+            (joined
+              (portRef O (instanceRef and_1658))
+              (portRef I0 (instanceRef not_1665))
+              (portRef I0 (instanceRef not_1669))
+              (portRef I0 (instanceRef not_1673))
+              (portRef I0 (instanceRef not_1677))
+            )
+          )
+          (net mat2ngcedif_net_1296
+            (joined
+              (portRef O (instanceRef and_1694))
+              (portRef I0 (instanceRef not_1701))
+              (portRef I0 (instanceRef not_1705))
+              (portRef I0 (instanceRef not_1709))
+              (portRef I0 (instanceRef not_1713))
+            )
+          )
+          (net mat2ngcedif_net_1297
             (joined
               (portRef O (instanceRef and_1714))
               (portRef CE (instanceRef VMODO_FSM_FFd4_renamed_131))
@@ -16184,427 +16313,421 @@
               (portRef CE (instanceRef VMODO_FSM_FFd1_renamed_134))
             )
           )
-          (net mat2ngcedif_net_1293
+          (net mat2ngcedif_net_1298
             (joined
               (portRef O (instanceRef and_668))
               (portRef D (instanceRef DIVCLK_1))
             )
           )
-          (net mat2ngcedif_net_1294
+          (net mat2ngcedif_net_1299
             (joined
               (portRef O (instanceRef and_674))
               (portRef S (instanceRef HCLK_cmp_eq0000_wg_cy_0__))
             )
           )
-          (net mat2ngcedif_net_1295
+          (net mat2ngcedif_net_1300
             (joined
               (portRef O (instanceRef and_680))
               (portRef S (instanceRef HCLK_cmp_eq0000_wg_cy_1__))
             )
           )
-          (net mat2ngcedif_net_1296
+          (net mat2ngcedif_net_1301
             (joined
               (portRef O (instanceRef and_686))
               (portRef S (instanceRef HCLK_cmp_eq0000_wg_cy_2__))
             )
           )
-          (net mat2ngcedif_net_1297
+          (net mat2ngcedif_net_1302
             (joined
               (portRef O (instanceRef and_692))
               (portRef S (instanceRef HCLK_cmp_eq0000_wg_cy_3__))
             )
           )
-          (net mat2ngcedif_net_1298
+          (net mat2ngcedif_net_1303
             (joined
               (portRef O (instanceRef and_698))
               (portRef S (instanceRef HCLK_cmp_eq0000_wg_cy_4__))
             )
           )
-          (net mat2ngcedif_net_1299
+          (net mat2ngcedif_net_1304
             (joined
               (portRef O (instanceRef and_704))
               (portRef S (instanceRef HCLK_cmp_eq0000_wg_cy_5__))
             )
           )
-          (net mat2ngcedif_net_1300
+          (net mat2ngcedif_net_1305
             (joined
               (portRef O (instanceRef and_710))
               (portRef S (instanceRef HCLK_cmp_eq0000_wg_cy_6__))
             )
           )
-          (net mat2ngcedif_net_1301
+          (net mat2ngcedif_net_1306
             (joined
               (portRef O (instanceRef and_716))
               (portRef S (instanceRef HCLK_cmp_eq0000_wg_cy_7__))
             )
           )
-          (net mat2ngcedif_net_1302
+          (net mat2ngcedif_net_1307
             (joined
               (portRef O (instanceRef and_722))
               (portRef S (instanceRef Mcompar_HMODO_cmp_ge0000_cy_0__))
             )
           )
-          (net mat2ngcedif_net_1303
+          (net mat2ngcedif_net_1308
             (joined
               (portRef O (instanceRef and_728))
               (portRef S (instanceRef Mcompar_HMODO_cmp_ge0000_cy_2__))
             )
           )
-          (net mat2ngcedif_net_1304
+          (net mat2ngcedif_net_1309
             (joined
               (portRef O (instanceRef and_734))
               (portRef S (instanceRef Mcompar_HMODO_cmp_ge0000_cy_9__))
             )
           )
-          (net mat2ngcedif_net_1305
+          (net mat2ngcedif_net_1310
             (joined
               (portRef O (instanceRef and_736))
               (portRef D (instanceRef HCOUNT_31))
             )
           )
-          (net mat2ngcedif_net_1306
+          (net mat2ngcedif_net_1311
             (joined
               (portRef O (instanceRef and_742))
               (portRef I0 (instanceRef and_1000))
             )
           )
-          (net mat2ngcedif_net_1307
+          (net mat2ngcedif_net_1312
             (joined
               (portRef O (instanceRef and_744))
               (portRef D (instanceRef HCOUNT_21))
             )
           )
-          (net mat2ngcedif_net_1308
+          (net mat2ngcedif_net_1313
             (joined
               (portRef O (instanceRef and_750))
               (portRef I1 (instanceRef and_1000))
             )
           )
-          (net mat2ngcedif_net_1309
+          (net mat2ngcedif_net_1314
             (joined
               (portRef O (instanceRef and_752))
               (portRef D (instanceRef HCOUNT_20))
             )
           )
-          (net mat2ngcedif_net_1310
+          (net mat2ngcedif_net_1315
             (joined
               (portRef O (instanceRef and_758))
               (portRef I2 (instanceRef and_1000))
             )
           )
-          (net mat2ngcedif_net_1311
+          (net mat2ngcedif_net_1316
             (joined
               (portRef O (instanceRef and_760))
               (portRef D (instanceRef HCOUNT_19))
             )
           )
-          (net mat2ngcedif_net_1312
+          (net mat2ngcedif_net_1317
             (joined
               (portRef O (instanceRef and_766))
               (portRef I3 (instanceRef and_1000))
             )
           )
-          (net mat2ngcedif_net_1313
+          (net mat2ngcedif_net_1318
             (joined
               (portRef O (instanceRef and_768))
               (portRef D (instanceRef HCOUNT_18))
             )
           )
-          (net mat2ngcedif_net_1314
+          (net mat2ngcedif_net_1319
             (joined
               (portRef O (instanceRef and_774))
               (portRef I0 (instanceRef and_994))
             )
           )
-          (net mat2ngcedif_net_1315
+          (net mat2ngcedif_net_1320
             (joined
               (portRef O (instanceRef and_776))
               (portRef D (instanceRef HCOUNT_17))
             )
           )
-          (net mat2ngcedif_net_1316
+          (net mat2ngcedif_net_1321
             (joined
               (portRef O (instanceRef and_782))
               (portRef I1 (instanceRef and_994))
             )
           )
-          (net mat2ngcedif_net_1317
+          (net mat2ngcedif_net_1322
             (joined
               (portRef O (instanceRef and_784))
               (portRef D (instanceRef HCOUNT_16))
             )
           )
-          (net mat2ngcedif_net_1318
+          (net mat2ngcedif_net_1323
             (joined
               (portRef O (instanceRef and_790))
               (portRef I2 (instanceRef and_994))
             )
           )
-          (net mat2ngcedif_net_1319
+          (net mat2ngcedif_net_1324
             (joined
               (portRef O (instanceRef and_792))
               (portRef D (instanceRef HCOUNT_15))
             )
           )
-          (net mat2ngcedif_net_1320
+          (net mat2ngcedif_net_1325
             (joined
               (portRef O (instanceRef and_798))
               (portRef I3 (instanceRef and_994))
             )
           )
-          (net mat2ngcedif_net_1321
+          (net mat2ngcedif_net_1326
             (joined
               (portRef O (instanceRef and_800))
               (portRef D (instanceRef HCOUNT_14))
             )
           )
-          (net mat2ngcedif_net_1322
+          (net mat2ngcedif_net_1327
             (joined
               (portRef O (instanceRef and_806))
               (portRef I0 (instanceRef and_988))
             )
           )
-          (net mat2ngcedif_net_1323
+          (net mat2ngcedif_net_1328
             (joined
               (portRef O (instanceRef and_808))
               (portRef D (instanceRef HCOUNT_13))
             )
           )
-          (net mat2ngcedif_net_1324
+          (net mat2ngcedif_net_1329
             (joined
               (portRef O (instanceRef and_814))
               (portRef I1 (instanceRef and_988))
             )
           )
-          (net mat2ngcedif_net_1325
+          (net mat2ngcedif_net_1330
             (joined
               (portRef O (instanceRef and_816))
               (portRef D (instanceRef HCOUNT_12))
             )
           )
-          (net mat2ngcedif_net_1326
+          (net mat2ngcedif_net_1331
             (joined
               (portRef O (instanceRef and_822))
               (portRef S (instanceRef Mcompar_HMODO_cmp_ge0000_cy_8__))
             )
           )
-          (net mat2ngcedif_net_1327
+          (net mat2ngcedif_net_1332
             (joined
               (portRef O (instanceRef and_824))
               (portRef D (instanceRef HCOUNT_30))
             )
           )
-          (net mat2ngcedif_net_1328
+          (net mat2ngcedif_net_1333
             (joined
               (portRef O (instanceRef and_830))
               (portRef I2 (instanceRef and_988))
             )
           )
-          (net mat2ngcedif_net_1329
+          (net mat2ngcedif_net_1334
             (joined
               (portRef O (instanceRef and_832))
               (portRef D (instanceRef HCOUNT_11))
             )
           )
-          (net mat2ngcedif_net_1330
+          (net mat2ngcedif_net_1335
             (joined
               (portRef O (instanceRef and_838))
               (portRef I3 (instanceRef and_988))
             )
           )
-          (net mat2ngcedif_net_1331
+          (net mat2ngcedif_net_1336
             (joined
               (portRef O (instanceRef and_840))
               (portRef D (instanceRef HCOUNT_10))
             )
           )
-          (net mat2ngcedif_net_1332
+          (net mat2ngcedif_net_1337
             (joined
               (portRef O (instanceRef and_842))
               (portRef D (instanceRef HCOUNT_9))
             )
           )
-          (net mat2ngcedif_net_1333
+          (net mat2ngcedif_net_1338
             (joined
               (portRef O (instanceRef and_848))
               (portRef S (instanceRef Mcompar_HMODO_cmp_ge0000_cy_1__))
             )
           )
-          (net mat2ngcedif_net_1334
+          (net mat2ngcedif_net_1339
             (joined
               (portRef O (instanceRef and_850))
               (portRef D (instanceRef HCOUNT_8))
             )
           )
-          (net mat2ngcedif_net_1335
+          (net mat2ngcedif_net_1340
             (joined
               (portRef O (instanceRef and_852))
               (portRef D (instanceRef HCOUNT_7))
             )
           )
-          (net mat2ngcedif_net_1336
+          (net mat2ngcedif_net_1341
             (joined
               (portRef O (instanceRef and_860))
               (portRef D (instanceRef HCOUNT_6))
             )
           )
-          (net mat2ngcedif_net_1337
+          (net mat2ngcedif_net_1342
             (joined
               (portRef O (instanceRef and_868))
               (portRef D (instanceRef HCOUNT_5))
             )
           )
-          (net mat2ngcedif_net_1338
+          (net mat2ngcedif_net_1343
             (joined
               (portRef O (instanceRef and_876))
               (portRef D (instanceRef HCOUNT_4))
             )
           )
-          (net mat2ngcedif_net_1339
+          (net mat2ngcedif_net_1344
             (joined
               (portRef O (instanceRef and_884))
               (portRef D (instanceRef HCOUNT_3))
             )
           )
-          (net mat2ngcedif_net_1340
+          (net mat2ngcedif_net_1345
             (joined
               (portRef O (instanceRef and_892))
               (portRef D (instanceRef HCOUNT_2))
             )
           )
-          (net mat2ngcedif_net_1341
+          (net mat2ngcedif_net_1346
             (joined
               (portRef O (instanceRef and_898))
               (portRef I0 (instanceRef and_1012))
             )
           )
-          (net mat2ngcedif_net_1342
+          (net mat2ngcedif_net_1347
             (joined
               (portRef O (instanceRef and_900))
               (portRef D (instanceRef HCOUNT_29))
             )
           )
-          (net mat2ngcedif_net_1343
+          (net mat2ngcedif_net_1348
             (joined
               (portRef O (instanceRef and_908))
               (portRef D (instanceRef HCOUNT_1))
             )
           )
-          (net mat2ngcedif_net_1344
+          (net mat2ngcedif_net_1349
             (joined
               (portRef O (instanceRef and_916))
               (portRef D (instanceRef HCOUNT_0))
             )
           )
-          (net mat2ngcedif_net_1345
+          (net mat2ngcedif_net_1350
             (joined
               (portRef O (instanceRef and_922))
               (portRef I1 (instanceRef and_1012))
             )
           )
-          (net mat2ngcedif_net_1346
+          (net mat2ngcedif_net_1351
             (joined
               (portRef O (instanceRef and_924))
               (portRef D (instanceRef HCOUNT_28))
             )
           )
-          (net mat2ngcedif_net_1347
+          (net mat2ngcedif_net_1352
             (joined
               (portRef O (instanceRef and_930))
               (portRef I2 (instanceRef and_1012))
             )
           )
-          (net mat2ngcedif_net_1348
+          (net mat2ngcedif_net_1353
             (joined
               (portRef O (instanceRef and_932))
               (portRef D (instanceRef HCOUNT_27))
             )
           )
-          (net mat2ngcedif_net_1349
+          (net mat2ngcedif_net_1354
             (joined
               (portRef O (instanceRef and_938))
               (portRef I3 (instanceRef and_1012))
             )
           )
-          (net mat2ngcedif_net_1350
+          (net mat2ngcedif_net_1355
             (joined
               (portRef O (instanceRef and_940))
               (portRef D (instanceRef HCOUNT_26))
             )
           )
-          (net mat2ngcedif_net_1351
+          (net mat2ngcedif_net_1356
             (joined
               (portRef O (instanceRef and_946))
               (portRef I0 (instanceRef and_1006))
             )
           )
-          (net mat2ngcedif_net_1352
+          (net mat2ngcedif_net_1357
             (joined
               (portRef O (instanceRef and_948))
               (portRef D (instanceRef HCOUNT_25))
             )
           )
-          (net mat2ngcedif_net_1353
+          (net mat2ngcedif_net_1358
             (joined
               (portRef O (instanceRef and_954))
               (portRef I1 (instanceRef and_1006))
             )
           )
-          (net mat2ngcedif_net_1354
+          (net mat2ngcedif_net_1359
             (joined
               (portRef O (instanceRef and_956))
               (portRef D (instanceRef HCOUNT_24))
             )
           )
-          (net mat2ngcedif_net_1355
+          (net mat2ngcedif_net_1360
             (joined
               (portRef O (instanceRef and_962))
               (portRef I2 (instanceRef and_1006))
             )
           )
-          (net mat2ngcedif_net_1356
+          (net mat2ngcedif_net_1361
             (joined
               (portRef O (instanceRef and_964))
               (portRef D (instanceRef HCOUNT_23))
             )
           )
-          (net mat2ngcedif_net_1357
+          (net mat2ngcedif_net_1362
             (joined
               (portRef O (instanceRef and_970))
               (portRef I3 (instanceRef and_1006))
             )
           )
-          (net mat2ngcedif_net_1358
+          (net mat2ngcedif_net_1363
             (joined
               (portRef O (instanceRef and_972))
               (portRef D (instanceRef HCOUNT_22))
             )
           )
-          (net mat2ngcedif_net_1359
-            (joined
-              (portRef O (instanceRef and_974))
-              (portRef I2 (instanceRef and_1558))
-            )
-          )
-          (net mat2ngcedif_net_1360
+          (net mat2ngcedif_net_1364
             (joined
               (portRef O (instanceRef and_976))
               (portRef D (instanceRef HMODO_FSM_FFd1_renamed_135))
             )
           )
-          (net mat2ngcedif_net_1361
+          (net mat2ngcedif_net_1365
             (joined
               (portRef O (instanceRef and_978))
               (portRef D (instanceRef HMODO_FSM_FFd2_renamed_136))
             )
           )
-          (net mat2ngcedif_net_1362
+          (net mat2ngcedif_net_1366
             (joined
               (portRef O (instanceRef and_980))
               (portRef D (instanceRef HMODO_FSM_FFd4_renamed_138))
             )
           )
-          (net mat2ngcedif_net_1363
+          (net mat2ngcedif_net_1367
             (joined
               (portRef O (instanceRef and_982))
               (portRef CE (instanceRef HCOUNT_0))
@@ -16645,169 +16768,175 @@
               (portRef CE (instanceRef HMODO_FSM_FFd4_renamed_138))
             )
           )
-          (net mat2ngcedif_net_1364
+          (net mat2ngcedif_net_1368
             (joined
               (portRef O (instanceRef and_988))
               (portRef S (instanceRef Mcompar_HMODO_cmp_ge0000_cy_3__))
             )
           )
-          (net mat2ngcedif_net_1365
+          (net mat2ngcedif_net_1369
             (joined
               (portRef O (instanceRef and_994))
               (portRef S (instanceRef Mcompar_HMODO_cmp_ge0000_cy_4__))
             )
           )
-          (net mat2ngcedif_net_1366
+          (net mat2ngcedif_net_1370
             (joined
               (portRef O (instanceRef not_1333))
               (portRef D (instanceRef HCLK_4))
             )
           )
-          (net mat2ngcedif_net_1367
+          (net mat2ngcedif_net_1371
             (joined
               (portRef O (instanceRef not_1361))
               (portRef D (instanceRef VCLK_10))
             )
           )
-          (net mat2ngcedif_net_1368
+          (net mat2ngcedif_net_1372
             (joined
               (portRef O (instanceRef not_1367))
               (portRef D (instanceRef VCLK_11))
             )
           )
-          (net mat2ngcedif_net_1369
+          (net mat2ngcedif_net_1373
             (joined
               (portRef O (instanceRef not_1371))
               (portRef D (instanceRef VCLK_12))
             )
           )
-          (net mat2ngcedif_net_1370
+          (net mat2ngcedif_net_1374
             (joined
               (portRef O (instanceRef not_1451))
               (portRef D (instanceRef VCLK_9))
             )
           )
-          (net mat2ngcedif_net_1371
+          (net mat2ngcedif_net_1375
+            (joined
+              (portRef O (instanceRef not_1565))
+              (portRef I1 (instanceRef and_1604))
+            )
+          )
+          (net mat2ngcedif_net_1376
             (joined
               (portRef O (instanceRef not_1571))
               (portRef I3 (instanceRef not_1577))
             )
           )
-          (net mat2ngcedif_net_1372
+          (net mat2ngcedif_net_1377
             (joined
               (portRef O (instanceRef not_1577))
               (portRef I1 (instanceRef and_1578))
             )
           )
-          (net mat2ngcedif_net_1373
+          (net mat2ngcedif_net_1378
             (joined
               (portRef O (instanceRef not_1585))
               (portRef I3 (instanceRef not_1591))
             )
           )
-          (net mat2ngcedif_net_1374
+          (net mat2ngcedif_net_1379
             (joined
               (portRef O (instanceRef not_1591))
               (portRef I1 (instanceRef and_1592))
             )
           )
-          (net mat2ngcedif_net_1375
+          (net mat2ngcedif_net_1380
             (joined
-              (portRef O (instanceRef not_1603))
-              (portRef I3 (instanceRef and_1604))
-            )
-          )
-          (net mat2ngcedif_net_1376
-            (joined
-              (portRef O (instanceRef not_1615))
-              (portRef I3 (instanceRef not_1621))
-            )
-          )
-          (net mat2ngcedif_net_1377
-            (joined
-              (portRef O (instanceRef not_1621))
+              (portRef O (instanceRef not_1609))
               (portRef I3 (instanceRef and_1622))
             )
           )
-          (net mat2ngcedif_net_1378
+          (net mat2ngcedif_net_1381
             (joined
-              (portRef O (instanceRef not_1631))
-              (portRef I2 (instanceRef not_1633))
-              (portRef I2 (instanceRef not_1637))
-              (portRef I2 (instanceRef not_1641))
-              (portRef I2 (instanceRef not_1645))
+              (portRef O (instanceRef not_1615))
+              (portRef I2 (instanceRef and_1622))
             )
           )
-          (net mat2ngcedif_net_1379
+          (net mat2ngcedif_net_1382
             (joined
               (portRef O (instanceRef not_1633))
               (portRef D (instanceRef VGA_B_3_renamed_5))
             )
           )
-          (net mat2ngcedif_net_1380
+          (net mat2ngcedif_net_1383
             (joined
               (portRef O (instanceRef not_1637))
               (portRef D (instanceRef VGA_B_2_renamed_4))
             )
           )
-          (net mat2ngcedif_net_1381
+          (net mat2ngcedif_net_1384
             (joined
               (portRef O (instanceRef not_1641))
               (portRef D (instanceRef VGA_B_1_renamed_3))
             )
           )
-          (net mat2ngcedif_net_1382
+          (net mat2ngcedif_net_1385
             (joined
               (portRef O (instanceRef not_1645))
               (portRef D (instanceRef VGA_B_0_renamed_2))
             )
           )
-          (net mat2ngcedif_net_1383
+          (net mat2ngcedif_net_1386
+            (joined
+              (portRef O (instanceRef not_1647))
+              (portRef I2 (instanceRef not_1665))
+            )
+          )
+          (net mat2ngcedif_net_1387
             (joined
               (portRef O (instanceRef not_1653))
               (portRef I3 (instanceRef and_1658))
             )
           )
-          (net mat2ngcedif_net_1384
-            (joined
-              (portRef O (instanceRef not_1663))
-              (portRef I2 (instanceRef not_1665))
-              (portRef I2 (instanceRef not_1669))
-              (portRef I2 (instanceRef not_1673))
-              (portRef I2 (instanceRef not_1677))
-            )
-          )
-          (net mat2ngcedif_net_1385
+          (net mat2ngcedif_net_1388
             (joined
               (portRef O (instanceRef not_1665))
               (portRef D (instanceRef VGA_G_3_renamed_9))
             )
           )
-          (net mat2ngcedif_net_1386
+          (net mat2ngcedif_net_1389
+            (joined
+              (portRef O (instanceRef not_1667))
+              (portRef I2 (instanceRef not_1669))
+            )
+          )
+          (net mat2ngcedif_net_1390
             (joined
               (portRef O (instanceRef not_1669))
               (portRef D (instanceRef VGA_G_2_renamed_8))
             )
           )
-          (net mat2ngcedif_net_1387
+          (net mat2ngcedif_net_1391
+            (joined
+              (portRef O (instanceRef not_1671))
+              (portRef I2 (instanceRef not_1673))
+            )
+          )
+          (net mat2ngcedif_net_1392
             (joined
               (portRef O (instanceRef not_1673))
               (portRef D (instanceRef VGA_G_1_renamed_7))
             )
           )
-          (net mat2ngcedif_net_1388
+          (net mat2ngcedif_net_1393
+            (joined
+              (portRef O (instanceRef not_1675))
+              (portRef I2 (instanceRef not_1677))
+            )
+          )
+          (net mat2ngcedif_net_1394
             (joined
               (portRef O (instanceRef not_1677))
               (portRef D (instanceRef VGA_G_0_renamed_6))
             )
           )
-          (net mat2ngcedif_net_1389
+          (net mat2ngcedif_net_1395
             (joined
               (portRef O (instanceRef not_1679))
               (portRef D (instanceRef VGA_HS_renamed_0))
             )
           )
-          (net mat2ngcedif_net_1390
+          (net mat2ngcedif_net_1396
             (joined
               (portRef O (instanceRef not_1681))
               (portRef CE (instanceRef VGA_HS_renamed_0))
@@ -16825,52 +16954,73 @@
               (portRef CE (instanceRef VGA_R_3_renamed_13))
             )
           )
-          (net mat2ngcedif_net_1391
+          (net mat2ngcedif_net_1397
             (joined
-              (portRef O (instanceRef not_1689))
+              (portRef O (instanceRef not_1683))
+              (portRef I2 (instanceRef not_1701))
+            )
+          )
+          (net mat2ngcedif_net_1398
+            (joined
+              (portRef O (instanceRef not_1687))
+              (portRef I2 (instanceRef and_1694))
+            )
+          )
+          (net mat2ngcedif_net_1399
+            (joined
+              (portRef O (instanceRef not_1693))
               (portRef I3 (instanceRef and_1694))
             )
           )
-          (net mat2ngcedif_net_1392
-            (joined
-              (portRef O (instanceRef not_1699))
-              (portRef I2 (instanceRef not_1701))
-              (portRef I2 (instanceRef not_1705))
-              (portRef I2 (instanceRef not_1709))
-              (portRef I2 (instanceRef not_1713))
-            )
-          )
-          (net mat2ngcedif_net_1393
+          (net mat2ngcedif_net_1400
             (joined
               (portRef O (instanceRef not_1701))
               (portRef D (instanceRef VGA_R_3_renamed_13))
             )
           )
-          (net mat2ngcedif_net_1394
+          (net mat2ngcedif_net_1401
+            (joined
+              (portRef O (instanceRef not_1703))
+              (portRef I2 (instanceRef not_1705))
+            )
+          )
+          (net mat2ngcedif_net_1402
             (joined
               (portRef O (instanceRef not_1705))
               (portRef D (instanceRef VGA_R_2_renamed_12))
             )
           )
-          (net mat2ngcedif_net_1395
+          (net mat2ngcedif_net_1403
+            (joined
+              (portRef O (instanceRef not_1707))
+              (portRef I2 (instanceRef not_1709))
+            )
+          )
+          (net mat2ngcedif_net_1404
             (joined
               (portRef O (instanceRef not_1709))
               (portRef D (instanceRef VGA_R_1_renamed_11))
             )
           )
-          (net mat2ngcedif_net_1396
+          (net mat2ngcedif_net_1405
+            (joined
+              (portRef O (instanceRef not_1711))
+              (portRef I2 (instanceRef not_1713))
+            )
+          )
+          (net mat2ngcedif_net_1406
             (joined
               (portRef O (instanceRef not_1713))
               (portRef D (instanceRef VGA_R_0_renamed_10))
             )
           )
-          (net mat2ngcedif_net_1397
+          (net mat2ngcedif_net_1407
             (joined
               (portRef O (instanceRef not_1717))
               (portRef D (instanceRef VGA_VS_renamed_1))
             )
           )
-          (net mat2ngcedif_net_1398
+          (net mat2ngcedif_net_1408
             (joined
               (portRef O (instanceRef not_1719))
               (portRef CE (instanceRef VGA_VS_renamed_1))
