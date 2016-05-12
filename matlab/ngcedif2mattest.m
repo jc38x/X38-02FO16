@@ -24,29 +24,13 @@ check_network(d, l, r, e);
 %view(bg);
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig';
-optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM.aig';
+optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM2.aig';
 
 mat2aiger(filename, d, l, r, e);
 
 script = [
     {['read_aiger ' filename ';']};
-     repmat([{'refactor'}; {'balance'}; {'rewrite'}; {'balance'};], 20, 1);
-     
-     {'refactor'};
-     {'rewrite'};
-     {'balance'};
-     {'refactor'};
-     {'rewrite'};
-     {'balance'};
-     {'refactor'};
-     {'rewrite'};
-     {'balance'};
-    {'resyn2'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
-    {'resyn2rs'};
+    {'refactor'};
     {['write_aiger -s ' optname]};
     {'cec'}
     {'quit'};
@@ -58,41 +42,35 @@ invoke_abc(script);
 
 check_network(df, lf, rf, ef);
 
+[df, lf, ef] = sort_graph(df, lf, rf, ef);
+[sf, cvf] = hara(df, rf, mode, K, maxi, alpha, 0, 0);
+[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
+
+[lutsf] = cones2luts(resultdf, resultlf, resultrf, resultef);
+
+check_network(resultdf, resultlf, resultrf, resultef);
+
+netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/edifexportVGA_NEW05112016.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
+
+
+
+
+
+
+
+
+
+
+%view(build_graph(resultdf, resultlf, resultrf, resultef));
+%view(build_graph(resultdf, resultlf, resultrf, lutsf));
+%[lutsf, inputsf, namesf] = cones2luts(resultlf, resultrf, resultef, []);
+    %hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
 %[iedgef, oedgef] = prepare_edges(df, rf);
 %orderf = graphtopoorder(df);
 %redrof = fliplr(orderf);
 %depthf = fill_depth(orderf, iedgef, df, rf);
 %heightf = fill_height(redrof, oedgef, df, rf);
 %[aff, noedgef] = fill_af(orderf, iedgef, oedgef, rf);
-
-[df, lf, ef] = sort_graph(df, lf, rf, ef);
-[sf, cvf] = hara(df, rf, mode, K, maxi, alpha, 0, 0); %hara(orderf, iedgef, oedgef, noedgef, df, depthf, heightf, aff, rf, K, DF, mode, maxi, alpha, epsrand(1), epsrand(2));
-[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
-
-%[lutsf, inputsf, namesf] = cones2luts(resultlf, resultrf, resultef, []);
-[lutsf] = cones2luts(resultdf, resultlf, resultrf, resultef);
-
-%view(build_graph(resultdf, resultlf, resultrf, lutsf));
-
-
-check_network(resultdf, resultlf, resultrf, resultef);
-
-netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/edifexportVGA_NEW3.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
-
-%view(build_graph(resultdf, resultlf, resultrf, resultef));
-
-
-
-
-
-
-
-
-    
-    
-    
-    
-
 %{
     function [out_name] = make_port_name(in_portepr, in_source)
     port = in_portepr.getPort();

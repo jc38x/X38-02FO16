@@ -9,12 +9,12 @@ n = numel(in_dl);
 offset = zeros(1, n);
 nets = 1:n;
 
-mapi  = containers.Map('KeyType', 'double', 'ValueType', 'any');
-mapj  = containers.Map('KeyType', 'double', 'ValueType', 'any');
-maps  = containers.Map('KeyType', 'double', 'ValueType', 'any');
-mappi = containers.Map('KeyType', 'double', 'ValueType', 'any');
-mapin = containers.Map('KeyType', 'double', 'ValueType', 'any');
-mappo = containers.Map('KeyType', 'double', 'ValueType', 'any');
+mapi  = cell(1, n);
+mapj  = cell(1, n);
+maps  = cell(1, n);
+mappi = cell(1, n);
+mapin = cell(1, n);
+mappo = cell(1, n);
 
 sz   = 0;
 szpi = 0;
@@ -27,9 +27,9 @@ for k = nets
     [di, dj, ds] = get_edges(in_dl{k});
     bp = offset(k);
     
-    mapi(k) = di + bp;
-    mapj(k) = dj + bp;
-    maps(k) = ds;
+    mapi{k} = di + bp;
+    mapj{k} = dj + bp;
+    maps{k} = ds;
 
     r = in_rl{k};
     
@@ -38,17 +38,16 @@ for k = nets
     szin = szin + r.szin;
     szpo = szpo + r.szpo;
 
-    mappi(k) = r.pi + bp;
-    mapin(k) = r.in + bp;
-    mappo(k) = r.po + bp;
+    mappi{k} = r.pi + bp;
+    mapin{k} = r.in + bp;
+    mappo{k} = r.po + bp;
 end
 
 uidall = 1:sz;
-keys = num2cell(nets);
-uidremap = C_remap([cell_collapse(mappi.values(keys)), cell_collapse(mapin.values(keys)), cell_collapse(mappo.values(keys))], uidall);
+uidremap = C_remap([cell_collapse(mappi), cell_collapse(mapin), cell_collapse(mappo)], uidall);
 allremap = uidremap.remap(uidall);
 
-out_delay = sparse(uidremap.remap(cell_collapse(mapi.values(keys))), uidremap.remap(cell_collapse(mapj.values(keys))), cell_collapse(maps.values(keys)), sz, sz);
+out_delay = sparse(uidremap.remap(cell_collapse(mapi)), uidremap.remap(cell_collapse(mapj)), cell_collapse(maps), sz, sz);
 out_labels = cell(1, sz);
 out_labels(allremap) = cell_collapse(in_ll);
 out_equations = cell(1, sz);
