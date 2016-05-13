@@ -1015,7 +1015,24 @@ write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
 read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leku/LEKU-CD.blif
 comb
 cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-source abc.rc
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig;
-refactor
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM2.aig
+refactor -l
+resyn2
+resyn2rs
+refactor
+rw z
+rf -z
+rf -l
+rf -lz
+rw -l
+rw -lz
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_HAL.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM_HAL.aig
+espresso
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+choice
+source abc.rc
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+rw -z
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig

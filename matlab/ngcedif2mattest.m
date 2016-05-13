@@ -7,52 +7,70 @@
 
 K = 4;
 DF = false;
-mode = 1;
-alpha = 1.5; %1.5-2.5
-maxi = 5; %20
+mode = 2;
+alpha = 2.5; %1.5-2.5
+maxi = 20; %20
 epsrand = [0.000, 0.000]; %small
 
-t = tic();
-%[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
-[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/practica3.ndf');
+srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\2-MESA-HB\metaheurísticas\mesahb_spea2.edif';
+dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\2-MESA-HB\metaheurísticas\mesahb_spea2_IMAP.edif';
+tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig';
 
-toc(t)
+[d, l, r, e, edif] = ngcedif2mat(srcfname);
+mat2aiger(tmpfname, d, l, r, e);
 
-check_network(d, l, r, e);
-
-%bg = build_graph(d, l, r, e);
-%view(bg);
-
-filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig';
-optname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM2.aig';
-
-mat2aiger(filename, d, l, r, e);
 
 script = [
-    {['read_aiger ' filename ';']};
-    {'refactor'};
-    {['write_aiger -s ' optname]};
+    {['read_aiger ' tmpfname ';']};
+    {'b'};
+    repmat([{'b'};{'rw'};{'rw -z'};{'b'};{'rw -z'};], 100, 1);
+    {'b'};
+    {['write_aiger -s ' tmpfname]};
     {'cec'}
     {'quit'};
     ];
 
-invoke_abc(script);
 
-[df, lf, rf, ef] = aiger2mat(optname);
+response = invoke_abc(script);
+%for k = 1:numel(response), fprintf('%s\n', response{k}); end
 
-check_network(df, lf, rf, ef);
+[df, lf, rf, ef] = aiger2mat(tmpfname);
+
+
+
 
 [df, lf, ef] = sort_graph(df, lf, rf, ef);
 [sf, cvf] = hara(df, rf, mode, K, maxi, alpha, 0, 0);
 [resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
-
 [lutsf] = cones2luts(resultdf, resultlf, resultrf, resultef);
-
-check_network(resultdf, resultlf, resultrf, resultef);
-
-netlist = mat2ngcedif('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/edifexportVGA_NEW05112016.edif', resultdf, resultlf, resultrf, lutsf, [], [], edif);
+netlist = mat2ngcedif(dstfname, resultdf, resultlf, resultrf, lutsf, [], [], edif);
 
 
+
+
+
+%t = tic();
+%[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
+%[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/hal_entity.edif');
+%toc(t)
+%check_network(d, l, r, e);
+%bg = build_graph(d, l, r, e);
+%view(bg);
+%tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM_HAL.aig';
+
+
+
+
+
+
+
+%check_network(df, lf, rf, ef);
+
+%check_network(resultdf, resultlf, resultrf, resultef);
+
+
+
+%view(build_graph(resultdf, resultlf, resultrf, lutsf));
 
 
 

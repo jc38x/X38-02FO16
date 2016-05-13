@@ -81,6 +81,9 @@ signal2index = containers.Map(out_labels, 1:numel(out_labels));
 lutedges = cell_collapse(mapedges.values());
 out_delay(sub2ind2(out_range.sz, cell2mat(signal2index.values(lutedges(1, :))), cell2mat(signal2index.values(lutedges(2, :))))) = 1;
 
+%view(build_graph(out_delay, out_labels, out_range, out_equations));
+
+
 for k = out_range.pi
     label = out_labels{k};
     if (~test_lut(label)), continue; end
@@ -110,6 +113,8 @@ end
 out_delay(cell_collapse(mapproxy.values())) = 1;
 [out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, cell_collapse(mapremove.values()));
 out_edif = edifenvironment;
+
+%view(build_graph(out_delay, out_labels, out_range, out_equations));
 
     function [out_isit] = test_lut(in_fullportname)
     pivot = find(in_fullportname == ',');

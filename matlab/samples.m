@@ -11,7 +11,10 @@
 
 
 [delay, labels, equations] = sort_graph(delay, labels, range, equations);
-view(build_graph(delay, labels, range, equations));
+cones = generate_cones2(delay, range, 4);
+
+
+%view(build_graph(delay, labels, range, equations));
 
 
 
@@ -20,6 +23,7 @@ view(build_graph(delay, labels, range, equations));
 %[naf, nnoedge] = fill_af(delay, range);
 %[in_iedge, in_oedge] = fill_edges(delay, range);
 
+%{
 [s, cv] = hara(delay, range, 1, 4, 1, 1.5, 0, 0);
 
 
@@ -32,7 +36,7 @@ view(build_graph(rd, rl, rr, re));
 
 luts = cones2luts(rd, rl, rr, re);
 view(build_graph(rd, rl, rr, luts));
-
+%}
 
 
 %fname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/latch2.aig';

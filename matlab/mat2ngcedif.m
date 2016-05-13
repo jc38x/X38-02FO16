@@ -116,14 +116,14 @@ while (edgesiterator.hasNext())
     sourceepr  = edge.getSourceEPR();
     if (~sourceepr.isTopLevelPortRef())
     sourcetype = char(sourceepr.getCellInstance().getType());
-    if (strcmpi(sourcetype(1:3), 'LUT')), continue; end
+    if (strncmpi(sourcetype, 'LUT', 3)), continue; end
     %if (strncmpi(sourcetype, 'XORCY', 5)), continue; end
     end
     
     sinkepr  = edge.getSinkEPR();
     if (~sinkepr.isTopLevelPortRef())
     sinktype = char(sinkepr.getCellInstance().getType());
-    if (strcmpi(  sinktype(1:3), 'LUT')), continue; end
+    if (strncmpi(  sinktype, 'LUT', 3)), continue; end
     %if (strncmpi(  sinktype, 'XORCY', 5)), continue; end
     end
     

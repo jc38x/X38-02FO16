@@ -1,7 +1,7 @@
 
 K = 4;
 DF = false;
-mode = 2;
+mode = 1;
 
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g125');

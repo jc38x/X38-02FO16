@@ -1,0 +1,8 @@
+INFO:NgdBuild - Release 13.4 edif2ngd O.87xd (nt64)
+INFO:NgdBuild - Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+ERROR:NgdBuild:766 - The EDIF netlist
+   'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/hal_entity.edif' was
+   created by the Xilinx NGC2EDIF program and is not a valid input netlist. 
+   Note that this EDIF netlist is intended for communicating timing information
+   to third-party synthesis tools. Specifically, no user modifications to the
+   contents of this file will effect the final implementation of the design. 
