@@ -25,6 +25,7 @@ mapedges  = containers.Map('KeyType', 'double', 'ValueType', 'any');
 
 uid = 0;
 edgecount = 0;
+lutcount = 0;
 
 while (initerator.hasNext())
     instance = initerator.next();
@@ -51,9 +52,11 @@ while (initerator.hasNext())
     case 'LUT6_D',  inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5', 'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
     otherwise,      continue;
     end
+    
+    %if ((inputs == 1) && strcmpi(tt, '2')), disp('Ignoring route-thru LUT.'); continue; end
 
     instancename = char(instance.getName());
-    [d, l, r, e] = tt2mat(tt, inputs);
+    [d, l, r, e] = abc_tt2mat(tt, inputs);%tt2mat(tt, inputs);
     if (isd)
         [d, l, r, e] = group_nets({d, sparse([], [], [], 1, 1, 1)}, {l, {'lo'}}, {r, prepare_range(0, 0, 1)}, {e, {''}});
         d(get_inode(d, find(strcmpi('o', l))), strcmpi('lo', l)) = 1;
@@ -61,8 +64,11 @@ while (initerator.hasNext())
     [l, e] = rename_node(d, l, e, [r.pi, r.po], rename);
     [l, e] = make_instance(instancename, d, l, r, e);
     push_net(d, l, r, e);
+    lutcount = lutcount + 1;
     lut2uid(instancename) = uid;
 end
+
+disp(['LUTs: ' num2str(lutcount)]);
 
 while (edgesiterator.hasNext())
     edge = edgesiterator.next();

@@ -6,9 +6,9 @@ mode = 1;
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g25');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g125');
 %[delay, labels, range, equations, original] = load_leko_leku('leko-g5/g625');
-[delay, labels, range, equations, original] = load_leko_leku('leku/LEKU-CD');
+%[delay, labels, range, equations, original] = load_leko_leku('leku/LEKU-CD');
 %[delay, labels, range, equations, original] = load_lgsynth93('blif/ex1010');
-
+[delay, labels, range, equations] = abc_tt2mat('ABCF', 4);
 
 filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig';
 mat2aiger(filename, delay, labels, range, equations);
@@ -47,10 +47,10 @@ script = [
     {'b'};
     {'b'};
     {'ps'};
-    {['write_aiger -s ' filename]};
-    {['read_blif ' original]};
-    {'comb'};
-    {['cec ' filename]};
+    %{['write_aiger -s ' filename]};
+    %{['read_blif ' original]};
+    %{'comb'};
+    %{['cec ' filename]};
     {'quit'};
     ];
 

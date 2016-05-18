@@ -1,1038 +1,2592 @@
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-cleanup
-resyn2rs
-balance
-refactor
-rewrite
-cleanup
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-resyn2rs
-balance
-refactor
-rewrite
-resyn
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5\g25.blif
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
+read_truth 1000
+read_truth 0004
+read_truth 6
+read_truth 93
+read_truth 363C
+read_truth D8
+read_truth 0001
+read_truth F444
+read_truth FF60
+read_truth A8
+read_truth FFEA
+read_truth AAA8
+read_truth F4
+read_truth E
+read_truth D111
+read_truth 8
+read_truth 80
+read_truth FDFC
+read_truth AAA8
+read_truth 60
+read_truth 0A28
+read_truth FFA8
+read_truth 6999
+read_truth 2303
+read_truth 96
+read_truth FDFC
+read_truth 6696
+read_truth F444
+read_truth 1554
+read_truth 9996
+read_truth FF60
+read_truth F2F8
+read_truth 0092
+read_truth 8222
+read_truth B313
+read_truth 4CEC
+read_truth 8880
+read_truth 8000
+read_truth 9000
+read_truth 0506
+read_truth 8828
+read_truth 0504
+read_truth 0004
+read_truth 08
+read_truth 1000
+read_truth C9
+read_truth 74F0
+read_truth FEFF
+read_truth AB01
+read_truth 0060
+read_truth 0006
+read_truth 02
+read_truth FFFE
+read_truth F1F0
+read_truth 4262
+read_truth F8
+read_truth 64
+read_truth 0004
+read_truth 8C04
+read_truth 80
+read_truth 0E04
+read_truth 0080
+read_truth 2820
+read_truth FFFE
+read_truth 1000
+read_truth AE84
+read_truth FF60
+read_truth 60
+read_truth FAD8
+read_truth FE
+read_truth 6A
+read_truth E
+read_truth 7
+read_truth ECA0
+read_truth FAE8
+read_truth EA2A
+read_truth A8
+read_truth F808
+read_truth FF60
+read_truth FF20
+read_truth FF08
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 2
+read_truth 20
+read_truth 02
+read_truth 80
+read_truth 0A08
+read_truth 02AA
+read_truth 0800
+read_truth 0040
+read_truth 0001
+read_truth EE4C
+read_truth 0060
+read_truth 6A
+read_truth 9555
+read_truth FE
+read_truth 0001
+read_truth AA20
+read_truth FF28
+read_truth 6
+read_truth C840
+read_truth F888
+read_truth A888
+read_truth FDA8
+read_truth 8
+read_truth FFEA
+read_truth CC80
+read_truth 6
+read_truth C396
+read_truth 72
+read_truth 96
+read_truth 56
+read_truth 1
+read_truth A659
+read_truth AAA8
+read_truth 6696
+read_truth A7F7
+read_truth 24
+read_truth 1202
+read_truth 96D2
+read_truth 9A
+read_truth 20
+read_truth 4262
+read_truth F888
+read_truth 0124
+read_truth 6999
+read_truth C396
+read_truth 3424
+read_truth 0040
+read_truth 2336
+read_truth 0002
+read_truth FAD8
+read_truth 28
+read_truth 0506
+read_truth C840
+read_truth E6A2
+read_truth 01
+read_truth FF82
+read_truth FFEA
+read_truth 8
+read_truth DF8A
+read_truth EA80
+read_truth F888
+read_truth 0024
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth E
+read_truth 2
+read_truth 04
+read_truth FDFF
+read_truth 4000
+read_truth FFFE
+read_truth FF10
+read_truth AA8A
+read_truth 0008
+read_truth 0004
+read_truth EBFF
+read_truth 6
+read_truth A6
+read_truth 6A
+read_truth 6CCC
+read_truth FE
+read_truth 0001
+read_truth 0F08
+read_truth FFEA
+read_truth 01
+read_truth EC
+read_truth 8
+read_truth 5554
+read_truth 2303
+read_truth F888
+read_truth FFEA
+read_truth 40
+read_truth 3332
+read_truth 88F8
+read_truth 8A
+read_truth FAF8
+read_truth 5450
+read_truth 6
+read_truth 56
+read_truth 96
+read_truth 5A96
+read_truth 59A6
+read_truth FF08
+read_truth AA20
+read_truth 8828
+read_truth A8
+read_truth 1154
+read_truth 2400
+read_truth 0004
+read_truth 0060
+read_truth 0008
+read_truth A6
+read_truth EF10
+read_truth 96D2
+read_truth 2800
+read_truth 08
+read_truth EB
+read_truth 04
+read_truth 4000
+read_truth 4262
+read_truth F888
+read_truth F708
+read_truth 0012
+read_truth 0004
+read_truth 2228
+read_truth 96D2
+read_truth FE
+read_truth 0008
+read_truth 1512
+read_truth 01
+read_truth EAE0
+read_truth FEFA
+read_truth 6
+read_truth ECA0
+read_truth 8
+read_truth FEFC
+read_truth EC
+read_truth FF8A
+read_truth F888
+read_truth 2800
+read_truth 2F3F
+read_truth FFEA
+read_truth FF60
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth E
+read_truth 2
+read_truth 04
+read_truth FDFF
+read_truth 4000
+read_truth FFFE
+read_truth FF10
+read_truth AA8A
+read_truth 0008
+read_truth 0004
+read_truth EBFF
+read_truth 6
+read_truth A6
+read_truth 6A
+read_truth 6CCC
+read_truth FE
+read_truth 0001
+read_truth 0F08
+read_truth FFEA
+read_truth 01
+read_truth EC
+read_truth 8
+read_truth 5554
+read_truth 2303
+read_truth F888
+read_truth FFEA
+read_truth 40
+read_truth 3332
+read_truth 88F8
+read_truth 8A
+read_truth FAF8
+read_truth 5450
+read_truth 6
+read_truth 56
+read_truth 96
+read_truth 5A96
+read_truth 59A6
+read_truth FF08
+read_truth AA20
+read_truth 8828
+read_truth A8
+read_truth 1154
+read_truth 2400
+read_truth 0004
+read_truth 0060
+read_truth 0008
+read_truth A6
+read_truth EF10
+read_truth 96D2
+read_truth 2800
+read_truth 08
+read_truth EB
+read_truth 04
+read_truth 4000
+read_truth 4262
+read_truth F888
+read_truth F708
+read_truth 0012
+read_truth 0004
+read_truth 2228
+read_truth 96D2
+read_truth FE
+read_truth 0008
+read_truth 1512
+read_truth 01
+read_truth EAE0
+read_truth FEFA
+read_truth 6
+read_truth ECA0
+read_truth 8
+read_truth FEFC
+read_truth EC
+read_truth FF8A
+read_truth F888
+read_truth 2800
+read_truth 2F3F
+read_truth FFEA
+read_truth FF60
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 78
+read_truth 6
+read_truth 4
+read_truth 40
+read_truth 10
+read_truth 80
+read_truth 94
+read_truth 0008
+read_truth 8000
+read_truth FFF7
+read_truth FF7F
+read_truth 0002
+read_truth AAA8
+read_truth 0001
+read_truth 8008
+read_truth 82AA
+read_truth 8ECC
+read_truth 8
+read_truth 6C
+read_truth FE
+read_truth 0001
+read_truth AEEA
+read_truth F888
+read_truth A888
+read_truth 6
+read_truth D8
+read_truth 8
+read_truth 9
+read_truth CCC8
+read_truth 4
+read_truth 40
+read_truth AAA8
+read_truth B3A0
+read_truth A888
+read_truth F888
+read_truth C8C0
+read_truth 28
+read_truth FFA8
+read_truth CC80
+read_truth 596A
+read_truth 27
+read_truth 96
+read_truth 56
+read_truth 2220
+read_truth CFBB
+read_truth CC80
+read_truth 59A6
+read_truth FF8A
+read_truth 596A
+read_truth 36
+read_truth 4000
+read_truth CC80
+read_truth 80
+read_truth 5A96
+read_truth FD
+read_truth 0006
+read_truth 3060
+read_truth 1202
+read_truth A8
+read_truth EA80
+read_truth 10
+read_truth 0008
+read_truth 999A
+read_truth 6C
+read_truth 8288
+read_truth AEEA
+read_truth F888
+read_truth 4622
+read_truth 28
+read_truth 4404
+read_truth 0008
+read_truth 0002
+read_truth F666
+read_truth 8
+read_truth 1566
+read_truth 01
+read_truth 28
+read_truth A280
+read_truth 3222
+read_truth 3828
+read_truth 2C20
+read_truth EA
+read_truth 880A
+read_truth EC
+read_truth FFF8
+read_truth AAA8
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth E
+read_truth 2
+read_truth 04
+read_truth FDFF
+read_truth 4000
+read_truth FFFE
+read_truth FF10
+read_truth AA8A
+read_truth 0008
+read_truth 0004
+read_truth EBFF
+read_truth 6
+read_truth A6
+read_truth 6A
+read_truth 6CCC
+read_truth FE
+read_truth 0001
+read_truth 0F08
+read_truth FFEA
+read_truth 01
+read_truth EC
+read_truth 8
+read_truth 5554
+read_truth 2303
+read_truth F888
+read_truth FFEA
+read_truth 40
+read_truth 3332
+read_truth 88F8
+read_truth 8A
+read_truth FAF8
+read_truth 5450
+read_truth 6
+read_truth 56
+read_truth 96
+read_truth 5A96
+read_truth 59A6
+read_truth FF08
+read_truth AA20
+read_truth 8828
+read_truth A8
+read_truth 1154
+read_truth 2400
+read_truth 0004
+read_truth 0060
+read_truth 0008
+read_truth A6
+read_truth EF10
+read_truth 96D2
+read_truth 2800
+read_truth 08
+read_truth EB
+read_truth 04
+read_truth 4000
+read_truth 4262
+read_truth F888
+read_truth F708
+read_truth 0012
+read_truth 0004
+read_truth 2228
+read_truth 96D2
+read_truth FE
+read_truth 0008
+read_truth 1512
+read_truth 01
+read_truth EAE0
+read_truth FEFA
+read_truth 6
+read_truth ECA0
+read_truth 8
+read_truth FEFC
+read_truth EC
+read_truth FF8A
+read_truth F888
+read_truth 2800
+read_truth 2F3F
+read_truth FFEA
+read_truth FF60
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 78
+read_truth 6
+read_truth 4
+read_truth 40
+read_truth 10
+read_truth 80
+read_truth 94
+read_truth 0008
+read_truth 8000
+read_truth FFF7
+read_truth FF7F
+read_truth 0002
+read_truth AAA8
+read_truth 0001
+read_truth 8008
+read_truth 82AA
+read_truth 8ECC
+read_truth 8
+read_truth 6C
+read_truth FE
+read_truth 0001
+read_truth AEEA
+read_truth F888
+read_truth A888
+read_truth 6
+read_truth D8
+read_truth 8
+read_truth 9
+read_truth CCC8
+read_truth 4
+read_truth 40
+read_truth AAA8
+read_truth B3A0
+read_truth A888
+read_truth F888
+read_truth C8C0
+read_truth 28
+read_truth FFA8
+read_truth CC80
+read_truth 596A
+read_truth 27
+read_truth 96
+read_truth 56
+read_truth 2220
+read_truth CFBB
+read_truth CC80
+read_truth 59A6
+read_truth FF8A
+read_truth 596A
+read_truth 36
+read_truth 4000
+read_truth CC80
+read_truth 80
+read_truth 5A96
+read_truth FD
+read_truth 0006
+read_truth 3060
+read_truth 1202
+read_truth A8
+read_truth EA80
+read_truth 10
+read_truth 0008
+read_truth 999A
+read_truth 6C
+read_truth 8288
+read_truth AEEA
+read_truth F888
+read_truth 4622
+read_truth 28
+read_truth 4404
+read_truth 0008
+read_truth 0002
+read_truth F666
+read_truth 8
+read_truth 1566
+read_truth 01
+read_truth 28
+read_truth A280
+read_truth 3222
+read_truth 3828
+read_truth 2C20
+read_truth EA
+read_truth 880A
+read_truth EC
+read_truth FFF8
+read_truth AAA8
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 1
+read_truth 6
+read_truth 04
+read_truth 20
+read_truth 94
+read_truth 1050
+read_truth 0400
+read_truth 5554
+read_truth 5510
+read_truth EF
+read_truth 0010
+read_truth 6
+read_truth 9C
+read_truth 93
+read_truth 363C
+read_truth 2644
+read_truth 9C66
+read_truth 0010
+read_truth AA20
+read_truth F222
+read_truth 6
+read_truth F888
+read_truth 28
+read_truth FF32
+read_truth 82
+read_truth A8
+read_truth FEFC
+read_truth 6C
+read_truth F808
+read_truth 8
+read_truth F888
+read_truth 4
+read_truth 8A
+read_truth 96
+read_truth 56
+read_truth 0511
+read_truth EEFA
+read_truth 9000
+read_truth C6
+read_truth C9
+read_truth F888
+read_truth 20
+read_truth BBBA
+read_truth 1E
+read_truth D2
+read_truth 54
+read_truth FFEA
+read_truth 007D
+read_truth 00DF
+read_truth 0075
+read_truth EAC0
+read_truth 59A6
+read_truth 9C
+read_truth 0006
+read_truth FFEA
+read_truth 2F
+read_truth CCC8
+read_truth 6B6F
+read_truth E7F7
+read_truth 22DF
+read_truth 0400
+read_truth FFFD
+read_truth FFEB
+read_truth FFDF
+read_truth 4CEC
+read_truth E2E7
+read_truth 04
+read_truth 4E
+read_truth CC36
+read_truth 9333
+read_truth 36
+read_truth 6C
+read_truth FFFE
+read_truth EB41
+read_truth 41EB
+read_truth 28A0
+read_truth 8
+read_truth 01
+read_truth 6
+read_truth 1ED2
+read_truth 28
+read_truth EA
+read_truth 3222
+read_truth C440
+read_truth 8000
+read_truth 0A88
+read_truth 963C
+read_truth 3320
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 80
+read_truth 40
+read_truth 0002
+read_truth 6
+read_truth 9C
+read_truth 963C
+read_truth 96B4
+read_truth 69D2
+read_truth 462A
+read_truth 6118
+read_truth FF60
+read_truth FEEE
+read_truth 0001
+read_truth 04
+read_truth EA
+read_truth 2033
+read_truth E040
+read_truth 40E0
+read_truth F888
+read_truth FF60
+read_truth FEEE
+read_truth 5540
+read_truth 3320
+read_truth 6
+read_truth 23DC
+read_truth 758A
+read_truth 96
+read_truth FFF8
+read_truth 56
+read_truth F888
+read_truth 59AA
+read_truth 9C
+read_truth 963C
+read_truth FF40
+read_truth 2332
+read_truth 82D7
+read_truth C8
+read_truth 8828
+read_truth 64
+read_truth 1410
+read_truth 4020
+read_truth 3332
+read_truth 0002
+read_truth 4454
+read_truth 40
+read_truth 0600
+read_truth 60
+read_truth 9600
+read_truth 2000
+read_truth 4414
+read_truth 0002
+read_truth 0020
+read_truth 7464
+read_truth 0880
+read_truth 04
+read_truth F4
+read_truth FF02
+read_truth FFFE
+read_truth FF60
+read_truth 60
+read_truth 0020
+read_truth FE
+read_truth 135F
+read_truth 8
+read_truth E444
+read_truth F888
+read_truth 40
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 8
+read_truth D
+read_truth 4
+read_truth 3010
+read_truth FF08
+read_truth A2AA
+read_truth 5554
+read_truth 5514
+read_truth 0110
+read_truth F888
+read_truth 0001
+read_truth 0002
+read_truth 8
+read_truth F444
+read_truth 6
+read_truth 56
+read_truth AA56
+read_truth 6362
+read_truth FF1D
+read_truth 0001
+read_truth FF60
+read_truth 5410
+read_truth F888
+read_truth F444
+read_truth F960
+read_truth 6
+read_truth EAC0
+read_truth F888
+read_truth EC
+read_truth F8
+read_truth EA
+read_truth 8
+read_truth FF60
+read_truth FEFA
+read_truth 4
+read_truth 5410
+read_truth 04
+read_truth DDDC
+read_truth 07F8
+read_truth 96
+read_truth 0145
+read_truth 1000
+read_truth 40
+read_truth D8
+read_truth 5666
+read_truth FFEB
+read_truth BAAB
+read_truth F444
+read_truth F888
+read_truth 1302
+read_truth 5410
+read_truth 0414
+read_truth FFA7
+read_truth EA80
+read_truth 96
+read_truth 1000
+read_truth 04
+read_truth F444
+read_truth E040
+read_truth FF60
+read_truth 56
+read_truth 62
+read_truth 0002
+read_truth 8828
+read_truth FF08
+read_truth FBBF
+read_truth 0155
+read_truth 090A
+read_truth 0110
+read_truth 0002
+read_truth 2220
+read_truth 5848
+read_truth 1000
+read_truth 3010
+read_truth FFFE
+read_truth 60
+read_truth 4262
+read_truth FE
+read_truth 8
+read_truth F888
+read_truth C888
+read_truth FF02
+read_truth FF60
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 2
+read_truth 6
+read_truth 01
+read_truth 20
+read_truth 04
+read_truth 28
+read_truth 0800
+read_truth 0020
+read_truth FFFE
+read_truth F888
+read_truth 0010
+read_truth FDA8
+read_truth 44E4
+read_truth 0006
+read_truth FDD7
+read_truth 0800
+read_truth F8
+read_truth E
+read_truth 0001
+read_truth EAC0
+read_truth EC
+read_truth F888
+read_truth FFEC
+read_truth FF60
+read_truth 28
+read_truth 8
+read_truth 96
+read_truth FEEE
+read_truth FF1B
+read_truth F8
+read_truth 32
+read_truth FF32
+read_truth 565A
+read_truth 8828
+read_truth 96
+read_truth 0020
+read_truth FF7F
+read_truth BDD7
+read_truth 1
+read_truth 96D2
+read_truth 4060
+read_truth 9A
+read_truth 264C
+read_truth FF08
+read_truth A888
+read_truth 20
+read_truth 0010
+read_truth 0020
+read_truth 0800
+read_truth FF60
+read_truth 0F08
+read_truth 4262
+read_truth F888
+read_truth F1F0
+read_truth 04
+read_truth 82D7
+read_truth 0604
+read_truth FF08
+read_truth 2228
+read_truth FF10
+read_truth FFE5
+read_truth DF
+read_truth 0600
+read_truth 04
+read_truth 0800
+read_truth 0010
+read_truth 0880
+read_truth 20
+read_truth 0414
+read_truth 0020
+read_truth F01E
+read_truth 103E
+read_truth 16E4
+read_truth 1342
+read_truth 9666
+read_truth 96D2
+read_truth 6654
+read_truth 8
+read_truth F888
+read_truth FE
+read_truth 0800
+read_truth EC
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 1
+read_truth 2
+read_truth 04
+read_truth 0010
+read_truth FFFE
+read_truth F888
+read_truth 0800
+read_truth 0008
+read_truth 6DFF
+read_truth FA2A
+read_truth FFC8
+read_truth 60
+read_truth 0001
+read_truth 7
+read_truth 080F
+read_truth 8
+read_truth FFF8
+read_truth F8
+read_truth FEFC
+read_truth EC
+read_truth F888
+read_truth FEEE
+read_truth EA
+read_truth 60
+read_truth FFF8
+read_truth F8
+read_truth FFEA
+read_truth F888
+read_truth 8
+read_truth FF60
+read_truth 6
+read_truth 96
+read_truth 78
+read_truth 569A
+read_truth 2
+read_truth 32
+read_truth FCFA
+read_truth F222
+read_truth D5
+read_truth B8F0
+read_truth EAAA
+read_truth 1
+read_truth 96
+read_truth 1110
+read_truth 60C0
+read_truth F888
+read_truth 3222
+read_truth 40
+read_truth 0414
+read_truth 264C
+read_truth 8828
+read_truth A6
+read_truth BA10
+read_truth 96
+read_truth 40
+read_truth 04
+read_truth 0008
+read_truth 0010
+read_truth 569A
+read_truth EAAA
+read_truth 4262
+read_truth 96A6
+read_truth F888
+read_truth 56
+read_truth 8828
+read_truth 3222
+read_truth FF10
+read_truth 1204
+read_truth 1404
+read_truth DFAD
+read_truth ABAA
+read_truth 0008
+read_truth FF60
+read_truth 0800
+read_truth 0006
+read_truth F888
+read_truth 04
+read_truth 956A
+read_truth 0008
+read_truth FFFE
+read_truth 0010
+read_truth 0018
+read_truth FF60
+read_truth 60
+read_truth 1B46
+read_truth 4100
+read_truth 1536
+read_truth 1430
+read_truth FE
+read_truth F888
+read_truth 40
+read_truth AEAA
+read_truth 3230
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/abc_tt.aig
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth FFFE
+read_truth FFFFFFFFFFFFFFFE
+compress2
+read_truth FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE
+read_truth 2
+read_truth 6
+read_truth 01
+read_truth 20
+read_truth 04
+read_truth 28
+read_truth 0800
+read_truth 0020
+read_truth FFFE
+read_truth F888
+read_truth 0010
+read_truth FDA8
+read_truth 44E4
+read_truth 0006
+read_truth FDD7
+read_truth 0800
+read_truth F8
+read_truth E
+read_truth 0001
+read_truth EAC0
+read_truth EC
+read_truth F888
+read_truth FFEC
+read_truth FF60
+read_truth 28
+read_truth 8
+read_truth 96
+read_truth FEEE
+read_truth FF1B
+read_truth F8
+read_truth 32
+read_truth FF32
+read_truth 565A
+read_truth 8828
+read_truth 96
+read_truth 0020
+read_truth FF7F
+read_truth BDD7
+read_truth 1
+read_truth 96D2
+read_truth 4060
+read_truth 9A
+read_truth 264C
+read_truth FF08
+read_truth A888
+read_truth 20
+read_truth 0010
+read_truth 0020
+read_truth 0800
+read_truth FF60
+read_truth 0F08
+read_truth 4262
+read_truth F888
+read_truth F1F0
+read_truth 04
+read_truth 82D7
+read_truth 0604
+read_truth FF08
+read_truth 2228
+read_truth FF10
+read_truth FFE5
+read_truth DF
+read_truth 0600
+read_truth 04
+read_truth 0800
+read_truth 0010
+read_truth 0880
+read_truth 20
+read_truth 0414
+read_truth 0020
+read_truth F01E
+read_truth 103E
+read_truth 16E4
+read_truth 1342
+read_truth 9666
+read_truth 96D2
+read_truth 6654
+read_truth 8
+read_truth F888
+read_truth FE
+read_truth 0800
+read_truth EC
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+compress2
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 2
+read_truth 6
+read_truth 01
+read_truth 20
+read_truth 04
+read_truth 28
+read_truth 0800
+read_truth 0020
+read_truth FFFE
+read_truth F888
+read_truth 0010
+read_truth FDA8
+read_truth 44E4
+read_truth 0006
+read_truth FDD7
+read_truth 0800
+read_truth F8
+read_truth E
+read_truth 0001
+read_truth EAC0
+read_truth EC
+read_truth F888
+read_truth FFEC
+read_truth FF60
+read_truth 28
+read_truth 8
+read_truth 96
+read_truth FEEE
+read_truth FF1B
+read_truth F8
+read_truth 32
+read_truth FF32
+read_truth 565A
+read_truth 8828
+read_truth 96
+read_truth 0020
+read_truth FF7F
+read_truth BDD7
+read_truth 1
+read_truth 96D2
+read_truth 4060
+read_truth 9A
+read_truth 264C
+read_truth FF08
+read_truth A888
+read_truth 20
+read_truth 0010
+read_truth 0020
+read_truth 0800
+read_truth FF60
+read_truth 0F08
+read_truth 4262
+read_truth F888
+read_truth F1F0
+read_truth 04
+read_truth 82D7
+read_truth 0604
+read_truth FF08
+read_truth 2228
+read_truth FF10
+read_truth FFE5
+read_truth DF
+read_truth 0600
+read_truth 04
+read_truth 0800
+read_truth 0010
+read_truth 0880
+read_truth 20
+read_truth 0414
+read_truth 0020
+read_truth F01E
+read_truth 103E
+read_truth 16E4
+read_truth 1342
+read_truth 9666
+read_truth 96D2
+read_truth 6654
+read_truth 8
+read_truth F888
+read_truth FE
+read_truth 0800
+read_truth EC
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
 resyn2
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec -h
-read_blif -h
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif\clma.blif
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-abc 01> 
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/clma.blif
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig;
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-resyn2
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 1
+read_truth 8
+read_truth 4
+read_truth 02
+read_truth 40
+read_truth 0504
+read_truth 0A08
+read_truth FFFE
+read_truth 0080
+read_truth 0100
+read_truth 0040
+read_truth C840
+read_truth 0001
+read_truth F888
+read_truth FF60
+read_truth 2033
+read_truth FD
+read_truth F222
+read_truth FFEA
+read_truth 6
+read_truth AA80
+read_truth F888
+read_truth A8
+read_truth FDFC
+read_truth ECA0
+read_truth 8
+read_truth DDDC
+read_truth 6
+read_truth 96
+read_truth 7F80
+read_truth 1E
+read_truth B4
+read_truth 6AAA
+read_truth 56
+read_truth 40
+read_truth A8
+read_truth FFD8
+read_truth 4
+read_truth FAEE
+read_truth B
+read_truth FF1B
+read_truth EA
+read_truth EC4C
+read_truth 8F
+read_truth B8F0
+read_truth D8
+read_truth A6
+read_truth 8F88
+read_truth 7F40
+read_truth F222
+read_truth 8
+read_truth EA
+read_truth 40
+read_truth FF20
+read_truth A8
+read_truth FFA8
+read_truth 8
+read_truth F888
+read_truth EA
+read_truth 5595
+read_truth A6
+read_truth 96
+read_truth 9666
+read_truth 0080
+read_truth CCEF
+read_truth 4060
+read_truth A8
+read_truth A6
+read_truth 40
+read_truth 0100
+read_truth 0504
+read_truth 60
+read_truth 8228
+read_truth 0040
+read_truth 060C
+read_truth FF20
+read_truth FF60
+read_truth F7
+read_truth 02
+read_truth 0100
+read_truth 0040
+read_truth 0504
+read_truth 60
+read_truth 0006
+read_truth 2400
+read_truth 0080
+read_truth 40
+read_truth 2033
+read_truth 0040
+read_truth FF60
+read_truth 60
+read_truth 264C
+read_truth 1610
+read_truth 06AE
+read_truth 3262
+read_truth 9666
+read_truth FE
+read_truth 153F
+read_truth EA
+read_truth ECA0
+read_truth EAC0
+read_truth F888
+read_truth 2232
+read_truth 0080
+read_truth FF1B
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 1
+read_truth 4
+read_truth 04
+read_truth 40
+read_truth 82
+read_truth FFFE
+read_truth 0008
+read_truth FF20
+read_truth A2AA
+read_truth 0504
+read_truth 2000
+read_truth FDA8
+read_truth 44E4
+read_truth 1402
+read_truth E
+read_truth 0002
+read_truth 0604
+read_truth 2000
+read_truth 0001
+read_truth 3210
+read_truth 40
+read_truth FFEA
+read_truth A888
+read_truth F8
+read_truth 6
+read_truth 28
+read_truth 0008
+read_truth F888
+read_truth 8
+read_truth 2800
+read_truth FF60
+read_truth 4
+read_truth F7
+read_truth FF15
+read_truth 0213
+read_truth 596A
+read_truth FFEA
+read_truth F8
+read_truth BF40
+read_truth 96
+read_truth A888
+read_truth FCFA
+read_truth EC4C
+read_truth F222
+read_truth FFD8
+read_truth FEBA
+read_truth A280
+read_truth 596A
+read_truth F8
+read_truth FFEA
+read_truth FF32
+read_truth 96
+read_truth 0008
+read_truth 0504
+read_truth 01
+read_truth F888
+read_truth 2000
+read_truth 0424
+read_truth A6
+read_truth EA80
+read_truth 96
+read_truth 0008
+read_truth FEFF
+read_truth 0002
+read_truth EAAA
+read_truth 40
+read_truth FF60
+read_truth 28FF
+read_truth 2000
+read_truth FFEA
+read_truth 5444
+read_truth 74F0
+read_truth 56
+read_truth 28FF
+read_truth 96A6
+read_truth 6222
+read_truth 2000
+read_truth 54
+read_truth 8828
+read_truth 6564
+read_truth 5060
+read_truth FF60
+read_truth F2
+read_truth FF32
+read_truth 0008
+read_truth 0028
+read_truth 40
+read_truth 2726
+read_truth 9666
+read_truth DBD3
+read_truth 5210
+read_truth 561C
+read_truth FE
+read_truth BA30
+read_truth 5444
+read_truth F222
+read_truth 153F
+read_truth FFEA
+read_truth 2000
+read_truth 80
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 1
+read_truth 2
+read_truth 02
+read_truth 40
+read_truth FFFE
+read_truth F888
+read_truth 0100
+read_truth 0800
+read_truth 0008
+read_truth 1014
+read_truth 6DFF
+read_truth E
+read_truth FFFE
+read_truth 60
+read_truth 0001
+read_truth F222
+read_truth 7
+read_truth FFEA
+read_truth 2033
+read_truth F888
+read_truth EA
+read_truth EC
+read_truth 2
+read_truth FFF8
+read_truth FFEA
+read_truth 6
+read_truth 96
+read_truth 2033
+read_truth 6656
+read_truth FFCA
+read_truth 40
+read_truth 3222
+read_truth FCFA
+read_truth FF60
+read_truth FFF8
+read_truth 59AA
+read_truth 96
+read_truth 1110
+read_truth F888
+read_truth 60C0
+read_truth 40
+read_truth FF20
+read_truth 0060
+read_truth 88A8
+read_truth 0486
+read_truth FF9D
+read_truth 0001
+read_truth 264C
+read_truth 96
+read_truth 0008
+read_truth 9666
+read_truth F888
+read_truth 64
+read_truth FF60
+read_truth 56
+read_truth 8828
+read_truth 3222
+read_truth F606
+read_truth 82D7
+read_truth 0018
+read_truth A7F7
+read_truth 4262
+read_truth 9A66
+read_truth 0100
+read_truth BFFF
+read_truth 28FF
+read_truth 0800
+read_truth 01
+read_truth FFEB
+read_truth EF
+read_truth 0213
+read_truth 8828
+read_truth 40
+read_truth FFF8
+read_truth EA
+read_truth 0018
+read_truth 0008
+read_truth FF60
+read_truth 60
+read_truth 1B46
+read_truth 4100
+read_truth 3222
+read_truth 40
+read_truth 1536
+read_truth 1250
+read_truth D
+read_truth 65FF
+read_truth FE
+read_truth 135F
+read_truth 13
+read_truth F888
+read_truth 40
+read_truth 88A8
+read_truth 0800
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 1
+read_truth 2
+read_truth D
+read_truth 02
+read_truth 08
+read_truth 14
+read_truth 0504
+read_truth FFFE
+read_truth 0040
+read_truth 2000
+read_truth 0002
+read_truth 01
+read_truth 0001
+read_truth 153F
+read_truth 3332
+read_truth DF
+read_truth 2033
+read_truth EA
+read_truth 60
+read_truth 8000
+read_truth C840
+read_truth DF
+read_truth 0D05
+read_truth 60
+read_truth F888
+read_truth FEEE
+read_truth FF60
+read_truth 56
+read_truth 3222
+read_truth 8
+read_truth 3320
+read_truth 60
+read_truth 6
+read_truth 2033
+read_truth 23DC
+read_truth 758A
+read_truth 96
+read_truth F888
+read_truth AD88
+read_truth 3332
+read_truth 59AA
+read_truth 153F
+read_truth 01
+read_truth 96
+read_truth 2888
+read_truth F888
+read_truth 2000
+read_truth 0001
+read_truth 0040
+read_truth 0002
+read_truth 4064
+read_truth BD
+read_truth 0406
+read_truth 8828
+read_truth 96
+read_truth 2000
+read_truth 0001
+read_truth 9666
+read_truth 56
+read_truth 0A28
+read_truth A8
+read_truth 0040
+read_truth 4622
+read_truth 2D24
+read_truth 2008
+read_truth 0002
+read_truth 9C66
+read_truth C3D2
+read_truth FFFE
+read_truth 2726
+read_truth 60
+read_truth 10DA
+read_truth FE
+read_truth FEEE
+read_truth 13
+read_truth C840
+read_truth EA
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 1
+read_truth 04
+read_truth 40
+read_truth 0302
+read_truth FFFE
+read_truth F888
+read_truth 0100
+read_truth 0008
+read_truth FDA8
+read_truth 44E4
+read_truth 0440
+read_truth AA08
+read_truth F313
+read_truth FD20
+read_truth 0001
+read_truth 4
+read_truth DF
+read_truth F111
+read_truth F222
+read_truth BA30
+read_truth 8
+read_truth 6
+read_truth A888
+read_truth EA
+read_truth F888
+read_truth FF60
+read_truth 60
+read_truth BF40
+read_truth 96
+read_truth A888
+read_truth 4
+read_truth 54
+read_truth FCFA
+read_truth DF
+read_truth FF13
+read_truth FF1B
+read_truth 0F08
+read_truth FFD8
+read_truth 40
+read_truth FF20
+read_truth EFDB
+read_truth E
+read_truth 135F
+read_truth 01
+read_truth 96
+read_truth F888
+read_truth 2000
+read_truth 2808
+read_truth A8
+read_truth A6
+read_truth EA80
+read_truth 4200
+read_truth 96
+read_truth 0008
+read_truth 0100
+read_truth 3310
+read_truth 9600
+read_truth 0440
+read_truth 0F08
+read_truth 2AEA
+read_truth 62
+read_truth 8828
+read_truth 56
+read_truth FFF7
+read_truth 0D08
+read_truth 100C
+read_truth FAF8
+read_truth AFA8
+read_truth 0100
+read_truth 0002
+read_truth 1242
+read_truth 54
+read_truth 5060
+read_truth FF60
+read_truth A6A7
+read_truth 0440
+read_truth 40
+read_truth 2800
+read_truth 01
+read_truth 0100
+read_truth F666
+read_truth 8
+read_truth 0440
+read_truth 5012
+read_truth 9666
+read_truth 1E46
+read_truth FE
+read_truth F888
+read_truth FEFA
+read_truth F222
+read_truth FE00
+read_truth 8F88
+read_truth ABFB
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 4
+read_truth 1
+read_truth 14
+read_truth 0004
+read_truth 1410
+read_truth 1014
+read_truth E
+read_truth FFFE
+read_truth 6
+read_truth 9A
+read_truth 2644
+read_truth 9C66
+read_truth C9
+read_truth 0001
+read_truth EA
+read_truth 96
+read_truth F888
+read_truth C8
+read_truth EC
+read_truth AAA8
+read_truth F222
+read_truth 8
+read_truth C4
+read_truth FEEE
+read_truth FFFE
+read_truth ECA0
+read_truth 6
+read_truth FF27
+read_truth F222
+read_truth FEFC
+read_truth BF80
+read_truth 0305
+read_truth 4B78
+read_truth D2
+read_truth 56
+read_truth 1E
+read_truth 569A
+read_truth 40E0
+read_truth 9A
+read_truth AAEA
+read_truth FF60
+read_truth F888
+read_truth EA
+read_truth 9666
+read_truth FF10
+read_truth 3060
+read_truth 9A
+read_truth C060
+read_truth 1504
+read_truth EA80
+read_truth 8D9D
+read_truth 02
+read_truth 0110
+read_truth 0400
+read_truth 2000
+read_truth 3336
+read_truth 0004
+read_truth F7
+read_truth 999C
+read_truth 9C66
+read_truth D080
+read_truth F222
+read_truth 1C86
+read_truth 1312
+read_truth BE14
+read_truth 0200
+read_truth 1BFF
+read_truth F111
+read_truth FFBD
+read_truth 0001
+read_truth 3060
+read_truth F58F
+read_truth 0400
+read_truth 54
+read_truth BE14
+read_truth 55A4
+read_truth 02
+read_truth 2800
+read_truth 40
+read_truth 0600
+read_truth 0400
+read_truth AAA8
+read_truth 01FF
+read_truth F9
+read_truth EABA
+read_truth 90
+read_truth 0004
+read_truth 0400
+read_truth 9666
+read_truth 4151
+read_truth 1410
+read_truth FE
+read_truth 01
+read_truth 8F88
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 4
+read_truth 02
+read_truth E4
+read_truth 0004
+read_truth 0400
+read_truth 1054
+read_truth E444
+read_truth DF8A
+read_truth 1514
+read_truth 1014
+read_truth 0110
+read_truth 1004
+read_truth 6
+read_truth 56
+read_truth 9C
+read_truth 936C
+read_truth 999C
+read_truth 462A
+read_truth 69D2
+read_truth 6118
+read_truth F444
+read_truth 0001
+read_truth EBAA
+read_truth FF60
+read_truth 6
+read_truth 82
+read_truth 820A
+read_truth 1BFF
+read_truth F111
+read_truth 8
+read_truth F888
+read_truth FAF8
+read_truth EC
+read_truth FE
+read_truth EA
+read_truth 28
+read_truth FFFE
+read_truth ECA0
+read_truth FAF8
+read_truth B8
+read_truth EAC0
+read_truth F111
+read_truth F888
+read_truth 820A
+read_truth 4
+read_truth B8
+read_truth EAC0
+read_truth FF8A
+read_truth EA
+read_truth D2
+read_truth 53AC
+read_truth A3AC
+read_truth 06F6
+read_truth 9
+read_truth 4774
+read_truth 569A
+read_truth 7F80
+read_truth 9555
+read_truth F444
+read_truth FF60
+read_truth 9699
+read_truth 44F4
+read_truth 060A
+read_truth FF20
+read_truth 0110
+read_truth F888
+read_truth 96D2
+read_truth 8288
+read_truth 9C
+read_truth 02
+read_truth 0400
+read_truth C9FF
+read_truth 28FF
+read_truth 4262
+read_truth F888
+read_truth 56
+read_truth 96D2
+read_truth 294A
+read_truth EA
+read_truth 55A4
+read_truth 32
+read_truth FFFE
+read_truth FF60
+read_truth 28
+read_truth 0060
+read_truth FE
+read_truth 01
+read_truth E
+read_truth 8DFF
+read_truth A280
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 4
+read_truth 1
+read_truth 51
+read_truth 80
+read_truth 20
+read_truth 02
+read_truth E4
+read_truth 41
+read_truth 0001
+read_truth 0220
+read_truth FEFF
+read_truth 6
+read_truth 56
+read_truth 9A
+read_truth F888
+read_truth AA56
+read_truth 6362
+read_truth 96B4
+read_truth 2000
+read_truth 0001
+read_truth 153F
+read_truth 2033
+read_truth 8
+read_truth F888
+read_truth E
+read_truth 28
+read_truth 82
+read_truth EA
+read_truth 6
+read_truth 54
+read_truth 8
+read_truth F8F0
+read_truth 93
+read_truth E020
+read_truth 9
+read_truth EAC0
+read_truth F888
+read_truth F222
+read_truth F8F0
+read_truth A222
+read_truth E020
+read_truth A888
+read_truth 88F8
+read_truth C8C0
+read_truth 6A
+read_truth 569A
+read_truth D2
+read_truth 3ACA
+read_truth CF9A
+read_truth 53AC
+read_truth 1E
+read_truth 0406
+read_truth 96
+read_truth 9996
+read_truth 963C
+read_truth 93
+read_truth 88F8
+read_truth 8000
+read_truth 2008
+read_truth 0908
+read_truth A8
+read_truth 264C
+read_truth 8288
+read_truth 9A
+read_truth 1404
+read_truth 2008
+read_truth 2000
+read_truth 20
+read_truth 0004
+read_truth 0008
+read_truth 0110
+read_truth 963C
+read_truth F222
+read_truth 02
+read_truth 8228
+read_truth AA56
+read_truth 9CE7
+read_truth 0800
+read_truth 9699
+read_truth 0004
+read_truth 02
+read_truth 20
+read_truth 2888
+read_truth 0504
+read_truth 0A28
+read_truth 28
+read_truth 0008
+read_truth FFFE
+read_truth 8FF8
+read_truth 8
+read_truth FF60
+read_truth FEFF
+read_truth 4114
+read_truth 0A06
+read_truth 1590
+read_truth FE
+read_truth 01
+read_truth FF82
+read_truth 56
+read_truth 80
+read_truth F888
+read_truth 8A
+read_truth 82D7
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6C
+read_truth 6
+read_truth 4
+read_truth FD
+read_truth 10
+read_truth 20
+read_truth FAF8
+read_truth FBFF
+read_truth F222
+read_truth FFF4
+read_truth 0400
+read_truth FFFE
+read_truth 0100
+read_truth DDC8
+read_truth E444
+read_truth DF8A
+read_truth FBBF
+read_truth 0220
+read_truth 5446
+read_truth 6400
+read_truth F8
+read_truth 0100
+read_truth F888
+read_truth F3F2
+read_truth 6
+read_truth 20
+read_truth 9C
+read_truth 96B4
+read_truth 153F
+read_truth F111
+read_truth 0001
+read_truth A820
+read_truth 96
+read_truth 6
+read_truth EAC0
+read_truth 4
+read_truth F888
+read_truth 60
+read_truth F3F2
+read_truth FF02
+read_truth E
+read_truth EAC0
+read_truth 8
+read_truth 60
+read_truth BA
+read_truth FEFC
+read_truth F888
+read_truth 4F
+read_truth 2303
+read_truth FF02
+read_truth F222
+read_truth 78
+read_truth A35C
+read_truth FF20
+read_truth A3A6
+read_truth BA
+read_truth 0FE2
+read_truth 56
+read_truth 0BF4
+read_truth 8F88
+read_truth F222
+read_truth FEEE
+read_truth 8
+read_truth CF9A
+read_truth FE95
+read_truth E
+read_truth 8288
+read_truth 96
+read_truth 9996
+read_truth 963C
+read_truth 28A0
+read_truth F888
+read_truth 5444
+read_truth A8
+read_truth 8288
+read_truth 264C
+read_truth 4020
+read_truth BF
+read_truth 0100
+read_truth 0400
+read_truth 0800
+read_truth 8228
+read_truth 28A0
+read_truth 963C
+read_truth F888
+read_truth F222
+read_truth 74F0
+read_truth 2AEA
+read_truth 64
+read_truth FF60
+read_truth 294A
+read_truth F8
+read_truth 1004
+read_truth DDC8
+read_truth 2228
+read_truth 0800
+read_truth 0400
+read_truth 0100
+read_truth 8288
+read_truth FF60
+read_truth 4042
+read_truth 82D7
+read_truth 55A4
+read_truth 54
+read_truth BA
+read_truth F3F2
+read_truth 0800
+read_truth 0100
+read_truth F606
+read_truth 0400
+read_truth 3676
+read_truth 5440
+read_truth FEEE
+read_truth F8
+read_truth FE
+read_truth 01
+read_truth EAC0
+read_truth A8
+read_truth FF01
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 1
+read_truth 8
+read_truth D
+read_truth 4
+read_truth 20
+read_truth 02
+read_truth FFFE
+read_truth 0008
+read_truth 0100
+read_truth 0060
+read_truth 6000
+read_truth 4002
+read_truth 51F3
+read_truth 2033
+read_truth F444
+read_truth FFAE
+read_truth 0001
+read_truth F888
+read_truth FEEE
+read_truth 56
+read_truth EA
+read_truth 51F3
+read_truth 2033
+read_truth FE
+read_truth 6
+read_truth FF82
+read_truth FEEE
+read_truth 5444
+read_truth F888
+read_truth F080
+read_truth 7
+read_truth 0D05
+read_truth C888
+read_truth 8882
+read_truth 153F
+read_truth 0A28
+read_truth 8
+read_truth FFA8
+read_truth 5444
+read_truth BF80
+read_truth 4F
+read_truth 2303
+read_truth 2033
+read_truth 7
+read_truth 4505
+read_truth CA53
+read_truth FEEE
+read_truth 569A
+read_truth 23
+read_truth 9C99
+read_truth FF82
+read_truth FF60
+read_truth F888
+read_truth AEAA
+read_truth 2888
+read_truth 6A
+read_truth FF02
+read_truth EF9B
+read_truth 0021
+read_truth 8828
+read_truth A8
+read_truth 2400
+read_truth E
+read_truth 96
+read_truth 0008
+read_truth 20
+read_truth FFD7
+read_truth F111
+read_truth 0060
+read_truth 8228
+read_truth 69A5
+read_truth 0100
+read_truth F8
+read_truth 462A
+read_truth FEFF
+read_truth 0C06
+read_truth FF60
+read_truth FEEE
+read_truth 69B4
+read_truth F888
+read_truth AFA8
+read_truth 56
+read_truth 17
+read_truth FF01
+read_truth 9996
+read_truth 93
+read_truth 2492
+read_truth 9D
+read_truth 4004
+read_truth 1622
+read_truth C9FA
+read_truth 0506
+read_truth ADFD
+read_truth 54
+read_truth 6564
+read_truth A8
+read_truth 06
+read_truth 02
+read_truth 21
+read_truth 0110
+read_truth 80
+read_truth 01
+read_truth 0008
+read_truth 0080
+read_truth FEEE
+read_truth FF60
+read_truth 60
+read_truth 8000
+read_truth 2AAA
+read_truth F666
+read_truth 8
+read_truth 5F44
+read_truth 0100
+read_truth FF02
+read_truth 4102
+read_truth AA56
+read_truth FE
+read_truth 01
+read_truth 93
+read_truth A8
+read_truth EA
+read_truth 2888
+read_truth 80
+read_truth 56
+read_truth 51F3
+read_truth 0007
+read_truth A955
+read_truth 060F
+read_truth F444
+read_truth F8
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 78
+read_truth 6
+read_truth D
+read_truth 1
+read_truth 4
+read_truth 10
+read_truth 40
+read_truth 0010
+read_truth 4544
+read_truth FFDF
+read_truth F222
+read_truth FFFE
+read_truth 0080
+read_truth FBBF
+read_truth 2028
+read_truth B9FF
+read_truth DBFF
+read_truth 6
+read_truth 963C
+read_truth 462A
+read_truth F888
+read_truth 60
+read_truth FFAE
+read_truth 0001
+read_truth 7
+read_truth 080F
+read_truth 9F
+read_truth A222
+read_truth 6
+read_truth 60
+read_truth FFFE
+read_truth BF80
+read_truth F888
+read_truth EAC0
+read_truth A8
+read_truth EC
+read_truth FEEE
+read_truth 8
+read_truth C4
+read_truth E
+read_truth A222
+read_truth EAC0
+read_truth BF80
+read_truth 60
+read_truth A8
+read_truth F888
+read_truth BF80
+read_truth FEFC
+read_truth 8
+read_truth AAA8
+read_truth FEEE
+read_truth E2
+read_truth FFFE
+read_truth ECA0
+read_truth 53AC
+read_truth FF40
+read_truth D
+read_truth EC4C
+read_truth 2D
+read_truth FF60
+read_truth CF9A
+read_truth 569A
+read_truth FF82
+read_truth FF40
+read_truth 8828
+read_truth 96
+read_truth 9996
+read_truth 8882
+read_truth 4002
+read_truth 4064
+read_truth DE8E
+read_truth FD20
+read_truth A8
+read_truth 8828
+read_truth 01
+read_truth 0C06
+read_truth 2008
+read_truth 10
+read_truth 1000
+read_truth 0080
+read_truth 8228
+read_truth 69A5
+read_truth 0010
+read_truth EF
+read_truth BD4B
+read_truth 4924
+read_truth 64
+read_truth FF60
+read_truth EAFD
+read_truth 1
+read_truth 8828
+read_truth 6C
+read_truth 0010
+read_truth AE8A
+read_truth AD
+read_truth BF02
+read_truth ABA8
+read_truth F888
+read_truth F1F0
+read_truth F4
+read_truth FF54
+read_truth 1000
+read_truth 0080
+read_truth 10
+read_truth 0600
+read_truth 0018
+read_truth F666
+read_truth 8
+read_truth 69B4
+read_truth 0010
+read_truth AAA8
+read_truth FF60
+read_truth 60
+read_truth 0476
+read_truth 0018
+read_truth C369
+read_truth 1116
+read_truth 4656
+read_truth 10
+read_truth 3014
+read_truth 1246
+read_truth FE
+read_truth 01
+read_truth F222
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 4
+read_truth 1
+read_truth 80
+read_truth 04
+read_truth 40
+read_truth 0080
+read_truth C040
+read_truth 8000
+read_truth 5540
+read_truth FFFE
+read_truth AA80
+read_truth 1000
+read_truth 0002
+read_truth DFBF
+read_truth F888
+read_truth 0001
+read_truth 4000
+read_truth 080F
+read_truth 153F
+read_truth 5540
+read_truth A222
+read_truth 1D0C
+read_truth 3111
+read_truth 3230
+read_truth 4
+read_truth C8C0
+read_truth 28
+read_truth 8
+read_truth 3230
+read_truth 01
+read_truth C8C0
+read_truth E
+read_truth 0E0A
+read_truth F888
+read_truth 8
+read_truth 78
+read_truth B4
+read_truth 1E
+read_truth 3111
+read_truth 4505
+read_truth E0A0
+read_truth B8F0
+read_truth C8C0
+read_truth D4
+read_truth 1E
+read_truth EA
+read_truth FFEA
+read_truth 153F
+read_truth EAC0
+read_truth B4
+read_truth 8828
+read_truth F888
+read_truth 0440
+read_truth FFEA
+read_truth 28A0
+read_truth AAA8
+read_truth 1002
+read_truth 1322
+read_truth 4140
+read_truth 264C
+read_truth 20AA
+read_truth 04
+read_truth FB
+read_truth FF48
+read_truth 5540
+read_truth FF20
+read_truth 0302
+read_truth 0080
+read_truth FFFE
+read_truth 8828
+read_truth 4
+read_truth FF48
+read_truth 0006
+read_truth 2228
+read_truth 9D
+read_truth 8040
+read_truth 1000
+read_truth D6BD
+read_truth 32
+read_truth FF48
+read_truth BFFF
+read_truth 0306
+read_truth 55A4
+read_truth F222
+read_truth 3310
+read_truth 0001
+read_truth 6000
+read_truth 40
+read_truth 80
+read_truth 8000
+read_truth FFFE
+read_truth 1000
+read_truth 5506
+read_truth 69A6
+read_truth 4155
+read_truth 9F
+read_truth F888
+read_truth EB41
+read_truth 41EB
+read_truth 1416
+read_truth 4622
+read_truth 06
+read_truth 0096
+read_truth 963C
+read_truth 294A
+read_truth 0C08
+read_truth 40
+read_truth AA56
+read_truth FE
+read_truth BFFF
+read_truth EEEA
+read_truth AEEA
+read_truth 1441
+read_truth D8F0
+read_truth ACAA
+read_truth AC
+read_truth FF48
+read_truth FB
+read_truth 0013
+read_truth 153F
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+read_truth 6
+read_truth 4
+read_truth 04
+read_truth 08
+read_truth 80
+read_truth 1110
+read_truth 5554
+read_truth F888
+read_truth 0004
+read_truth 4000
+read_truth 0040
+read_truth FFB9
+read_truth E
+read_truth FFFE
+read_truth 8
+read_truth F222
+read_truth F8
+read_truth 0001
+read_truth 08
+read_truth 0040
+read_truth AEAA
+read_truth FFF8
+read_truth F888
+read_truth 6A
+read_truth 0400
+read_truth E
+read_truth 82
+read_truth FF60
+read_truth 8
+read_truth FFDF
+read_truth 5333
+read_truth A8
+read_truth 28
+read_truth F888
+read_truth 6
+read_truth 8882
+read_truth 8
+read_truth 4B78
+read_truth 47B8
+read_truth ABAA
+read_truth B
+read_truth FEFA
+read_truth 8E8A
+read_truth 8F
+read_truth B8F0
+read_truth FEBA
+read_truth 36C6
+read_truth D2
+read_truth AEEA
+read_truth 1E
+read_truth F222
+read_truth EAAE
+read_truth 0040
+read_truth 2220
+read_truth CF9A
+read_truth AEAA
+read_truth 36C6
+read_truth EDF9
+read_truth 1
+read_truth 9C
+read_truth 96
+read_truth C396
+read_truth 0028
+read_truth FFFE
+read_truth F888
+read_truth F020
+read_truth 0042
+read_truth 96D2
+read_truth 3060
+read_truth 90A0
+read_truth 4454
+read_truth 56
+read_truth ABAA
+read_truth 0004
+read_truth 04
+read_truth 0040
+read_truth 28
+read_truth 41EB
+read_truth A280
+read_truth FF60
+read_truth AEAA
+read_truth 0028
+read_truth 0001
+read_truth FFFE
+read_truth 4B24
+read_truth 999A
+read_truth 6A
+read_truth FF60
+read_truth 08FF
+read_truth ABAA
+read_truth 04
+read_truth 6A66
+read_truth 24
+read_truth FFDF
+read_truth 0306
+read_truth 96D2
+read_truth 0040
+read_truth A8
+read_truth F222
+read_truth F8
+read_truth 999A
+read_truth 90A0
+read_truth 7754
+read_truth 0004
+read_truth 0001
+read_truth 6564
+read_truth 3060
+read_truth FFF8
+read_truth 41EB
+read_truth A7F7
+read_truth B3A0
+read_truth AE
+read_truth FF32
+read_truth 2282
+read_truth 0028
+read_truth 1032
+read_truth 0040
+read_truth 0213
+read_truth 0004
+read_truth F666
+read_truth 8
+read_truth FFF8
+read_truth F8
+read_truth 1712
+read_truth 0716
+read_truth 4262
+read_truth 5A96
+read_truth DBD3
+read_truth FE
+read_truth 4
+read_truth 01
+read_truth E
+read_truth 8191
+read_truth ACCA
+read_truth F088
+read_truth FFAE
 strash
-resyn2
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF.aig;
-refactor
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/LUTFFFF_SIM.aig
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-refactor
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig;
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM.aig
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig;
-refactor
-rewrite
-balance
-resyn2
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM.aig
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-refactor
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-rw -l
-rw -lz
-refactor
-rw -l
-rw -lz
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-resyn2
-rw -l
-rw -lz
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-resyn2
-rw -l
-rw -lz
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-resyn
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-resyn2
-rw -l
-rw -lz
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-resyn2
-rw -l
-rw -lz
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-source abc.rc
-help
-speedup -h
-irws -h
-irw -h
-rewrite -h
-refactor -h
-send_aig -h
-ifraig -h
-iresyn -h
-resyn2 -h
-iresyn -l
-irw -l
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-comb
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig;
-refactor
-rewrite
-balance
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g25.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g125.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g125.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g625.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leko-g5/g625.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/alu4.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex2.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex2.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex4.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex4.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex2.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/apex2.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/C6288.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/C6288.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/bigkey.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/bigkey.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/clma.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/clma.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/des.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/des.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/diffeq.blif
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/dsip.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/dsip.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/elliptic.blif
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex1010.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex1010.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex5p.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex5p.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/frisc.blif
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/i10.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/i10.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/misex3.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/misex3.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/pdc.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/pdc.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/s38417.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/s38417.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/s38584.1.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/s38584.1.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/seq.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/seq.blif
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/spla.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/spla.blif
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/pdc.blif
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LGSynth93\testcases\blif/ex1010.blif
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lgsynth93_blif2aig_abc.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leku/LEKU-CD.blif
-comb
-write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\tmp_lek__blif2aig_abc.aig
-source abc.rc
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-strash
-resyn2
-rw -l
-rw -lz
-rf -l
-resyn2rs
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_blif C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\LEKO_LEKU\leku/LEKU-CD.blif
-comb
-cec C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/conetest.aig
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped.aig;
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM2.aig
-refactor -l
-resyn2
-resyn2rs
-refactor
-rw z
-rf -z
-rf -l
-rf -lz
-rw -l
-rw -lz
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_HAL.aig;
-write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/sample_ISE_mapped_SIM_HAL.aig
-espresso
-read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
-choice
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/abc_tt.aig
 source abc.rc
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
-rw -z
+refactor
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig

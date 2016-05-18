@@ -7,18 +7,18 @@ USE IEEE.NUMERIC_STD.all;
 ENTITY arf_wsga_entity IS
 	PORT (
 		reset, clk: IN std_logic;
-		input1, input2, input3, input4, input5, input6, input7, input8: IN unsigned(0 TO 3);
-		output1, output2: OUT unsigned(0 TO 4));
+		input1, input2, input3, input4, input5, input6, input7, input8: IN unsigned(0 TO 30);
+		output1, output2: OUT unsigned(0 TO 31));
 END arf_wsga_entity;
 
 ARCHITECTURE arf_wsga_description OF arf_wsga_entity IS
 	SIGNAL current_state : unsigned(0 TO 7) := "00000000";
-	SHARED VARIABLE register1: unsigned(0 TO 4) := "00000";
-	SHARED VARIABLE register2: unsigned(0 TO 4) := "00000";
-	SHARED VARIABLE register3: unsigned(0 TO 4) := "00000";
-	SHARED VARIABLE register4: unsigned(0 TO 4) := "00000";
-	SHARED VARIABLE register5: unsigned(0 TO 4) := "00000";
-	SHARED VARIABLE register6: unsigned(0 TO 4) := "00000";
+	SHARED VARIABLE register1: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register2: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register3: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register4: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register5: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register6: unsigned(0 TO 31) := "00000000000000000000000000000000";
 BEGIN
 
 	moore_machine: PROCESS(clk, reset)

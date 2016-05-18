@@ -5,6 +5,8 @@
 %https://docs.oracle.com/javase/7/docs/api/java/io/FileOutputStream.html
 %http://reliability.ee.byu.edu/edif/doc/
 
+t = tic();
+
 K = 4;
 DF = false;
 mode = 2;
@@ -12,8 +14,10 @@ alpha = 2.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.000, 0.000]; %small
 
-srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\2-MESA-HB\metaheurísticas\mesahb_spea2.edif';
-dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\2-MESA-HB\metaheurísticas\mesahb_spea2_IMAP.edif';
+srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\4-MPEG-MV\metaheurísticas\mpegmv_wsga.edif';
+dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\4-MPEG-MV\metaheurísticas\mpegmv_wsga_IMAP.edif';
+%srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3.ndf';
+%dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3_IMAP_MODE7.edif';
 tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig';
 
 [d, l, r, e, edif] = ngcedif2mat(srcfname);
@@ -30,8 +34,51 @@ script = [
     {'quit'};
     ];
 
+script2 = [
+    {['read_aiger ' tmpfname]};
+    {'strash'};
+    {'ps'};
+    {'b'};
+    {'b'};
+    
+    {'rr'};
+    {'resyn2'};
+    repmat([{'rw '};{'b'};{'rw -z'};{'b'};{'rw -z'};], 1000, 1);
+    
+    {'b'};
+    {'b'};
+    {'ps'};
+    {['write_aiger -s ' tmpfname]};
+    %{['read_blif ' original]};
+    %{'comb'};
+    %{['cec ' tmpfname]};
+    {'quit'};
+    ];
 
-response = invoke_abc(script);
+script3 = [
+    {['read_aiger ' tmpfname ';']};
+    {'refactor'};
+    {'refactor'};
+    {'refactor'};
+    {['write_aiger -s ' tmpfname]};
+    {'quit'};
+    ];
+
+script4 = [
+    {['read_aiger ' tmpfname ';']};
+    {'resyn2'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {['write_aiger -s ' tmpfname]};
+    {'quit'};
+    ];
+
+
+response = invoke_abc(script3);
 %for k = 1:numel(response), fprintf('%s\n', response{k}); end
 
 [df, lf, rf, ef] = aiger2mat(tmpfname);
@@ -45,6 +92,7 @@ response = invoke_abc(script);
 [lutsf] = cones2luts(resultdf, resultlf, resultrf, resultef);
 netlist = mat2ngcedif(dstfname, resultdf, resultlf, resultrf, lutsf, [], [], edif);
 
+toc(t)
 
 
 

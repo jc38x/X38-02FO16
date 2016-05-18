@@ -12,10 +12,10 @@ ENTITY mesahb_hype_entity IS
 END mesahb_hype_entity;
 
 ARCHITECTURE mesahb_hype_description OF mesahb_hype_entity IS
-	SIGNAL current_state : unsigned(0 TO 7) := "0000000000000000000000000000000000";
-	SHARED VARIABLE register1: unsigned(0 TO 31) := "0000000000000000000000000000000";
-	SHARED VARIABLE register2: unsigned(0 TO 31) := "0000000000000000000000000000000";
-	SHARED VARIABLE register3: unsigned(0 TO 31) := "0000000000000000000000000000000";
+	SIGNAL current_state : unsigned(0 TO 7) := "00000000";
+	SHARED VARIABLE register1: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register2: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register3: unsigned(0 TO 31) := "00000000000000000000000000000000";
 BEGIN
 
 	moore_machine: PROCESS(clk, reset)
