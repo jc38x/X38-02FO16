@@ -14,8 +14,8 @@ alpha = 2.5; %1.5-2.5
 maxi = 20; %20
 epsrand = [0.000, 0.000]; %small
 
-srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\4-MPEG-MV\metaheurísticas\mpegmv_wsga.edif';
-dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\4-MPEG-MV\metaheurísticas\mpegmv_wsga_IMAP.edif';
+srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\14-MESA-IA\asap-alap-random\mesaia_random.edif';
+dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\14-MESA-IA\asap-alap-random\mesaia_random_IMAP.edif';
 %srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3.ndf';
 %dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3_IMAP_MODE7.edif';
 tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig';
