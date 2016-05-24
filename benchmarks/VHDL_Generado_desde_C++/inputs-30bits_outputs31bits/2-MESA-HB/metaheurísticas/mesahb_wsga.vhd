@@ -13,10 +13,10 @@ END mesahb_wsga_entity;
 
 ARCHITECTURE mesahb_wsga_description OF mesahb_wsga_entity IS
 	SIGNAL current_state : unsigned(0 TO 7) := "00000000";
-	SHARED VARIABLE register1: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register2: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register3: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register4: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register1: unsigned(0 TO 31) := "0000000000000000000000000000000";
+	SHARED VARIABLE register2: unsigned(0 TO 31) := "0000000000000000000000000000000";
+	SHARED VARIABLE register3: unsigned(0 TO 31) := "0000000000000000000000000000000";
+	SHARED VARIABLE register4: unsigned(0 TO 31) := "0000000000000000000000000000000";
 BEGIN
 
 	moore_machine: PROCESS(clk, reset)
@@ -58,7 +58,7 @@ BEGIN
 				register1 := register2 + register1;
 				register2 := register3 + 25;
 			WHEN "00001000" =>
-				output2 <= register1(0 TO 15) & register2(0 TO 15);
+				output2 <= register1(0 TO 14) & register2(0 TO 15);
 			WHEN OTHERS =>
 				NULL;
 		END CASE;

@@ -1,17 +1,17 @@
--- IT Tijuana, NetList-FPGA-Optimizer 0.01 (printed on 2016-05-16.08:47:35)
+-- IT Tijuana, NetList-FPGA-Optimizer 0.01 (printed on 2016-05-17.11:31:50)
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.all;
 USE IEEE.NUMERIC_STD.all;
 
-ENTITY ewf_alap_entity IS
+ENTITY ewf_wsga_entity IS
 	PORT (
 		reset, clk: IN std_logic;
 		input1, input2: IN unsigned(0 TO 30);
 		output1, output2, output3, output4, output5: OUT unsigned(0 TO 31));
-END ewf_alap_entity;
+END ewf_wsga_entity;
 
-ARCHITECTURE ewf_alap_description OF ewf_alap_entity IS
+ARCHITECTURE ewf_wsga_description OF ewf_wsga_entity IS
 	SIGNAL current_state : unsigned(0 TO 7) := "00000000";
 	SHARED VARIABLE register1: unsigned(0 TO 31) := "00000000000000000000000000000000";
 	SHARED VARIABLE register2: unsigned(0 TO 31) := "00000000000000000000000000000000";
@@ -21,9 +21,6 @@ ARCHITECTURE ewf_alap_description OF ewf_alap_entity IS
 	SHARED VARIABLE register6: unsigned(0 TO 31) := "00000000000000000000000000000000";
 	SHARED VARIABLE register7: unsigned(0 TO 31) := "00000000000000000000000000000000";
 	SHARED VARIABLE register8: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register9: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register10: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register11: unsigned(0 TO 31) := "00000000000000000000000000000000";
 BEGIN
 
 	moore_machine: PROCESS(clk, reset)
@@ -44,53 +41,54 @@ BEGIN
 				register1 := input1 + 1;
 			WHEN "00000010" =>
 				register2 := register1 + 3;
+				register3 := input2 + 4;
 			WHEN "00000011" =>
-				register3 := register2 + 5;
-				register4 := input2 + 6;
+				register4 := register2 + 6;
 			WHEN "00000100" =>
-				register3 := register4 + register3;
+				register4 := register3 + register4;
 			WHEN "00000101" =>
-				register5 := register3 * 8;
-				register6 := register3 * 10;
+				register5 := register4 * 8;
 			WHEN "00000110" =>
-				register5 := register4 + register5;
-				register6 := register2 + register6;
+				register5 := register2 + register5;
+				register6 := register4 * 10;
 			WHEN "00000111" =>
 				register4 := register4 + register5;
-				register2 := register2 + register6;
+				register6 := register3 + register6;
+				register2 := register2 + register5;
 			WHEN "00001000" =>
-				register4 := register4 * 12;
-				register2 := register2 * 14;
+				output1 <= register6 + register4;
+				register3 := register3 + register6;
+				register2 := register2 * 13;
 			WHEN "00001001" =>
-				register4 := register4 + 16;
+				register3 := register3 * 15;
 				register2 := register1 + register2;
 			WHEN "00001010" =>
-				register7 := register5 + register4;
-				register8 := register6 + register2;
-			WHEN "00001011" =>
-				register7 := register7 + 18;
+				register3 := register3 + 17;
 				register1 := register1 + register2;
-				register8 := register8 + 20;
-				register9 := register4 + 22;
+				register4 := register5 + register2;
+			WHEN "00001011" =>
+				register4 := register4 + 19;
+				register5 := register6 + register3;
+				register1 := register1 * 21;
+				register6 := register3 + 23;
 			WHEN "00001100" =>
-				register10 := register7 * 24;
-				register1 := register1 * 26;
-				register11 := register8 * 28;
+				register6 := register6 * 25;
+				register5 := register5 + 27;
+				register1 := register1 + 29;
+				register7 := register4 * 31;
 			WHEN "00001101" =>
-				register9 := register9 * 30;
-				register3 := register3 + register6;
-				register6 := register10 + 32;
-				register1 := register1 + 34;
-				register10 := register11 + 36;
+				register8 := register5 * 33;
+				register7 := register7 + 35;
+				output2 <= register3 + register6;
+				output3 <= register2 + register1;
 			WHEN "00001110" =>
-				output1 <= register4 + register9;
-				output2 <= register5 + register3;
-				output3 <= register7 + register6;
-				output4 <= register2 + register1;
-				output5 <= register8 + register10;
+				register1 := register8 + 39;
+				output4 <= register4 + register7;
+			WHEN "00001111" =>
+				output5 <= register5 + register1;
 			WHEN OTHERS =>
 				NULL;
 		END CASE;
 	END PROCESS operations;
 
-END ewf_alap_description;
+END ewf_wsga_description;

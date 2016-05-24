@@ -13,10 +13,10 @@ END hal_random_entity;
 
 ARCHITECTURE hal_random_description OF hal_random_entity IS
 	SIGNAL current_state : unsigned(0 TO 7) := "00000000";
-	SHARED VARIABLE register1: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register2: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register3: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register4: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register1: unsigned(0 TO 31) := "0000000000000000000000000000000";
+	SHARED VARIABLE register2: unsigned(0 TO 31) := "0000000000000000000000000000000";
+	SHARED VARIABLE register3: unsigned(0 TO 31) := "0000000000000000000000000000000";
+	SHARED VARIABLE register4: unsigned(0 TO 31) := "0000000000000000000000000000000";
 BEGIN
 
 	moore_machine: PROCESS(clk, reset)
@@ -51,7 +51,7 @@ BEGIN
 				IF (register2 < 11) THEN
 					output2 <= register2;
 				ELSE
-					output2 <= "00000000000000000000000000001011";
+					output2 <= "0000000000000000000000000001011";
 				END IF;
 			WHEN "00000111" =>
 				output3 <= register1 - register3;

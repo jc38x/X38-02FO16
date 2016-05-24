@@ -13,8 +13,8 @@ END hal_hype_entity;
 
 ARCHITECTURE hal_hype_description OF hal_hype_entity IS
 	SIGNAL current_state : unsigned(0 TO 7) := "00000000";
-	SHARED VARIABLE register1: unsigned(0 TO 31) := "00000000000000000000000000000000";
-	SHARED VARIABLE register2: unsigned(0 TO 31) := "00000000000000000000000000000000";
+	SHARED VARIABLE register1: unsigned(0 TO 31) := "0000000000000000000000000000000";
+	SHARED VARIABLE register2: unsigned(0 TO 31) := "0000000000000000000000000000000";
 BEGIN
 
 	moore_machine: PROCESS(clk, reset)
@@ -40,7 +40,7 @@ BEGIN
 				IF (register1 < 5) THEN
 					output2 <= register1;
 				ELSE
-					output2 <= "00000000000000000000000000000101";
+					output2 <= "0000000000000000000000000000101";
 				END IF;
 				register1 := input4 * 6;
 			WHEN "00000011" =>
