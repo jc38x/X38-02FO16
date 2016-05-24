@@ -11,16 +11,16 @@ K = 4;
 DF = false;
 mode = 2;
 alpha = 2.5; %1.5-2.5
-maxi = 20; %20
+maxi = 5; %20
 epsrand = [0.000, 0.000]; %small
 
-srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\14-MESA-IA\asap-alap-random\mesaia_random.edif';
-dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\14-MESA-IA\asap-alap-random\mesaia_random_IMAP.edif';
-%srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3.ndf';
-%dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3_IMAP_MODE7.edif';
+%srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\4-MPEG-MV\metaheurísticas\mpegmv_hype.edif';
+%dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-4bits_outputs5bits\4-MPEG-MV\metaheurísticas\mpegmv_hype_IMAP.edif';
+srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3.ndf';
+dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3_IMAP_MODE11.edif';
 tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig';
 
-[d, l, r, e, edif] = ngcedif2mat(srcfname);
+[d, l, r, e, edif] = ngcedif2mat(srcfname, [{'resyn2'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'};]);
 mat2aiger(tmpfname, d, l, r, e);
 
 
@@ -77,8 +77,20 @@ script4 = [
     {'quit'};
     ];
 
+script5 = [
+    {['read_aiger ' tmpfname ';']};
+    {'rr'};
+    %repmat({'choice'}, 50, 1);
+    repmat([{'compress'}; {'compress2'}], 50, 1);
+    repmat([{'resyn'}; {'resyn2'}], 50, 1);
+    
+    
+    {['write_aiger -s ' tmpfname]};
+    {'quit'};
+    ];
 
-response = invoke_abc(script3);
+
+response = invoke_abc(script5);
 %for k = 1:numel(response), fprintf('%s\n', response{k}); end
 
 [df, lf, rf, ef] = aiger2mat(tmpfname);
@@ -97,6 +109,52 @@ toc(t)
 
 
 
+%newnames = cell(1, r.szpi + r.szpo);
+        %for m = 1:r.szpi, newnames{m} = ['i' num2str(m - 1)]; end
+        %newnames(end) = {'o'};        
+        %[l, e] = rename_node(d, l, e, [r.pi, r.po], newnames);
+%{
+    subn = numel(node);
+    noderemap = C_remap(node, 1:subn); 
+    edge = vcone{in_range.CONE_EDGE};
+    coneorder = graphtopoorder(sparse(noderemap.remap(edge(1, :)), noderemap.remap(edge(2, :)), 1, subn, subn));
+    equation = in_equations{cvidx};
+    for l = node(fliplr(coneorder(1:(subn - 1)))), equation = strrep(equation, ['[' in_labels{l} ']'], in_equations{l}); end
+    out_equations{i2} = equation;
+    %}
+    %{
+    instancename = char(instance.getName());
+    [d, l, r, e] = abc_tt2mat(tt, inputs);%tt2mat(tt, inputs);
+    if (isd)
+        [d, l, r, e] = group_nets({d, sparse([], [], [], 1, 1, 1)}, {l, {'lo'}}, {r, prepare_range(0, 0, 1)}, {e, {''}});
+        d(get_inode(d, find(strcmpi('o', l))), strcmpi('lo', l)) = 1;
+    end
+    [l, e] = rename_node(d, l, e, [r.pi, r.po], rename);
+    [l, e] = make_instance(instancename, d, l, r, e);
+    push_net(d, l, r, e);
+    lutcount = lutcount + 1;
+    lut2uid(instancename) = uid;
+    %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%disp(['LUTs: ' num2str(lutcount)]);
 %t = tic();
 %[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/matlab/sample_ISE_mapped.edif');
 %[d, l, r, e, edif] = ngcedif2mat('C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/hal_entity.edif');

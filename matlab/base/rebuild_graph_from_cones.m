@@ -10,17 +10,16 @@ poofs = in_range.szin - nin;
 tag = sparse(1, in_S, (1:nin) + in_range.szpi);
 maxedges = nnz(in_delay);
 
-edgesx     = zeros(1, maxedges);
-edgesi     = zeros(1, maxedges);
-edgesj     = zeros(1, maxedges);
-edgesd     = zeros(1, maxedges);
+edgesx = zeros(1, maxedges);
+edgesi = zeros(1, maxedges);
+edgesj = zeros(1, maxedges);
+edgesd = zeros(1, maxedges);
 edgesindex = 0;
 
 out_range = prepare_range(in_range.szpi, nin, in_range.szpo);
 
 out_equations = cell(1, out_range.sz);
-out_equations(in_range.pi)         = in_equations(in_range.pi);
-out_equations(in_range.po - poofs) = in_equations(in_range.po);
+out_equations(out_range.top) = in_equations(in_range.top);
 
 out_labels = [in_labels(in_range.pi), in_labels(in_S), in_labels(in_range.po)];
 
@@ -45,13 +44,9 @@ for cvidx = in_S
         push_edge(i2, e2 - poofs, in_delay(e(1), e2));
     end
 
-    node = vcone{in_range.CONE_NODE};
-    subn = numel(node);
-    noderemap = C_remap(node, 1:subn); 
-    edge = vcone{in_range.CONE_EDGE};
-    coneorder = graphtopoorder(sparse(noderemap.remap(edge(1, :)), noderemap.remap(edge(2, :)), 1, subn, subn));
+    node = vcone{in_range.CONE_NODE};    
     equation = in_equations{cvidx};
-    for l = node(fliplr(coneorder(1:(subn - 1)))), equation = strrep(equation, ['[' in_labels{l} ']'], in_equations{l}); end
+    for l = node((end - 1):-1:1), equation = strrep(equation, ['[' in_labels{l} ']'], in_equations{l}); end
     out_equations{i2} = equation;
 end
 
@@ -61,14 +56,13 @@ out_delay = sparse(edgesi(k), edgesj(k), edgesd(k), out_range.sz, out_range.sz);
     function push_edge(in_o, in_i, in_d)
     index = sub2ind([out_range.sz, out_range.sz], in_o, in_i);
     match = edgesx == index;
-    if (any(match))
-        if (in_d > edgesd(match)), edgesd(match) = in_d; end
-    else
+    if (~any(match))
         edgesindex = edgesindex + 1;
         edgesx(edgesindex) = index;
         edgesi(edgesindex) = in_o;
         edgesj(edgesindex) = in_i;
         edgesd(edgesindex) = in_d;
+    elseif (in_d > edgesd(match)), edgesd(match) = in_d;
     end
     end
 end
