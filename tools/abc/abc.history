@@ -7189,6 +7189,1599 @@ strash
 resyn2rs
 write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_VGA_B_mux0000_0_239_renamed_288.aig
 empty
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+compress
+compress2
+resyn
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+source abc.rc
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_1__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult0000_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0000_Madd_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register3_mult0000_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0000_Madd_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register4_mult0001_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00010_Madd_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register2_mult00020_Madd_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00000_Madd_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register1_mult00010_Madd_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult00010_Madd_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_0__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_1__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output1_add0000_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_0__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_1__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_output2_add0000_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_0__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_1__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register3_addsub0000_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_0__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_1__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register4_addsub0000_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register5_addsub0000_lut_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_30__.aig
+read_truth 6
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register5_mult0002_Madd1_lut_31__.aig
+read_truth 8
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_3_1.aig
+read_truth 1
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_and00001.aig
+read_truth D
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_28_111.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_not0001211.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_10_21.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_cmp_eq00021.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_or000021.aig
+read_truth 02
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_10_31.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_10_11.aig
+read_truth 40
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_0_11.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_9_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_8_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_7_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_6_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_5_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_4_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_31_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_30_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_29_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_28_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_27_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_26_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_25_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_24_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_23_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_22_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_21_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_20_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_19_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_18_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_17_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_16_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_15_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_14_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_13_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_12_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_11_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_mux0000_10_1.aig
+read_truth 0080
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_10_11.aig
+read_truth 0001
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_10_21.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_9_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_8_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_7_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_6_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_5_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_4_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_3_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_2_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_27_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_26_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_25_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_24_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_23_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_22_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_21_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_20_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_1_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_19_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_18_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_17_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_16_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_15_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_14_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_13_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_12_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_11_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_10_1.aig
+read_truth FFFE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_or00041.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_9_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_8_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_7_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_6_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_5_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_4_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_3_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_2_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_29_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_27_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_26_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_25_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_24_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_23_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_22_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_21_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_20_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_1_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_19_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_18_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_17_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_16_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_15_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_14_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_13_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_12_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_11_1.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_10_1.aig
+read_truth 0008
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_output2_cmp_eq00001_renamed_65.aig
+read_truth 0002
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_output1_cmp_eq00001_renamed_66.aig
+read_truth 1404
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_not00011_renamed_67.aig
+read_truth 9000
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_28_21.aig
+read_truth DBFF
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_28_11.aig
+read_truth 7DDF
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_28_11.aig
+read_truth FB
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_10_4_SW0.aig
+read_truth EAEB
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_10_4_SW1.aig
+read_truth 02DF
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_10_4.aig
+read_truth 0080
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_28_7_renamed_68.aig
+read_truth FE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_current_state_cmp_lt00001_SW0.aig
+read_truth 0001
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_current_state_cmp_lt00001.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_0_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_0_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_0_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_1_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_2__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_1__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_1__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_1__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_1__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_3__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_2__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_2_4_renamed_69.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_4__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_3__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_3_4_renamed_70.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_5__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_4__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_6__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_5__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_7__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_6__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_8__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_7__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_9__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_8__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_10__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_9__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_11__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_10__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_12__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_11__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_13__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_12__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_14__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_13__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_15__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_14__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_16__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_15__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_17__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_16__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_18__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_17__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_19__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_18__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_4_4_renamed_71.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_20__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_19__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_21__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_20__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_22__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_21__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_23__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_22__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_24__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_23__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_25__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_24__SW0.aig
+read_truth EA
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_5_4_renamed_72.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_5_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_26__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_25__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_27__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_26__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_28__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_27__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_29__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_28__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_30__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_29__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_31__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_30__SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_31__SW0.aig
+read_truth EA
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register4_mux0000_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_5_4_renamed_73.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_4_4_renamed_74.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_3_4_renamed_75.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_2_4_renamed_76.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_1_4_renamed_77.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_0_4_renamed_78.aig
+read_truth 8
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_0_5_renamed_79.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_0_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_6_4_renamed_80.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_6_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_7_4_renamed_81.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_7_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_8_4_renamed_82.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_8_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_9_4_renamed_83.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_9_14.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_10_4_renamed_84.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_10_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_5_20_renamed_85.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_5_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_4_20_renamed_86.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_4_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_3_20_renamed_87.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_3_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_2_20_renamed_88.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_2_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_1_20_renamed_89.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_1_23.aig
+read_truth E040
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_0_20_renamed_90.aig
+read_truth E
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_0_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_11_4_renamed_91.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_11_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_6_4_renamed_92.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_12_4_renamed_93.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_12_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_13_4_renamed_94.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_13_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_14_4_renamed_95.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_14_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_15_4_renamed_96.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_15_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_7_4_renamed_97.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_16_4_renamed_98.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_16_14.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_8_4_renamed_99.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_6_20_renamed_100.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_6_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_7_20_renamed_101.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_7_23.aig
+read_truth E040
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_8_20_renamed_102.aig
+read_truth E
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_8_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_17_4_renamed_103.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_17_14.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_18_4_renamed_104.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_18_14.aig
+read_truth E040
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_9_20_renamed_105.aig
+read_truth E
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_9_23.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_19_4_renamed_106.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_19_14.aig
+read_truth E040
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_10_20_renamed_107.aig
+read_truth E
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_10_23.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_20_4_renamed_108.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_20_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_11_20_renamed_109.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_11_23.aig
+read_truth E040
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_12_20_renamed_110.aig
+read_truth E
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_12_23.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_21_4_renamed_111.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_21_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_13_20_renamed_112.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_13_23.aig
+read_truth 8
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_22_1_renamed_113.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_14_20_renamed_114.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_14_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_15_20_renamed_115.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_15_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_23_1_renamed_116.aig
+read_truth E040
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_16_20_renamed_117.aig
+read_truth E
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_16_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_24_1_renamed_118.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_25_1_renamed_119.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_26_1_renamed_120.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_27_1_renamed_121.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_28_1_renamed_122.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_29_1_renamed_123.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_30_1_renamed_124.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_31_1_renamed_125.aig
+read_truth 8
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_18_11_renamed_126.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_18_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_19_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_20_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_21_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_22_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_23_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_24_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_25_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_26_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_27_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_28_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_29_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_30_22.aig
+read_truth F8
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_31__.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_31_22.aig
+read_truth 6
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Mmult_register6_mult0000_Madd_lut_30_1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_30_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_29_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_28_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_27_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_26_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_25_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_24_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_23_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_22_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_21_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_20_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_19_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_18_23.aig
+read_truth FFEC
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_17_23.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_31_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_30_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_29_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_28_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_27_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_26_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_25_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_24_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_23_14.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_22_14.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_0__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_1__.aig
+read_truth 6A
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_2__.aig
+read_truth 56
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_8_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_8_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_7_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_7_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_6_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_6_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_5_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_5_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_4_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_4_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_3_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_3_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_2_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_2_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_1_22_SW0.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_1_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_9_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_10_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_11_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_12_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_13_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_14_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_15_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_16_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_17_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_18_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_18_8_renamed_387.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_19_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_19_8_renamed_388.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_20_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_20_8_renamed_389.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_21_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_21_8_renamed_390.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_22_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_22_8_renamed_391.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_23_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_23_8_renamed_392.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_24_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_24_8_renamed_393.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_25_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_25_8_renamed_394.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_26_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_26_8_renamed_395.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_27_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_27_8_renamed_396.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_28_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_28_8_renamed_397.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_29_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_29_8_renamed_398.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_30_8_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_30_8_renamed_399.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_31_8_SW0.aig
+read_truth EA
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_31_8_renamed_400.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_31__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_30__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_29__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_28__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_27__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_26__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_25__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_24__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_23__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_22__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_21__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_20__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_19__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_18__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_17__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_16__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_15__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_14__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_13__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_12__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_11__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_10__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_9__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_8__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_7__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_6__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_5__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_4__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_3__.aig
+read_truth EAAA
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_2__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_15_5_renamed_401.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_14_5_renamed_402.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_13_5_renamed_403.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_12_5_renamed_404.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_11_5_renamed_405.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_10_5_renamed_406.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_9_5_renamed_407.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_8_5_renamed_408.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_7_5_renamed_409.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_6_5_renamed_410.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_5_5_renamed_411.aig
+read_truth 0406
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_not00011_renamed_412.aig
+read_truth 0080
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_mux0000_10_11.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_31__SW1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_30__SW1.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0000_28__SW1.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0000_28_10_renamed_413.aig
+read_truth 0002
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_5_15.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_4_13.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_3_13_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_3_13.aig
+read_truth 0080
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_2_13_SW0.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_2_13.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_0__.aig
+read_truth 5666
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_1__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_16_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_16_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_15_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_15_22.aig
+read_truth 5666
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_3__.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_14_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_14_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_13_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_13_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_12_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_12_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_11_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_11_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_10_22_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_10_22.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_9_22_SW0.aig
+read_truth FEEE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_9_22.aig
+read_truth FD79
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_0_2_SW2.aig
+read_truth 1
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_0_2.aig
+read_truth FFF8
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_17_22.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_30_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_29_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_28_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_27_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_26_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_25_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_24_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_23_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_22_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_21_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_20_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_19_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_18_3_SW0.aig
+read_truth 02
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_17_3_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_31_1_renamed_415.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register1_addsub0000_lut_31_2_renamed_416.aig
+read_truth 5666
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_31_1_renamed_417.aig
+read_truth 6A
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_Madd_register2_addsub0000_lut_31_2_renamed_418.aig
+read_truth FFFE
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register3_or00021_renamed_419.aig
+read_truth 0002
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_N241_renamed_420.aig
+read_truth 0008
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_N181_renamed_421.aig
+read_truth 0018
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register6_not00011_renamed_422.aig
+read_truth 1430
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_not00011_renamed_423.aig
+read_truth 1536
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_not00011_renamed_424.aig
+read_truth 149E
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_not00011_renamed_425.aig
+read_truth E040
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_17_20_renamed_426.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_19_11_renamed_427.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_20_11_renamed_428.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_21_11_renamed_429.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_22_11_renamed_430.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_23_11_renamed_431.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_24_11_renamed_432.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_18_20_renamed_433.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_25_11_renamed_434.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_19_20_renamed_435.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_26_11_renamed_436.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_20_20_renamed_437.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_27_11_renamed_438.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_21_20_renamed_439.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_28_11_renamed_440.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_22_20_renamed_441.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_29_11_renamed_442.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_23_20_renamed_443.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_30_11_renamed_444.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_24_20_renamed_445.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_31__SW0.aig
+read_truth 8
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_31_11_renamed_446.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_25_20_renamed_447.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_26_20_renamed_448.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_27_20_renamed_449.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_28_20_renamed_450.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_29_20_renamed_451.aig
+read_truth E040
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_30_20_renamed_452.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_16_3_renamed_453.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_15_3_renamed_454.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_14_3_renamed_455.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_13_3_renamed_456.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_12_3_renamed_457.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_11_3_renamed_458.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_10_3_renamed_459.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_9_3_renamed_460.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_8_3_renamed_461.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_7_3_renamed_462.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_6_3_renamed_463.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_5_3_renamed_464.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_4_3_renamed_465.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_3_3_renamed_466.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_2_3_renamed_467.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_1_3_renamed_468.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register1_mux0001_0_3_renamed_469.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_31_14_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_30_14_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_29_14_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_28_14_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_27_14_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_26_14_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_25_14_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_24_14_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_23_14_SW0.aig
+read_truth F888
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_22_14_SW0.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_21_5_renamed_470.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_20_5_renamed_471.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_19_5_renamed_472.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_18_5_renamed_473.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_17_5_renamed_474.aig
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_16_5_renamed_475.aig
+read_truth 0080
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register5_mux0000_4_13_SW0.aig
+read_truth EAC0
+strash
+resyn2rs
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/_tmp_ngcedif2mat_register2_mux0001_17_22_SW0.aig
+empty
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+compress
+compress2
+resyn
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+source abc.rc
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_HMODO_cmp_ge0000_lut_3___renamed_14.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_HMODO_cmp_ge0000_lut_4___renamed_15.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_HMODO_cmp_ge0000_lut_5___renamed_16.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_HMODO_cmp_ge0000_lut_6___renamed_17.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_HMODO_cmp_ge0000_lut_7___renamed_18.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_0__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_1__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_2__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_3__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_4__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5__.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_3_1_renamed_19.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_4_1_renamed_20.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5_1_renamed_21.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6_1_renamed_22.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_7_1_renamed_23.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_8__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_3_2_renamed_24.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_4_2_renamed_25.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5_2_renamed_26.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6_2_renamed_27.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_7_2_renamed_28.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_8_1_renamed_29.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_0_1_renamed_30.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_1_3_renamed_31.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_2_1_renamed_32.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_3_3_renamed_33.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_4_3_renamed_34.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5_3_renamed_35.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6_3_renamed_36.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_0_2_renamed_37.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_1_4_renamed_38.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_2_2_renamed_39.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_3_4_renamed_40.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_4_4_renamed_41.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5_4_renamed_42.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6_4_renamed_43.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_2_3_renamed_44.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5_5_renamed_45.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6_5_renamed_46.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_7_5_renamed_47.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_8_3_renamed_48.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_9_2_renamed_49.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_10__.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_0_3_renamed_50.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_1_6_renamed_51.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_2_4_renamed_52.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_3_6_renamed_53.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_4_5_renamed_54.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5_6_renamed_55.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6_6_renamed_56.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_0_4_renamed_57.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_3_7_renamed_58.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5_7_renamed_59.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6_7_renamed_60.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_7_7_renamed_61.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_8_4_renamed_62.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_9_3_renamed_63.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_10_1_renamed_64.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_2_5_renamed_65.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5_8_renamed_66.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6_8_renamed_67.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_7_8_renamed_68.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_8_5_renamed_69.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_9_4_renamed_70.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_10_2_renamed_71.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_1_9_renamed_72.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_4_6_renamed_73.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_5_9_renamed_74.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_6_9_renamed_75.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_7_9_renamed_76.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_8_6_renamed_77.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_9_5_renamed_78.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_ge0000_lut_10_3_renamed_79.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_3__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_4__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_5__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_6__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_7__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_8__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_3_1_renamed_80.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_4_1_renamed_81.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_5_1_renamed_82.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_6_1_renamed_83.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_7_1_renamed_84.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_8_1_renamed_85.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_3_2_renamed_86.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_4_2_renamed_87.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_5_2_renamed_88.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_6_2_renamed_89.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_7_2_renamed_90.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_8_2_renamed_91.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_0__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_1_3_renamed_92.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_2__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_3_3_renamed_93.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_4_3_renamed_94.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_5_3_renamed_95.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_6_3_renamed_96.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_1_4_renamed_97.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_2_1_renamed_98.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_3_4_renamed_99.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_4_4_renamed_100.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_5_4_renamed_101.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_6_4_renamed_102.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_7_4_renamed_103.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_8_3_renamed_104.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_0_1_renamed_105.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_1_5_renamed_106.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_2_2_renamed_107.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_3_5_renamed_108.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_4_5_renamed_109.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_5_5_renamed_110.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_6_5_renamed_111.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_0_2_renamed_112.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_1_6_renamed_113.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_3_6_renamed_114.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_4_6_renamed_115.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_5_6_renamed_116.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_6_6_renamed_117.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_7_6_renamed_118.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_3_7_renamed_119.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_4_7_renamed_120.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_5_7_renamed_121.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_6_7_renamed_122.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_PAT_B_cmp_lt0003_lut_7_7_renamed_123.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_VCOUNT_cmp_ge0000_lut_1___renamed_124.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_VCOUNT_cmp_ge0000_lut_3___renamed_125.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_VCOUNT_cmp_ge0000_lut_6___renamed_126.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_VCOUNT_cmp_ge0000_lut_7___renamed_127.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_VCOUNT_cmp_ge0000_lut_8___renamed_128.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_VCOUNT_cmp_ge0000_lut_9___renamed_129.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_VCOUNT_cmp_ge0000_lut_10___renamed_130.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCLK_cmp_eq0000_wg_lut_0__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCLK_cmp_eq0000_wg_lut_1__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCLK_cmp_eq0000_wg_lut_2__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCLK_cmp_eq0000_wg_lut_3__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCLK_cmp_eq0000_wg_lut_4__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCLK_cmp_eq0000_wg_lut_5__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCLK_cmp_eq0000_wg_lut_6__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCLK_cmp_eq0000_wg_lut_7__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCLK_cmp_eq0000_wg_lut_0__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCLK_cmp_eq0000_wg_lut_1__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCLK_cmp_eq0000_wg_lut_2__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCLK_cmp_eq0000_wg_lut_3__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCLK_cmp_eq0000_wg_lut_4__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCLK_cmp_eq0000_wg_lut_5__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCLK_cmp_eq0000_wg_lut_6__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCLK_cmp_eq0000_wg_lut_7__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_cmp_eq0000_wg_lut_1__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_cmp_eq0000_wg_lut_2__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_cmp_eq0000_wg_lut_3__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_cmp_eq0000_wg_lut_4__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_cmp_eq0000_wg_lut_5__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_cmp_eq0000_wg_lut_6__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_cmp_eq0000_wg_lut_7__.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_cmp_eq0000_wg_lut_8__.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_9_1.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_7_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_41.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_311.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_301.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_31_renamed_139.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_291.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_281.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_271.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_261.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_251.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_241.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_231.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_221.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_211.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_201.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_21_renamed_140.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_191.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_171.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_131.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_13_renamed_141.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_01.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_91.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_81.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_71.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_311.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_301.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_31_renamed_142.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_291.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_281.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_271.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_261.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_251.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_241.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_231.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_221.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_211.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_201.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_21_renamed_143.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_191.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_181.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_171.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_161.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_151.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_141.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_131.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_121.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_111.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_101.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_11_renamed_144.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_91.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_81.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_71.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_51.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_181.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_161.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_151.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_121.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_111.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_101.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_61.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_01.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_61.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_VCLK_eqn_141.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_51.aig
+read_truth FDA8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcount_HCLK_eqn_41.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_VS_mux00011.aig
+read_truth 7F
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_HS_mux00011.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VMODO_not00011.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_VS_not00011.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HMODO_FSM_FFd4_In1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HMODO_FSM_FFd2_In1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_9_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_8_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_7_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_6_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_5_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_4_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_3_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_2_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_24_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_22_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_21_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_20_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_19_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_18_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_17_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_16_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_15_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_14_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_13_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_12_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_11_1.aig
+read_truth 2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_10_1.aig
+read_truth 0E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HMODO_FSM_FFd1_In1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_31_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_30_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_29_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_28_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_27_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_26_1.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_25_1.aig
+read_truth FE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_3_SW0.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_2111.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_DIVCLK_mux0000_1_111.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_HMODO_cmp_ge0000_lut_8___renamed_273.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_HMODO_cmp_ge0000_lut_9_1.aig
+read_truth 1B
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_Mcompar_HMODO_cmp_ge0000_lut_1___renamed_274.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_0_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_1_1.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0002_23_1.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_HS_not00011.aig
+read_truth E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_2111_SW0.aig
+read_truth FBEA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_11160.aig
+read_truth 80
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_and000011.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_3_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_2_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_1_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_G_mux0000_3_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_G_mux0000_2_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_G_mux0000_1_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_G_mux0000_0_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_R_mux0000_3_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_R_mux0000_2_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_R_mux0000_1_1.aig
+read_truth F888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_R_mux0000_0_1.aig
+read_truth C444
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_BITSEL_mux000739_SW0.aig
+read_truth 8C0C
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_1136_renamed_275.aig
+read_truth 222A
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_BITSEL_mux000739.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_11160_SW2.aig
+read_truth 15
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_117_renamed_276.aig
+read_truth 40CC
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_211_renamed_277.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_221_renamed_278.aig
+read_truth 0888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_R_mux0000_0_211_renamed_279.aig
+read_truth F5F1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_R_mux0000_0_228_renamed_280.aig
+read_truth EAEE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_242_renamed_281.aig
+read_truth FF02
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_G_mux0000_0_216_renamed_282.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VCOUNT_and00001.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_11_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_10_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_12_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_13_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_15_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_14_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_16_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_17_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_19_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_18_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_20_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_21_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_23_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_22_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_24_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_25_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_27_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_26_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_28_1.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_HCOUNT_mux0000_29_1.aig
+read_truth 8AFF
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_1116_renamed_284.aig
+read_truth 1000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_3.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_277_SW0.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_G_mux0000_0_243_SW0.aig
+read_truth 2220
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_R_mux0000_0_254_SW0.aig
+read_truth D
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_BITSEL_mux000739_SW0_SW0.aig
+read_truth 75F5
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_1193_renamed_285.aig
+read_truth 8808
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_11160_SW3.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_R_mux0000_0_22_renamed_286.aig
+read_truth 1555
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_G_mux0000_0_27_renamed_287.aig
+read_truth 08
+strash
+resyn2rs
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_tmp_ngcedif2mat_VGA_B_mux0000_0_239_renamed_288.aig
+empty
 source abc.rc
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
 compress

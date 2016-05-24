@@ -4,8 +4,7 @@
 % 2016
 %**************************************************************************
 
-function [out_stdout] = invoke_abc(in_script)
-[path, sl] = get_tools_path();
-workdir = [path 'abc' sl];
-out_stdout = spawn_process([workdir 'abc.exe'], '', workdir, in_script);
+function [out_path, out_sl] = get_workspace_path()
+[dirs, out_sl] = split_module_path(mfilename('fullpath'));
+out_path = [[dirs{1:(end-2)}] 'workspace' out_sl];
 end
