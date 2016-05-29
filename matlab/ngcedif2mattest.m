@@ -20,7 +20,15 @@ srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3.ndf';
 dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3_IMAP_MODE11.edif';
 tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig';
 
-[d, l, r, e, edif] = ngcedif2mat(srcfname, [{'resyn2'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'};]);
+[d, l, r, e, edif, stats] = ngcedif2mat(srcfname, [{'resyn2'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'};]);
+disp(['LUTs: ' num2str(stats.luts)]);
+%primitives = stats.primitives;
+%for k = primitives.keys()
+ %   disp([k{:} ' ' num2str(primitives(k{:}))]);    
+%end
+
+
+
 mat2aiger(tmpfname, d, l, r, e);
 
 
@@ -108,7 +116,35 @@ toc(t)
 
 
 
+     %inputs = lutbatch{1, k};
+%lutcount = zeros(1, 6);
+
+    %lutcount(inputs) = lutcount(inputs) + 1;
+        %d(get_inode(d, find(strcmpi('o', l))), strcmpi('lo', l)) = 1;
     
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+%disp(['LUT1: ' num2str(lutcount(1))]);
+%disp(['LUT2: ' num2str(lutcount(2))]);
+%disp(['LUT3: ' num2str(lutcount(3))]);
+%disp(['LUT4: ' num2str(lutcount(4))]);
+%disp(['LUT5: ' num2str(lutcount(5))]);
+%disp(['LUT6: ' num2str(lutcount(6))]);
+%disp('-');
 %{
     
     

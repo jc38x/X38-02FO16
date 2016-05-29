@@ -8,34 +8,22 @@ function [out_delay, out_labels, out_range, out_equations, out_edif, out_stats] 
 edifenvironment = edu.byu.ece.edif.util.parse.EdifParser.translate(in_filename);
 topcell = edifenvironment.getTopCell();
 edifgraph = edu.byu.ece.edif.util.graph.EdifCellInstanceGraph(topcell);
-inlist = topcell.getCellInstanceList();
-initerator = inlist.iterator();
-edges = edifgraph.getEdges();
-edgesiterator = edges.iterator();
-
-
-
-lut2uid   = containers.Map();
-maplabel  = containers.Map();
-
-mapd      = cell(1, intmax('uint16'));
-mapl      = cell(1, intmax('uint16'));
-mapr      = cell(1, intmax('uint16'));
-mape      = cell(1, intmax('uint16'));
-
-uid = 0;
-
+initerator = topcell.getCellInstanceList().iterator();
+edgesiterator = edifgraph.getEdges().iterator();
 
 alloc = intmax('uint16');
 
+lutset   = containers.Map();
+maplabel = containers.Map();
 
+mapd = cell(1, alloc);
+mapl = cell(1, alloc);
+mapr = cell(1, alloc);
+mape = cell(1, alloc);
+uid  = 0;
 
-lutbatch = cell(5, alloc);
+lutbatch = cell(6, alloc);
 lutindex = 0;
-
-
-
-
 
 while (initerator.hasNext())
     instance = initerator.next();
@@ -48,6 +36,7 @@ while (initerator.hasNext())
     lutbatch{3, lutindex} = isd;
     lutbatch{4, lutindex} = tt;
     lutbatch{5, lutindex} = char(instance.getName());
+    lutbatch{6, lutindex} = char(instance.getType());
 end
 
 lutrange = 1:lutindex;
@@ -72,34 +61,8 @@ for k = lutrange
     [l, e] = rename_node(d, l, e, [r.pi, r.po], lutbatch{2, k});
     [l, e] = make_instance(instancename, d, l, r, e);
     push_net(d, l, r, e);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    lut2uid(instancename) = uid;
-    
+    lutset(instancename) = instancename;
 end
-
-
-%inputs = lutbatch{1, k};
-%lutcount = zeros(1, 6);
-
-    %lutcount(inputs) = lutcount(inputs) + 1;
 
 mapedges = cell(1, alloc);
 edgecount = 0;
@@ -156,79 +119,25 @@ end
 
 out_delay(cell_collapse(mapproxy)) = 1;
 [out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, cell_collapse(mapremove));
-out_edif = edifenvironment;
 
 bufindex = find(~cellfun('isempty', regexp(out_labels, '.*,?buf_.*')));
 mapproxy = cell(1, out_range.sz);
+
 for k = bufindex
-    inode = get_inode(out_delay, k);
     onode = get_onode(out_delay, k);
-    mapproxy{k} = sub2ind2(out_range.sz, repmat(inode, 1, numel(onode)), onode);
+    mapproxy{k} = sub2ind2(out_range.sz, repmat(get_inode(out_delay, k), 1, numel(onode)), onode);
 end
 
 out_delay(cell_collapse(mapproxy)) = 1;
 [out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, bufindex);
+out_edif = edifenvironment;
 
-
-
-        
-        %d(get_inode(d, find(strcmpi('o', l))), strcmpi('lo', l)) = 1;
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-%disp(['LUT1: ' num2str(lutcount(1))]);
-%disp(['LUT2: ' num2str(lutcount(2))]);
-%disp(['LUT3: ' num2str(lutcount(3))]);
-%disp(['LUT4: ' num2str(lutcount(4))]);
-%disp(['LUT5: ' num2str(lutcount(5))]);
-%disp(['LUT6: ' num2str(lutcount(6))]);
-%disp('-');
-disp(['LUTs: ' num2str(lutindex)]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+out_stats.luts      = lutindex;
+out_stats.processed = lutbatch;
 
     function [out_isit] = test_lut(in_fullportname)
     pivot = find(in_fullportname == ',');
-    out_isit = ~isempty(pivot) && lut2uid.isKey(in_fullportname(1:(pivot - 1)));
+    out_isit = ~isempty(pivot) && lutset.isKey(in_fullportname(1:(pivot - 1)));
     end
 
     function push_net(in_d, in_l, in_r, in_e)

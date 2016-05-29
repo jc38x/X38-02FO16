@@ -20655,6 +20655,1658 @@ strash
 resyn2rs
 write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_451.aig
 empty
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+compress
+compress2
+resyn
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+source abc.rc
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_2.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_3.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_4.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_5.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_6.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_7.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_8.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_9.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_10.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_11.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_12.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_13.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_14.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_15.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_16.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_17.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_18.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_19.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_20.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_21.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_22.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_23.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_24.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_25.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_26.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_27.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_28.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_29.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_30.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_31.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_32.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_33.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_34.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_35.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_36.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_37.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_38.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_39.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_40.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_41.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_42.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_43.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_44.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_45.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_46.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_47.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_48.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_49.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_50.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_51.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_52.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_53.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_54.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_55.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_56.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_57.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_58.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_59.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_60.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_61.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_62.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_63.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_64.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_65.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_66.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_67.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_68.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_69.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_70.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_71.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_72.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_73.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_74.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_75.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_76.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_77.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_78.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_79.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_80.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_81.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_82.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_83.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_84.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_85.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_86.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_87.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_88.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_89.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_90.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_91.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_92.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_93.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_94.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_95.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_96.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_97.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_98.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_99.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_100.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_101.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_102.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_103.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_104.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_105.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_106.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_107.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_108.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_109.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_110.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_111.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_112.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_113.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_114.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_115.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_116.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_117.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_118.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_119.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_120.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_121.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_122.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_123.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_124.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_125.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_126.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_127.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_128.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_129.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_130.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_131.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_132.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_133.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_134.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_135.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_136.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_137.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_138.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_139.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_140.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_141.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_142.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_143.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_144.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_145.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_146.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_147.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_148.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_149.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_150.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_151.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_152.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_153.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_154.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_155.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_156.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_157.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_158.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_159.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_160.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_161.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_162.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_163.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_164.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_165.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_166.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_167.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_168.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_169.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_170.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_171.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_172.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_173.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_174.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_175.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_176.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_177.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_178.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_179.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_180.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_181.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_182.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_183.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_184.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_185.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_186.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_187.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_188.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_189.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_190.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_191.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_192.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_193.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_194.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_195.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_196.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_197.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_198.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_199.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_200.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_201.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_202.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_203.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_204.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_205.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_206.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_207.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_208.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_209.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_210.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_211.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_212.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_213.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_214.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_215.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_216.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_217.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_218.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_219.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_220.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_221.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_222.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_223.aig
+read_truth FDA8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_224.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_225.aig
+read_truth 7F
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_226.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_227.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_228.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_229.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_230.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_231.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_232.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_233.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_234.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_235.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_236.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_237.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_238.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_239.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_240.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_241.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_242.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_243.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_244.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_245.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_246.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_247.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_248.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_249.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_250.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_251.aig
+read_truth 2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_252.aig
+read_truth 0E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_253.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_254.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_255.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_256.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_257.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_258.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_259.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_260.aig
+read_truth FE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_261.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_262.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_263.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_387.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_388.aig
+read_truth 1B
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_389.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_390.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_391.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_392.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_393.aig
+read_truth E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_394.aig
+read_truth FBEA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_395.aig
+read_truth 80
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_396.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_397.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_398.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_399.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_400.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_401.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_402.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_403.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_404.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_405.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_406.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_407.aig
+read_truth F888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_408.aig
+read_truth C444
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_409.aig
+read_truth 8C0C
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_410.aig
+read_truth 222A
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_411.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_412.aig
+read_truth 15
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_413.aig
+read_truth 40CC
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_414.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_415.aig
+read_truth 0888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_416.aig
+read_truth F5F1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_417.aig
+read_truth EAEE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_418.aig
+read_truth FF02
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_419.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_420.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_421.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_422.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_423.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_424.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_425.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_426.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_427.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_428.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_429.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_430.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_431.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_432.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_433.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_434.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_435.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_436.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_437.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_438.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_439.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_440.aig
+read_truth 8AFF
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_441.aig
+read_truth 1000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_442.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_443.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_444.aig
+read_truth 2220
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_445.aig
+read_truth D
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_446.aig
+read_truth 75F5
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_447.aig
+read_truth 8808
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_448.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_449.aig
+read_truth 1555
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_450.aig
+read_truth 08
+strash
+resyn2rs
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_451.aig
+empty
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+compress
+compress2
+resyn
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+source abc.rc
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_2.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_3.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_4.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_5.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_6.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_7.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_8.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_9.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_10.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_11.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_12.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_13.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_14.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_15.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_16.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_17.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_18.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_19.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_20.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_21.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_22.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_23.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_24.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_25.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_26.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_27.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_28.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_29.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_30.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_31.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_32.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_33.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_34.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_35.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_36.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_37.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_38.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_39.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_40.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_41.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_42.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_43.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_44.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_45.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_46.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_47.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_48.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_49.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_50.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_51.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_52.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_53.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_54.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_55.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_56.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_57.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_58.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_59.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_60.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_61.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_62.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_63.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_64.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_65.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_66.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_67.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_68.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_69.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_70.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_71.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_72.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_73.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_74.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_75.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_76.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_77.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_78.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_79.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_80.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_81.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_82.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_83.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_84.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_85.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_86.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_87.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_88.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_89.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_90.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_91.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_92.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_93.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_94.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_95.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_96.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_97.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_98.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_99.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_100.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_101.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_102.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_103.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_104.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_105.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_106.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_107.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_108.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_109.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_110.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_111.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_112.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_113.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_114.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_115.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_116.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_117.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_118.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_119.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_120.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_121.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_122.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_123.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_124.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_125.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_126.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_127.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_128.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_129.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_130.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_131.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_132.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_133.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_134.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_135.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_136.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_137.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_138.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_139.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_140.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_141.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_142.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_143.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_144.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_145.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_146.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_147.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_148.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_149.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_150.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_151.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_152.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_153.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_154.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_155.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_156.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_157.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_158.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_159.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_160.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_161.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_162.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_163.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_164.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_165.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_166.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_167.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_168.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_169.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_170.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_171.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_172.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_173.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_174.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_175.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_176.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_177.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_178.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_179.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_180.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_181.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_182.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_183.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_184.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_185.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_186.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_187.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_188.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_189.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_190.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_191.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_192.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_193.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_194.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_195.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_196.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_197.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_198.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_199.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_200.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_201.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_202.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_203.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_204.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_205.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_206.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_207.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_208.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_209.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_210.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_211.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_212.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_213.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_214.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_215.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_216.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_217.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_218.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_219.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_220.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_221.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_222.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_223.aig
+read_truth FDA8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_224.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_225.aig
+read_truth 7F
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_226.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_227.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_228.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_229.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_230.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_231.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_232.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_233.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_234.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_235.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_236.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_237.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_238.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_239.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_240.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_241.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_242.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_243.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_244.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_245.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_246.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_247.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_248.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_249.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_250.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_251.aig
+read_truth 2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_252.aig
+read_truth 0E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_253.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_254.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_255.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_256.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_257.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_258.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_259.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_260.aig
+read_truth FE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_261.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_262.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_263.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_387.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_388.aig
+read_truth 1B
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_389.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_390.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_391.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_392.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_393.aig
+read_truth E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_394.aig
+read_truth FBEA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_395.aig
+read_truth 80
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_396.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_397.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_398.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_399.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_400.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_401.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_402.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_403.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_404.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_405.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_406.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_407.aig
+read_truth F888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_408.aig
+read_truth C444
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_409.aig
+read_truth 8C0C
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_410.aig
+read_truth 222A
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_411.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_412.aig
+read_truth 15
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_413.aig
+read_truth 40CC
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_414.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_415.aig
+read_truth 0888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_416.aig
+read_truth F5F1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_417.aig
+read_truth EAEE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_418.aig
+read_truth FF02
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_419.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_420.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_421.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_422.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_423.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_424.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_425.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_426.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_427.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_428.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_429.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_430.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_431.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_432.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_433.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_434.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_435.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_436.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_437.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_438.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_439.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_440.aig
+read_truth 8AFF
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_441.aig
+read_truth 1000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_442.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_443.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_444.aig
+read_truth 2220
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_445.aig
+read_truth D
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_446.aig
+read_truth 75F5
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_447.aig
+read_truth 8808
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_448.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_449.aig
+read_truth 1555
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_450.aig
+read_truth 08
+strash
+resyn2rs
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_451.aig
+empty
+read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
+compress
+compress2
+resyn
+write_aiger -s C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig
+source abc.rc
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_2.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_3.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_4.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_5.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_6.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_7.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_8.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_9.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_10.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_11.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_12.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_13.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_14.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_15.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_16.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_17.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_18.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_19.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_20.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_21.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_22.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_23.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_24.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_25.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_26.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_27.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_28.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_29.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_30.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_31.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_32.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_33.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_34.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_35.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_36.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_37.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_38.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_39.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_40.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_41.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_42.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_43.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_44.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_45.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_46.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_47.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_48.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_49.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_50.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_51.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_52.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_53.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_54.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_55.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_56.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_57.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_58.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_59.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_60.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_61.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_62.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_63.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_64.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_65.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_66.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_67.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_68.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_69.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_70.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_71.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_72.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_73.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_74.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_75.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_76.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_77.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_78.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_79.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_80.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_81.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_82.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_83.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_84.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_85.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_86.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_87.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_88.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_89.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_90.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_91.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_92.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_93.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_94.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_95.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_96.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_97.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_98.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_99.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_100.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_101.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_102.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_103.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_104.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_105.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_106.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_107.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_108.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_109.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_110.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_111.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_112.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_113.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_114.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_115.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_116.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_117.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_118.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_119.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_120.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_121.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_122.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_123.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_124.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_125.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_126.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_127.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_128.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_129.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_130.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_131.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_132.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_133.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_134.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_135.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_136.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_137.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_138.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_139.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_140.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_141.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_142.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_143.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_144.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_145.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_146.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_147.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_148.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_149.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_150.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_151.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_152.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_153.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_154.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_155.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_156.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_157.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_158.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_159.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_160.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_161.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_162.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_163.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_164.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_165.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_166.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_167.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_168.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_169.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_170.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_171.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_172.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_173.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_174.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_175.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_176.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_177.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_178.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_179.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_180.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_181.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_182.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_183.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_184.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_185.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_186.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_187.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_188.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_189.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_190.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_191.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_192.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_193.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_194.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_195.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_196.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_197.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_198.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_199.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_200.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_201.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_202.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_203.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_204.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_205.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_206.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_207.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_208.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_209.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_210.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_211.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_212.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_213.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_214.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_215.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_216.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_217.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_218.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_219.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_220.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_221.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_222.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_223.aig
+read_truth FDA8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_224.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_225.aig
+read_truth 7F
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_226.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_227.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_228.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_229.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_230.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_231.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_232.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_233.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_234.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_235.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_236.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_237.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_238.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_239.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_240.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_241.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_242.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_243.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_244.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_245.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_246.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_247.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_248.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_249.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_250.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_251.aig
+read_truth 2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_252.aig
+read_truth 0E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_253.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_254.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_255.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_256.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_257.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_258.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_259.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_260.aig
+read_truth FE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_261.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_262.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_263.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_387.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_388.aig
+read_truth 1B
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_389.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_390.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_391.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_392.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_393.aig
+read_truth E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_394.aig
+read_truth FBEA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_395.aig
+read_truth 80
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_396.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_397.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_398.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_399.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_400.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_401.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_402.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_403.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_404.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_405.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_406.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_407.aig
+read_truth F888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_408.aig
+read_truth C444
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_409.aig
+read_truth 8C0C
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_410.aig
+read_truth 222A
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_411.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_412.aig
+read_truth 15
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_413.aig
+read_truth 40CC
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_414.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_415.aig
+read_truth 0888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_416.aig
+read_truth F5F1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_417.aig
+read_truth EAEE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_418.aig
+read_truth FF02
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_419.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_420.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_421.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_422.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_423.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_424.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_425.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_426.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_427.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_428.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_429.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_430.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_431.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_432.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_433.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_434.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_435.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_436.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_437.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_438.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_439.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_440.aig
+read_truth 8AFF
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_441.aig
+read_truth 1000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_442.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_443.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_444.aig
+read_truth 2220
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_445.aig
+read_truth D
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_446.aig
+read_truth 75F5
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_447.aig
+read_truth 8808
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_448.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_449.aig
+read_truth 1555
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_450.aig
+read_truth 08
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_451.aig
+source abc.rc
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_1.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_2.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_3.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_4.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_5.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_6.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_7.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_8.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_9.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_10.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_11.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_12.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_13.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_14.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_15.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_16.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_17.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_18.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_19.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_20.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_21.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_22.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_23.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_24.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_25.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_26.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_27.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_28.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_29.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_30.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_31.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_32.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_33.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_34.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_35.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_36.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_37.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_38.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_39.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_40.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_41.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_42.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_43.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_44.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_45.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_46.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_47.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_48.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_49.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_50.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_51.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_52.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_53.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_54.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_55.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_56.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_57.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_58.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_59.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_60.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_61.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_62.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_63.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_64.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_65.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_66.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_67.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_68.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_69.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_70.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_71.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_72.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_73.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_74.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_75.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_76.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_77.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_78.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_79.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_80.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_81.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_82.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_83.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_84.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_85.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_86.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_87.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_88.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_89.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_90.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_91.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_92.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_93.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_94.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_95.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_96.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_97.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_98.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_99.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_100.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_101.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_102.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_103.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_104.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_105.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_106.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_107.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_108.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_109.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_110.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_111.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_112.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_113.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_114.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_115.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_116.aig
+read_truth 01
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_117.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_118.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_119.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_120.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_121.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_122.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_123.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_124.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_125.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_126.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_127.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_128.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_129.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_130.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_131.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_132.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_133.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_134.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_135.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_136.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_137.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_138.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_139.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_140.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_141.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_142.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_143.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_144.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_145.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_146.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_147.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_148.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_149.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_150.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_151.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_152.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_153.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_154.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_155.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_156.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_157.aig
+read_truth 0001
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_158.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_159.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_160.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_161.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_162.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_163.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_164.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_165.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_166.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_167.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_168.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_169.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_170.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_171.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_172.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_173.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_174.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_175.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_176.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_177.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_178.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_179.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_180.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_181.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_182.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_183.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_184.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_185.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_186.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_187.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_188.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_189.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_190.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_191.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_192.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_193.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_194.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_195.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_196.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_197.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_198.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_199.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_200.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_201.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_202.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_203.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_204.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_205.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_206.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_207.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_208.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_209.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_210.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_211.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_212.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_213.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_214.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_215.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_216.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_217.aig
+read_truth 72
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_218.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_219.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_220.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_221.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_222.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_223.aig
+read_truth FDA8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_224.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_225.aig
+read_truth 7F
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_226.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_227.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_228.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_229.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_230.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_231.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_232.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_233.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_234.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_235.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_236.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_237.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_238.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_239.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_240.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_241.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_242.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_243.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_244.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_245.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_246.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_247.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_248.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_249.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_250.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_251.aig
+read_truth 2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_252.aig
+read_truth 0E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_253.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_254.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_255.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_256.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_257.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_258.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_259.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_260.aig
+read_truth FE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_261.aig
+read_truth 8
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_262.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_263.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_387.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_388.aig
+read_truth 1B
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_389.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_390.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_391.aig
+read_truth 00E2
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_392.aig
+read_truth EA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_393.aig
+read_truth E
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_394.aig
+read_truth FBEA
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_395.aig
+read_truth 80
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_396.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_397.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_398.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_399.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_400.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_401.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_402.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_403.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_404.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_405.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_406.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_407.aig
+read_truth F888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_408.aig
+read_truth C444
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_409.aig
+read_truth 8C0C
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_410.aig
+read_truth 222A
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_411.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_412.aig
+read_truth 15
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_413.aig
+read_truth 40CC
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_414.aig
+read_truth 4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_415.aig
+read_truth 0888
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_416.aig
+read_truth F5F1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_417.aig
+read_truth EAEE
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_418.aig
+read_truth FF02
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_419.aig
+read_truth 8000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_420.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_421.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_422.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_423.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_424.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_425.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_426.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_427.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_428.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_429.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_430.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_431.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_432.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_433.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_434.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_435.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_436.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_437.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_438.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_439.aig
+read_truth E4
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_440.aig
+read_truth 8AFF
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_441.aig
+read_truth 1000
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_442.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_443.aig
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_444.aig
+read_truth 2220
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_445.aig
+read_truth D
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_446.aig
+read_truth 75F5
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_447.aig
+read_truth 8808
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_448.aig
+read_truth 1
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_449.aig
+read_truth 1555
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_450.aig
+read_truth 08
+strash
+resyn2rs
+write_aiger -s C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\_abc_tt2mat_451.aig
+empty
 source abc.rc
 read_aiger C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig;
 compress
