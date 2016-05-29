@@ -21,9 +21,9 @@ dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3_IMAP_M
 tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig';
 
 [d, l, r, e, edif, stats] = ngcedif2mat(srcfname, [{'resyn2'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'};]);
-disp(['LUTs: ' num2str(stats.luts)]);
+%disp(['LUTs: ' num2str(stats.luts)]);
 %primitives = stats.primitives;
-%for k = primitives.keys()
+%for k = prismitives.keys()
  %   disp([k{:} ' ' num2str(primitives(k{:}))]);    
 %end
 

@@ -61,7 +61,7 @@ for k = lutrange
     [l, e] = rename_node(d, l, e, [r.pi, r.po], lutbatch{2, k});
     [l, e] = make_instance(instancename, d, l, r, e);
     push_net(d, l, r, e);
-    lutset(instancename) = instancename;
+    lutset(instancename) = 0;
 end
 
 mapedges = cell(1, alloc);
@@ -130,10 +130,9 @@ end
 
 out_delay(cell_collapse(mapproxy)) = 1;
 [out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, bufindex);
-out_edif = edifenvironment;
 
-out_stats.luts      = lutindex;
-out_stats.processed = lutbatch;
+out_edif  = edifenvironment;
+out_stats = lutbatch;
 
     function [out_isit] = test_lut(in_fullportname)
     pivot = find(in_fullportname == ',');
