@@ -61,9 +61,11 @@ epw.incrIndent();
 
 while (instanceiterator.hasNext())
     instance = instanceiterator.next();
-    type = char(instance.getType());
-    if (strncmpi(type, 'LUT', 3)), continue; end
+    %type = char(instance.getType());
+    %if (strncmpi(type, 'LUT', 3)), continue; end
     %if (strncmpi(type, 'XORCY', 5)), continue; end
+    hit = unmap_table_xilinx(instance);
+    if (hit), continue; end
     instance.toEdif(epw);
 end
 
@@ -115,16 +117,20 @@ while (edgesiterator.hasNext())
     
     sourceepr  = edge.getSourceEPR();
     if (~sourceepr.isTopLevelPortRef())
-    sourcetype = char(sourceepr.getCellInstance().getType());
-    if (strncmpi(sourcetype, 'LUT', 3)), continue; end
+    %sourcetype = char(sourceepr.getCellInstance().getType());
+    %if (strncmpi(sourcetype, 'LUT', 3)), continue; end
     %if (strncmpi(sourcetype, 'XORCY', 5)), continue; end
+    hit = unmap_table_xilinx(sourceepr.getCellInstance());
+    if (hit), continue; end
     end
     
     sinkepr  = edge.getSinkEPR();
     if (~sinkepr.isTopLevelPortRef())
-    sinktype = char(sinkepr.getCellInstance().getType());
-    if (strncmpi(  sinktype, 'LUT', 3)), continue; end
+    %sinktype = char(sinkepr.getCellInstance().getType());
+    %if (strncmpi(  sinktype, 'LUT', 3)), continue; end
     %if (strncmpi(  sinktype, 'XORCY', 5)), continue; end
+    hit = unmap_table_xilinx(  sinkepr.getCellInstance());
+    if (hit), continue; end
     end
     
     push_net(make_port_name(sourceepr, true), make_port_name(sinkepr, false));

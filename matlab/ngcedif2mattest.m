@@ -108,50 +108,152 @@ toc(t)
 
 
 
+    
+%{
+    
+    
+    
+    
+    
+    
+lutcount = zeros(1, 6);
+instancename = in_instance{k};
+
+
+    
+        
+        
+        
+    
+        
+        
+        
+        
+
+    if (lutbatch{3, k})
+        lpo = get_inode(d, r.po);
+        [d, l, r, e] = group_nets({d, sparse([], [], [], 1, 1, 1)}, {l, {'lo'}}, {r, prepare_range(0, 0, 1)}, {e, {''}});
+        d(lpo, r.po) = 1;
+    end
+    
+    [l, e] = rename_node(d, l, e, [r.pi, r.po], lutbatch{2, k});
+    [l, e] = make_instance(instancename, d, l, r, e);
+    push_net(d, l, r, e);
+    lut2uid(instancename) = uid;
+    lutcount(inputs) = lutcount(inputs) + 1;
+end
+%}
 
 
 
+
+%{
+if (in_inputs == 1 && strcmpi(in_tthex, '2'))
+    disp('route-thru');
+    out_delay = sparse([1, 2], [2, 3], 1, 3, 3);
+    out_labels = {'i0', 'and_2', 'o'};
+    out_range = prepare_range(1, 1, 1);
+    out_equations = [{''}, {'and([i0],[i0])'}, {''}]; 
+    return;
+end
+
+
+
+filename = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/abc_tt.aig';
+invoke_abc({['read_truth ' in_tthex]; 'strash'; 'refactor'; 'refactor'; 'refactor'; ['write_aiger -s ' filename]; 'quit'});
+[out_delay, out_labels, out_range, out_equations] = aiger2mat(filename);
+
+if (out_range.szin < 1)
+end
+
+
+newnames = cell(1, out_range.szpi + out_range.szpo);
+for k = 1:out_range.szpi, newnames{k} = ['i' num2str(k - 1)]; end
+newnames(end) = {'o'};
+
+[out_labels, out_equations] = rename_node(out_delay, out_labels, out_equations, [out_range.pi, out_range.po], newnames);
+%}
+
+
+%{
+script = cell(alloc, 1);
+scriptindex = 0;
+wsp = get_workspace_path();
+prefix = '_tmp_ngcedif2mat_';
+ext = '.aig';
+
+for k = lutrange
+    tt = lutbatch{4, k};
+    if (lutbatch{1, k} <= 1), continue; end
+    nextindex = scriptindex + 4 + numel(in_lutsyn);
+    script((scriptindex + 1):nextindex) = [{['read_truth ' tt]}; {'strash'}; in_lutsyn; {['write_aiger -s ' wsp prefix lutbatch{5, k} ext]}; {'empty'}];
+    scriptindex = nextindex;
+end
+
+scriptindex = scriptindex + 1;
+script(scriptindex) = {'quit'};
+script = script(1:scriptindex);
+        
+invoke_abc(script);
+
+lutcount = zeros(1, 6);
+
+for k = lutrange
+    instancename = lutbatch{5, k};
+    inputs = lutbatch{1, k};
+
+    if (inputs <= 1)
+        switch (lutbatch{4, k})
+        case '0', d = sparse(    2,      3,  1, 3, 3); l = {'i0', 'gnd_2', 'o'}; e = [{''}, {'0'},              {''}];
+        case '1', d = sparse([1, 2], [2, 3], 1, 3, 3); l = {'i0', 'not_2', 'o'}; e = [{''}, {'not([i0])'},      {''}];
+        case '2', d = sparse([1, 2], [2, 3], 1, 3, 3); l = {'i0', 'and_2', 'o'}; e = [{''}, {'and([i0],[i0])'}, {''}];
+        case '3', d = sparse(    2,      3,  1, 3, 3); l = {'i0', 'vcc_2', 'o'}; e = [{''}, {'1'},              {''}];
+        end
+        
+        r = prepare_range(1, 1, 1);
+    else
+        [d, l, r, e] = aiger2mat([wsp prefix instancename ext]);
+        [l, e] = rename_node(d, l, e, r.po, {'o'});
+        
+        if (r.szin < 1)
+            pt = get_inode(d, r.po);
+            lpt = ['[' l{pt} ']'];
+            r = prepare_range(r.szpi, 1, r.szpo);
+            d = sparse([pt, r.in], [r.in, r.po], 1, r.sz, r.sz);
+            l = [l(r.pi), {'and_2'}, l(end)];
+            e = [e(r.pi), {['and(' lpt ',' lpt ')']}, e(end)];
+        end
+    end
+%}
+    %type = char(instance.getType());
+%{
+    switch (upper(type))
+    case 'LUT1',    inputs = 1; rename = {'I0'                                      'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT1_L',  inputs = 1; rename = {'I0'                                'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT1_D',  inputs = 1; rename = {'I0'                                'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT2',    inputs = 2; rename = {'I0', 'I1',                               'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT2_L',  inputs = 2; rename = {'I0', 'I1',                         'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT2_D',  inputs = 2; rename = {'I0', 'I1',                         'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT3',    inputs = 3; rename = {'I0', 'I1', 'I2',                         'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT3_L',  inputs = 3; rename = {'I0', 'I1', 'I2',                   'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT3_D',  inputs = 3; rename = {'I0', 'I1', 'I2',                   'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT4',    inputs = 4; rename = {'I0', 'I1', 'I2', 'I3',                   'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT4_L',  inputs = 4; rename = {'I0', 'I1', 'I2', 'I3',             'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT4_D',  inputs = 4; rename = {'I0', 'I1', 'I2', 'I3',             'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT5',    inputs = 5; rename = {'I0', 'I1', 'I2', 'I3', 'I4',             'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT5_L',  inputs = 5; rename = {'I0', 'I1', 'I2', 'I3', 'I4',       'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT5_D',  inputs = 5; rename = {'I0', 'I1', 'I2', 'I3', 'I4',       'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT6',    inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5',       'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT6_L',  inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5', 'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    case 'LUT6_D',  inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5', 'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
+    otherwise,      continue;
+    end
+    %}
 %[dirs, sl] = split_module_path(mfilename('fullpath'));
 %workdir = [[dirs{1:(end-2)}] 'tools' sl 'abc' sl];
 
 %{
-nj = numel(in_script);
-ns = numel(stdout);
-response = cell(1, ns);
-index = 0;
-j = 0;
 
-for k = 1:ns
-    line = stdout{k};
-    [sidx, endindex] = regexp(line, 'abc \d+\>');
-    
-    startindex = [sidx, numel(line) + 1];
-    statement = line(1:(startindex(1) - 1));
-    ne = numel(endindex);
-    
-    text = cell(1, (2 * ne) + 1);
-    subindex = 0;
-
-    if (~isempty(statement)), push_line(statement); end
-
-    for i = 1:ne
-        matchstop = endindex(i) + 2;
-        statement = line((matchstop + 1):(startindex(i + 1) - 1));
-        j = j + 1;
-        if (j <= nj), push_line([line(startindex(i):matchstop) in_script{j}]); end
-        if (~isempty(statement)), push_line(statement); end
-    end
-    
-    index = index + 1;
-    response{index} = text(1:subindex);
-end
-
-out_stdout = cell_collapse(response(1:index));
-
-    function push_line(in_line)
-    subindex = subindex + 1;
-    text{subindex} = in_line;
-    end
 %}
 
 

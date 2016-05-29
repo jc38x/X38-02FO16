@@ -33,32 +33,14 @@ alloc = intmax('uint16');
 lutbatch = cell(5, alloc);
 lutindex = 0;
 
+
+
+
+
 while (initerator.hasNext())
     instance = initerator.next();
-    type = char(instance.getType());
-
-    switch (upper(type))
-    case 'LUT1',    inputs = 1; rename = {'I0'                                      'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT1_L',  inputs = 1; rename = {'I0'                                'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT1_D',  inputs = 1; rename = {'I0'                                'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT2',    inputs = 2; rename = {'I0', 'I1',                               'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT2_L',  inputs = 2; rename = {'I0', 'I1',                         'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT2_D',  inputs = 2; rename = {'I0', 'I1',                         'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT3',    inputs = 3; rename = {'I0', 'I1', 'I2',                         'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT3_L',  inputs = 3; rename = {'I0', 'I1', 'I2',                   'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT3_D',  inputs = 3; rename = {'I0', 'I1', 'I2',                   'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT4',    inputs = 4; rename = {'I0', 'I1', 'I2', 'I3',                   'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT4_L',  inputs = 4; rename = {'I0', 'I1', 'I2', 'I3',             'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT4_D',  inputs = 4; rename = {'I0', 'I1', 'I2', 'I3',             'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT5',    inputs = 5; rename = {'I0', 'I1', 'I2', 'I3', 'I4',             'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT5_L',  inputs = 5; rename = {'I0', 'I1', 'I2', 'I3', 'I4',       'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT5_D',  inputs = 5; rename = {'I0', 'I1', 'I2', 'I3', 'I4',       'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT6',    inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5',       'O'}; isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT6_L',  inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5', 'LO'};      isd = false; tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    case 'LUT6_D',  inputs = 6; rename = {'I0', 'I1', 'I2', 'I3', 'I4', 'I5', 'LO', 'O'}; isd = true;  tt = char(instance.getProperty('INIT').getValue().getStringValue());
-    otherwise,      continue;
-    end
-    
+    [hit, inputs, rename, isd, tt] = unmap_table_xilinx(instance);
+    if (~hit), continue; end    
     lutindex = lutindex + 1;
     
     lutbatch{1, lutindex} = inputs;
@@ -68,61 +50,19 @@ while (initerator.hasNext())
     lutbatch{5, lutindex} = char(instance.getName());
 end
 
-
-
-
 lutrange = 1:lutindex;
 lutbatch = lutbatch(:, lutrange);
 
-script = cell(alloc, 1);
-scriptindex = 0;
-wsp = get_workspace_path();
-prefix = '_tmp_ngcedif2mat_';
-ext = '.aig';
-
-for k = lutrange
-    tt = lutbatch{4, k};
-    if (lutbatch{1, k} <= 1), continue; end
-    nextindex = scriptindex + 4 + numel(in_lutsyn);
-    script((scriptindex + 1):nextindex) = [{['read_truth ' tt]}; {'strash'}; in_lutsyn; {['write_aiger -s ' wsp prefix lutbatch{5, k} ext]}; {'empty'}];
-    scriptindex = nextindex;
-end
-
-scriptindex = scriptindex + 1;
-script(scriptindex) = {'quit'};
-script = script(1:scriptindex);
-        
-invoke_abc(script);
-
-lutcount = zeros(1, 6);
+[dl, ll, rl, el] = abc_tt2mat(lutbatch(4, :), lutbatch(1, :), in_lutsyn);
 
 for k = lutrange
     instancename = lutbatch{5, k};
-    inputs = lutbatch{1, k};
-
-    if (inputs <= 1)
-        switch (lutbatch{4, k})
-        case '0', d = sparse(    2,      3,  1, 3, 3); l = {'i0', 'gnd_2', 'o'}; e = [{''}, {'0'},              {''}];
-        case '1', d = sparse([1, 2], [2, 3], 1, 3, 3); l = {'i0', 'not_2', 'o'}; e = [{''}, {'not([i0])'},      {''}];
-        case '2', d = sparse([1, 2], [2, 3], 1, 3, 3); l = {'i0', 'and_2', 'o'}; e = [{''}, {'and([i0],[i0])'}, {''}];
-        case '3', d = sparse(    2,      3,  1, 3, 3); l = {'i0', 'vcc_2', 'o'}; e = [{''}, {'1'},              {''}];
-        end
-        
-        r = prepare_range(1, 1, 1);
-    else
-        [d, l, r, e] = aiger2mat([wsp prefix instancename ext]);
-        [l, e] = rename_node(d, l, e, r.po, {'o'});
-        
-        if (r.szin < 1)
-            pt = get_inode(d, r.po);
-            lpt = ['[' l{pt} ']'];
-            r = prepare_range(r.szpi, 1, r.szpo);
-            d = sparse([pt, r.in], [r.in, r.po], 1, r.sz, r.sz);
-            l = [l(r.pi), {'and_2'}, l(end)];
-            e = [e(r.pi), {['and(' lpt ',' lpt ')']}, e(end)];
-        end
-    end
-
+    
+    d = dl{k};
+    l = ll{k};
+    r = rl{k};
+    e = el{k};
+    
     if (lutbatch{3, k})
         lpo = get_inode(d, r.po);
         [d, l, r, e] = group_nets({d, sparse([], [], [], 1, 1, 1)}, {l, {'lo'}}, {r, prepare_range(0, 0, 1)}, {e, {''}});
@@ -132,9 +72,34 @@ for k = lutrange
     [l, e] = rename_node(d, l, e, [r.pi, r.po], lutbatch{2, k});
     [l, e] = make_instance(instancename, d, l, r, e);
     push_net(d, l, r, e);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
     lut2uid(instancename) = uid;
-    lutcount(inputs) = lutcount(inputs) + 1;
+    
 end
+
+
+%inputs = lutbatch{1, k};
+%lutcount = zeros(1, 6);
+
+    %lutcount(inputs) = lutcount(inputs) + 1;
 
 mapedges = cell(1, alloc);
 edgecount = 0;
@@ -193,7 +158,16 @@ out_delay(cell_collapse(mapproxy)) = 1;
 [out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, cell_collapse(mapremove));
 out_edif = edifenvironment;
 
+bufindex = find(~cellfun('isempty', regexp(out_labels, '.*,?buf_.*')));
+mapproxy = cell(1, out_range.sz);
+for k = bufindex
+    inode = get_inode(out_delay, k);
+    onode = get_onode(out_delay, k);
+    mapproxy{k} = sub2ind2(out_range.sz, repmat(inode, 1, numel(onode)), onode);
+end
 
+out_delay(cell_collapse(mapproxy)) = 1;
+[out_delay, out_labels, out_range, out_equations] = remove_node(out_delay, out_labels, out_range, out_equations, bufindex);
 
 
 
@@ -216,13 +190,13 @@ out_edif = edifenvironment;
 
 
 
-disp(['LUT1: ' num2str(lutcount(1))]);
-disp(['LUT2: ' num2str(lutcount(2))]);
-disp(['LUT3: ' num2str(lutcount(3))]);
-disp(['LUT4: ' num2str(lutcount(4))]);
-disp(['LUT5: ' num2str(lutcount(5))]);
-disp(['LUT6: ' num2str(lutcount(6))]);
-disp('-');
+%disp(['LUT1: ' num2str(lutcount(1))]);
+%disp(['LUT2: ' num2str(lutcount(2))]);
+%disp(['LUT3: ' num2str(lutcount(3))]);
+%disp(['LUT4: ' num2str(lutcount(4))]);
+%disp(['LUT5: ' num2str(lutcount(5))]);
+%disp(['LUT6: ' num2str(lutcount(6))]);
+%disp('-');
 disp(['LUTs: ' num2str(lutindex)]);
 
 
