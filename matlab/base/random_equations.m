@@ -52,7 +52,7 @@ for in = in_range.in
     case 1, equation = ['not(' signals{input} ')'];
     otherwise
         equation = make_gate(signals{input(1)}, signals{input(2)});
-        for i = 3:nni, equation = make_gate(equation, signals{input(i)}); end
+        for k = 3:nni, equation = make_gate(equation, signals{input(k)}); end
     end
     out_equations{in} = equation;
 end

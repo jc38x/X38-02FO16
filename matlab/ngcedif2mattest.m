@@ -1,9 +1,7 @@
 
-%http://www1.pldworld.com/@xilinx/html/technote/tool/manual/15i_doc/alliance/lib/lib7_21.htm
-%http://www1.pldworld.com/@xilinx/html/technote/tool/manual/15i_doc/alliance/lib/lib7_19.htm
-%http://www1.pldworld.com/@xilinx/html/technote/tool/manual/15i_doc/alliance/lib/lib7_20.htm
+
 %https://docs.oracle.com/javase/7/docs/api/java/io/FileOutputStream.html
-%http://reliability.ee.byu.edu/edif/doc/
+%
 
 t = tic();
 
@@ -14,24 +12,110 @@ alpha = 2.5; %1.5-2.5
 maxi = 5; %20
 epsrand = [0.000, 0.000]; %small
 
-%srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-30bits_outputs31bits\3-ARF\metaheurísticas\arf_femo.edif';
-%dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-30bits_outputs31bits\3-ARF\metaheurísticas\arf_femo_IMAP.edif';
-srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3.ndf';
-dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3_IMAP_MODE11.edif';
+srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-30bits_outputs31bits\3-ARF\metaheurísticas\arf_wsga.edif';
+dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-30bits_outputs31bits\3-ARF\metaheurísticas\arf_wsga_IMAP.edif';
+%srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3.ndf';
+%dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3_IMAP_MODE11.edif';
 tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig';
 
-[d, l, r, e, edif, stats] = ngcedif2mat(srcfname, [{'resyn2'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'}; {'resyn2rs'};]);
-%disp(['LUTs: ' num2str(stats.luts)]);
-%primitives = stats.primitives;
-%for k = prismitives.keys()
- %   disp([k{:} ' ' num2str(primitives(k{:}))]);    
-%end
+lutsyn = [
+    {'rr'};
+    {'resyn2'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    {'resyn2rs'};
+    ];
 
-
-
+[d, l, r, e, edif, stats] = ngcedif2mat(srcfname, lutsyn);
 mat2aiger(tmpfname, d, l, r, e);
 
+script5 = [
+    {['read_aiger ' tmpfname ';']};
+    {'rr'};
+    repmat([{'compress'}; {'compress2'}], 50, 1);
+    repmat([{'resyn'}; {'resyn2'}], 50, 1);
+    {['write_aiger -s ' tmpfname]};
+    {'quit'};
+    ];
 
+invoke_abc(script5);
+
+[df, lf, rf, ef] = aiger2mat(tmpfname);
+
+[df, lf, ef] = sort_graph(df, lf, rf, ef);
+[sf, cvf] = hara(df, rf, mode, K, maxi, alpha, 0, 0, lf, ef);
+[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
+[lutsf] = cones2luts(resultdf, resultlf, resultrf, resultef);
+netlist = mat2ngcedif(dstfname, resultdf, resultlf, resultrf, lutsf, [], [], edif);
+
+toc(t)
+
+
+
+
+%{
+    for node = solution
+        cone = cv{node};
+        coneoedge = cone{in_range.CONE_OEDGE};
+        coneonode = coneoedge(2, :);
+        coneonode = unique(coneonode(is_in(coneonode, in_range)));
+        coneonode = coneonode(:).';
+        numberoedges = sum(is_po(coneonode, in_range));
+        solsubset = solution(solution > node);
+        solsubset = solsubset(:).';
+        
+        for onode = coneonode
+            for container = solsubset
+                cont = cv{container};
+                members = cont{in_range.CONE_NODE};
+                numberoedges = numberoedges + sum(members == onode);
+            end
+        end
+        observedoedges(node) = numberoedges;
+    end
+    %}
+%type = char(instance.getType());
+    %if (strncmpi(type, 'LUT', 3)), continue; end
+    %if (strncmpi(type, 'XORCY', 5)), continue; end
+    %initstring = initstring(7:(end-1));
+
+
+    %adjk = k;% - in_range.pihi;
+    %in_inputs{adjk};
+    
+    
+    %if (any(strcmpi(initstring, {'0', '1'})))
+    %    error('Unimplemented: constants in LUT graph');
+    %end
+    
+    
+         %sourcetype = char(sourceepr.getCellInstance().getType());
+    %if (strncmpi(sourcetype, 'LUT', 3)), continue; end
+    %if (strncmpi(sourcetype, 'XORCY', 5)), continue; end
+    %sinktype = char(sinkepr.getCellInstance().getType());
+    %if (strncmpi(  sinktype, 'LUT', 3)), continue; end
+    %if (strncmpi(  sinktype, 'XORCY', 5)), continue; end
+    %hit = ;
+        %if (hit), continue; end
+    %end
+    %    hit = ;
+    %    if (hit), continue; end
+    %end
+% Begin filthy hack -------------------------------------------------------
+%quit = 0;
+%while (quit < 3)
+%    x1 = numel(out_stdout);
+%    pause(1);
+%    x2 = numel(out_stdout);
+%    if (x1 == x2), quit = quit + 1; else quit = 0; end
+%end
+% End filthy hack ---------------------------------------------------------
+%response = invoke_abc(script5);
+%for k = 1:numel(response), fprintf('%s\n', response{k}); end
+%{
 script = [
     {['read_aiger ' tmpfname ';']};
     {'b'};
@@ -84,38 +168,7 @@ script4 = [
     {['write_aiger -s ' tmpfname]};
     {'quit'};
     ];
-
-script5 = [
-    {['read_aiger ' tmpfname ';']};
-    {'rr'};
-    %repmat({'choice'}, 50, 1);
-    repmat([{'compress'}; {'compress2'}], 50, 1);
-    repmat([{'resyn'}; {'resyn2'}], 50, 1);
-    
-    
-    {['write_aiger -s ' tmpfname]};
-    {'quit'};
-    ];
-
-
-response = invoke_abc(script5);
-%for k = 1:numel(response), fprintf('%s\n', response{k}); end
-
-[df, lf, rf, ef] = aiger2mat(tmpfname);
-
-
-
-
-[df, lf, ef] = sort_graph(df, lf, rf, ef);
-[sf, cvf] = hara(df, rf, mode, K, maxi, alpha, 0, 0);
-[resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
-[lutsf] = cones2luts(resultdf, resultlf, resultrf, resultef);
-netlist = mat2ngcedif(dstfname, resultdf, resultlf, resultrf, lutsf, [], [], edif);
-
-toc(t)
-
-
-
+%}
      %inputs = lutbatch{1, k};
 %lutcount = zeros(1, 6);
 

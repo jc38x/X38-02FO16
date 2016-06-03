@@ -3,7 +3,7 @@
 % 10.1109/TCAD.2006.882119
 %**************************************************************************
 
-function [out_s, out_cv] = hara(in_delay, in_range, in_mode, in_K, in_maxi, in_alpha, in_minrand, in_maxrand)
+function [out_s, out_cv] = hara(in_delay, in_range, in_mode, in_K, in_maxi, in_alpha, in_minrand, in_maxrand, in_labels, in_equations)
 
 
 
@@ -66,25 +66,10 @@ for i = 1:in_maxi
 
 
     observedoedges = ones(1, in_range.sz);
-    for node = solution
-        cone = cv{node};
-        coneoedge = cone{in_range.CONE_OEDGE};
-        coneonode = coneoedge(2, :);
-        coneonode = unique(coneonode(is_in(coneonode, in_range)));
-        coneonode = coneonode(:).';
-        numberoedges = sum(is_po(coneonode, in_range));
-        solsubset = solution(solution > node);
-        solsubset = solsubset(:).';
-        
-        for onode = coneonode
-            for container = solsubset
-                cont = cv{container};
-                members = cont{in_range.CONE_NODE};
-                numberoedges = numberoedges + sum(members == onode);
-            end
-        end
-        observedoedges(node) = numberoedges;
-    end
+    td = rebuild_graph_from_cones(solution, cv, in_delay, in_range, in_labels, in_equations);
+    for k = 1:numel(solution), observedoedges(solution(k)) = sum(td(in_range.szpi + k, :) > 0); end
+    
+    
 end
 
 

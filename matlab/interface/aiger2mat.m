@@ -18,21 +18,21 @@ fmt = header{1};
 if (~strcmp(fmt, 'aig')), error(['Unexpected format identifier ''' fmt '''. Expected ''aig''.']); end
 if (numel(header) > 6), error('Header BCJF not supported.'); end
 
-m = str2double(header{2});
-i = str2double(header{3});
-l = str2double(header{4});
-o = str2double(header{5});
-a = str2double(header{6});
+vm = str2double(header{2});
+vi = str2double(header{3});
+vl = str2double(header{4});
+vo = str2double(header{5});
+va = str2double(header{6});
 
-if (m < 0), error('M < 0.'); end
-if (i < 0), error('I < 0.'); end
-if (l < 0), error('L < 0.'); end
-if (o < 0), error('O < 0.'); end
-if (a < 0), error('A < 0.'); end
+if (vm < 0), error('M < 0.'); end
+if (vi < 0), error('I < 0.'); end
+if (vl < 0), error('L < 0.'); end
+if (vo < 0), error('O < 0.'); end
+if (va < 0), error('A < 0.'); end
 
-ii = 2 * (1:i);
-li = 2 * ((i + 1):(i + l));
-ai = 2 * ((i + l + 1):(i + l + a));
+ii = 2 * (1:vi);
+li = 2 * ((vi + 1):(vi + vl));
+ai = 2 * ((vi + vl + 1):(vi + vl + va));
 
 input = strtrim(cellstr(num2str(ii.')).');
 latch = strtrim(cellstr(num2str(li.')).');
@@ -41,10 +41,10 @@ and   = strtrim(cellstr(num2str(ai.')).');
 instancemap = containers.Map();
 signal2uid  = containers.Map();
 
-edges  = cell(2, (3 * a) + i + o + (2 * l) + 2);
-pilist = zeros(1, i + l);
-inlist = zeros(1, (2 * a) + i + 2);
-polist = zeros(1, o + l);
+edges  = cell(2, (3 * va) + vi + vo + (2 * vl) + 2);
+pilist = zeros(1, vi + vl);
+inlist = zeros(1, (2 * va) + vi + 2);
+polist = zeros(1, vo + vl);
 
 uid        = 0;
 edgesindex = 0;
@@ -52,17 +52,17 @@ piindex    = 0;
 poindex    = 0;
 inindex    = 0;
 
-for k = 1:i, push_input_port(input{k}, ['i_' num2str(k) '_']); end
+for k = 1:vi, push_input_port(input{k}, ['i_' num2str(k) '_']); end
 
-for k = 1:l
+for k = 1:vl
     sk = num2str(k);
     push_input_port(latch{k}, ['latch_' sk '_i_']);
     push_output_port(strtrim(fgetl(fid)), ['latch_' sk '_o_']);
 end
 
-for k = 1:o, push_output_port(strtrim(fgetl(fid)), ['o_' num2str(k) '_']); end
+for k = 1:vo, push_output_port(strtrim(fgetl(fid)), ['o_' num2str(k) '_']); end
 
-for k = 1:a
+for k = 1:va
     literal = and{k};
     push_node(literal, 'and_');
     rh0 = ai(k) - next_sequence();
@@ -98,9 +98,9 @@ while (~feof(fid))
 
     switch (symbol(1))
     case 'i', out_labels{out_range.pilo     + index} = label;
-    case 'o', out_labels{out_range.polo + l + index} = label;
+    case 'o', out_labels{out_range.polo + vl + index} = label;
     case 'l'
-        ii = out_range.inlo - l + index;
+        ii = out_range.inlo - vl + index;
         io = out_range.polo     + index;
         out_labels{ii} = rename_latch(ii, label);
         out_labels{io} = rename_latch(io, label);

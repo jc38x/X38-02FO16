@@ -1,4 +1,4 @@
--- IT Tijuana, NetList-FPGA-Optimizer 0.01 (printed on 2016-05-13.00:55:14)
+-- IT Tijuana, NetList-FPGA-Optimizer 0.01 (printed on 2016-05-16.08:47:50)
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.all;
@@ -20,6 +20,7 @@ ARCHITECTURE ewf_random_description OF ewf_random_entity IS
 	SHARED VARIABLE register5: unsigned(0 TO 4) := "00000";
 	SHARED VARIABLE register6: unsigned(0 TO 4) := "00000";
 	SHARED VARIABLE register7: unsigned(0 TO 4) := "00000";
+	SHARED VARIABLE register8: unsigned(0 TO 4) := "00000";
 BEGIN
 
 	moore_machine: PROCESS(clk, reset)
@@ -47,49 +48,47 @@ BEGIN
 				register4 := register1 + register4;
 			WHEN "00000101" =>
 				register5 := register4 * 8;
-			WHEN "00000110" =>
-				register5 := register1 + register5;
 				register6 := register4 * 10;
+			WHEN "00000110" =>
+				register5 := register3 + register5;
 			WHEN "00000111" =>
-				register6 := register3 + register6;
+				register4 := register4 + register5;
+				register6 := register1 + register6;
+				register3 := register3 + register5;
 			WHEN "00001000" =>
-				register4 := register4 + register6;
+				register1 := register1 + register6;
+				register3 := register3 * 12;
 			WHEN "00001001" =>
-				output1 <= register5 + register4;
-				register1 := register1 + register5;
-				register3 := register3 + register6;
+				register1 := register1 * 14;
 			WHEN "00001010" =>
-				register3 := register3 * 13;
-				register1 := register1 * 15;
-			WHEN "00001011" =>
+				register1 := register1 + 16;
 				register3 := register2 + register3;
-				register1 := register1 + 17;
-			WHEN "00001100" =>
+			WHEN "00001011" =>
+				register7 := register6 + register1;
 				register2 := register2 + register3;
-				register4 := register1 + 19;
-				register5 := register5 + register1;
+			WHEN "00001100" =>
+				register7 := register7 + 18;
+				register5 := register5 + register3;
 			WHEN "00001101" =>
-				register5 := register5 + 21;
-				register4 := register4 * 23;
-				register2 := register2 * 25;
+				register8 := register7 * 20;
+				output1 <= register6 + register4;
 			WHEN "00001110" =>
-				register2 := register2 + 27;
-				register7 := register5 * 29;
+				register4 := register8 + 23;
+				register6 := register1 + 25;
+				register2 := register2 * 27;
 			WHEN "00001111" =>
-				register7 := register7 + 31;
-				output2 <= register1 + register4;
-				output3 <= register3 + register2;
+				register6 := register6 * 29;
+				output2 <= register7 + register4;
+				register4 := register5 + 32;
+				register2 := register2 + 34;
 			WHEN "00010000" =>
-				output4 <= register5 + register7;
-				register1 := register6 + register3;
+				output3 <= register3 + register2;
+				output4 <= register1 + register6;
+				register1 := register4 * 38;
 			WHEN "00010001" =>
-				register1 := register1 + 36;
+				register1 := register1 + 40;
 			WHEN "00010010" =>
-				register2 := register1 * 38;
-			WHEN "00010011" =>
-				register2 := register2 + 40;
-			WHEN "00010100" =>
-				output5 <= register1 + register2;
+				output5 <= register4 + register1;
 			WHEN OTHERS =>
 				NULL;
 		END CASE;

@@ -3,6 +3,11 @@
 % jcds (jcds.x38e@gmail.com)
 % 2016
 %**************************************************************************
+% References
+% http://www1.pldworld.com/@xilinx/html/technote/tool/manual/15i_doc/alliance/lib/lib7_19.htm
+% http://www1.pldworld.com/@xilinx/html/technote/tool/manual/15i_doc/alliance/lib/lib7_20.htm
+% http://www1.pldworld.com/@xilinx/html/technote/tool/manual/15i_doc/alliance/lib/lib7_21.htm
+%**************************************************************************
 
 function [out_hit, out_inputs, out_rename, out_isd, out_tt] = unmap_table_xilinx(in_instance)
 table = [

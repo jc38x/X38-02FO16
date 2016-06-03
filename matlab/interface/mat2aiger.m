@@ -44,13 +44,13 @@ for k = get_inorder(in_delay, in_range)
     end
 end
 
-l = sum(ilatch);
-i = in_range.szpi - l;
-o = in_range.szpo - l;
-a = uid;
-m = i + l + a;
+vl = sum(ilatch);
+vi = in_range.szpi - vl;
+vo = in_range.szpo - vl;
+va = uid;
+vm = vi + vl + va;
 
-write_line(['aig ' num2str(m) ' ' num2str(i) ' ' num2str(l) ' ' num2str(o) ' ' num2str(a)]);
+write_line(['aig ' num2str(vm) ' ' num2str(vi) ' ' num2str(vl) ' ' num2str(vo) ' ' num2str(va)]);
 
 olatch  = strcmpi('#AIGERLATCH', in_equations(in_range.po));
 ponodes = in_range.po(~olatch);
@@ -59,7 +59,7 @@ polatch = in_range.po( olatch);
 for k = [polatch, ponodes], write_line(num2str(signal2literal(in_labels{get_inode(in_delay, k)}))); end
 
 keys = and2uid.keys();
-andlist = cell(1, a);
+andlist = cell(1, va);
 andlist(cell2mat(and2uid.values(keys))) = keys;
 
 for andgate = andlist

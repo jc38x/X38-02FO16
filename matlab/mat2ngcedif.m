@@ -61,29 +61,16 @@ epw.incrIndent();
 
 while (instanceiterator.hasNext())
     instance = instanceiterator.next();
-    %type = char(instance.getType());
-    %if (strncmpi(type, 'LUT', 3)), continue; end
-    %if (strncmpi(type, 'XORCY', 5)), continue; end
     hit = unmap_table_xilinx(instance);
     if (hit), continue; end
     instance.toEdif(epw);
 end
 
-
-
-
-
 for k = get_inorder(in_delay, in_range)
     lutname = in_labels{k};
-    %adjk = k;% - in_range.pihi;
-    inputs = in_labels(get_inode(in_delay, k));%in_inputs{adjk};
-    ni = numel(inputs);
-    initstring = in_luts{k};
-    if (any(strcmpi(initstring, {'0', '1'})))
-        error('Unimplemented: constants in LUT graph');
-    end
-    %initstring = initstring(7:(end-1));
-    initstring = regexp(initstring, '''[0-9a-fA-F]+''', 'match');
+    inputs = in_labels(get_inode(in_delay, k));
+    ni = numel(inputs);    
+    initstring = regexp(in_luts{k}, '''[0-9a-fA-F]+''', 'match');
     initstring = initstring{1};
     initstring = initstring(2:(end - 1));
     
@@ -95,10 +82,10 @@ for k = get_inorder(in_delay, in_range)
     epw.decrIndent();
     epw.printlnIndent(')');
     
-    for i = 1:ni
-        input = inputs{i};
+    for l = 1:ni
+        input = inputs{l};
         if (lutmap.isKey(input)), source = [input ',O']; else source = input; end
-        push_net(source, [lutname ',' index2lutinput{i}]);
+        push_net(source, [lutname ',' index2lutinput{l}]);
     end
     
     lutmap(lutname) = lutname;
@@ -113,28 +100,23 @@ for k = in_range.po
 end
 
 while (edgesiterator.hasNext())
-    edge = edgesiterator.next();
-    
-    sourceepr  = edge.getSourceEPR();
-    if (~sourceepr.isTopLevelPortRef())
-    %sourcetype = char(sourceepr.getCellInstance().getType());
-    %if (strncmpi(sourcetype, 'LUT', 3)), continue; end
-    %if (strncmpi(sourcetype, 'XORCY', 5)), continue; end
-    hit = unmap_table_xilinx(sourceepr.getCellInstance());
-    if (hit), continue; end
-    end
-    
-    sinkepr  = edge.getSinkEPR();
-    if (~sinkepr.isTopLevelPortRef())
-    %sinktype = char(sinkepr.getCellInstance().getType());
-    %if (strncmpi(  sinktype, 'LUT', 3)), continue; end
-    %if (strncmpi(  sinktype, 'XORCY', 5)), continue; end
-    hit = unmap_table_xilinx(  sinkepr.getCellInstance());
-    if (hit), continue; end
-    end
-    
+    edge = edgesiterator.next();    
+    sourceepr = edge.getSourceEPR();
+    if (~sourceepr.isTopLevelPortRef() && unmap_table_xilinx(sourceepr.getCellInstance())), continue; end
+    sinkepr   = edge.getSinkEPR();
+    if (  ~sinkepr.isTopLevelPortRef() && unmap_table_xilinx(  sinkepr.getCellInstance())), continue; end    
     push_net(make_port_name(sourceepr, true), make_port_name(sinkepr, false));
 end
+
+
+
+
+    
+    
+
+
+
+
 
 netdrivers = nets.keys();
 netid = 0;
