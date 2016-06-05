@@ -12,9 +12,13 @@ list = strcat('[', in_labels, ']');
 for k = in_range.in
     signals = list(get_inode(in_delay, k));
     ns = numel(signals);
-    if (ns < 1), continue; end
-
     equation = in_equations{k};
+    
+    if (ns < 1)
+        out_luts{k} = equation;
+        continue;
+    end
+
     inputs = tt_inputs(ns);
     ni = size(inputs, 2);
     outputs = zeros(1, ni);

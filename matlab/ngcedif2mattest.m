@@ -1,22 +1,21 @@
 
-
-%https://docs.oracle.com/javase/7/docs/api/java/io/FileOutputStream.html
-%
-
 t = tic();
 
 K = 4;
 DF = false;
 mode = 2;
-alpha = 2.5; %1.5-2.5
+alpha = 2; %1.5-2.5
 maxi = 5; %20
 epsrand = [0.000, 0.000]; %small
 
-srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-30bits_outputs31bits\3-ARF\metaheurísticas\arf_wsga.edif';
-dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-30bits_outputs31bits\3-ARF\metaheurísticas\arf_wsga_IMAP.edif';
+%srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-30bits_outputs31bits\3-ARF\metaheurísticas\arf_wsga.edif';
+%dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\VHDL_Generado_desde_C++\inputs-30bits_outputs31bits\3-ARF\metaheurísticas\arf_wsga_IMAP.edif';
+srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\fuzzificacion.edif';
+dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\benchmarks\fuzzificacion_IMAP.edif';
 %srcfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3.ndf';
 %dstfname = 'C:\Users\jcds\Documents\GitHub\X38-02FO16\workspace\practica3_IMAP_MODE11.edif';
-tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig';
+%tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/tmp_abc_logic_opt.aig';
+tmpfname = 'C:/Users/jcds/Documents/GitHub/X38-02FO16/workspace/fuzzificacion.aig';
 
 lutsyn = [
     {'rr'};
@@ -49,10 +48,46 @@ invoke_abc(script5);
 [sf, cvf] = hara(df, rf, mode, K, maxi, alpha, 0, 0, lf, ef);
 [resultdf, resultlf, resultrf, resultef] = rebuild_graph_from_cones(sf, cvf, df, rf, lf, ef);
 [lutsf] = cones2luts(resultdf, resultlf, resultrf, resultef);
-netlist = mat2ngcedif(dstfname, resultdf, resultlf, resultrf, lutsf, [], [], edif);
+mat2ngcedif(dstfname, resultdf, resultlf, resultrf, lutsf, edif);
 
 toc(t)
 
+
+
+
+
+
+%{
+if (~lib.containsCellByName('LUT1'))
+    lut1cell = edu.byu.ece.edif.core.EdifCell(lib, 'LUT1');
+    lut1cell.addPort('I0', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('O',  1, edu.byu.ece.edif.core.EdifPort.OUT);
+end
+
+if (~lib.containsCellByName('LUT2'))
+    lut1cell = edu.byu.ece.edif.core.EdifCell(lib, 'LUT2');
+    lut1cell.addPort('I0', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('I1', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('O',  1, edu.byu.ece.edif.core.EdifPort.OUT);
+end
+
+if (~lib.containsCellByName('LUT3'))
+    lut1cell = edu.byu.ece.edif.core.EdifCell(lib, 'LUT3');
+    lut1cell.addPort('I0', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('I1', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('I2', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('O',  1, edu.byu.ece.edif.core.EdifPort.OUT);
+end
+
+if (~lib.containsCellByName('LUT4'))
+    lut1cell = edu.byu.ece.edif.core.EdifCell(lib, 'LUT4');
+    lut1cell.addPort('I0', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('I1', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('I2', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('I3', 1, edu.byu.ece.edif.core.EdifPort.IN);
+    lut1cell.addPort('O',  1, edu.byu.ece.edif.core.EdifPort.OUT);
+end
+%}
 
 
 
